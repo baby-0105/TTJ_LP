@@ -1,10 +1,107 @@
-.p-home-bg {
-  display: block;
-  height: 300px;
-  background-image: url('#{$bgPath}sea.jpg');
-  background-size: cover;
+.p-top-container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px;
 }
 
-.p-home-grid {
+// 案件
+.p-top-project {
+  margin-bottom: 10px;
+}
+
+.p-top-project__heading {
+  position: relative;
+  padding: 20px 0;
+  font-size: 30px;
+  text-align: center;
+  &::before, &:after {
+    position: absolute;
+    display: block;
+    width: 1000px;
+    height: 10px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    content: '';
+  }
+  &::before {
+    top: 0;
+    background: linear-gradient(to right, #D9340A, #fff 50%, #2582bb);
+  }
+  &::after {
+    bottom: 0;
+    background: linear-gradient(to right, #2582bb, #fff 50%, #D9340A);
+  }
+}
+
+.p-top-project__heading--red {
+  color: #D9340A;
+}
+
+.p-top-project__heading--blue {
+  color: #2582bb;
+}
+
+.p-top-project__list {
   display: flex;
+  justify-content: center;
+}
+
+// 悩み
+.p-top-trouble__heading {
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  font-size: 30px;
+  text-align: center;
+  &::after {
+    position: absolute;
+    display: block;
+    left: 50%;
+    bottom: 0;
+    width: 1000px;
+    height: 10px;
+    background: linear-gradient(to right, #D9340A, #fff 50%, #2582bb);
+    transform: translateX(-50%);
+    content: '';
+  }
+}
+
+.p-top-trouble__list {
+  display: flex;
+  justify-content: center;
+}
+
+.p-top-trouble__listItem {
+  width: calc((100% - 100px) / 3);
+  border-radius: 0 0 15px 15px;
+  text-align: center;
+  &:first-child {
+    .p-top-trouble__listItem__inner__troubleType--detail {
+      padding-bottom: 25px;
+    }
+  }
+  &:nth-last-child(n+2) {
+    margin-right: 10px;
+  }
+}
+
+.p-top-trouble__listItem__inner {
+  background-color: #EFEFEF;
+}
+
+.p-top-trouble__listItem__inner__img {
+  border-radius: 15px;
+}
+
+.p-top-trouble__listItem__inner__troubleType {
+  padding: 20px 0;
+  font-size: 20px;
+  border-radius:0 0 15px 15px;
+  background-color: #EFEFEF;
+}
+
+.p-top-trouble__listItem__inner__troubleType--detail {
+  color: #fff;
+  background-color: #343434;
 }
