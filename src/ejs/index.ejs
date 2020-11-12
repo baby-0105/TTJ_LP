@@ -12,6 +12,33 @@ src/ejs/template/_head %>
     </div>
   </div>
 
+  <div class="l-top-aboutService">
+    <ul class="p-top-aboutService__logo">
+      <% var aboutServiceLogoInitial=['T','T','J']; %>
+      <% var aboutServiceLogo=['rust','ech','ob']; %>
+      <!-- jQueryアニメーションつけるために、spanタグ使用 （22行目） -->
+      <% for (var i = 0; i < aboutServiceLogo.length; i++) { %>
+        <li class="p-top-aboutService__logoList">
+          <span class="p-top-aboutService__logoList__initial"><%= aboutServiceLogoInitial[i] %></span><%= aboutServiceLogo[i] %>
+        </li>
+      <% } %>
+    </ul>
+    <dl class="p-top-aboutService__explain">
+      <dt class="p-top-aboutService__explain__title">
+        <span class="p-top-aboutService__explain__titleInitial">T</span>
+        <span class="p-top-aboutService__explain__titleInitial">T</span>
+        Jとは
+      </dt>
+      <!-- 線が伸びるアニメーションのため（spanタグでunderline） -->
+      <span class="p-top-aboutService__explain__underline"></span>
+      <dd class="p-top-aboutService__explain__text">
+        「TTJ」の作成目的としては、フリーランスエンジニアの人口増加を見込み、
+        そこに対して、今競合他社が少ない時に、案件探しといえば「TTJ」という
+        イメージを定着させ、案件紹介サイトのシェアの確保を狙う。
+      </dd>
+    </dl>
+  </div>
+
   <div class="p-top-container">
     <div class="p-top-project">
       <h1 class="p-top-project__heading"><span class="p-top-project__heading--red">T</span><span class="p-top-project__heading--blue">T</span><span class="p-top-project__heading--white">J</span>とは多彩かつ豊富な案件をご用意しております。</h1>
@@ -34,15 +61,15 @@ src/ejs/template/_head %>
         <% for (var j = 0; j < 3; j++) { %>
         <li class="p-top-trouble__listItem">
           <div class="p-top-trouble__listItem__inner">
-            <img class="p-top-trouble__listItem__inner__img" src="<%= imgPath %>trouble-human.jpeg" alt="悩んでる人の画像">
+            <img class="p-top-trouble__listItem__inner__img" src="<%= img_path %>trouble-human.jpeg" alt="悩んでる人の画像">
             <h2 class="p-top-trouble__listItem__inner__troubleType"><%= troubleType[j] %></h2>
             <p class="p-top-trouble__listItem__inner__troubleType--detail"><%= troubleTypeDetail[j] %></p>
           </div>
         </li>
         <% } %>
       </ul>
-    </div><!-- /. -->
-  </div><!-- /.p-top-container -->
+    </div>
+  </div>
 </main>
 
 <% include src/ejs/template/_footer %>

@@ -9,6 +9,7 @@
 .p-top-heading__block {
   margin-left: auto;
   width: 40%;
+  text-align: center;
 }
 
 .p-top-heading__title {
@@ -18,6 +19,7 @@
   color: white;
   text-shadow: 1px 2px 3px #808080;
   margin-bottom: 50px;
+  text-align: left;
 }
 
 .p-top-heading__title--red {
@@ -28,15 +30,80 @@
   color: #2582bb;
 }
 
+/*// -----------------------------------------------------------------
+//  .p-top-aboutService
+// -----------------------------------------------------------------*/
+
+.p-top-aboutService__logoList {
+  font-size: 80px;
+  line-height: 180px;
+  font-weight: bold;
+
+  // TTJ の (最初の) T
+  &:first-child > .p-top-aboutService__logoList__initial {
+    color: #d9340a;
+  }
+
+  // TTJ の (2番目の) T
+  &:nth-child(2) > .p-top-aboutService__logoList__initial {
+    color: #2582bb;
+  }
+}
+
+.p-top-aboutService__logoList__initial {
+  font-size: 180px;
+}
+
+.p-top-aboutService__explain {
+  background-color: #343434;
+  color: white;
+  height: 370px;
+  width: 65%;
+  margin-left: auto;
+  padding: 10px 10px 10px 80px;
+  position: relative;
+}
+
+.p-top-aboutService__explain__title {
+  font-size: 80px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.p-top-aboutService__explain__titleInitial {
+  letter-spacing: -10px;
+
+  &:first-child {
+    color: #d9340a;
+  }
+
+  &:nth-child(2) {
+    color: #2582bb;
+  }
+}
+
+.p-top-aboutService__explain__underline {
+  display: block;
+  position: absolute;
+  right: 0;
+  height: 2px;
+  width: 70%;
+  background-color: white;
+}
+
+.p-top-aboutService__explain__text {
+  margin-top: 30px;
+}
+
+/*// -----------------------------------------------------------------
+//
+// -----------------------------------------------------------------*/
+
 .p-top-container {
   width: 1200px;
   margin: 0 auto;
   padding: 20px 20px;
 }
-
-/*// -----------------------------------------------------------------
-//  .p-top-project
-// -----------------------------------------------------------------*/
 
 // 案件
 .p-top-project {
