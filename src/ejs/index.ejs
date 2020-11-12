@@ -1,8 +1,40 @@
 <% var title = "TOP"; var description = "トップのdescription"; %> 
 <% include
 src/ejs/template/_head %>
+<% var imgPath = '/assets/images/'; %>
 
-<% include src/ejs/template/_header %>
 
+<main class="l-main">
+  <div class="p-top-container">
+    <div class="p-top-project">
+      <h1 class="p-top-project__heading"><span class="p-top-project__heading--red">T</span><span class="p-top-project__heading--blue">T</span><span class="p-top-project__heading--white">J</span>とは多彩かつ豊富な案件をご用意しております。</h1>
+      <ul class="p-top-project__list">
+        <% for (var i = 0; i < 3; i++) { %>
+          <a href="#" class="p-top-project__list__link">
+            <li class="p-top-project__list__item">
+              <div class="p-top-project__list__item__inner">案件<%= i %></div>
+            </li>
+          </a>
+        <% } %>
+      </ul>
+    </div>
 
+    <div class="p-top-trouble">
+      <h1 class="p-top-trouble__heading">多く寄せられている悩み</h1>
+      <ul class="p-top-trouble__list">
+        <% var troubleType = ['希望の案件が見つからない', '上流工程から三角したい', '今のキャリアに悩んでいる']; %>
+        <% var troubleTypeDetail = ['自分のスキル、経験に見合う報酬が欲しい。', 'プロジェクトの構想フェーズから参画しお客さんから反応も欲しい', 'フリーランスに興味はあるが、収入が安定するか、仕事がしっかりと貰えるのか不安がある。'] %>
+        <% for (var j = 0; j < 3; j++) { %>
+        <li class="p-top-trouble__listItem">
+          <div class="p-top-trouble__listItem__inner">
+            <img class="p-top-trouble__listItem__inner__img" src="<%= imgPath %>trouble-human.jpeg" alt="悩んでる人の画像">
+            <h2 class="p-top-trouble__listItem__inner__troubleType"><%= troubleType[j] %></h2>
+            <p class="p-top-trouble__listItem__inner__troubleType--detail"><%= troubleTypeDetail[j] %></p>
+          </div>
+        </li>
+        <% } %>
+      </ul>
+    </div><!-- /. -->
+  </div><!-- /.p-top-container -->
+</main>
 
