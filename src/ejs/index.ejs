@@ -1,10 +1,17 @@
-<% var title = "TOP"; var description = "トップのdescription"; %> 
-<% include
+<% var title = "TTL_JP_TOP"; var description = "トップのTTL_JP"; %> <% include
 src/ejs/template/_head %>
-<% var imgPath = '/assets/images/'; %>
-
+<% var img_path='/assets/images/'; %>
 
 <main class="l-main">
+  <div class="l-top-heading">
+    <div class="p-top-heading__block">
+      <h1 class="p-top-heading__title">
+        <span class="p-top-heading__title--red">幸せ</span>と<span class="p-top-heading__title--blue">平和</span>を<br>提供いたします。
+      </h1>
+      <a class="c-top-entryBtn" href="#">登録はこちら</a>
+    </div>
+  </div>
+
   <div class="p-top-container">
     <div class="p-top-project">
       <h1 class="p-top-project__heading"><span class="p-top-project__heading--red">T</span><span class="p-top-project__heading--blue">T</span><span class="p-top-project__heading--white">J</span>とは多彩かつ豊富な案件をご用意しております。</h1>
@@ -38,3 +45,4 @@ src/ejs/template/_head %>
   </div><!-- /.p-top-container -->
 </main>
 
+<% include src/ejs/template/_footer %>

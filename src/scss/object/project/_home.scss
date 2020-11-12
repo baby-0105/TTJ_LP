@@ -1,8 +1,42 @@
+/*// ==========================================================================
+// p-top
+// ==========================================================================*/
+
+/*// -----------------------------------------------------------------
+//  .p-top-heading
+// -----------------------------------------------------------------*/
+
+.p-top-heading__block {
+  margin-left: auto;
+  width: 40%;
+}
+
+.p-top-heading__title {
+  font-size: 60px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  color: white;
+  text-shadow: 1px 2px 3px #808080;
+  margin-bottom: 50px;
+}
+
+.p-top-heading__title--red {
+  color: #d9340a;
+}
+
+.p-top-heading__title--blue {
+  color: #2582bb;
+}
+
 .p-top-container {
   width: 1200px;
   margin: 0 auto;
   padding: 20px 20px;
 }
+
+/*// -----------------------------------------------------------------
+//  .p-top-project
+// -----------------------------------------------------------------*/
 
 // 案件
 .p-top-project {
