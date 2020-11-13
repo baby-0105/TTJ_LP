@@ -39,6 +39,7 @@
   line-height: 180px;
   font-weight: bold;
   overflow: hidden; // ロゴのfadeinを隠すため
+  letter-spacing: 20px;
 
   // TTJ の (最初の) T
   &:first-child > .p-top-aboutService__logoList__initial {
