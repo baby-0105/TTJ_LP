@@ -134,6 +134,7 @@ module.exports = (env, argv) => {
     devServer: {
       contentBase: path.resolve(__dirname, 'public'),
       port: 8080,
+      open: true,
     },
   }
 }
