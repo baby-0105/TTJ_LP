@@ -96,7 +96,7 @@
 }
 
 /*// -----------------------------------------------------------------
-//
+//  .p-top-container
 // -----------------------------------------------------------------*/
 
 .p-top-container {
@@ -105,22 +105,30 @@
   padding: 20px 20px;
 }
 
-// 案件
+/*// -----------------------------------------------------------------
+//  .p-top-project
+// -----------------------------------------------------------------*/
+
 .p-top-project {
-  margin-bottom: 10px;
+  margin-bottom: 100px;
 }
+
+/*// -----------------------------------------------------------------
+//  .p-top-project__heading
+// -----------------------------------------------------------------*/
 
 .p-top-project__heading {
   position: relative;
+  margin-bottom: 30px;
   padding: 20px 0;
   font-size: 30px;
+  font-weight: bold;
   text-align: center;
   &::before, &:after {
     position: absolute;
     display: block;
     width: 1000px;
     height: 10px;
-    top: 0;
     left: 50%;
     transform: translateX(-50%);
     content: '';
@@ -143,25 +151,65 @@
   color: #2582bb;
 }
 
+/*// -----------------------------------------------------------------
+//  .p-top-project__list
+// -----------------------------------------------------------------*/
+
 .p-top-project__list {
   display: flex;
   justify-content: center;
 }
 
-// 悩み
+.p-top-project__list__link {
+  &:hover {
+    transform: scale(1.05);
+    transition: all 300ms 0s ease;
+    opacity: .6;
+  }
+  &:nth-last-child(n+2) {
+    margin-right: 10px;
+  }
+}
+
+.p-top-project__list__item {
+  padding-bottom: 100px;
+  border: 1px solid;
+}
+
+.p-top-project__list__item__title {
+  display: block;
+  padding: 10px 20px;
+  background-color: rgba(#808080, 0.3);
+}
+
+.p-top-project__list__item__about {
+  padding: 10px 20px;
+  border-bottom: 1px solid #000;
+}
+
+.p-top-project__list__item__development {
+  padding: 10px 20px;
+}
+
+/*// -----------------------------------------------------------------
+//  .p-top-trouble
+// -----------------------------------------------------------------*/
+
 .p-top-trouble__heading {
   position: relative;
   margin-bottom: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 6px;
   text-align: center;
   &::after {
     position: absolute;
     display: block;
     left: 50%;
     bottom: 0;
-    width: 1000px;
-    height: 10px;
+    width: 35%;
+    height: 5px;
     background: linear-gradient(to right, #D9340A, #fff 50%, #2582bb);
     transform: translateX(-50%);
     content: '';
