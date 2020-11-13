@@ -1,23 +1,19 @@
-
-.header {
+.l-header {
   position: fixed;
-}
-.header-main{
   height: 75px;
   width: 100%;
   background-color: #343434;
   box-shadow: 2px 2px 4px -2px gray inset;
-
+  z-index: 2;
 }
 
-.header-logo {
+.c-header-logo {
   margin : 0 auto;
   width: 200px;
-  // background-color: white;
   line-height: 75px;
 }
 
-.logo-image{
+.c-header-logo__img {
   height :50px;
   width :190px;
 }

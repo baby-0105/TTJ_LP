@@ -1,6 +1,8 @@
 <% var title = "TTL_JP_TOP"; var description = "トップのTTL_JP"; %> <% include
 src/ejs/template/_head %>
-<% var img_path='/assets/images/'; %>
+<% var imgPath='/assets/images/'; %>
+
+<% include src/ejs/template/_header %>
 
 <main class="l-main">
   <div class="l-top-heading">
@@ -8,18 +10,18 @@ src/ejs/template/_head %>
       <h1 class="p-top-heading__title">
         <span class="p-top-heading__title--red">幸せ</span>と<span class="p-top-heading__title--blue">平和</span>を<br>提供いたします。
       </h1>
-      <a class="c-top-entryBtn" href="#">登録はこちら</a>
+      <a class="c-top-entryBtn" href="#">案件例を見る！！</a>
     </div>
   </div>
 
-  <div class="l-top-aboutService">
+  <div class="l-top-aboutService" id="aboutService">
     <ul class="p-top-aboutService__logo">
       <% var aboutServiceLogoInitial=['T','T','J']; %>
       <% var aboutServiceLogo=['rust','ech','ob']; %>
       <!-- jQueryアニメーションつけるために、spanタグ使用 （22行目） -->
       <% for (var i = 0; i < aboutServiceLogo.length; i++) { %>
         <li class="p-top-aboutService__logoList">
-          <span class="p-top-aboutService__logoList__initial"><%= aboutServiceLogoInitial[i] %></span><%= aboutServiceLogo[i] %>
+          <span class="p-top-aboutService__logoList__initial" id="fadeLogoInitial<%= i+1 %>"><%= aboutServiceLogoInitial[i] %></span><%= aboutServiceLogo[i] %>
         </li>
       <% } %>
     </ul>
@@ -30,7 +32,7 @@ src/ejs/template/_head %>
         Jとは
       </dt>
       <!-- 線が伸びるアニメーションのため（spanタグでunderline） -->
-      <span class="p-top-aboutService__explain__underline"></span>
+      <span class="p-top-aboutService__explain__underline" id="extendUnderline"></span>
       <dd class="p-top-aboutService__explain__text">
         「TTJ」の作成目的としては、フリーランスエンジニアの人口増加を見込み、
         そこに対して、今競合他社が少ない時に、案件探しといえば「TTJ」という
@@ -61,7 +63,7 @@ src/ejs/template/_head %>
         <% for (var j = 0; j < 3; j++) { %>
         <li class="p-top-trouble__listItem">
           <div class="p-top-trouble__listItem__inner">
-            <img class="p-top-trouble__listItem__inner__img" src="<%= img_path %>trouble-human.jpeg" alt="悩んでる人の画像">
+            <img class="p-top-trouble__listItem__inner__img" src="<%= imgPath %>trouble-human.jpeg" alt="悩んでる人の画像">
             <h2 class="p-top-trouble__listItem__inner__troubleType"><%= troubleType[j] %></h2>
             <p class="p-top-trouble__listItem__inner__troubleType--detail"><%= troubleTypeDetail[j] %></p>
           </div>

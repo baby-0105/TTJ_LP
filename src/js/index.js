@@ -1,10 +1,32 @@
+/* eslint-disable */
+
 import $ from 'jquery'
 import router from './modules/Router'
 import '../scss/app.scss'
 
 $(() => {
-  new router()
+  // var $bodyAndHtml = $('body, html'),
+  //     $body = $('body');
 
-  const hoge = 'hoge'
-  console.log(hoge)
+  // スクロールイベント
+  $(window).scroll(function() {
+    let windowHeight = $(window).height(),
+        scrollPosi = $(window).scrollTop();
+
+    // underline：伸びる & TTJロゴ：fadeIn
+    $('#aboutService').each(function() {
+      let aboutServicePosi = $(this).offset().top;
+
+      if (scrollPosi > aboutServicePosi - windowHeight + 150){
+        $('#extendUnderline').addClass('extendUnderline');
+        for(let i=0; i<3; i++) {
+          let delayTime = ['0', '500', '1000'];
+
+          $(`#fadeLogoInitial${i+1}`).delay(delayTime[i]).queue(function() {
+            $(this).addClass('fadeLogoInitial');
+          })
+        }
+      }
+    })
+  });
 })
