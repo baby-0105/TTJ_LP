@@ -38,6 +38,7 @@
   font-size: 80px;
   line-height: 180px;
   font-weight: bold;
+  overflow: hidden; // ロゴのfadeinを隠すため
 
   // TTJ の (最初の) T
   &:first-child > .p-top-aboutService__logoList__initial {
@@ -51,7 +52,17 @@
 }
 
 .p-top-aboutService__logoList__initial {
+  position: relative;
+  right: 250px;
   font-size: 180px;
+  opacity: 0;
+}
+
+// ロゴのフェードイン
+.fadeLogoInitial {
+  opacity: 1;
+  right: 0;
+  transition: 1.5s;
 }
 
 .p-top-aboutService__explain {
@@ -87,8 +98,13 @@
   position: absolute;
   right: 0;
   height: 2px;
-  width: 70%;
+  width: 0;
   background-color: white;
+}
+
+.extendUnderline {
+  width: 70%;
+  transition: 2.0s;
 }
 
 .p-top-aboutService__explain__text {
