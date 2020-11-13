@@ -40,9 +40,9 @@ src/ejs/template/_head %>
     </dl>
   </div>
 
-  <div class="p-top-container">
+  <div class="p-top-container" id="container">
     <div class="p-top-project">
-      <h1 class="p-top-project__heading" id="fade-in-up">
+      <h1 class="p-top-project__heading" id="fade-in-down1">
         <span class="p-top-project__heading--red">T</span>
         <span class="p-top-project__heading--blue">T</span>
         <span class="p-top-project__heading--white">J</span>
@@ -51,47 +51,45 @@ src/ejs/template/_head %>
         案件をご用意しております。
       </h1>
       <% var projects = [
-        {'name': '【PHP/Laravel】システム開発', 'unitPrice': 65, 'workingPlace': '東京', 'developmentEnvironment': 'PHP Laravel'},
+      {'name': '【PHP/Laravel】システム開発', 'unitPrice': 65, 'workingPlace': '東京', 'developmentEnvironment': 'PHP Laravel'},
+      {'name': '【PHP/Laravel】システム開発', 'unitPrice': 65, 'workingPlace': '東京', 'developmentEnvironment': 'PHP Laravel'},
+      {'name': '【PHP/Laravel】システム開発', 'unitPrice': 65, 'workingPlace': '東京', 'developmentEnvironment': 'PHP Laravel'}
       ]; %>
-      <% var project = (function(name, price, place, environment) { %>
-        <a href="#" class="p-top-project__list__link">
-          <li class="p-top-project__list__item">
-            <h2 class="p-top-project__list__item__title"><%= name %></h2>
-            <div class="p-top-project__list__item__about">
-              <p class="p-top-project__list__item__price">単価/月 <%= price %>万円</p>
-              <p class="p-top-project__list__item__place">勤務地 <%= place %></p>
-            </div>
-            <div class="p-top-project__list__item__development">
-              <p class="p-top-project__list__item__development__enironment">開発環境 <%= environment %></p>
-              <!-- <p class="p-top-project__list__item__development__language"></p> -->
-            </div><!-- /.p-top-project__list__item__development -->
-          </li>
-        </a>
-      <% }); %>
       <ul class="p-top-project__list">
-      <% project(projects[0].name, projects[0].unitPrice, projects[0].workingPlace, projects[0].developmentEnvironment); %>
-      <% project(projects[0].name, projects[0].unitPrice, projects[0].workingPlace, projects[0].developmentEnvironment); %>
-      <% project(projects[0].name, projects[0].unitPrice, projects[0].workingPlace, projects[0].developmentEnvironment); %>
-      </ul>
-    </div>
-
-    <div class="p-top-trouble">
-      <h1 class="p-top-trouble__heading">多く寄せられている悩み</h1>
-      <ul class="p-top-trouble__list">
-        <% var troubleType = ['希望の案件が見つからない', '上流工程から三角したい', '今のキャリアに悩んでいる']; %>
-        <% var troubleTypeDetail = ['自分のスキル、経験に見合う報酬が欲しい。', 'プロジェクトの構想フェーズから参画しお客さんから反応も欲しい', 'フリーランスに興味はあるが、収入が安定するか、仕事がしっかりと貰えるのか不安がある。'] %>
-        <% for (var j = 0; j < 3; j++) { %>
-        <li class="p-top-trouble__listItem">
-          <div class="p-top-trouble__listItem__inner">
-            <img class="p-top-trouble__listItem__inner__img" src="<%= imgPath %>trouble-human.jpeg" alt="悩んでる人の画像">
-            <h2 class="p-top-trouble__listItem__inner__troubleType"><%= troubleType[j] %></h2>
-            <p class="p-top-trouble__listItem__inner__troubleType--detail"><%= troubleTypeDetail[j] %></p>
+        <% for (var j = 0; j < projects.length; j++) { %>
+        <a href="#" class="p-top-project__list__link">
+        <li class="p-top-project__list__item" id="fade-in-down<%= j+2 %>">
+          <h2 class="p-top-project__list__item__title"><%= projects[j].name %></h2>
+          <div class="p-top-project__list__item__about">
+            <p class="p-top-project__list__item__price">単価/月 <%= projects[j].unitPrice %>万円</p>
+            <p class="p-top-project__list__item__place">勤務地 <%= projects[j].workingPlace %></p>
           </div>
+          <div class="p-top-project__list__item__development">
+            <p class="p-top-project__list__item__development__enironment">開発環境 <%= projects[j].developmentEnvironment %></p>
+          <!-- <p class="p-top-project__list__item__development__language"></p> -->
+          </div><!-- /.p-top-project__list__item__development -->
         </li>
+        </a>
         <% } %>
       </ul>
-    </div>
+    </div><!-- /.p-top-project -->
+
+    <div class="p-top-trouble">
+      <h1 class="p-top-trouble__heading" id="fade-in-down5">多く寄せられている悩み</h1>
+      <ul class="p-top-trouble__list">
+      <% var troubleType = ['希望の案件が見つからない', '上流工程から三角したい', '今のキャリアに悩んでいる']; %>
+      <% var troubleTypeDetail = ['自分のスキル、経験に見合う報酬が欲しい。', 'プロジェクトの構想フェーズから参画しお客さんから反応も欲しい', 'フリーランスに興味はあるが、収入が安定するか、仕事がしっかりと貰えるのか不安がある。'] %>
+      <% for (var k = 0; k < troubleType.length; k++) { %>
+        <li class="p-top-trouble__listItem" id="fade-in-down<%= k+6 %>">
+          <div class="p-top-trouble__listItem__inner">
+            <img class="p-top-trouble__listItem__inner__img" src="<%= imgPath %>trouble-human.jpeg" alt="悩んでる人の画像">
+            <h2 class="p-top-trouble__listItem__inner__troubleType"><%= troubleType[k] %></h2>
+            <p class="p-top-trouble__listItem__inner__troubleType--detail"><%= troubleTypeDetail[k] %></p>
+          </div>
+        </li>
+      <% } %>
+      </ul>
+    </div><!-- /.p-top-trouble -->
   </div>
 </main>
-
 <% include src/ejs/template/_footer %>
