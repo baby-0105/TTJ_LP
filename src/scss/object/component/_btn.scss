@@ -10,4 +10,11 @@
   letter-spacing: 2px;
   background-color: #383434;
   box-shadow: 0 5px 3px 0 rgba(0, 0, 0, .5);
+  position: relative;
+  transition: all 0.5s;
+  display: inline-block;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }

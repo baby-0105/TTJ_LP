@@ -19,7 +19,6 @@ src/ejs/template/_head %>
     <ul class="p-top-aboutService__logo">
       <% var aboutServiceLogoInitial=['T','T','J']; %>
       <% var aboutServiceLogo=['rust','ech','ob']; %>
-      <!-- jQueryアニメーションつけるために、spanタグ使用 （22行目） -->
       <% for (var i = 0; i < aboutServiceLogo.length; i++) { %>
         <li class="p-top-aboutService__logoList">
           <span class="p-top-aboutService__logoList__initial" id="fadeLogoInitial<%= i+1 %>"><%= aboutServiceLogoInitial[i] %></span><%= aboutServiceLogo[i] %>
@@ -32,7 +31,6 @@ src/ejs/template/_head %>
         <span class="p-top-aboutService__explain__titleInitial">T</span>
         Jとは
       </dt>
-      <!-- 線が伸びるアニメーションのため（spanタグでunderline） -->
       <span class="p-top-aboutService__explain__underline" id="extendUnderline"></span>
       <dd class="p-top-aboutService__explain__text">
         「TTJ」の作成目的としては、フリーランスエンジニアの人口増加を見込み、
