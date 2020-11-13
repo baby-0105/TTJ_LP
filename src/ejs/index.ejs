@@ -1,6 +1,7 @@
 <% var title = "TTL_JP_TOP"; var description = "トップのTTL_JP"; %> <% include
 src/ejs/template/_head %>
 <% var img_path='/assets/images/'; %>
+<% include src/ejs/template/_header %>
 
 <main class="l-main">
   <div class="l-top-heading">
@@ -41,15 +42,36 @@ src/ejs/template/_head %>
 
   <div class="p-top-container">
     <div class="p-top-project">
-      <h1 class="p-top-project__heading"><span class="p-top-project__heading--red">T</span><span class="p-top-project__heading--blue">T</span><span class="p-top-project__heading--white">J</span>とは多彩かつ豊富な案件をご用意しております。</h1>
+      <h1 class="p-top-project__heading" id="fade-in-up">
+        <span class="p-top-project__heading--red">T</span>
+        <span class="p-top-project__heading--blue">T</span>
+        <span class="p-top-project__heading--white">J</span>
+        とは多彩かつ豊富な
+        <br>
+        案件をご用意しております。
+      </h1>
+      <% var projects = [
+        {'name': '【PHP/Laravel】システム開発', 'unitPrice': 65, 'workingPlace': '東京', 'developmentEnvironment': 'PHP Laravel'},
+      ]; %>
+      <% var project = (function(name, price, place, environment) { %>
+        <a href="#" class="p-top-project__list__link">
+          <li class="p-top-project__list__item">
+            <h2 class="p-top-project__list__item__title"><%= name %></h2>
+            <div class="p-top-project__list__item__about">
+              <p class="p-top-project__list__item__price">単価/月 <%= price %>万円</p>
+              <p class="p-top-project__list__item__place">勤務地 <%= place %></p>
+            </div>
+            <div class="p-top-project__list__item__development">
+              <p class="p-top-project__list__item__development__enironment">開発環境 <%= environment %></p>
+              <!-- <p class="p-top-project__list__item__development__language"></p> -->
+            </div><!-- /.p-top-project__list__item__development -->
+          </li>
+        </a>
+      <% }); %>
       <ul class="p-top-project__list">
-        <% for (var i = 0; i < 3; i++) { %>
-          <a href="#" class="p-top-project__list__link">
-            <li class="p-top-project__list__item">
-              <div class="p-top-project__list__item__inner">案件<%= i %></div>
-            </li>
-          </a>
-        <% } %>
+      <% project(projects[0].name, projects[0].unitPrice, projects[0].workingPlace, projects[0].developmentEnvironment); %>
+      <% project(projects[0].name, projects[0].unitPrice, projects[0].workingPlace, projects[0].developmentEnvironment); %>
+      <% project(projects[0].name, projects[0].unitPrice, projects[0].workingPlace, projects[0].developmentEnvironment); %>
       </ul>
     </div>
 

@@ -3,8 +3,17 @@ import router from './modules/Router'
 import '../scss/app.scss'
 
 $(() => {
-  new router()
+  $('#fade-in-up').css('visibility','hidden');
+$(window).scroll(function(){
+ var windowHeight = $(window).height(),
+     topWindow    = $(window).scrollTop();
 
-  const hoge = 'hoge'
-  console.log(hoge)
+ $('#fade-in-up').each(function(){
+  var targetPosition = $(this).offset().top;
+  
+  if(topWindow > targetPosition - windowHeight + 100){
+   $(this).addClass("fadeInDown");
+  }
+ });
+});
 })
