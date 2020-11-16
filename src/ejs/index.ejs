@@ -8,88 +8,26 @@ src/ejs/template/_head %>
 <main class="l-main">
   <div class="l-top-heading">
     <div class="p-top-heading__block">
-      <h1 class="p-top-heading__title">
-        <span class="p-top-heading__title--red">幸せ</span>と<span class="p-top-heading__title--blue">平和</span>を<br>提供いたします。
-      </h1>
-      <a class="c-top-entryBtn" href="#">案件例を見る！！</a>
+      <img src="<%= imgPath %>trust.png" class="p-top-heading__titleImg" alt="トラストのロゴ">
+      <h3 class="p-top-heading__catchPhrase">最短2日で案件紹介</h3>
+      <p class="p-top-heading__text">IT起業家・フリーランスの自立を支える<br>お仕事サービス</p>
+      <a class="c-top-toProject" id="toProject" href="#">案件例を見る！！</a>
     </div>
   </div>
 
-  <div class="l-top-aboutService" id="aboutService">
-    <ul class="p-top-aboutService__logo">
-      <% var aboutServiceLogoInitial=['T','T','J']; %>
-      <% var aboutServiceLogo=['rust','ech','ob']; %>
-      <% for (var i = 0; i < aboutServiceLogo.length; i++) { %>
-        <li class="p-top-aboutService__logoList">
-          <span class="p-top-aboutService__logoList__initial" id="fadeLogoInitial<%= i+1 %>"><%= aboutServiceLogoInitial[i] %></span><%= aboutServiceLogo[i] %>
+  <div class="l-top-request">
+    <h2 class="p-top-request__title">統計に基づくクリエイター,エンジニアの要望</h2>
+    <ul class="p-top-request__block">
+      <% var requestTitle = ['スキルマッチ', '高単価', '時間効率']; %>
+      <% var requestText = ['自身のスキルにあった案件が欲しい', 'ある程度一定した収入が欲しい', '空いている時間を利用し効率よく収入を増やしたい']; %>
+      <% for (var i = 0; i < requestTitle.length; i++) { %>
+        <li class="p-top-request__blockList">
+          <h3 class="p-top-request__blockList__title"><%= requestTitle[i] %></h3>
+          <img src="<%= imgPath %>request<%= i+1 %>.png" class="p-top-request__blockList__img" alt="要望ブロックのlistのロゴ">
+          <p class="p-top-request__blockList__text"><%= requestText[i] %></p>
         </li>
       <% } %>
     </ul>
-    <dl class="p-top-aboutService__explain">
-      <dt class="p-top-aboutService__explain__title">
-        <span class="p-top-aboutService__explain__titleInitial">T</span>
-        <span class="p-top-aboutService__explain__titleInitial">T</span>
-        Jとは
-      </dt>
-      <span class="p-top-aboutService__explain__underline" id="extendUnderline"></span>
-      <dd class="p-top-aboutService__explain__text">
-        「TTJ」の作成目的としては、フリーランスエンジニアの人口増加を見込み、
-        そこに対して、今競合他社が少ない時に、案件探しといえば「TTJ」という
-        イメージを定着させ、案件紹介サイトのシェアの確保を狙う。
-      </dd>
-    </dl>
-  </div>
-
-  <div class="p-top-container" id="container">
-    <div class="p-top-project">
-      <h1 class="p-top-project__heading" id="fade-in-down1">
-        <span class="p-top-project__heading--red">T</span>
-        <span class="p-top-project__heading--blue">T</span>
-        <span class="p-top-project__heading--white">J</span>
-        とは多彩かつ豊富な
-        <br>
-        案件をご用意しております。
-      </h1>
-      <% var projects = [
-      {'name': '【PHP/Laravel】システム開発', 'unitPrice': 65, 'workingPlace': '東京', 'developmentEnvironment': 'PHP Laravel'},
-      {'name': '【PHP/Laravel】システム開発', 'unitPrice': 65, 'workingPlace': '東京', 'developmentEnvironment': 'PHP Laravel'},
-      {'name': '【PHP/Laravel】システム開発', 'unitPrice': 65, 'workingPlace': '東京', 'developmentEnvironment': 'PHP Laravel'}
-      ]; %>
-      <ul class="p-top-project__list">
-        <% for (var j = 0; j < projects.length; j++) { %>
-        <a href="#" class="p-top-project__list__link">
-        <li class="p-top-project__list__item" id="fade-in-down<%= j+2 %>">
-          <h2 class="p-top-project__list__item__title"><%= projects[j].name %></h2>
-          <div class="p-top-project__list__item__about">
-            <p class="p-top-project__list__item__price">単価/月 <%= projects[j].unitPrice %>万円</p>
-            <p class="p-top-project__list__item__place">勤務地 <%= projects[j].workingPlace %></p>
-          </div>
-          <div class="p-top-project__list__item__development">
-            <p class="p-top-project__list__item__development__enironment">開発環境 <%= projects[j].developmentEnvironment %></p>
-          <!-- <p class="p-top-project__list__item__development__language"></p> -->
-          </div><!-- /.p-top-project__list__item__development -->
-        </li>
-        </a>
-        <% } %>
-      </ul>
-    </div><!-- /.p-top-project -->
-
-    <div class="p-top-trouble">
-      <h1 class="p-top-trouble__heading" id="fade-in-down5">多く寄せられている悩み</h1>
-      <ul class="p-top-trouble__list">
-      <% var troubleType = ['希望の案件が見つからない', '上流工程から三角したい', '今のキャリアに悩んでいる']; %>
-      <% var troubleTypeDetail = ['自分のスキル、経験に見合う報酬が欲しい。', 'プロジェクトの構想フェーズから参画しお客さんから反応も欲しい', 'フリーランスに興味はあるが、収入が安定するか、仕事がしっかりと貰えるのか不安がある。'] %>
-      <% for (var k = 0; k < troubleType.length; k++) { %>
-        <li class="p-top-trouble__listItem" id="fade-in-down<%= k+6 %>">
-          <div class="p-top-trouble__listItem__inner">
-            <img class="p-top-trouble__listItem__inner__img" src="<%= imgPath %>trouble-human.jpeg" alt="悩んでる人の画像">
-            <h2 class="p-top-trouble__listItem__inner__troubleType"><%= troubleType[k] %></h2>
-            <p class="p-top-trouble__listItem__inner__troubleType--detail"><%= troubleTypeDetail[k] %></p>
-          </div>
-        </li>
-      <% } %>
-      </ul>
-    </div><!-- /.p-top-trouble -->
   </div>
 </main>
 <% include src/ejs/template/_footer %>
