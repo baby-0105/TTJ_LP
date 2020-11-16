@@ -17,11 +17,11 @@ src/ejs/template/_head %>
 
   <div class="l-top-aboutService" id="aboutService">
     <ul class="p-top-aboutService__logo">
-      <% var aboutServiceLogoInitial=['T','T','J']; %>
+      <% var serviceInitial=['T','T','J']; %>
       <% var aboutServiceLogo=['rust','ech','ob']; %>
       <% for (var i = 0; i < aboutServiceLogo.length; i++) { %>
         <li class="p-top-aboutService__logoList">
-          <span class="p-top-aboutService__logoList__initial" id="fadeLogoInitial<%= i+1 %>"><%= aboutServiceLogoInitial[i] %></span><%= aboutServiceLogo[i] %>
+          <span class="p-top-aboutService__logoList__initial" id="fadeLogoInitial<%= i+1 %>"><%= serviceInitial[i] %></span><%= aboutServiceLogo[i] %>
         </li>
       <% } %>
     </ul>
@@ -40,56 +40,79 @@ src/ejs/template/_head %>
     </dl>
   </div>
 
-  <div class="p-top-container" id="container">
-    <div class="p-top-project">
-      <h1 class="p-top-project__heading" id="fade-in-down1">
-        <span class="p-top-project__heading--red">T</span>
-        <span class="p-top-project__heading--blue">T</span>
-        <span class="p-top-project__heading--white">J</span>
-        とは多彩かつ豊富な
-        <br>
-        案件をご用意しております。
+
+
+  <!-- <div class="p-top-container" id="container"> -->
+    <div class="p-top-flowUpToWork">
+      <h1 class="p-top-flowUpToWork__heading" id="fade-in-down1">
+        <span class="p-top-flowUpToWork__heading--bold">TTJ</span>とは多彩かつ豊富な案件をご用意しております。
       </h1>
-      <% var projects = [
-      {'name': '【PHP/Laravel】システム開発', 'unitPrice': 65, 'workingPlace': '東京', 'developmentEnvironment': 'PHP Laravel'},
-      {'name': '【PHP/Laravel】システム開発', 'unitPrice': 65, 'workingPlace': '東京', 'developmentEnvironment': 'PHP Laravel'},
-      {'name': '【PHP/Laravel】システム開発', 'unitPrice': 65, 'workingPlace': '東京', 'developmentEnvironment': 'PHP Laravel'}
-      ]; %>
-      <ul class="p-top-project__list">
-        <% for (var j = 0; j < projects.length; j++) { %>
-        <a href="#" class="p-top-project__list__link">
-        <li class="p-top-project__list__item" id="fade-in-down<%= j+2 %>">
-          <h2 class="p-top-project__list__item__title"><%= projects[j].name %></h2>
-          <div class="p-top-project__list__item__about">
-            <p class="p-top-project__list__item__price">単価/月 <%= projects[j].unitPrice %>万円</p>
-            <p class="p-top-project__list__item__place">勤務地 <%= projects[j].workingPlace %></p>
-          </div>
-          <div class="p-top-project__list__item__development">
-            <p class="p-top-project__list__item__development__enironment">開発環境 <%= projects[j].developmentEnvironment %></p>
-          <!-- <p class="p-top-project__list__item__development__language"></p> -->
-          </div><!-- /.p-top-project__list__item__development -->
+      <ul class="p-top-flowUpToWork__menu">
+        <% var flow = [
+          {'flowNum': '01', 'flowImage': 'application_form.png    ', 'flowText': '簡単申込みフォームへ入力'},
+          {'flowNum': '02', 'flowImage': 'contact.png             ', 'flowText': '弊社担当より連絡       '},
+          {'flowNum': '03', 'flowImage': 'project_introduction.png', 'flowText': '案件紹介、相談         '},
+          {'flowNum': '04', 'flowImage': 'business.png            ', 'flowText': '業務開始              '},
+        ]; %>
+        <% for (var i = 0; i < flow.length; i++) { %>
+        <li class="p-top-flowUpToWork__list">
+          <h2 class="p-top-flowUpToWork__list__order"><%= flow[i].flowNum %></h2>
+          <img class="p-top-flowUpToWork__list__image" src="<%= imgPath %><%= flow[i].flowImage %>" alt="仕事の流れ 画像">
+          <p class="p-top-flowUpToWork__list__txt"><%= flow[i].flowText %></p>
         </li>
-        </a>
+        <% } %>
+      </ul>
+    </div>
+
+    <div class="p-top-project">
+      <% var jobCategory = ['Engineer', 'Engineer', 'Designer']; %>
+      <% var projects = [
+      {'unitPrice': '41~65', 'workingDays': 3},
+      {'unitPrice': '41~65', 'workingDays': 3},
+      {'unitPrice': '41~65', 'workingDays': 3}
+      ]; %>
+      <% var developmentEnvironment = ['PHP', 'MySQL', 'JavaScript', 'AWS']; %>
+      <h2 class="p-top-project__heading">
+        <span class="p-top-project__heading--bold">TTJ</span>が提供する案件
+      </h2>
+      <h3 class="p-top-project__subTitle">多種多様な案件を取り揃えております</h3>
+      <div class="p-top-project__jobCategory">
+        <% for (var j = 0; j < jobCategory.length; j++) { %>
+        <p class="p-top-project__jobCategory__txt"><%= jobCategory[j] %></p>
+        <% } %>
+      </div>
+      <ul class="p-top-project__list">
+        <% for (var k = 0; k < projects.length; k++) { %>
+        <li class="p-top-project__listItem" id="fade-in-down<%= j+2 %>">
+          <img class="p-top-project__listItem__goodMan" src="<%= imgPath %>goodhuman.png" alt="男性　いいね">
+          <ul class="p-top-project__listItem__developmentEnironment">
+            <% for (var l = 0; l < developmentEnvironment.length; l++) { %>
+            <li><%= developmentEnvironment[l] %></li>
+            <% } %>
+          </ul>
+          <p class="p-top-project__listItem__about">★週3日PHP案件！有名人も活用するブログサービス運営を支えるエンジニア募集！</p>
+          <div class="p-top-project__listItem__feature">
+            <div class="p-top-project__listItem__income">
+              <img class="p-top-project__listItem__income__image" src="<%= imgPath %>money.png" alt="">
+              <p class="p-top-project__listItem__income__monthly">月収</p>
+              <p class="p-top-project__listItem__income__price">
+                <span class="p-top-project__listItem__income__price--emphasis"><%= projects[k].unitPrice %></span>万円
+              </p>
+            </div>
+            <!-- 区切り用の縦線を空文字のpタグで調整 -->
+            <p class="p-top-project__listItem__separator"></p>
+            <div class="p-top-project__listItem__working">
+              <img class="p-top-project__listItem__working__image" src="<%= imgPath %>schedule.png" alt="">
+              <p class="p-top-project__listItem__working__week">週に</p>
+              <p class="p-top-project__listItem__working__days">
+                <span class="p-top-project__listItem__working__days--emphasis"><%= projects[k].workingDays %></span>日勤務
+              </p>
+            </div>
+          </div>
+        </li>
         <% } %>
       </ul>
     </div><!-- /.p-top-project -->
-
-    <div class="p-top-trouble">
-      <h1 class="p-top-trouble__heading" id="fade-in-down5">多く寄せられている悩み</h1>
-      <ul class="p-top-trouble__list">
-      <% var troubleType = ['希望の案件が見つからない', '上流工程から三角したい', '今のキャリアに悩んでいる']; %>
-      <% var troubleTypeDetail = ['自分のスキル、経験に見合う報酬が欲しい。', 'プロジェクトの構想フェーズから参画しお客さんから反応も欲しい', 'フリーランスに興味はあるが、収入が安定するか、仕事がしっかりと貰えるのか不安がある。'] %>
-      <% for (var k = 0; k < troubleType.length; k++) { %>
-        <li class="p-top-trouble__listItem" id="fade-in-down<%= k+6 %>">
-          <div class="p-top-trouble__listItem__inner">
-            <img class="p-top-trouble__listItem__inner__img" src="<%= imgPath %>trouble-human.jpeg" alt="悩んでる人の画像">
-            <h2 class="p-top-trouble__listItem__inner__troubleType"><%= troubleType[k] %></h2>
-            <p class="p-top-trouble__listItem__inner__troubleType--detail"><%= troubleTypeDetail[k] %></p>
-          </div>
-        </li>
-      <% } %>
-      </ul>
-    </div><!-- /.p-top-trouble -->
-  </div>
+  <!-- </div> -->
 </main>
 <% include src/ejs/template/_footer %>
