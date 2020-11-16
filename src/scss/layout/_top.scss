@@ -4,25 +4,22 @@
 
 .l-top-heading {
   height: 100vh;
-  background: url("#{$bgPath}heading.bg1.png");
-  background-size: cover;
-  padding: 0 30px;
+  background: url("#{$bgPath}heading.bg1.png") no-repeat;
+  background-size: 65%;
+  background-position: 150% 50%;
+  padding-left: 100px;
   display: flex;
   align-items: center;
+
+  @include mq('u-sp') {
+    padding-left: 0;
+    flex-direction: column;
+    background-size: 100%;
+    background-position: 200% 100%;
+  }
 }
 
-.l-top-aboutService {
-  display: flex;
-  padding: 20px 0 50px 100px;
-  background: url('#{$bgPath}bg-trust-logo.png') no-repeat;
-  background-color:rgba(255,255,255,0.9); // 背景画像のみ薄く（IE,Edge　未対応）
-  background-blend-mode: lighten; // 背景画像のみ薄く（IE,Edge　未対応）
-  background-size: 42%;
-}
-
-//　だんだん大きく濃くな〜る
-.toDarkBgColor {
-  transition: 3.0s;
-  background-color:rgba(255,255,255,0.5);
-  background-size: 45%;
+.l-top-request {
+  background: linear-gradient(to bottom, #f4f4f4 95%, white);
+  padding: 50px 0 30px;
 }
