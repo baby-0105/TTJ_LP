@@ -14,6 +14,7 @@ src/ejs/template/_head %>
       <a class="c-top-toProject" id="toProject" href="#">案件例を見る！！</a>
     </div>
   </div>
+
   <div class="l-top-request">
     <h2 class="p-top-request__title">統計に基づくクリエイター,エンジニアの要望</h2>
     <ul class="p-top-request__block">
@@ -28,34 +29,6 @@ src/ejs/template/_head %>
       <% } %>
     </ul>
   </div>
-
-
-  <div class="l-top-aboutService" id="aboutService">
-    <ul class="p-top-aboutService__logo">
-      <% var serviceInitial=['T','T','J']; %>
-      <% var aboutServiceLogo=['rust','ech','ob']; %>
-      <% for (var i = 0; i < aboutServiceLogo.length; i++) { %>
-        <li class="p-top-aboutService__logoList">
-          <span class="p-top-aboutService__logoList__initial" id="fadeLogoInitial<%= i+1 %>"><%= serviceInitial[i] %></span><%= aboutServiceLogo[i] %>
-        </li>
-      <% } %>
-    </ul>
-    <dl class="p-top-aboutService__explain">
-      <dt class="p-top-aboutService__explain__title">
-        <span class="p-top-aboutService__explain__titleInitial">T</span>
-        <span class="p-top-aboutService__explain__titleInitial">T</span>
-        Jとは
-      </dt>
-      <span class="p-top-aboutService__explain__underline" id="extendUnderline"></span>
-      <dd class="p-top-aboutService__explain__text">
-        「TTJ」の作成目的としては、フリーランスエンジニアの人口増加を見込み、
-        そこに対して、今競合他社が少ない時に、案件探しといえば「TTJ」という
-        イメージを定着させ、案件紹介サイトのシェアの確保を狙う。
-      </dd>
-    </dl>
-  </div>
-
-
 
   <!-- <div class="p-top-container" id="container"> -->
     <div class="p-top-flowUpToWork">
