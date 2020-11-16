@@ -8,12 +8,27 @@ src/ejs/template/_head %>
 <main class="l-main">
   <div class="l-top-heading">
     <div class="p-top-heading__block">
-      <h1 class="p-top-heading__title">
-        <span class="p-top-heading__title--red">幸せ</span>と<span class="p-top-heading__title--blue">平和</span>を<br>提供いたします。
-      </h1>
-      <a class="c-top-entryBtn" href="#">案件例を見る！！</a>
+      <img src="<%= imgPath %>trust.png" class="p-top-heading__titleImg" alt="トラストのロゴ">
+      <h3 class="p-top-heading__catchPhrase">最短2日で案件紹介</h3>
+      <p class="p-top-heading__text">IT起業家・フリーランスの自立を支える<br>お仕事サービス</p>
+      <a class="c-top-toProject" id="toProject" href="#">案件例を見る！！</a>
     </div>
   </div>
+  <div class="l-top-request">
+    <h2 class="p-top-request__title">統計に基づくクリエイター,エンジニアの要望</h2>
+    <ul class="p-top-request__block">
+      <% var requestTitle = ['スキルマッチ', '高単価', '時間効率']; %>
+      <% var requestText = ['自身のスキルにあった案件が欲しい', 'ある程度一定した収入が欲しい', '空いている時間を利用し効率よく収入を増やしたい']; %>
+      <% for (var i = 0; i < requestTitle.length; i++) { %>
+        <li class="p-top-request__blockList">
+          <h3 class="p-top-request__blockList__title"><%= requestTitle[i] %></h3>
+          <img src="<%= imgPath %>request<%= i+1 %>.png" class="p-top-request__blockList__img" alt="要望ブロックのlistのロゴ">
+          <p class="p-top-request__blockList__text"><%= requestText[i] %></p>
+        </li>
+      <% } %>
+    </ul>
+  </div>
+
 
   <div class="l-top-aboutService" id="aboutService">
     <ul class="p-top-aboutService__logo">
@@ -114,5 +129,6 @@ src/ejs/template/_head %>
       </ul>
     </div><!-- /.p-top-project -->
   <!-- </div> -->
+
 </main>
 <% include src/ejs/template/_footer %>
