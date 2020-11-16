@@ -68,3 +68,4 @@ $(() => {
     $bodyAndHtml.animate({scrollTop: $('#project').offset().top - headerHeight}, 'swing');
   });
 })
+
