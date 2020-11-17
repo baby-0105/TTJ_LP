@@ -126,22 +126,21 @@
 // .p-top-flowUpToWork
 // -----------------------------------------------------------------*/
 .p-top-flowUpToWork {
-  // width: 80%;
   margin: 0 auto;
 }
 
 .p-top-flowUpToWork__heading {
   position: relative;
   margin: 30px 0 100px 0;
-  font-size: 25px;
+  font-size: 2.5vw;
   text-align: center;
-  letter-spacing: 10px;
+  letter-spacing: 8px;
   &::before, &::after {
     position: absolute;
     display: block;
     top: -25px;
-    width: 10%;
-    height: 100px;
+    width: 10vw;
+    height: 10vh;
     content: '';
   }
   &::before {
@@ -172,11 +171,14 @@
   flex-direction: column;
   width: 400px;
   height: 500px;
-  &:first-child, &:nth-child(2) {
+  &:nth-last-child(n+2) {
     margin-bottom: 30px;
   }
   &:nth-child(odd) {
     margin-right: 20px;
+    @include mq(u-sp) {
+      margin-right: 0;
+    }
   }
 }
 
@@ -187,10 +189,19 @@
   text-indent: -10px;
 }
 
+.p-top-flowUpToWork__list__image {
+  @include mq(u-sp) {
+    margin-bottom: 20px;
+  }
+}
+
 .p-top-flowUpToWork__list__txt {
   font-size: 18px;
   text-align: center;
   margin-top: auto;
+  @include mq(u-sp) {
+    margin-top: 0;
+  }
 }
 
 
@@ -198,7 +209,9 @@
 // .p-top-project
 // -----------------------------------------------------------------*/
 
-.p-top-project { margin-bottom: 100px; }
+.p-top-project {
+  margin-bottom: 100px;
+}
 
 /*// -----------------------------------------------------------------
 // .p-top-project__heading
@@ -247,55 +260,79 @@
 // .p-top-project__list
 // -----------------------------------------------------------------*/
 
-.p-top-project__jobCategory {
+.p-top-project__list {
   display: flex;
-  justify-content: space-between;
-  width: calc(350px * 3);
-  margin: 0 6%;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+  &:nth-last-child(n+2) {
+    margin-right: 10px;
+  }
+  @include mq(u-sp) {
+    width: 70%;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-.p-top-project__jobCategory__txt {
-  display: inline-block;
-  width: 120px;
-  height: 120px;
-  margin-bottom: -6%;
-  text-align: center;
-  font-weight: bold;
-  line-height: 120px;
-  color: rgba( $colorBlack, .8);
-  background-color: #d9340a;
-  border-radius: 50%;
-  box-shadow: 15px 15px 10px -5px rgba(0, 0, 0, .3);
-  z-index: 1;
-  &:first-child {
-    margin-left: 25px;
+.p-top-project__listItem {
+  max-width: 350px;
+  padding: 5% 2%;
+  border: 4px solid #707070;
+  background-color: #ECECEC;
+  &:nth-last-child(n+2) {
+    margin-right: 80px;
   }
+  @include mq(u-sp) {
+    &:nth-last-child(n+2) {
+      margin-bottom: 120px;
+      margin-right: 0;
+    }
+  }
+}
 
-  &:last-child {
+.p-top-project__listItem__jobCategory {
+  display: flex;
+  @include mq(o-sp) {
+    justify-content: space-between;
+    width: calc(350px * 3);
+    margin: 0 6%;
+  }
+  @include mq(u-sp) {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+  }
+}
+
+.p-top-project__listItem {
+  &:nth-last-child(n+2) > .p-top-project__listItem__jobCategory__txt {
+    background-color: #d9340a;
+  }
+  &:last-child > .p-top-project__listItem__jobCategory__txt {
     background-color: #2582bb;
     color: $colorWhite;
   }
 }
 
-.p-top-project__list {
-  display: flex;
-  justify-content: center;
-  &:nth-last-child(n+2) {
-    margin-right: 10px;
-  }
-}
-
-.p-top-project__listItem {
-  width: 350px;
-  padding: 15px 30px;
-  border: 1px solid;
-  &:nth-last-child(n+2) {
-    margin-right: 80px;
-  }
+.p-top-project__listItem__jobCategory__txt {
+  position: relative;
+  display: inline-block;
+  top: -100px;
+  left: -100px;
+  width: 120px;
+  height: 120px;
+  margin-left: 25px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 120px;
+  color: rgba( $colorBlack, .8);
+  border-radius: 50%;
+  box-shadow: 15px 15px 10px -5px rgba(0, 0, 0, .3);
 }
 
 .p-top-project__listItem__goodMan {
-  margin-bottom: 8px;
+  margin: -100px 0 80px 0;
 }
 
 .p-top-project__listItem__developmentEnironment {
@@ -373,6 +410,148 @@
   margin-top: auto;
 }
 
+
+
+/*// -----------------------------------------------------------------
+// .p-top-pie
+// -----------------------------------------------------------------*/
+.p-top-pieList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+  @include mq(u-sp) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.p-top-pieItem {
+  margin-bottom: 100px;
+}
+
+.p-top-pieItem__title {
+  text-align: center;
+  font-size: 25px;
+  opacity: .6;
+  margin-bottom: 10px;
+}
+
+.p-top-pieItem__detail {
+  position: relative;
+  height: 450px;
+  width: 450px;
+  @include mq(u-sp) {
+    height: 250px;
+    width: 250px;
+  }
+}
+
+.infographic-wrapper {
+	width: 450px;
+	height: 450px;
+	margin: auto;
+	font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+
+	.outer-group, .content-group .icon-group{
+		transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+	}
+
+	.outer-group{
+    width: 100%;
+		height: 100%;
+		transition: transform 2s;
+    -webkit-transition: -webkit-transform 2s;
+
+    [data-state~='expand'] > .content-group {
+
+      .icon-group{
+        opacity:1
+      }
+		}
+	}
+
+	.content-group{
+		overflow: visible;
+
+		.icon-group{
+			font-size: 22px;
+			opacity: 0.4;
+			cursor: pointer;
+		}
+
+		.detail{
+			opacity: 0;
+			font-size: 15px;
+			cursor: pointer;
+
+			&.enter{
+				animation: fadeIn 0.75s ease-in 0s 1 normal forwards;
+				-webkit-animation: fadeIn 0.75s ease-in 0s 1 normal forwards;
+			}
+
+			&.exit{
+				animation: fadeIn 0.2s ease-in 0s 1 reverse backwards;
+				-webkit-animation: fadeIn 0.2s ease-in 0s 1 reverse backwards;
+			}
+		}
+	}
+
+	.center-group{
+
+		transition: transform 2s;
+    -webkit-transition: -webkit-transform 2s;
+    transform-origin: center center;
+    -webkit-transform-origin: center center;
+
+		&.state-icon{
+
+				text.head,text.subhead,text.detail,image,rect{
+					display: none;
+				}
+		}
+
+		&.state-image{
+				text.icon,text.head{
+					display: none;
+				}
+		}
+
+		&.state-text{
+				text.icon,image,rect{
+					display: none;
+				}
+		}
+	}
+}
+
+
+@keyframes fadeIn{
+	0%{
+		opacity: 0;
+	}
+
+	100%{
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadeIn{
+	0%{
+		opacity: 0;
+	}
+
+	100%{
+		opacity: 1;
+	}
+}
+
+
+
 /*// -----------------------------------------------------------------
 //  p-top-faq__title
 // -----------------------------------------------------------------*/
@@ -428,3 +607,4 @@
 .p-top-faq__answer__text {
   line-height: 35px;
 }
+

@@ -33,7 +33,7 @@ src/ejs/template/_head %>
   <!-- <div class="p-top-container" id="container"> -->
     <div class="p-top-flowUpToWork">
       <h1 class="p-top-flowUpToWork__heading" id="fade-in-down1">
-        <span class="p-top-flowUpToWork__heading--bold">TTJ</span>とは多彩かつ豊富な案件をご用意しております。
+        <span class="p-top-flowUpToWork__heading--bold">TTJ</span>があなたのご要望に合ったお仕事を紹介致します
       </h1>
       <ul class="p-top-flowUpToWork__menu">
         <% var flow = [
@@ -64,43 +64,50 @@ src/ejs/template/_head %>
         <span class="p-top-project__heading--bold">TTJ</span>が提供する案件
       </h2>
       <h3 class="p-top-project__subTitle">多種多様な案件を取り揃えております</h3>
-      <div class="p-top-project__jobCategory">
-        <% for (var j = 0; j < jobCategory.length; j++) { %>
-        <p class="p-top-project__jobCategory__txt"><%= jobCategory[j] %></p>
-        <% } %>
-      </div>
       <ul class="p-top-project__list">
         <% for (var k = 0; k < projects.length; k++) { %>
-        <li class="p-top-project__listItem" id="fade-in-down<%= j+2 %>">
-          <img class="p-top-project__listItem__goodMan" src="<%= imgPath %>goodhuman.png" alt="男性　いいね">
-          <ul class="p-top-project__listItem__developmentEnironment">
-            <% for (var l = 0; l < developmentEnvironment.length; l++) { %>
-            <li><%= developmentEnvironment[l] %></li>
-            <% } %>
-          </ul>
-          <p class="p-top-project__listItem__about">★週3日PHP案件！有名人も活用するブログサービス運営を支えるエンジニア募集！</p>
-          <div class="p-top-project__listItem__feature">
-            <div class="p-top-project__listItem__income">
-              <img class="p-top-project__listItem__income__image" src="<%= imgPath %>money.png" alt="">
-              <p class="p-top-project__listItem__income__monthly">月収</p>
-              <p class="p-top-project__listItem__income__price">
-                <span class="p-top-project__listItem__income__price--emphasis"><%= projects[k].unitPrice %></span>万円
-              </p>
-            </div>
-            <!-- 区切り用の縦線を空文字のpタグで調整 -->
-            <p class="p-top-project__listItem__separator"></p>
-            <div class="p-top-project__listItem__working">
-              <img class="p-top-project__listItem__working__image" src="<%= imgPath %>schedule.png" alt="">
-              <p class="p-top-project__listItem__working__week">週に</p>
-              <p class="p-top-project__listItem__working__days">
-                <span class="p-top-project__listItem__working__days--emphasis"><%= projects[k].workingDays %></span>日勤務
-              </p>
-            </div>
-          </div>
+          <li class="p-top-project__listItem" id="fade-in-down<%= k+2 %>">
+            <p class="p-top-project__listItem__jobCategory__txt"><%= jobCategory[k] %></p>
+            <img class="p-top-project__listItem__goodMan" src="<%= imgPath %>goodhuman.png" alt="男性　いいね">
+            <ul class="p-top-project__listItem__developmentEnironment">
+              <% for (var l = 0; l < developmentEnvironment.length; l++) { %>
+              <li><%= developmentEnvironment[l] %></li>
+              <% } %>
+            </ul>
+            <p class="p-top-project__listItem__about">★週3日PHP案件！有名人も活用するブログサービス運営を支えるエンジニア募集！</p>
+            <div class="p-top-project__listItem__feature">
+              <div class="p-top-project__listItem__income">
+                <img class="p-top-project__listItem__income__image" src="<%= imgPath %>money.png" alt="">
+                <p class="p-top-project__listItem__income__monthly">月収</p>
+                <p class="p-top-project__listItem__income__price">
+                  <span class="p-top-project__listItem__income__price--emphasis"><%= projects[k].unitPrice %></span>万円
+                </p>
+              </div>
+              <!-- 区切り用の縦線を空文字のpタグで調整 -->
+              <p class="p-top-project__listItem__separator"></p>
+              <div class="p-top-project__listItem__working">
+                <img class="p-top-project__listItem__working__image" src="<%= imgPath %>schedule.png" alt="">
+                <p class="p-top-project__listItem__working__week">週に</p>
+                <p class="p-top-project__listItem__working__days">
+                  <span class="p-top-project__listItem__working__days--emphasis"><%= projects[k].workingDays %></span>日勤務
+                </p>
+              </div><!-- /.p-top-project__listItem__working -->
+            </div><!-- /.p-top-project__listItem__feature -->
         </li>
         <% } %>
       </ul>
     </div><!-- /.p-top-project -->
+
+    <ul class="p-top-pieList">
+      <% var pattern = ['開発言語', 'リモート/常駐', '開発内容']; %>
+      <% for (var m = 0; m < pattern.length; m++) { %>
+      <li class="p-top-pieItem">
+        <h2 class="p-top-pieItem__title"><%= pattern[m] %></h2>
+        <div class="p-top-pieItem__detail">
+        <canvas id="myChart<%= m+1 %>"></canvas>
+      </li>
+      <% } %>
+    </ul>
   <!-- </div> -->
 
   <div class="l-top-faq">
