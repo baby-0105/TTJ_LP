@@ -19,7 +19,7 @@ src/ejs/template/_head %>
     <h2 class="p-top-request__title">統計に基づくクリエイター,エンジニアの要望</h2>
     <ul class="p-top-request__block">
       <% var requestTitle = ['スキルマッチ', '高単価', '時間効率']; %>
-      <% var requestText = ['自身のスキルにあった案件が欲しい', 'ある程度一定した収入が欲しい', '空いている時間を利用し効率よく収入を増やしたい']; %>
+      <% var requestText  = ['自身のスキルにあった案件が欲しい', 'ある程度一定した収入が欲しい', '空いている時間を利用し効率よく収入を増やしたい']; %>
       <% for (var i = 0; i < requestTitle.length; i++) { %>
         <li class="p-top-request__blockList">
           <h3 class="p-top-request__blockList__title"><%= requestTitle[i] %></h3>
@@ -52,7 +52,7 @@ src/ejs/template/_head %>
       </ul>
     </div>
 
-    <div class="p-top-project">
+    <div class="p-top-project" id="project">
       <% var jobCategory = ['Engineer', 'Engineer', 'Designer']; %>
       <% var projects = [
       {'unitPrice': '41~65', 'workingDays': 3},
@@ -110,5 +110,28 @@ src/ejs/template/_head %>
     </ul>
   <!-- </div> -->
 
+  <div class="l-top-faq">
+    <h1 class="p-top-faq__title">FAQ</h1>
+    <ul class="p-top-faq">
+      <% var question = [
+        '案件は回ってくるでしょうか？', '案件は回ってくるでしょうか？', '案件は回ってくるでしょうか？'
+      ]; %>
+      <% var answer = [
+        'はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。',
+        'はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。',
+        'はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたしますはい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。。'
+      ]; %>
+      <% for (var i=0; i < question.length; i++) { %>
+        <li class="p-top-faq__list">
+          <div class="p-top-faq__question" id="questionMenu<%= i+1 %>" data-name="clicks">
+            <h3 class="p-top-faq__question__title" id="questionTitle<%= i+1 %>">Q.<%= question[i] %></h3>
+          </div>
+          <div class="p-top-faq__answer">
+            <p class="p-top-faq__answer__text">A.<%= answer[i] %></p>
+          </div>
+        </li>
+      <% } %>
+    </ul>
+  </div>
 </main>
 <% include src/ejs/template/_footer %>

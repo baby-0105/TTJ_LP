@@ -1,14 +1,13 @@
 .l-header {
   position: fixed;
-  height: 75px;
   width: 100%;
   background-color: #343434;
   box-shadow: 2px 2px 4px -2px gray inset;
   z-index: 2;
+  padding: 15px 0;
 }
 
 .c-header-logo {
   margin : 0 auto;
   width: 9%;
-  line-height: 75px;
 }
