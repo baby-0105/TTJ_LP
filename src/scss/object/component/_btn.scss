@@ -13,13 +13,19 @@
   position: relative;
   transition: all 0.5s;
   display: inline-block;
+  white-space: nowrap; // 文字おりかえさない
 
   &:hover {
     transform: scale(1.05);
   }
 
-  @include mq('u-sp') {
+  @include mq('u-pc') {
     font-size: 20px;
+    padding: 10px 50px;
+  }
+
+  @include mq('u-sp') {
+    font-size: 15px;
     padding: 10px 40px;
   }
 }
