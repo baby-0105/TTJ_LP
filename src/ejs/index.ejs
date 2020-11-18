@@ -15,6 +15,37 @@ src/ejs/template/_head %>
     </div>
   </div>
 
+  <div class="l-top-aboutService" id="aboutService">
+    <ul class="p-top-aboutService__logo">
+      <% var serviceInitial   = ['T','T','J']; %>
+      <% var aboutServiceLogo = ['rust','ech','ob']; %>
+      <% for (var i = 0; i < aboutServiceLogo.length; i++) { %>
+        <li class="p-top-aboutService__logoList">
+          <span class="p-top-aboutService__logoList__initial" id="fadeLogoInitial<%= i+1 %>"><%= serviceInitial[i] %></span><%= aboutServiceLogo[i] %>
+        </li>
+      <% } %>
+    </ul>
+    <dl class="p-top-aboutService__explain">
+      <dt class="p-top-aboutService__explain__title">
+        <% for (var i = 0; i < serviceInitial.length; i++) { %>
+          <span class="p-top-aboutService__explain__titleInitial"><%= serviceInitial[i] %></span>
+        <% } %>
+        とは
+      </dt>
+      <span class="p-top-aboutService__explain__underline" id="extendUnderline"></span>
+      <dd class="p-top-aboutService__explain__text">
+        TTJは今まで様々なITビジネスの営業に携わってきたIT業界の営業スペシャリストです。<br><br>
+        その中での経験からクライアントとエンジニア、双方のニーズの合致こそがIT業界の発展だと考えております。<br>
+        TTJではエンジニアのニーズを尊重し【あなたにマッチする案件】を提案します。
+        弊社の営業ノウハウには自信がありますので、【自走できるエンジニア】へのサポートもお任せ下さい。<br><br>
+        本当に自分のスキルに合った業務につけるのか...<br><br>
+        フリーランスとしてどのように営業すれば良いかわからない...<br><br>
+        単価の交渉のやり方...等<br><br>
+        まずはお気軽にLINEにてご登録下さい！
+      </dd>
+    </dl>
+  </div>
+
   <div class="l-top-request">
     <h2 class="p-top-request__title">統計に基づくクリエイター,エンジニアの要望</h2>
     <ul class="p-top-request__block">
