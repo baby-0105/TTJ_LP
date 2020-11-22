@@ -3,14 +3,11 @@
 // ==========================================================================*/
 
 .l-top-heading {
-  height: 100vh;
-  background: url("#{$bgPath}heading.bg1.png") no-repeat;
-  background-size: 65%;
-  background-position: 150% 50%;
-  padding-left: 100px;
+  // height: 100vh;
   display: flex;
   align-items: center;
-
+  padding: 100px 0;
+  background: url(#{$bgPath}sea.jpg) no-repeat center/cover;
   @include mq('u-sp') {
     padding-left: 0;
     flex-direction: column;
