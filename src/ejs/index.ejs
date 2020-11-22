@@ -8,12 +8,24 @@ src/ejs/template/_head %>
 <main class="l-main">
   <div class="l-top-heading">
     <div class="p-top-heading__block">
+      <div class="p-top-heading__circle--day">
+        <h3 class="p-top-heading__catchPhrase">最短<span class="p-top-heading__catchPhrase--bold">2</span>日で<br>業務開始</h3>
+      </div>
       <img src="<%= imgPath %>trust.png" class="p-top-heading__titleImg" alt="トラストのロゴ">
-      <h3 class="p-top-heading__catchPhrase">最短2日で案件紹介</h3>
-      <p class="p-top-heading__text">IT起業家・フリーランスの自立を支える<br>お仕事サービス</p>
-      <a class="c-top-toProject" id="toProject" href="#">案件例を見る！！</a>
-    </div>
-  </div>
+      <div class="p-top-heading__flex">
+        <div class="p-top-heading__circle--match">
+          <h3 class="p-top-heading__catchPhrase">希望案件<br>マッチ率<span class="p-top-heading__catchPhrase--bold">97</span>％</h3>
+        </div>
+        <div class="p-top-heading__column">
+          <a class="c-top-toProject" id="toProject" href="#">案件を見てみる！！</a>
+          <a class="c-top-toLine" id="toProject" href="#">LINE公式アカウントを登録する</a>
+        </div>
+        <div class="p-top-heading__circle--line">
+          <h3 class="p-top-heading__catchPhrase"><span class="p-top-heading__catchPhrase--bold">LINE</span>で<br>簡単登録</h3>
+        </div><!-- /.p-top-heading__circle -->
+      </div><!-- /.p-top-heading__flex -->
+    </div><!-- /.p-top-heading__block -->
+  </div><!-- /.l-top-heading -->
 
   <div class="l-top-aboutService" id="aboutService">
     <ul class="p-top-aboutService__logo">
@@ -68,14 +80,16 @@ src/ejs/template/_head %>
       </h1>
       <ul class="p-top-flowUpToWork__menu">
         <% var flow = [
-          {'flowNum': '01', 'flowImage': 'application_form.png    ', 'flowText': '簡単申込みフォームへ入力'},
-          {'flowNum': '02', 'flowImage': 'contact.png             ', 'flowText': '弊社担当より連絡       '},
-          {'flowNum': '03', 'flowImage': 'project_introduction.png', 'flowText': '案件紹介、相談         '},
-          {'flowNum': '04', 'flowImage': 'business.png            ', 'flowText': '業務開始              '},
+          {'flowNum': '01', 'flowImage': 'application_form.png    ', 'flowText': '登録'},
+          {'flowNum': '02', 'flowImage': 'contact.png             ', 'flowText': '担当から連絡'},
+          {'flowNum': '03', 'flowImage': 'project_introduction.png', 'flowText': '打ち合わせ'},
+          {'flowNum': '04', 'flowImage': 'business.png            ', 'flowText': '案件紹介'},
+          {'flowNum': '04', 'flowImage': 'business.png            ', 'flowText': 'クライアントへ提案(遅くても2日以内)'},
+          {'flowNum': '04', 'flowImage': 'business.png            ', 'flowText': 'エンジニア、クライアント打ち合わせ'},
+          {'flowNum': '04', 'flowImage': 'business.png            ', 'flowText': '業務開始'},
         ]; %>
         <% for (var i = 0; i < flow.length; i++) { %>
         <li class="p-top-flowUpToWork__list">
-          <h2 class="p-top-flowUpToWork__list__order"><%= flow[i].flowNum %></h2>
           <img class="p-top-flowUpToWork__list__image" src="<%= imgPath %><%= flow[i].flowImage %>" alt="仕事の流れ 画像">
           <p class="p-top-flowUpToWork__list__txt"><%= flow[i].flowText %></p>
         </li>
@@ -130,12 +144,11 @@ src/ejs/template/_head %>
     </div><!-- /.p-top-project -->
 
     <ul class="p-top-pieList">
-      <% var pattern = ['開発言語', 'リモート/常駐', '開発内容']; %>
+      <% var pattern = ['開発言語', '開発内容', '月収']; %>
       <% for (var m = 0; m < pattern.length; m++) { %>
       <li class="p-top-pieItem">
-        <h2 class="p-top-pieItem__title"><%= pattern[m] %></h2>
-        <div class="p-top-pieItem__detail">
-        <canvas id="myChart<%= m+1 %>"></canvas>
+        <!-- <h2 class="p-top-pieItem__title"><%= pattern[m] %></h2> -->
+        <p class="p-top-pieItem__image"><img src="<%= imgPath %><%= pattern[m] %>.png" alt="開発言語 画像"></p>
       </li>
       <% } %>
     </ul>

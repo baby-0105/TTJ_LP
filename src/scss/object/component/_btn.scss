@@ -3,18 +3,18 @@
 // ==========================================================================*/
 
 .c-top-toProject {
-  color: white;
   padding: 15px 80px;
   border-radius: 30px;
   font-size: 25px;
   letter-spacing: 2px;
-  background-color: #383434;
-  box-shadow: 0 5px 3px 0 rgba(0, 0, 0, .5);
+  background-color: rgba($colorWhite, .7);
+  border: 1px solid $colorBlack;
+  border-radius: 35px;
   position: relative;
   transition: all 0.5s;
   display: inline-block;
   white-space: nowrap; // 文字おりかえさない
-
+  margin-bottom: 30px;
   &:hover {
     transform: scale(1.05);
   }
@@ -27,5 +27,21 @@
   @include mq('u-sp') {
     font-size: 15px;
     padding: 10px 40px;
+  }
+}
+
+.c-top-toLine {
+  display: inline-block;
+  font-size: 20px;
+  width: 330px;
+  padding: 5px;
+  margin: 0 auto;
+  border-radius: 20px;
+  color: $colorWhite;
+  background-color: rgba(#0DB53C, .8);
+  transition: all 1s;
+  &:hover {
+    transform: scale(1.05);
+    background-color: rgba(#0DB53C, 1);
   }
 }
