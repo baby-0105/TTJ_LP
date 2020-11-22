@@ -42,16 +42,20 @@ $(() => {
     $bodyAndHtml.animate({scrollTop: $('#project').offset().top - headerHeight}, 'swing');
   });
 
-  let $faqList = $('.p-top-faqSP__list');
+  let $faqList = $('.p-top-faqSP__list'),
+      current_scrollY;
 
   // FAQ：モーダル（PC用）
   for (let i=0; i < $faqList.length; i++) {
     $(document).on('click', function(e) {
-      let $faqPCAnswer = $(`#faqPCAnswer${i+1}`);
+      let $faqPCAnswer = $(`#faqPCAnswer${i+1}`),
+          $body = $('body');
 
       if($(e.target).is(`#faqPCQuestion${i+1}`) || $(e.target).is(`#faqPCTitleQuestion${i+1}`)) {
+        $body.toggleClass('nonScroll');
         $faqPCAnswer.toggleClass('show');
       } else if($(e.target).is('*')) {
+        $body.removeClass('nonScroll');
         $faqPCAnswer.removeClass('show');
       }
     });

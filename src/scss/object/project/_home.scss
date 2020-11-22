@@ -614,6 +614,33 @@
   user-select: none; // ダブルクリック時の青色選択無効
 }
 
+// --------------------------×アイコン--------------------------
+
+.crossIcon {
+  margin: 0 auto;
+  transition: .5s;
+}
+
+.p-top-faqPC__crossIcon {
+  color: white;
+  font-size: 25px;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+
+  &:hover > .crossIcon {
+    transform: rotateZ(180deg);
+  }
+}
+
+/* ---------------------------------------------------- */
+
 #bgBlack {
   position: absolute;
   left: 0;
@@ -625,6 +652,10 @@
 
 .show {
   display: block;
+}
+
+.nonScroll {
+  overflow: hidden; // モーダル表示時：スクロール×
 }
 
 /*
