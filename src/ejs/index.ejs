@@ -177,29 +177,13 @@ src/ejs/template/_head %>
     ]; %>
 
     <!-- p-top-faqPCブロック：slide用 -->
-    <ul class="p-top-faqPC__question1">
-      <% for (var i=0; i < 6; i++) { %>
-        <li class="p-top-faqPC__question1List" id="faqPCQuestion<%= i+1 %>">
-          <h3 class="p-top-faqPC__question1__title" id="faqPCTitleQuestion<%= i+1 %>">Q.<%= question[i] %></h3>
+    <ul class="p-top-faqPC__question slick01 slick-slider">
+      <% for (var i=0; i < question.length; i++) { %>
+        <li class="p-top-faqPC__questionList slick-slide slick-current slick-active" id="faqPCQuestion<%= i+1 %>">
+          <h3 class="p-top-faqPC__question__title" id="faqPCTitleQuestion<%= i+1 %>">Q.<%= question[i] %></h3>
         </li>
       <% } %>
     </ul>
-    <ul class="p-top-faqPC__question2">
-      <% for (var j=6; j < question.length; j++) { %>
-        <li class="p-top-faqPC__question2List" id="faqPCQuestion<%= j+1 %>">
-          <h3 class="p-top-faqPC__question2__title" id="faqPCTitleQuestion<%= j+1 %>">Q.<%= question[j] %></h3>
-        </li>
-      <% } %>
-    </ul>
-
-    <!-- 下6行：non slide用 -->
-    <!-- <ul class="p-top-faqPC__question"> -->
-      <!-- <% for (var i=0; i < question.length; i++) { %> -->
-        <!-- <li class="p-top-faqPC__questionList" id="faqPCQuestion<%= i+1 %>"> -->
-          <!-- <h3 class="p-top-faqPC__question__title" id="faqPCTitleQuestion<%= i+1 %>">Q.<%= question[i] %></h3> -->
-        <!-- </li> -->
-      <!-- <% } %> -->
-    <!-- </ul> -->
 
     <ul class="p-top-faqPC__answer">
       <% for (var i=0; i < answer.length; i++) { %>
