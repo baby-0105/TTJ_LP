@@ -2,7 +2,6 @@
 src/ejs/template/_head %>
 
 <% var imgPath='/assets/images/'; %>
-
 <% include src/ejs/template/_header %>
 
 <main class="l-main">
@@ -35,7 +34,7 @@ src/ejs/template/_head %>
       <span class="p-top-aboutService__explain__underline" id="extendUnderline"></span>
       <dd class="p-top-aboutService__explain__text">
         TTJは今まで様々なITビジネスの営業に携わってきたIT業界の営業スペシャリストです。<br><br>
-        その中での経験からクライアントとエンジニア、双方のニーズの合致こそがIT業界の発展だと考えております。<br>
+        その中での経験からクライアントとエンジニア、双方のニーズの合致こそがT業界の発展だと考えております。<br>
         TTJではエンジニアのニーズを尊重し【あなたにマッチする案件】を提案します。
         弊社の営業ノウハウには自信がありますので、【自走できるエンジニア】へのサポートもお任せ下さい。<br><br>
         本当に自分のスキルに合った業務につけるのか...<br><br>
@@ -143,22 +142,71 @@ src/ejs/template/_head %>
 
   <div class="l-top-faq">
     <h1 class="p-top-faq__title">FAQ</h1>
-    <ul class="p-top-faq">
-      <% var question = [
-        '案件は回ってくるでしょうか？', '案件は回ってくるでしょうか？', '案件は回ってくるでしょうか？'
-      ]; %>
-      <% var answer = [
-        'はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。',
-        'はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。',
-        'はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたしますはい。スキルレベルにもよりますがTTJが全力サポートいたします。はい。スキルレベルにもよりますがTTJが全力サポートいたします。。'
-      ]; %>
-      <% for (var i=0; i < question.length; i++) { %>
-        <li class="p-top-faq__list">
-          <div class="p-top-faq__question" id="questionMenu<%= i+1 %>" data-name="clicks">
-            <h3 class="p-top-faq__question__title" id="questionTitle<%= i+1 %>">Q.<%= question[i] %></h3>
+    <% var question = [
+      'フリーランスエージェントとはどういうサービスですか？', 'TTJのサービス利用料金は発生しますか？', '自分のスキルに見合った案件へ就けますか？', '実務未経験ですが案件紹介は可能でしょうか？',
+      'TTJのマージン率はどのぐらいですか？', 'フリーランスとして初めての案件となりますがTTJでどこまでサポートしてくれますか？', 'TTJでは現案件から次回案件へ以降の際、期間を開けず就業することは可能でしょうか？',
+      '案件の期間はどのぐらいでしょうか？', '案件先は東京のみでしょうか？', '月の労働時間はどのぐらいでしょうか？', '他のエージェントでは常駐案件が多いと聞きましたがTTJも同じでしょうか？',
+      '登録にするにあたり、何か用意するものなどありますでしょうか？'
+    ]; %>
+    <% var answer = [
+      'フリーランスエンジニアへ案件をご紹介し、契約手続きや条件の交渉等行うサービスです。わかりやすく言うとエンジニアの営業代行業務になります。',
+      'いいえ、ご利用料金は完全無料となります。',
+      'はい、LINEにて登録後、弊社営業担当より細かなヒアリングを行いしっかりニーズにマッチした案件をご紹介いたします。',
+      '未経験でも案件紹介はできる可能性はありますが単価等、スキル見合いになりますので100%ニーズにマッチできるかはご相談させていただければと思います。',
+      '案件の単価にもよりますが15%〜20%ほどです。ちなみに業界の相場としては20%〜25%ほどが一般的です。',
+      '案件の提案から業務開始まではもちろん、クライアント様との商談の仕方等ノウハウも含めサポート致します。',
+      'はい、可能です。TTJではエンジニア1人1人に担当がつきますので案件終了期間が近づきましたら担当より次回案件についてご相談致します。',
+      '案件ごとに変わりますが3~6ヶ月での更新が一般的となります。エンジニア、クライアント様より双方認識(ニーズ)が合えば延長することも可能です。ちなみに弊社の案件更新率は90%以上となります。',
+      'いいえ、やはり東京が多いのは事実ですが、TTJでは全国にクライアント様がおりますので地方常駐案件も多数ございます。現在はリモートの案件も増えてきておりますので場所に拘らない案件紹介も可能となります。',
+      'エンジニアのニーズやクライアント様ごとに変わりますが、できる限り双方のニーズに合致する案件紹介を致します。基準としては1日8h程度の業務が一般的です。',
+      'やはり割合として常駐案件が多いですがコロナ禍の影響もありリモートワーク案件も急増しております。まずは一度お気軽にご相談下さい。',
+      '登録の際には特にございません。ヒアリングや提案の際に何が必要かは山口さんに確認'
+    ]; %>
+
+    <!-- p-top-faqPCブロック：slide用 -->
+    <ul class="p-top-faqPC__question1">
+      <% for (var i=0; i < 6; i++) { %>
+        <li class="p-top-faqPC__question1List" id="faqPCQuestion<%= i+1 %>">
+          <h3 class="p-top-faqPC__question1__title" id="faqPCTitleQuestion<%= i+1 %>">Q.<%= question[i] %></h3>
+        </li>
+      <% } %>
+    </ul>
+    <ul class="p-top-faqPC__question2">
+      <% for (var j=6; j < question.length; j++) { %>
+        <li class="p-top-faqPC__question2List" id="faqPCQuestion<%= j+1 %>">
+          <h3 class="p-top-faqPC__question2__title" id="faqPCTitleQuestion<%= j+1 %>">Q.<%= question[j] %></h3>
+        </li>
+      <% } %>
+    </ul>
+
+    <!-- 下6行：non slide用 -->
+    <!-- <ul class="p-top-faqPC__question"> -->
+      <!-- <% for (var i=0; i < question.length; i++) { %> -->
+        <!-- <li class="p-top-faqPC__questionList" id="faqPCQuestion<%= i+1 %>"> -->
+          <!-- <h3 class="p-top-faqPC__question__title" id="faqPCTitleQuestion<%= i+1 %>">Q.<%= question[i] %></h3> -->
+        <!-- </li> -->
+      <!-- <% } %> -->
+    <!-- </ul> -->
+
+    <ul class="p-top-faqPC__answer">
+      <% for (var i=0; i < answer.length; i++) { %>
+        <li class="p-top-faqPC__answerList" id="faqPCAnswer<%= i+1 %>">
+          <div id="bgBlack"></div>
+          <div class="p-top-faqPC__answerList__textBlock">
+            <p class="p-top-faqPC__answerList__text">A.<%= answer[i] %></p>
           </div>
-          <div class="p-top-faq__answer">
-            <p class="p-top-faq__answer__text">A.<%= answer[i] %></p>
+        </li>
+      <% } %>
+    </ul>
+
+    <ul class="p-top-faqSP">
+      <% for (var i=0; i < question.length; i++) { %>
+        <li class="p-top-faqSP__list">
+          <div class="p-top-faqSP__question" id="questionMenu<%= i+1 %>" data-name="clicks">
+            <h3 class="p-top-faqSP__question__title" id="questionTitle<%= i+1 %>">Q.<%= question[i] %></h3>
+          </div>
+          <div class="p-top-faqSP__answer">
+            <p class="p-top-faqSP__answer__text">A.<%= answer[i] %></p>
           </div>
         </li>
       <% } %>

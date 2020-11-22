@@ -40,11 +40,29 @@ $(() => {
     $bodyAndHtml.animate({scrollTop: $('#project').offset().top - headerHeight}, 'swing');
   });
 
-  // FAQ：アコーディオン
-  for(let i=0; i<3; i++) {
-    $(`#questionMenu${i+1}`).on('click', function() {
+  let $faqList = $('.p-top-faqSP__list');
+
+  // FAQ：モーダル（PC用）
+  for (let i=0; i < $faqList.length; i++) {
+    $(document).on('click', function(e) {
+      let $faqPCAnswer = $(`#faqPCAnswer${i+1}`);
+
+      if($(e.target).is(`#faqPCQuestion${i+1}`) || $(e.target).is(`#faqPCTitleQuestion${i+1}`)) {
+        $faqPCAnswer.toggleClass('show');
+      } else if($(e.target).is('*')) {
+        $faqPCAnswer.removeClass('show');
+      }
+    });
+  }
+
+  // FAQ：アコーディオン（スマホ用）
+  for(let i=0; i < $faqList.length; i++) {
+    let $questionMenu = $(`#questionMenu${i+1}`),
+        $questionTitle = $(`#questionTitle${i+1}`);
+
+    $questionMenu.on('click', function() {
       $(this).next().stop().slideToggle();
-      $(`#questionTitle${i+1}`).toggleClass('arrowTransform');
+      $questionTitle.toggleClass('arrowTransform');
     });
   }
 
