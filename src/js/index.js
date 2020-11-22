@@ -1,6 +1,9 @@
 /* eslint-disable */
 
 import $ from 'jquery'
+import 'slick-carousel';
+import 'slick-carousel/slick/slick.scss';
+import 'slick-carousel/slick/slick.min.js';
 import router from './modules/Router'
 import '../scss/app.scss'
 
@@ -64,5 +67,15 @@ $(() => {
       $questionTitle.toggleClass('arrowTransform');
     });
   }
+
+  $('.slick01').slick({
+    // asNavFor: 'nav-dots',
+    dots: true,
+    slidesToShow: 6,
+    slidesToScroll: 6,
+    prevArrow: '<button class="slide-arrow prev"></button>',
+    nextArrow: '<button class="slide-arrow next"></button>',
+    dotsClass: 'slide-dots',
+  });
 
 })
