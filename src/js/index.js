@@ -72,6 +72,7 @@ $(() => {
     });
   }
 
+  // スライドショー
   $('.slick01').slick({
     // asNavFor: 'nav-dots',
     dots: true,
