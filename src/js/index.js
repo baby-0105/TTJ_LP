@@ -42,8 +42,7 @@ $(() => {
     $bodyAndHtml.animate({scrollTop: $('#project').offset().top - headerHeight}, 'swing');
   });
 
-  let $faqList = $('.p-top-faqSP__list'),
-      current_scrollY;
+  let $faqList = $('.p-top-faqSP__list');
 
   // FAQ：モーダル（PC用）
   for (let i=0; i < $faqList.length; i++) {
@@ -55,7 +54,7 @@ $(() => {
         $body.addClass('nonScroll');
         $faqPCAnswer.toggleClass('show');
       } else if($(e.target).is('.crossIcon')) {
-        $body.removeClass('nonScroll');// removeClass、css()は、×
+        $body.removeClass('nonScroll');
         $faqPCAnswer.removeClass('show');
       }
     });
@@ -82,5 +81,4 @@ $(() => {
     nextArrow: '<button class="slide-arrow next"></button>',
     dotsClass: 'slide-dots',
   });
-
 })
