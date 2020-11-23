@@ -29,20 +29,23 @@
 }
 
 .l-top-aboutService {
-  display: flex;
-  padding: 20px 0 50px 100px;
-  background: url('#{$bgPath}bg-trust-logo.png') no-repeat;
-  background-color:rgba(255,255,255,0.9); // 背景画像のみ薄く（IE,Edge　未対応）
-  background-blend-mode: lighten; // 背景画像のみ薄く（IE,Edge　未対応）
-  background-size: 42%;
+  padding: 100px 50px;
+
+  // 最初のTTJ
+  // display: flex;
+  // padding: 20px 0 50px 100px;
+  // background: url('#{$bgPath}bg-trust-logo.png') no-repeat;
+  // background-color:rgba(255,255,255,0.9); // 背景画像のみ薄く（IE,Edge　未対応）
+  // background-blend-mode: lighten; // 背景画像のみ薄く（IE,Edge　未対応）
+  // background-size: 42%;
 }
 
-//　だんだん大きく濃くな〜る
-.toDarkBgColor {
-  transition: 3.0s;
-  background-color:rgba(255,255,255,0.5);
-  background-size: 45%;
-}
+//　だんだん大きく濃くな〜る: 最初のTTJ
+// .toDarkBgColor {
+//   transition: 3.0s;
+//   background-color:rgba(255,255,255,0.5);
+//   background-size: 45%;
+// }
 
 .l-top-request {
   background: linear-gradient(to bottom,#e4e4e4 90%, white);
