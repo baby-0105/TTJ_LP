@@ -12,24 +12,33 @@ $(() => {
   // スクロールイベント
   $(window).scroll(function() {
     let windowHeight = $(window).height()   ,
-        scrollPosi   = $(window).scrollTop();
+        scrollPosi   = $(window).scrollTop(),
+        $aboutServiceText = $('.p-top-aboutService__text');
 
-    // ①underline：伸びる ②TTJロゴ：fadeIn ③bgcolor：大きく濃くなる
     $('#aboutService').each(function() {
       let aboutServicePosi = $(this).offset().top;
 
       if (scrollPosi > aboutServicePosi - windowHeight + 150) {
-        $('#extendUnderline').addClass('extendUnderline');
+        for(let i=0; i<$aboutServiceText.length; i++) {
+          let delayTime = ['0', '500', '1000', '1500'];
 
-        for(let i=0; i<3; i++) {
-          let delayTime = ['0', '500', '1000'];
+          $(`#aboutServiceText${i+1}`).delay(delayTime[i]).queue(function() {
 
-          $(`#fadeLogoInitial${i+1}`).delay(delayTime[i]).queue(function() {
-            $(this).addClass('fadeLogoInitial');
+            $(this).addClass('textVisible');
           })
         }
 
-        $(this).addClass('toDarkBgColor');
+        // $('#extendUnderline').addClass('extendUnderline');
+
+        // for(let i=0; i<3; i++) {
+        //   let delayTime = ['0', '500', '1000'];
+
+        //   $(`#fadeLogoInitial${i+1}`).delay(delayTime[i]).queue(function() {
+        //     $(this).addClass('fadeLogoInitial');
+        //   })
+        // }
+
+        // $(this).addClass('toDarkBgColor');
       }
     })
   });

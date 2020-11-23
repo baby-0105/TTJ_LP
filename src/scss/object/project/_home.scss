@@ -80,83 +80,148 @@
 //  .p-top-aboutService
 // -----------------------------------------------------------------*/
 
-.p-top-aboutService__logoList {
-  font-size: 80px;
-  line-height: 180px;
-  font-weight: bold;
-  overflow: hidden; // ロゴのfadeinを隠すため
-  letter-spacing: 20px;
+.p-top-aboutService__textBlock {
+  position: relative;
 
-  // TTJ の (最初の) T
-  &:first-child > .p-top-aboutService__logoList__initial {
-    color: #d9340a;
-  }
-
-  // TTJ の (2番目の) T
-  &:nth-child(2) > .p-top-aboutService__logoList__initial {
-    color: #2582bb;
+  &:before {
+    content: 'TTJとは？';
+    font-size: 220px;
+    color: rgba(105, 105, 105, 0.6);
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 20px;
+    white-space: nowrap;
   }
 }
 
-.p-top-aboutService__logoList__initial {
-  position: relative;
-  right: 250px;
-  font-size: 180px;
+.p-top-aboutService__text {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 150px;
+
   opacity: 0;
-}
-
-// ロゴのフェードイン
-.fadeLogoInitial {
-  opacity: 1;
-  right: 0;
-  transition: 1.5s;
-}
-
-.p-top-aboutService__explain {
-  background-color: #343434;
-  color: white;
-  height: 100%;
-  width: 65%;
-  margin-left: auto;
-  padding: 10px 10px 20px 80px;
   position: relative;
+  top: 50px;
+  transition: .5s;
 }
 
-.p-top-aboutService__explain__title {
-  font-size: 80px;
-  font-weight: bold;
-  text-align: right;
+.textVisible {
+  opacity: 1;
+  top: 0;
 }
 
-.p-top-aboutService__explain__titleInitial {
-  letter-spacing: -10px;
-
-  &:first-child {
-    color: #d9340a;
-  }
-
-  &:nth-child(2) {
-    color: #2582bb;
-  }
+.p-top-aboutService__text--modifier {
+  background: linear-gradient(transparent 70%, #2582bb 85%, #D9340A 100%);
 }
 
-.p-top-aboutService__explain__underline {
-  display: block;
-  position: absolute;
-  right: 0;
-  height: 2px;
-  width: 0;
-  background-color: white;
+.p-top-aboutService__entry {
+  display: flex;
+  justify-content: space-around;
 }
 
-.extendUnderline {
-  width: 70%;
-  transition: 2.0s;
+.p-top-aboutService__entry__img {
+  width: 40%;
 }
 
-.p-top-aboutService__explain__text {
-  margin-top: 30px;
+.p-top-aboutService__entryBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
 }
+
+.p-top-aboutService__entryBlock__text {
+  font-size: 20px;
+}
+
+// .p-top-aboutService__logoList {
+//   // 最初のTTJ
+//   font-size: 80px;
+//   line-height: 180px;
+//   font-weight: bold;
+//   overflow: hidden; // ロゴのfadeinを隠すため
+//   letter-spacing: 20px;
+
+//   // TTJ の (最初の) T
+//   &:first-child > .p-top-aboutService__logoList__initial {
+//     color: #d9340a;
+//   }
+
+//   // TTJ の (2番目の) T
+//   &:nth-child(2) > .p-top-aboutService__logoList__initial {
+//     color: #2582bb;
+//   }
+// }
+
+// .p-top-aboutService__logoList__initial {
+//   // 最初のTTJ
+//   position: relative;
+//   right: 250px;
+//   font-size: 180px;
+//   opacity: 0;
+// }
+
+// // ロゴのフェードイン
+// .fadeLogoInitial {
+//   // 最初のTTJ
+//   opacity: 1;
+//   right: 0;
+//   transition: 1.5s;
+// }
+
+// .p-top-aboutService__explain {
+//   // 最初のTTJ
+//   background-color: #343434;
+//   color: white;
+//   height: 100%;
+//   width: 65%;
+//   margin-left: auto;
+//   padding: 10px 10px 20px 80px;
+//   position: relative;
+// }
+
+// .p-top-aboutService__explain__title {
+//   // 最初のTTJ
+//   font-size: 80px;
+//   font-weight: bold;
+//   text-align: right;
+// }
+
+// .p-top-aboutService__explain__titleInitial {
+//   // 最初のTTJ
+//   letter-spacing: -10px;
+
+//   &:first-child {
+//     color: #d9340a;
+//   }
+
+//   &:nth-child(2) {
+//     color: #2582bb;
+//   }
+// }
+
+// .p-top-aboutService__explain__underline {
+//   // 最初のTTJ
+//   display: block;
+//   position: absolute;
+//   right: 0;
+//   height: 2px;
+//   width: 0;
+//   background-color: white;
+// }
+
+// .extendUnderline {
+//   // 最初のTTJ
+//   width: 70%;
+//   transition: 2.0s;
+// }
+
+// .p-top-aboutService__explain__text {
+//   // 最初のTTJ
+//   margin-top: 30px;
+// }
 
 /*// -----------------------------------------------------------------
 //  .p-top-request
