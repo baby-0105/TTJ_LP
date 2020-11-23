@@ -180,7 +180,7 @@
 }
 
 .p-top-request__blockList {
-  width: 30%;
+  width: 25%;
   background: linear-gradient(white, #e4e4e4);
   border-radius: 40px;
   padding: 20px 30px;
@@ -218,14 +218,14 @@
 }
 
 .p-top-request__blockList__img {
-  width: 250px;
-  height: 250px;
+  width: 80%;
   margin: 0 auto;
   display: block;
   margin-bottom: 40px;
 }
 
 .p-top-request__blockList__text {
+  text-align: center;
   position: relative;
 
   &:after {
@@ -346,9 +346,9 @@
   margin-bottom: 100px;
 }
 
-/*// -----------------------------------------------------------------
-// .p-top-project__heading
-// -----------------------------------------------------------------*/
+/*
+  .p-top-project__heading
+---------------------------------------------------- */
 
 .p-top-project__heading {
   font-size: 50px;
@@ -366,9 +366,9 @@
   font-size: 25px;
 }
 
-/*// -----------------------------------------------------------------
-// .p-top-project__list
-// -----------------------------------------------------------------*/
+/*
+  .p-top-project__list
+---------------------------------------------------- */
 
 .p-top-project__list {
   display: flex;
@@ -385,9 +385,10 @@
   }
 }
 
-/*// -----------------------------------------------------------------
-// .p-top-project__listItem
-// -----------------------------------------------------------------*/
+/*
+  .p-top-project__listItem
+---------------------------------------------------- */
+
 .p-top-project__listItem {
   max-width: 350px;
   padding: 5% 1%;
@@ -451,7 +452,7 @@
 
 /*
   .p-top-project__list__developmentEnironment
-// -----------------------------------------------------------------*/
+-----------------------------------------------------------------*/
 .p-top-project__listItem__developmentEnironment {
   display: flex;
   flex-wrap: wrap;
@@ -487,7 +488,7 @@
 
 /*
   .p-top-project__list__income
-// -----------------------------------------------------------------*/
+-----------------------------------------------------------------*/
 .p-top-project__listItem__income__monthly {
   text-align: center;
   margin: -40px 0 10px 0;
@@ -506,7 +507,7 @@
 
 /*
   .p-top-project__list__working
-// -----------------------------------------------------------------*/
+-----------------------------------------------------------------*/
 .p-top-project__listItem__working {
   display: flex;
   flex-direction: column;
@@ -534,8 +535,6 @@
 .p-top-project__listItem__working__week {
   margin-top: auto;
 }
-
-
 
 /*// -----------------------------------------------------------------
 // .p-top-pie
@@ -582,6 +581,13 @@
 /*
   p-top-faqPC__question
 ---------------------------------------------------- */
+
+.p-top-faqPC__question {
+  @include mq(u-sp) {
+    display: none;
+  }
+}
+
 .p-top-faqPC__questionList {
   width: 300px;
   height: 100px;
@@ -599,19 +605,30 @@
 
 .p-top-faqPC__answerList {
   display: none;
+  // opacity: 0;
+  // transition: .5s;
+  // transform: scale(0);
 }
 
 .p-top-faqPC__answerList__textBlock {
-  width: 90%;
+  width: 60%;
   margin: 0 auto;
   border: solid 1px black;
-  background-color: white;
+  background: linear-gradient(-60deg, #ec8c8c 2%,white 8%,white 92%,#c4fcfc 98%);
+  padding: 20px;
+  border-radius: 10px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
   user-select: none; // ダブルクリック時の青色選択無効
+}
+
+.p-top-faqPC__answerList__title {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
 // --------------------------×アイコン--------------------------
@@ -648,10 +665,16 @@
   background: rgba(51, 51, 51, 0.8);
   width: 100%;
   height: 100%;
+  // opacity: 1;
+  // transform: scale(1);
+  // display: block;
 }
 
 .show {
   display: block;
+  // opacity: 1;
+  // transform: scale(1);
+  // transition: 0.5s;
 }
 
 .nonScroll {
