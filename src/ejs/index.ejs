@@ -179,7 +179,7 @@ src/ejs/template/_head %>
     <!-- p-top-faqPCブロック：slide用 -->
     <ul class="p-top-faqPC__question slick01 slick-slider">
       <% for (var i=0; i < question.length; i++) { %>
-        <li class="p-top-faqPC__questionList slick-slide slick-current slick-active" id="faqPCQuestion<%= i+1 %>">
+        <li class="p-top-faqPC__questionList slick-slide slick-current slick-active">
           <h3 class="p-top-faqPC__question__title" id="faqPCTitleQuestion<%= i+1 %>">Q.<%= question[i] %></h3>
         </li>
       <% } %>
