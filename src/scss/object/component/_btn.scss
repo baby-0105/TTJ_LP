@@ -3,9 +3,9 @@
 // ==========================================================================*/
 
 .c-top-toProject {
-  padding: 15px 80px;
+  padding: 2vh 6vw;
   border-radius: 30px;
-  font-size: 25px;
+  font-size: 2vw;
   letter-spacing: 2px;
   background-color: rgba($colorWhite, .7);
   border: 1px solid $colorBlack;
@@ -30,16 +30,17 @@
   }
 }
 
-.c-top-toLine {
+.c-top-toLINE {
+  position: relative;
   display: inline-block;
-  font-size: 20px;
-  width: 330px;
-  padding: 5px;
+  font-size: 1.2vw;
+  padding: 1vh 2vw;
   margin: 0 auto;
   border-radius: 20px;
   color: $colorWhite;
-  background-color: rgba(#0DB53C, .8);
-  transition: all 1s;
+  background-color: rgba(#0DB53C, .7);
+  transition: all .5s;
+  cursor: pointer;
   &:hover {
     transform: scale(1.05);
     background-color: rgba(#0DB53C, 1);

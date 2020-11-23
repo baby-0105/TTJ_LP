@@ -35,17 +35,15 @@ $colorWhite: #fff;
 @mixin circlePattern($pattern) {
   position: relative;
   display: inline-block;
-  width: 250px;
-  height: 250px;
-  border-radius: 250px;
+  width: 17vw;
+  height: 17vw;
+  border-radius: 50%;
   @if ($pattern=="day") {
     margin-bottom: 50px;
     background-color: rgba(#E45764, .9);
   } @else if ($pattern=="match") {
-    margin-right: 100px;
     background-color: rgba(#63C5FF, .9);
   } @else {
-    margin-left: 100px;
     background-color: rgba(#2EE32F, .9);
   }
 }

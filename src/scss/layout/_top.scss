@@ -7,17 +7,25 @@
 }
 
 .l-top-heading {
-  // height: 100vh;
+  height: 100vh;
+  position: relative;
   display: flex;
   align-items: center;
-  padding: 100px 0;
+  padding: 10px 0; // あれ...?当たってない？
   background: url(#{$bgPath}sea.jpg) no-repeat center/cover;
-  @include mq('u-sp') {
-    padding-left: 0;
-    flex-direction: column;
-    background-size: 100%;
-    background-position: bottom;
-  }
+  background-attachment: fixed;
+  // &::before { // ぼかした背景画像を上から被せる
+  //   position: absolute;
+  //   bottom: 0;
+  //   right: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   padding-top: 53%;
+  //   background: inherit; // 親要素から背景設定を継承する
+  //   background-clip: content-box; // paddingは除外したい
+  //   filter: blur(5px);
+  //   content: '';
+  // }
 }
 
 .l-top-aboutService {
