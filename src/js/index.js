@@ -51,11 +51,11 @@ $(() => {
       let $faqPCAnswer = $(`#faqPCAnswer${i+1}`),
           $body = $('body');
 
-      if($(e.target).is(`#faqPCQuestion${i+1}`) || $(e.target).is(`#faqPCTitleQuestion${i+1}`)) {
-        $body.toggleClass('nonScroll');
+      if($(e.target).is(`#slick-slide0${i+1}`) || $(e.target).is(`#faqPCTitleQuestion${i+1}`)) {
+        $body.addClass('nonScroll');
         $faqPCAnswer.toggleClass('show');
-      } else if($(e.target).is('*')) {
-        $body.removeClass('nonScroll');
+      } else if($(e.target).is('.crossIcon')) {
+        $body.removeClass('nonScroll');// removeClass、css()は、×
         $faqPCAnswer.removeClass('show');
       }
     });
