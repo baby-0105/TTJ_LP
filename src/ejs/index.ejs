@@ -188,10 +188,12 @@ src/ejs/template/_head %>
     <ul class="p-top-faqPC__answer">
       <% for (var i=0; i < answer.length; i++) { %>
         <li class="p-top-faqPC__answerList" id="faqPCAnswer<%= i+1 %>">
-          <div id="bgBlack"></div>
-          <div class="p-top-faqPC__answerList__textBlock">
-            <p class="p-top-faqPC__answerList__text">A.<%= answer[i] %></p>
-            <span class="p-top-faqPC__crossIcon"><i class="fas fa-times crossIcon"></i></span>
+          <div id="bgBlack">
+            <div class="p-top-faqPC__answerList__textBlock">
+              <h3 class="p-top-faqPC__answerList__title">-<%= question[i] %>-</h3>
+              <p class="p-top-faqPC__answerList__text">A.<%= answer[i] %></p>
+              <span class="p-top-faqPC__crossIcon"><i class="fas fa-times crossIcon"></i></span>
+            </div>
           </div>
         </li>
       <% } %>
