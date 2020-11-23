@@ -5,28 +5,25 @@
 /*// -----------------------------------------------------------------
 //  .p-top-heading
 // -----------------------------------------------------------------*/
-
 .p-top-heading__block {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 100%;
   margin: 0 auto;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1s;
   @include mq('u-sp') {
     width: 90%;
     margin-top: 100px;
   }
 }
 
-.p-top-heading__circle--day {
-  @include circlePattern(day);
-}
-.p-top-heading__circle--match {
-  @include circlePattern(match);
-}
-.p-top-heading__circle--line {
-  @include circlePattern(line);
-}
+.p-top-heading__circle--day {@include circlePattern(day);}
+.p-top-heading__circle--match {@include circlePattern(match);}
+.p-top-heading__circle--LINE {@include circlePattern(line);}
 
 .p-top-heading__catchPhrase {
   // font-family: Source Han Code JP;
@@ -34,48 +31,53 @@
   display: inline-block;
   left: 0;
   top: 50%;
-  width: 250px;
-  font-size: 30px;
+  width: 100%;
+  font-size: 2vw;
   color: $colorWhite;
   text-align: center;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   content: '';
   @include mq('u-sp') {
-    font-size: 35px;
+    font-size: 2vw;
   }
 }
 
 .p-top-heading__catchPhrase--bold {
   font-weight: bold;
-  font-size: 35px;
+  font-size: 3vw;
 }
 
 .p-top-heading__titleImg {
-  margin-bottom: 30px;
-  width: 50%;
+  // margin-bottom: -30px;
+  width: 40%;
 }
 
-.p-top-heading__flex {
+.p-top-heading__horizontal {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  width: 100%;
 }
 
-.p-top-heading__column {
+.p-top-heading__vertical {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.p-top-heading__text {
-  font-size: 20px;
-  margin-bottom: 20px;
+// .p-top-heading__text {
+//   font-size: 20px;
+//   margin-bottom: 20px;
 
-  @include mq('u-sp') {
-    font-size: 15px;
-  }
+//   @include mq('u-sp') {
+//     font-size: 15px;
+//   }
+// }
+
+.disappear {
+  opacity: 0;
+  transform: translateY(-400px);
 }
-
 /*// -----------------------------------------------------------------
 //  .p-top-aboutService
 // -----------------------------------------------------------------*/
@@ -89,7 +91,7 @@
 
   // TTJ の (最初の) T
   &:first-child > .p-top-aboutService__logoList__initial {
-    color: #d9340a;
+    color: #FF6363;
   }
 
   // TTJ の (2番目の) T
@@ -132,7 +134,7 @@
   letter-spacing: -10px;
 
   &:first-child {
-    color: #d9340a;
+    color: #FF6363;
   }
 
   &:nth-child(2) {
@@ -218,8 +220,8 @@
 }
 
 .p-top-request__blockList__img {
-  width: 250px;
-  height: 250px;
+  width: 50%;
+  height: 50%;
   margin: 0 auto;
   display: block;
   margin-bottom: 40px;
@@ -259,22 +261,29 @@
   font-size: 2.5vw;
   text-align: center;
   letter-spacing: 8px;
+  @include mq(u-sp) {
+    font-size: 4vw;
+  }
   &::before, &::after {
     position: absolute;
     display: block;
-    top: -25px;
-    width: 10vw;
-    height: 10vh;
+    top: 0;
+    width: 7vw;
+    height: 110%;
     content: '';
+    @include mq(u-sp) {
+      top: 10px;
+      height: 60px;
+    }
   }
   &::before {
     left: 0;
-    background-color: #D9340A;
+    background-color: #FF6363;
   }
 
   &::after {
     right: 0;
-    background-color: #2582bb;
+    background-color: #07E7FF;
   }
 }
 
@@ -285,43 +294,61 @@
 .p-top-flowUpToWork__menu {
   display: flex;
   justify-content: center;
-  width: 70%;
+  width: 80%;
   margin: 0 auto 100px auto;
+  @include mq(u-sp) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .p-top-flowUpToWork__list {
   display: flex;
   flex-direction: column;
-  width: 400px;
-  height: 250px;
+  width: 100%;
+  height: 220px;
   padding: 10px;
   border: 1px solid rgba($colorBlack, .4);
   border-radius: 5px;
-
+  @include mq(u-sp) {
+    width: 50%;
+  }
   &:nth-last-child(n+2) {
     position: relative;
-    margin-right: 80px;
-    margin-bottom: 30px;
-    &::after {
+    @include mq(o-sp) {
+      margin-right: 60px;
+    }
+    @include mq(u-sp) {
+      margin-bottom: 40px;
+    }
+    &::after { // 矢印の設定
       position: absolute;
       display: block;
-      top: 100px;
-      right: -60px;
       width: 0;
       height: 0;
       border-style: solid;
-      border-width: 20px 0 20px 40px;
-      border-color: transparent transparent transparent #d9340a;
+      border-color: transparent transparent transparent #FF6363;
       content: '';
+      @include mq(o-sp) {
+        top: 100px;
+        right: -40px;
+        border-width: 10px 0 10px 20px;
+      }
+      @include mq(u-sp) {
+        bottom: -40px;
+        left: calc(50% - 2vw); // 三角形の横幅分を引く
+        border-width: 2vw 0 2vw 4vw;
+        transform: rotate(90deg);
+      }
     }
-  }
-  &:nth-child(odd) {
-    @include mq(u-sp) { margin-right: 0; }
   }
 }
 
 .p-top-flowUpToWork__list__image {
   object-fit: contain;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
   @include mq(u-sp) {
     margin-bottom: 20px;
   }
@@ -333,7 +360,7 @@
   // white-space: nowrap;
   margin-top: auto;
   @include mq(u-sp) {
-    margin-top: 0;
+    font-size: 2.5vw;
   }
 }
 
@@ -373,7 +400,7 @@
 .p-top-project__list {
   display: flex;
   justify-content: center;
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
   &:nth-last-child(n+2) {
     margin-right: 10px;
@@ -389,14 +416,14 @@
 // .p-top-project__listItem
 // -----------------------------------------------------------------*/
 .p-top-project__listItem {
-  max-width: 350px;
-  padding: 5% 1%;
+  padding: 10px;
   border: 4px solid #707070;
   background-color: #ECECEC;
   &:nth-last-child(n+2) {
-    margin-right: 80px;
+    margin-right: 40px;
   }
   @include mq(u-sp) {
+    width: 80%;
     &:nth-last-child(n+2) {
       margin-bottom: 120px;
       margin-right: 0;
@@ -419,39 +446,43 @@
 }
 
 .p-top-project__listItem {
-  &:nth-last-child(n+2) > .p-top-project__listItem__jobCategory__txt {
-    background-color: #d9340a;
+  &:nth-last-child(n+2) > .p-top-project__listItem__jobCategory {
+    background-color: #FF6363;
   }
-  &:last-child > .p-top-project__listItem__jobCategory__txt {
-    background-color: #2582bb;
+  &:last-child > .p-top-project__listItem__jobCategory {
+    background-color: #07E7FF;
     color: $colorWhite;
   }
 }
 
-.p-top-project__listItem__jobCategory__txt {
+.p-top-project__listItem__jobCategory {
   position: relative;
   display: inline-block;
   top: -100px;
   left: -100px;
-  width: 120px;
-  height: 120px;
+  max-width: 120px;
+  width: 100%;
+  height: auto;
   margin-left: 25px;
   text-align: center;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 120px;
   color: rgba( $colorBlack, .8);
   border-radius: 50%;
   box-shadow: 15px 15px 10px -5px rgba(0, 0, 0, .3);
+  @include mq(u-sp) {
+    top: -90px;
+  }
 }
 
 .p-top-project__listItem__goodMan {
-  margin: -170px 0 20px 0;
+  margin: -110px 0 20px 0;
+  @include mq(u-sp) {
+    margin-top: -220px;
+  }
 }
 
 
-/*
-  .p-top-project__list__developmentEnironment
-// -----------------------------------------------------------------*/
 .p-top-project__listItem__developmentEnironment {
   display: flex;
   flex-wrap: wrap;
@@ -505,7 +536,7 @@
 }
 
 /*
-  .p-top-project__list__working
+  .p-top-project__listItem__working
 // -----------------------------------------------------------------*/
 .p-top-project__listItem__working {
   display: flex;
@@ -542,8 +573,6 @@
 // -----------------------------------------------------------------*/
 .p-top-pieList {
   display: flex;
-  // flex-wrap: wrap;
-  // justify-content: center;
   width: 80%;
   margin: 0 auto;
   @include mq(u-sp) {

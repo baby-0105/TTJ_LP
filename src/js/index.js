@@ -7,12 +7,14 @@ import router from './modules/Router'
 import '../scss/app.scss'
 
 $(() => {
-  let $bodyAndHtml = $('body, html');
+  let $bodyAndHtml = $('body, html'),
+      startPos     = $(window).scrollTop(); // 元の位置を取得
+
 
   // スクロールイベント
   $(window).scroll(function() {
-    let windowHeight = $(window).height()   ,
-        scrollPosi   = $(window).scrollTop();
+    let windowHeight  = $(this).height(),
+        scrollPosi     = $(this).scrollTop();
 
     // ①underline：伸びる ②TTJロゴ：fadeIn ③bgcolor：大きく濃くなる
     $('#aboutService').each(function() {
@@ -30,6 +32,17 @@ $(() => {
         }
 
         $(this).addClass('toDarkBgColor');
+      }
+    })
+
+
+    $('#fluffy_disappear').each(function() {
+      let aboutServicePosi = $(this).offset().top;
+
+      if (startPos+100 < scrollPosi) {
+        $(this).addClass('disappear');
+      } else {
+        $(this).removeClass('disappear');
       }
     })
   });
