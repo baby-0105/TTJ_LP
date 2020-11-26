@@ -33,12 +33,12 @@
 .c-top-toLINE {
   position: relative;
   display: inline-block;
-  font-size: 1.2vw;
-  padding: 1vh 2vw;
-  margin: 0 auto;
+  font-size: 1.5vw;
+  padding: 2vh 4vw;
   border-radius: 20px;
   color: $colorWhite;
   background-color: rgba(#0DB53C, .7);
+  text-shadow: 2px 4px 3px black;
   transition: all .5s;
   cursor: pointer;
   &:hover {

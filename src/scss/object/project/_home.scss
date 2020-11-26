@@ -2,6 +2,9 @@
 // p-top
 // ==========================================================================*/
 
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
+
 /*// -----------------------------------------------------------------
 //  .p-top-heading
 // -----------------------------------------------------------------*/
@@ -26,7 +29,6 @@
 .p-top-heading__circle--LINE {@include circlePattern(line);}
 
 .p-top-heading__catchPhrase {
-  // font-family: Source Han Code JP;
   position: absolute;
   display: inline-block;
   left: 0;
@@ -49,7 +51,6 @@
 }
 
 .p-top-heading__titleImg {
-  // margin-bottom: -30px;
   width: 40%;
 }
 
@@ -65,15 +66,6 @@
   justify-content: center;
 }
 
-// .p-top-heading__text {
-//   font-size: 20px;
-//   margin-bottom: 20px;
-
-//   @include mq('u-sp') {
-//     font-size: 15px;
-//   }
-// }
-
 .disappear {
   opacity: 0;
   transform: translateY(-400px);
@@ -82,43 +74,66 @@
 //  .p-top-aboutService
 // -----------------------------------------------------------------*/
 
-.p-top-aboutService__textBlock {
+.p-top-aboutService__explain {
+  display: flex;
+  align-items: center;
   position: relative;
-  
-// .p-top-aboutService__logoList {
-//   font-size: 80px;
-//   line-height: 180px;
-//   font-weight: bold;
-//   overflow: hidden; // ロゴのfadeinを隠すため
-//   letter-spacing: 20px;
+  margin-bottom: 100px;
+}
 
-//   // TTJ の (最初の) T
-//   &:first-child > .p-top-aboutService__logoList__initial {
-//     color: #FF6363;
-//   }
+.p-top-aboutService__bgLogo {
+  font-size: 600px;
+  font-weight: bold;
+  color: rgba(105, 105, 105, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+}
 
-  &:before {
-    content: 'TTJとは？';
-    font-size: 220px;
-    color: rgba(105, 105, 105, 0.6);
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    letter-spacing: 20px;
-    white-space: nowrap;
-  }
+.p-top-aboutService__bgLogo__list--red {
+  color: rgba(#D9340A, 0.2);
+}
+
+.p-top-aboutService__bgLogo__list--blue {
+  color: rgba(#2582bb, 0.2);
+}
+
+.p-top-aboutService__imgBlock {
+  width: 60%;
+  margin-right: 60px;
+}
+
+.p-top-aboutService__img {
+  opacity: 0;
+
+  position: relative; // 画像の重なりの関係で追加
+  height: 50%;
+  transform: scale(0);
+}
+
+.moveAboutServiceImg {
+  transition: 2s;
+  opacity: 1;
+  transform: scale(1);
 }
 
 .p-top-aboutService__text {
   text-align: center;
+  margin-bottom: 100px;
   font-size: 25px;
-  margin-bottom: 150px;
+  text-shadow: 1px 3px 3px #ffc042;
 
   opacity: 0;
   position: relative;
   top: 50px;
   transition: .5s;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .textVisible {
@@ -132,199 +147,75 @@
 
 .p-top-aboutService__entry {
   display: flex;
-  justify-content: space-around;
-}
-
-.p-top-aboutService__entry__img {
-  width: 40%;
-
-// .p-top-aboutService__explain__titleInitial {
-//   letter-spacing: -10px;
-
-//   &:first-child {
-//     color: #FF6363;
-//   }
-
-//   &:nth-child(2) {
-//     color: #2582bb;
-//   }
-}
-
-.p-top-aboutService__entryBlock {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
+}
+
+.p-top-aboutService__entryArrowBlock {
+  width: 200px;
+}
+
+// LINEへ：のびる矢印
+.p-top-aboutService__entryArrow {
+  opacity: 0;
+  width: 1px;
+  height: 10px;
+  background-color: black;
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 0;
+  transition: 1.5s;
+
+  @mixin arrowWing($transform, $direction) {
+    content: '';
+    width: 30%;
+    height: 10px;
+    background-color: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    transform: $transform;
+    transform-origin: $direction;
+    transition: 1s;
+  }
+
+  &:before {
+    @include arrowWing($transform: rotate(-45deg) scale(0), $direction: bottom right);
+  }
+
+  &:after {
+    @include arrowWing($transform: rotate(45deg) scale(0), $direction: top right);
+  }
+}
+
+.extendArrow1 {
+  opacity: 1;
+  width: 100%;
+}
+
+.extendArrow2 {
+  &:before  {
+    opacity: 1;
+    transform: rotate(-45deg) scale(1);
+  }
+
+  &:after  {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
 }
 
 .p-top-aboutService__entryBlock__text {
   font-size: 20px;
 }
 
-// .p-top-aboutService__logoList {
-//   // 最初のTTJ
-//   font-size: 80px;
-//   line-height: 180px;
-//   font-weight: bold;
-//   overflow: hidden; // ロゴのfadeinを隠すため
-//   letter-spacing: 20px;
-
-//   // TTJ の (最初の) T
-//   &:first-child > .p-top-aboutService__logoList__initial {
-//     color: #d9340a;
-//   }
-
-//   // TTJ の (2番目の) T
-//   &:nth-child(2) > .p-top-aboutService__logoList__initial {
-//     color: #2582bb;
-//   }
-// }
-
-// .p-top-aboutService__logoList__initial {
-//   // 最初のTTJ
-//   position: relative;
-//   right: 250px;
-//   font-size: 180px;
-//   opacity: 0;
-// }
-
-// // ロゴのフェードイン
-// .fadeLogoInitial {
-//   // 最初のTTJ
-//   opacity: 1;
-//   right: 0;
-//   transition: 1.5s;
-// }
-
-// .p-top-aboutService__explain {
-//   // 最初のTTJ
-//   background-color: #343434;
-//   color: white;
-//   height: 100%;
-//   width: 65%;
-//   margin-left: auto;
-//   padding: 10px 10px 20px 80px;
-//   position: relative;
-// }
-
-// .p-top-aboutService__explain__title {
-//   // 最初のTTJ
-//   font-size: 80px;
-//   font-weight: bold;
-//   text-align: right;
-// }
-
-// .p-top-aboutService__explain__titleInitial {
-//   // 最初のTTJ
-//   letter-spacing: -10px;
-
-//   &:first-child {
-//     color: #d9340a;
-//   }
-
-//   &:nth-child(2) {
-//     color: #2582bb;
-//   }
-// }
-
-// .p-top-aboutService__explain__underline {
-//   // 最初のTTJ
-//   display: block;
-//   position: absolute;
-//   right: 0;
-//   height: 2px;
-//   width: 0;
-//   background-color: white;
-// }
-
-// .extendUnderline {
-//   // 最初のTTJ
-//   width: 70%;
-//   transition: 2.0s;
-// }
-
-// .p-top-aboutService__explain__text {
-//   // 最初のTTJ
-//   margin-top: 30px;
-// }
-
-/*// -----------------------------------------------------------------
-//  .p-top-request
-// -----------------------------------------------------------------*/
-
-.p-top-request__title {
-  font-size: 30px;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.p-top-request__block {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-
-  @include mq('u-sp') {
-    flex-direction: column;
-  }
-}
-
-.p-top-request__blockList {
-  width: 25%;
-  background: linear-gradient(white, #e4e4e4);
-  border-radius: 40px;
-  padding: 20px 30px;
-
-  @include mq('u-sp') {
-    width: 100%;
-
-    &:not(last-child) {
-      margin-bottom: 30px;
-    }
-  }
-}
-
-@mixin request_blockList_underLine {
-  content: '';
-  height: 3px;
-  width: 30%;
-  background-color: gray;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.p-top-request__blockList__title {
-  font-size: 30px;
-  text-align: center;
-  margin-bottom: 30px;
-  position: relative;
-
-  &:after {
-    @include request_blockList_underLine;
-
-    bottom: -5px;
-  }
-}
-
-.p-top-request__blockList__img {
-
-  width: 80%;
-
-  margin: 0 auto;
-  display: block;
-  margin-bottom: 40px;
-}
-
-.p-top-request__blockList__text {
-  text-align: center;
-  position: relative;
-
-  &:after {
-    @include request_blockList_underLine;
-
-    top: -20px;
-  }
+.p-top-aboutService__entryBlock__text--line {
+  color: #0DB53C;
+  text-shadow: 2px 4px 7px #0DB53C;
+  font-size: 100px;
+  font-weight: 900;
 }
 
 /*// -----------------------------------------------------------------
