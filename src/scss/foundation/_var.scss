@@ -3,6 +3,7 @@ $breakSP: 768;
 $breakPC: 950;
 $breakpoints: (
   'u-sp': 'print, screen and (max-width: #{$breakSP}px)',
+  'u-pc': 'print, screen and (max-width: #{$breakPC}px)',
   'o-sp': 'print, screen and (min-width: #{$breakSP + 1}px)',
   'sp-pc':
     'print, screen and (max-width: #{$breakPC}px) and (min-width: #{$breakSP + 1}px)',

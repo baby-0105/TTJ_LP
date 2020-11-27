@@ -1,4 +1,9 @@
-.c-footer-logo {
-  width: 10%;
+.c-footer-company__logo {
+  width: 30%;
   display: block;
+}
+
+.c-footer-link {
+  display: flex;
+  align-items: flex-end;
 }
