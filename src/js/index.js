@@ -12,7 +12,7 @@ $(() => {
 
 
   // スクロールイベント
-  $(window).scroll(function() {      
+  $(window).scroll(function() {
     let windowHeight  = $(this).height(),
         scrollPosi    = $(this).scrollTop(),
         $aboutServiceText = $('.p-top-aboutService__text');
@@ -45,10 +45,11 @@ $(() => {
     })
 
 
+    // ファーストビュー fadeIn&fadeOut
     $('#fluffy_disappear').each(function() {
       let aboutServicePosi = $(this).offset().top;
 
-      if (startPos+100 < scrollPosi) {
+      if (startPos+400 < scrollPosi) {
         $(this).addClass('disappear');
       } else {
         $(this).removeClass('disappear');
@@ -98,8 +99,9 @@ $(() => {
   $('.slick01').slick({
     // asNavFor: 'nav-dots',
     dots: true,
-    slidesToShow: 6,
+    slidesToShow: 3,
     slidesToScroll: 6,
+    centerMode:true,
     prevArrow: '<button class="slide-arrow prev"></button>',
     nextArrow: '<button class="slide-arrow next"></button>',
     dotsClass: 'slide-dots',

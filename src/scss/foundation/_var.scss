@@ -41,9 +41,42 @@ $colorWhite: #fff;
   @if ($pattern=="day") {
     margin-bottom: 50px;
     background-color: rgba(#E45764, .9);
+    @include mq(u-sp) {
+      margin-bottom: 0;
+    }
   } @else if ($pattern=="match") {
     background-color: rgba(#63C5FF, .9);
+    @include mq(u-sp) {
+      margin-right: 10px;
+    }
   } @else {
     background-color: rgba(#2EE32F, .9);
   }
+}
+
+@mixin projectIcon($image) {
+  position: relative;
+  margin-right: 15px;
+  &::before {
+    position: absolute;
+    display: inline-block;
+    top: -5px;
+    background: no-repeat center/contain;
+    content: '';
+  }
+  @if ($image=="money") {
+    &::before {
+      width: 50px;
+      height: 50px;
+      left: -50px;
+      background-image: url(#{$bgPath}money.png);
+    }
+} @else {
+  &::before {
+    width: 30px;
+    height: 30px;
+    left: -90px;
+    background-image: url(#{$bgPath}calendar_1.png);
+  }
+}
 }

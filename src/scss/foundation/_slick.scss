@@ -119,30 +119,23 @@ button{
 .slide-arrow {
   position: absolute;
   top: 50%;
-  margin-top: -15px;
-  border: none;
-  outline: none;
+  width: 30px;
+  height: 30px;
+  border-top: 5px solid;
+  border-left: 5px solid;
+  // outline: none;
   cursor: pointer;
+  z-index: 1; // 左矢印だけ何故か反応しないからこれで調整
 }
 
 .prev {
-  left: -40px;
-  width: 0;
-  height: 0;
-  border-left: 0 solid transparent;
-  border-right: 15px solid #000;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
+  left: 35px;
+  transform: rotate(-45deg);
 }
 
 .next {
-  right: -40px;
-  width: 0;
-  height: 0;
-  border-right: 0 solid transparent;
-  border-left: 15px solid #000;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
+  right: 35px;
+  transform: rotate(135deg);
 }
 
 .slick-dots {
@@ -172,15 +165,21 @@ button{
         position: absolute;
         top: 0;
         left: 0;
-        text-indent: 0px;
-        font-size: 20px;
-        content: '◯';
+        width: 10px;
+        height: 10px;
+        background-color: gray;
+        border-radius: 10px;
+        content: '';
         cursor: pointer;
       }
     }
     &.slick-active{
       button:before{
-        content: '●';
+        width: 10px;
+        height: 10px;
+        background-color: blue;
+        border-radius: 10px;
+        content: '';
         cursor: pointer;
       }
     }

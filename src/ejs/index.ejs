@@ -15,14 +15,18 @@ src/ejs/template/_head %>
         <div class="p-top-heading__circle--match">
           <h3 class="p-top-heading__catchPhrase">希望案件<br>マッチ率<span class="p-top-heading__catchPhrase--bold"> 97 </span>％</h3>
         </div>
-        <div class="p-top-heading__vertical">
+        <div class="p-top-heading__vertical u-hidden-sp">
           <a class="c-top-toProject" id="toProject" href="#">案件を見てみる！！</a>
           <a class="c-top-toLINE" id="toProject" href="#">LINE公式アカウントを登録する</a>
         </div>
         <div class="p-top-heading__circle--LINE">
           <h3 class="p-top-heading__catchPhrase"><span class="p-top-heading__catchPhrase--bold">LINE</span>で<br>簡単登録</h3>
         </div><!-- /.p-top-heading__circle -->
-      </div><!-- /.p-top-heading__flex -->
+      </div><!-- /.p-top-heading__horizontal -->
+      <div class="p-top-heading__vertical u-hidden-pc">
+        <a class="c-top-toProject" id="toProject" href="#">案件を見てみる！！</a>
+        <a class="c-top-toLINE" id="toProject" href="#">LINE公式アカウントを登録する</a>
+      </div>
     </div><!-- /.p-top-heading__block -->
   </div><!-- /.l-top-heading -->
 
@@ -64,23 +68,22 @@ src/ejs/template/_head %>
 
   <!-- 仕事までの流れ -->
     <div class="p-top-flowUpToWork">
-      <h1 class="p-top-flowUpToWork__heading">
-        <span class="p-top-flowUpToWork__heading--bold">TTJ</span>があなたのご要望に合った<br class="u-hidden-pc">お仕事を紹介致します
-      </h1>
+      <h1 class="p-top-flowUpToWork__heading">お仕事までの流れ</h1>
       <ul class="p-top-flowUpToWork__menu">
         <% var flow = [
-          {'flowNum': '01', 'flowImage': 'application_form.png    ', 'flowText': '登録'},
-          {'flowNum': '02', 'flowImage': 'contact.png             ', 'flowText': '担当から連絡'},
-          {'flowNum': '03', 'flowImage': 'project_introduction.png', 'flowText': '打ち合わせ'},
-          {'flowNum': '04', 'flowImage': 'business.png            ', 'flowText': '案件紹介'},
-          {'flowNum': '04', 'flowImage': 'business.png            ', 'flowText': 'クライアントへ提案<br>(遅くても2日以内)'},
-          {'flowNum': '04', 'flowImage': 'business.png            ', 'flowText': 'エンジニア、クライアント打ち合わせ'},
-          {'flowNum': '04', 'flowImage': 'business.png            ', 'flowText': '業務開始'},
+          {'flowNum': 'STEP.01', 'flowImage': 'アセット 2 (1).png', 'flowText': '登録'},
+          {'flowNum': 'STEP.02', 'flowImage': 'ttj.job2.png',      'flowText': '担当から連絡'},
+          {'flowNum': 'STEP.03', 'flowImage': 'アセット 2 (1).png', 'flowText': '打ち合わせ'},
+          {'flowNum': 'STEP.04', 'flowImage': 'アセット 2 (1).png', 'flowText': '案件紹介'},
+          {'flowNum': 'STEP.05', 'flowImage': 'アセット 2 (1).png', 'flowText': 'クライアントへ<br>提案'},
+          {'flowNum': 'STEP.06', 'flowImage': 'アセット 2 (1).png', 'flowText': 'エンジニア<br class="u-hidden-sp">クライアント<br>打ち合わせ'},
+          {'flowNum': 'STEP.07', 'flowImage': 'アセット 2 (1).png', 'flowText': '業務開始'},
         ]; %>
         <% for (var i = 0; i < flow.length; i++) { %>
         <li class="p-top-flowUpToWork__list">
-          <img class="p-top-flowUpToWork__list__image" src="<%= imgPath %><%= flow[i].flowImage %>" alt="仕事の流れ 画像">
+          <p class="p-top-flowUpToWork__list__order"><%= flow[i].flowNum %></p>
           <p class="p-top-flowUpToWork__list__txt"><%- flow[i].flowText %></p>
+          <img class="p-top-flowUpToWork__list__image" src="<%= imgPath %><%= flow[i].flowImage %>" alt="仕事の流れ 画像">
         </li>
         <% } %>
       </ul>
@@ -88,60 +91,58 @@ src/ejs/template/_head %>
 
     <!-- 案件例 -->
     <div class="p-top-project" id="project">
-      <% var jobCategory = ['Engineer', 'Engineer', 'Designer']; %>
       <% var projects = [
       {'unitPrice': '41~65', 'workingDays': 3},
       {'unitPrice': '41~65', 'workingDays': 3},
-      {'unitPrice': '41~65', 'workingDays': 3}
+      {'unitPrice': '41~65', 'workingDays': 3},
+      {'unitPrice': '41~65', 'workingDays': 3},
+      {'unitPrice': '41~65', 'workingDays': 3},
+      {'unitPrice': '41~65', 'workingDays': 3},
+      {'unitPrice': '41~65', 'workingDays': 3},
       ]; %>
       <% var developmentEnvironment = ['PHP', 'MySQL', 'JavaScript', 'AWS']; %>
-      <h2 class="p-top-project__heading">
-        <span class="p-top-project__heading--bold">TTJ</span>が提供する案件
-      </h2>
-      <h3 class="p-top-project__subTitle">多種多様な案件を取り揃えております</h3>
-      <ul class="p-top-project__list">
+      <h2 class="p-top-project__heading">案件例/比率</h2>
+
+      <!-- 円グラフ -->
+      <ul class="p-top-pieList">
+        <% var category = ['月収', '開発内容', '開発言語']; %>
+        <% for (var m = 0; m < category.length; m++) { %>
+        <li class="p-top-pieItem">
+          <h2 class="p-top-pieItem__category"><%= category[m] %></h2>
+          <p class="p-top-pieItem__image"><img src="<%= imgPath %><%= category[m] %>.png" alt="開発言語 画像"></p>
+        </li>
+        <% } %>
+      </ul>
+
+      <ul class="p-top-project__list slick01 slick-slider">
         <% for (var k = 0; k < projects.length; k++) { %>
-          <li class="p-top-project__listItem" id="fade-in-down<%= k+2 %>">
-            <p class="p-top-project__listItem__jobCategory"><%= jobCategory[k] %></p>
-            <img class="p-top-project__listItem__goodMan" src="<%= imgPath %>goodhuman.png" alt="男性　いいね">
-            <ul class="p-top-project__listItem__developmentEnironment">
-              <% for (var l = 0; l < developmentEnvironment.length; l++) { %>
-              <li><%= developmentEnvironment[l] %></li>
-              <% } %>
-            </ul>
-            <p class="p-top-project__listItem__about">★週3日PHP案件！有名人も活用するブログサービス運営を支えるエンジニア募集！</p>
-            <div class="p-top-project__listItem__feature">
-              <div class="p-top-project__listItem__income">
-                <img class="p-top-project__listItem__income__image" src="<%= imgPath %>money.png" alt="">
-                <p class="p-top-project__listItem__income__monthly">月収</p>
-                <p class="p-top-project__listItem__income__price">
-                  <span class="p-top-project__listItem__income__price--emphasis"><%= projects[k].unitPrice %></span>万円
-                </p>
-              </div>
-              <!-- 区切り用の縦線を空文字のpタグで調整 -->
-              <p class="p-top-project__listItem__separator"></p>
-              <div class="p-top-project__listItem__working">
-                <img class="p-top-project__listItem__working__image" src="<%= imgPath %>schedule.png" alt="">
-                <p class="p-top-project__listItem__working__week">週に</p>
-                <p class="p-top-project__listItem__working__days">
-                  <span class="p-top-project__listItem__working__days--emphasis"><%= projects[k].workingDays %></span>日勤務
-                </p>
-              </div><!-- /.p-top-project__listItem__working -->
-            </div><!-- /.p-top-project__listItem__feature -->
+        <!-- <img class="p-top-project__outlineImg" src="<%= imgPath %>ttj.jopex.png" alt=""> -->
+        <li class="p-top-project__listItem slick-slide slick-current slick-active" id="fade-in-down<%= k+2 %>">
+          <img class="p-top-project__listItem__goodMan" src="<%= imgPath %>goodhuman.png" alt="男性　いいね">
+          <ul class="p-top-project__listItem__developmentEnironment">
+            <% for (var l = 0; l < developmentEnvironment.length; l++) { %>
+            <li><%= developmentEnvironment[l] %></li>
+            <% } %>
+          </ul>
+          <p class="p-top-project__listItem__about">★週3日PHP案件！有名人も活用するブログサービス運営を支えるエンジニア募集！</p>
+          <dl class="p-top-project__listItem__feature">
+            <div>
+              <dt class="p-top-project__listItem__income__monthly">月収</dt>
+              <dd class="p-top-project__listItem__income__price">
+                <span class="p-top-project__listItem__income__price--emphasis"><%= projects[k].unitPrice %></span>万円
+              </dd>
+            </div>
+            <div>
+              <dt class="p-top-project__listItem__working__week">週</dt>
+              <dd class="p-top-project__listItem__working__days">
+                <span class="p-top-project__listItem__working__days--emphasis"><%= projects[k].workingDays %></span>日勤務
+              </dd>
+            </div>
+          </dl>
         </li>
         <% } %>
       </ul>
     </div><!-- /.p-top-project -->
-
-    <!-- 円グラフ -->
-    <ul class="p-top-pieList">
-      <% var pattern = ['開発言語', '開発内容', '月収']; %>
-      <% for (var m = 0; m < pattern.length; m++) { %>
-      <li class="p-top-pieItem">
-        <p class="p-top-pieItem__image"><img src="<%= imgPath %><%= pattern[m] %>.png" alt="開発言語 画像"></p>
-      </li>
-      <% } %>
-    </ul>
 
   <div class="l-top-faq">
     <h1 class="p-top-faq__title">FAQ</h1>
@@ -167,9 +168,9 @@ src/ejs/template/_head %>
     ]; %>
 
     <!-- p-top-faqPCブロック：slide用 -->
-    <ul class="p-top-faqPC__question slick01 slick-slider">
+    <ul class="p-top-faqPC__question">
       <% for (var i=0; i < question.length; i++) { %>
-        <li class="p-top-faqPC__questionList slick-slide slick-current slick-active">
+        <li class="p-top-faqPC__questionList">
           <h3 class="p-top-faqPC__question__title" id="faqPCTitleQuestion<%= i+1 %>">Q.<%= question[i] %></h3>
         </li>
       <% } %>
