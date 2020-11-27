@@ -34,7 +34,7 @@
   display: inline-block;
   font-size: 1.2vw;
   padding: 2vh 2vw;
-  margin: 0 auto;
+  margin: 0 auto; // ここ消してる
   border-radius: 2vw;
   color: $colorWhite;
   background-color: rgba(#2DE531, .7);
