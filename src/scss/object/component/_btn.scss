@@ -32,13 +32,12 @@
 .c-top-toLINE {
   position: relative;
   display: inline-block;
-  font-size: 1.2vw;
-  padding: 2vh 2vw;
-  margin: 0 auto; // ここ消してる
-  border-radius: 2vw;
-  color: $colorWhite;
   background-color: rgba(#2DE531, .7);
   box-shadow: 0px 7px 3px 0px $colorBlack;
+  font-size: 1.5vw;
+  padding: 2vh 4vw;
+  border-radius: 20px;
+  color: $colorWhite;
   transition: all .5s;
   cursor: pointer;
   &:hover {

@@ -31,39 +31,38 @@ src/ejs/template/_head %>
   </div><!-- /.l-top-heading -->
 
   <div class="l-top-aboutService" id="aboutService">
-    <ul class="p-top-aboutService__textBlock">
-      <% var aboutServiceText = [
-        'TTJは今まで様々なITビジネスの営業に携わってきた<span class="p-top-aboutService__text--modifier">IT業界の営業スペシャリスト</span>です。',
-        'その中での経験からクライアントとエンジニア、双方のニーズの合致こそがT業界の発展だと考えております。',
-        'TTJではエンジニアのニーズを尊重し<span class="p-top-aboutService__text--modifier">【あなたにマッチする案件】</span>を提案します。',
-        '弊社の営業ノウハウには自信がありますので、<span class="p-top-aboutService__text--modifier">【自走できるエンジニア】</span>へのサポートもお任せ下さい。'
-      ]; %>
-      <% for (var i = 0; i < aboutServiceText.length; i++) { %>
-        <li class="p-top-aboutService__text" id="aboutServiceText<%= i+1 %>"><%- aboutServiceText[i] %></li>
-      <% } %>
-    </ul>
-    <div class="p-top-aboutService__entry">
-      <img src="<%= imgPath %>aboutService_img1.png" class="p-top-aboutService__entry__img" alt="人の吹き出し">
-      <div class="p-top-aboutService__entryBlock">
-        <p class="p-top-aboutService__entryBlock__text">まずはお気軽にLINEにてご登録下さい！</p>
-        <a class="c-top-toLine" id="toProject" href="#">LINE公式アカウントを登録する</a>
+    <div class="p-top-aboutService__explain">
+      <div class="p-top-aboutService__bgLogo">
+        <% var aboutServicebgLogo=['T', 'T', 'J']; %>
+        <% var color=['red', 'blue', 'white']; %>
+        <% for (var i = 0; i < aboutServicebgLogo.length; i++) { %>
+          <span class="p-top-aboutService__bgLogo__list--<%= color[i] %>"><%= aboutServicebgLogo[i] %></span>
+        <% } %>
       </div>
+      <div class="p-top-aboutService__imgBlock">
+        <img src="<%= imgPath %>sikou.png" class="p-top-aboutService__img" id="aboutServiceImg" alt="人の吹き出し">
+      </div>
+      <ul class="p-top-aboutService__textBlock">
+        <% var aboutServiceText = [
+          'TTJは今まで様々なITビジネスの営業に携わってきた<span class="p-top-aboutService__text--modifier">IT業界の営業スペシャリスト</span>です。',
+          'その中での経験からクライアントとエンジニア、双方のニーズの合致こそがT業界の発展だと考えております。',
+          'TTJではエンジニアのニーズを尊重し<span class="p-top-aboutService__text--modifier">【あなたにマッチする案件】</span>を提案します。',
+          '弊社の営業ノウハウには自信がありますので、<span class="p-top-aboutService__text--modifier">【自走できるエンジニア】</span>へのサポートもお任せ下さい。'
+        ]; %>
+        <% for (var i = 0; i < aboutServiceText.length; i++) { %>
+          <li class="p-top-aboutService__text" id="aboutServiceText<%= i+1 %>"><%- aboutServiceText[i] %></li>
+        <% } %>
+      </ul>
     </div>
-  </div>
-
-  <div class="l-top-request">
-    <h2 class="p-top-request__title">統計に基づくクリエイター,エンジニアの要望</h2>
-    <ul class="p-top-request__block">
-      <% var requestTitle = ['スキルマッチ', '高単価', '時間効率']; %>
-      <% var requestText  = ['自身のスキルにあった案件が欲しい', 'ある程度一定した収入が欲しい', '空いている時間を利用し効率よく収入を増やしたい']; %>
-      <% for (var i = 0; i < requestTitle.length; i++) { %>
-        <li class="p-top-request__blockList">
-          <h3 class="p-top-request__blockList__title"><%= requestTitle[i] %></h3>
-          <img src="<%= imgPath %>request<%= i+1 %>.png" class="p-top-request__blockList__img" alt="要望ブロックのlistのロゴ">
-          <p class="p-top-request__blockList__text"><%= requestText[i] %></p>
-        </li>
-      <% } %>
-    </ul>
+    <div class="p-top-aboutService__entry">
+      <p class="p-top-aboutService__entryBlock__text">
+        まずはお気軽に、<br> <span class="p-top-aboutService__entryBlock__text--line">LINE</span>にてご登録下さい！
+      </p>
+      <div class="p-top-aboutService__entryArrowBlock">
+        <span class="p-top-aboutService__entryArrow" id="aboutServiceEntryArrow"></span>
+      </div>
+      <a class="c-top-toLINE" href="#">LINE公式アカウントを登録する</a>
+    </div>
   </div>
 
   <!-- 仕事までの流れ -->
