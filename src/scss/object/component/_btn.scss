@@ -3,18 +3,17 @@
 // ==========================================================================*/
 
 .c-top-toProject {
-  padding: 2vh 6vw;
-  border-radius: 30px;
-  font-size: 2vw;
-  letter-spacing: 2px;
-  background-color: rgba($colorWhite, .7);
-  border: 1px solid $colorBlack;
-  border-radius: 35px;
   position: relative;
-  transition: all 0.5s;
   display: inline-block;
-  white-space: nowrap; // 文字おりかえさない
   margin-bottom: 30px;
+  padding: 2vh 6vw;
+  font-size: 2vw;
+  background-color:#EEFF00;
+  border-radius: 35px;
+  box-shadow: 0px 7px 3px 0px $colorBlack;
+  letter-spacing: 2px;
+  transition: all 0.5s;
+  white-space: nowrap; // 文字おりかえさない
   &:hover {
     transform: scale(1.05);
   }
@@ -33,16 +32,16 @@
 .c-top-toLINE {
   position: relative;
   display: inline-block;
+  background-color: rgba(#2DE531, .7);
+  box-shadow: 0px 7px 3px 0px $colorBlack;
   font-size: 1.5vw;
   padding: 2vh 4vw;
   border-radius: 20px;
   color: $colorWhite;
-  background-color: rgba(#0DB53C, .7);
-  text-shadow: 2px 4px 3px black;
   transition: all .5s;
   cursor: pointer;
   &:hover {
     transform: scale(1.05);
-    background-color: rgba(#0DB53C, 1);
+    background-color: rgba(#2DE531, 1);
   }
 }
