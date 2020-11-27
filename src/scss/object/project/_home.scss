@@ -20,7 +20,6 @@
   transition: all 1s;
   @include mq('u-sp') {
     width: 90%;
-    margin-top: 100px;
   }
 }
 
@@ -262,7 +261,7 @@
     height: 10%;
     content: '';
     @include mq(u-sp) {
-      width: 30vw;
+      width: 27vw;
     }
   }
   &::before {
@@ -293,49 +292,57 @@
   width: 100%;
   height: 220px;
   @include mq(u-sp) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 50%;
+    height: 2%;
+    color: $colorWhite;
+    transform: skewX(-15deg);
+    background-color: #07E7FF;
   }
   &:nth-last-child(n+2) {
     position: relative;
     @include mq(u-sp) {
       margin-bottom: 20px;
     }
-    &::before {
-      position: absolute;
-      display: block;
-      background-color: $colorBlack;
-      content: '';
+    &::before { // 矢印 棒
       @include mq(o-sp) {
-        top:  18px;
+        position: absolute;
+        display: block;
+        background-color: $colorBlack;
+        top:  15px;
         right: -10px;
         width: 3vw;
         height: 1vh;
-      }
-      @include mq(u-sp) {
-        bottom: 0;
-        left: calc(50% - .5vw);
-        width: 1vw;
-        height: 7vh;
+        content: '';
       }
     }
-    &::after { // 矢印の設定
-      position: absolute;
-      display: block;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-color: transparent transparent transparent $colorBlack;
-      content: '';
+    &::after { // 矢印 三角形
       @include mq(o-sp) {
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent transparent transparent $colorBlack;
         top: 10px;
         right: -20px;
         border-width: 10px 0 10px 20px;
+        content: '';
       }
       @include mq(u-sp) {
-        bottom: -10px;
-        left: calc(50% - 2vw); // 三角形の横幅分を引く
-        border-width: 2vw 0 2vw 4vw;
-        transform: rotate(90deg);
+        position: absolute;
+        display: block;
+        bottom: -20px;
+        right: 40%;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent transparent transparent #07E7FF;
+        border-width: 0 10px 20px 10px;
+        content: '';
+      transform: skewX(25deg);
       }
     }
   }
@@ -343,6 +350,10 @@
 
 .p-top-flowUpToWork__list__order {
   text-align: center;
+  @include mq(u-sp) {
+    height: initial;
+    transform: skewX(15deg);
+  }
 }
 
 .p-top-flowUpToWork__list__txt {
@@ -352,6 +363,8 @@
   margin-bottom: 10px;
   @include mq(u-sp) {
     font-size: 2.5vw;
+    height: initial;
+    transform: skewX(15deg);
   }
 }
 
@@ -360,10 +373,6 @@
   width: 10vw;
   height: 10vh;
   margin: 0 auto;
-  @include mq(u-sp) {
-    margin-top: auto;
-    margin-bottom: 20px;
-  }
 }
 
 /*// -----------------------------------------------------------------
@@ -427,9 +436,8 @@
 ---------------------------------------------------- */
 
 .p-top-project__list {
-  width: 80%;
+  // width: 80%;
   margin: 0 auto;
-  padding: 10px 0;
   @include mq(u-sp) {
     width: 70%;
     flex-direction: column;
@@ -437,81 +445,24 @@
   }
 }
 
-.p-top-project__outlineImg {
-  position: relative;
-  width: 20%;
-  height: auto;
-}
-
 /*
   .p-top-project__listItem
 ---------------------------------------------------- */
-
-.p-top-project__listItem {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 75%;
-  border: 5px solid;
-  border-top-left-radius: 80px;
-  padding: 30px;
-  &:nth-last-child(n+2) {
-    margin-right: 10px;
-  }
-  @include mq(u-sp) {
-    width: 80%;
-    &:nth-last-child(n+2) {
-      margin-bottom: 120px;
-      margin-right: 0;
-    }
-  }
-}
-
-.p-top-project__listItem {
-  &:nth-last-child(n+2) > .p-top-project__listItem__jobCategory {
-    background-color: #FF6363;
-  }
-  &:last-child > .p-top-project__listItem__jobCategory {
-    background-color: #07E7FF;
-    color: $colorWhite;
-  }
-}
-
-.p-top-project__listItem__goodMan {
-  width: 70%;
-  height: auto;
-  margin: 0px auto 20px auto;
-  border: 15px solid;
-  @include mq(u-sp) {
-    margin-top: -220px;
-  }
-}
-
-.p-top-project__listItem__developmentEnironment {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-.p-top-project__listItem__developmentEnironment > li {
-  width: 90px;
-  height: 25px;
-  text-align: center;
-  background-color: $colorWhite;
+.p-top-project__listItem__margin {
+  margin-right: 10px;
+  outline: none;
   border: 1px solid;
-  border-radius: 20px;
-  &:first-child {
-    margin-bottom: 5px;
-  }
-
-  &:nth-last-child(n+2) {
-    margin-right: 5px;
-  }
 }
 
 .p-top-project__listItem__about {
-  font-size: 17px;
+  padding: 40px;
+  font-size: 1.2vw;
   letter-spacing: 3px;
+  background-color: rgba($colorGray, .1);
+}
+
+.p-top-project__listItem__feature {
+  margin-bottom: 10px;
 }
 
 .p-top-project__listItem__feature > div {
@@ -524,12 +475,16 @@
 /*
   .p-top-project__list__income
 -----------------------------------------------------------------*/
+.p-top-project__listItem__incomeBlock {
+  padding: 10px;
+}
+
 .p-top-project__listItem__income__monthly {
   @include projectIcon(money);
 }
 
 .p-top-project__listItem__income__price--emphasis {
-  font-size: 24px;
+  font-size: 25px;
   font-weight: bold;
 }
 
@@ -556,6 +511,28 @@
 .p-top-project__listItem__working__days--emphasis {
   font-weight: bold;
   font-size: 25px;
+}
+
+.p-top-project__listItem__developmentEnironment {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.p-top-project__listItem__developmentEnironment > li {
+  width: 90px;
+  height: 25px;
+  text-align: center;
+  background-color: $colorWhite;
+  border: 1px solid;
+  border-radius: 20px;
+  &:first-child {
+    margin-bottom: 5px;
+  }
+
+  &:nth-last-child(n+2) {
+    margin-right: 5px;
+  }
 }
 
 /*// -----------------------------------------------------------------

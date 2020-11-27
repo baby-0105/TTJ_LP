@@ -7,6 +7,7 @@ import router from './modules/Router'
 import '../scss/app.scss'
 
 $(() => {
+
   let $bodyAndHtml = $('body, html'),
       startPos     = $(window).scrollTop(); // 元の位置を取得
 
@@ -59,9 +60,7 @@ $(() => {
 
   // 「案件を見るボタン」：クリックイベント
   $('#toProject').on('click', function() {
-    let headerHeight = $('#header').innerHeight(); //innerHeight() → paddingも含めた高さ
-
-    $bodyAndHtml.animate({scrollTop: $('#project').offset().top - headerHeight}, 'swing');
+    $bodyAndHtml.animate({scrollTop: $('#project').offset().top}, 'swing');
   });
 
 
@@ -95,15 +94,29 @@ $(() => {
     });
   }
 
-  // スライドショー
-  $('.slick01').slick({
-    // asNavFor: 'nav-dots',
+  // 案件 スライドショー
+  $('.p-top-project__list').slick({
     dots: true,
+    slidesToScroll: 1,
     slidesToShow: 3,
-    slidesToScroll: 6,
-    centerMode:true,
+    centerMode: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    // swipe: true,
     prevArrow: '<button class="slide-arrow prev"></button>',
     nextArrow: '<button class="slide-arrow next"></button>',
     dotsClass: 'slide-dots',
+    responsive: [
+      {
+      breakpoint: 950,
+      settings: {
+          slidesToShow: 2,
+      }},
+      {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+      }}
+    ],
   });
 })

@@ -4,6 +4,7 @@ $breakPC: 950;
 $breakpoints: (
   'u-sp': 'print, screen and (max-width: #{$breakSP}px)',
   'o-sp': 'print, screen and (min-width: #{$breakSP + 1}px)',
+  'u-pc': 'print, screen and (max-width: #{$breakPC}px)',
   'sp-pc':
     'print, screen and (max-width: #{$breakPC}px) and (min-width: #{$breakSP + 1}px)',
   'o-pc': 'print, screen and (min-width: #{$breakPC + 1}px)',
@@ -57,6 +58,7 @@ $colorWhite: #fff;
 @mixin projectIcon($image) {
   position: relative;
   margin-right: 15px;
+  font-size: 1.2vw;
   &::before {
     position: absolute;
     display: inline-block;

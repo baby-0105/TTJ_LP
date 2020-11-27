@@ -65,6 +65,7 @@
     float: left;
     height: 100%;
     min-height: 1px;
+    outline: none;
     [dir="rtl"] & {
         float: right;
     }
@@ -118,12 +119,12 @@ button{
 
 .slide-arrow {
   position: absolute;
-  top: 50%;
+  top: calc(50% - 60px);
   width: 30px;
   height: 30px;
   border-top: 5px solid;
   border-left: 5px solid;
-  // outline: none;
+  outline: none;
   cursor: pointer;
   z-index: 1; // 左矢印だけ何故か反応しないからこれで調整
 }
@@ -138,11 +139,6 @@ button{
   transform: rotate(135deg);
 }
 
-.slick-dots {
-  display: flex;
-  justify-content: center;
-}
-
 .slick-dots > li {
   &:first-child {
     margin-right: 10px;
@@ -153,8 +149,11 @@ button{
   text-indent: -9999px;
 }
 
-.slide-dots{
-  text-align: center;
+.slide-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110px;
   li{
     display: inline-block;
     margin: 0 15px;

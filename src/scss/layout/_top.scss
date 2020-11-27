@@ -9,14 +9,15 @@
 .l-top-heading {
   display: flex;
   align-items: center;
-  padding: 100px 0;
+  padding: 50px 0;
   background: url(#{$bgPath}sea_morudibu.jpg) no-repeat center/cover;
   // background: linear-gradient(25deg, rgba(#FC9D9D, 0.4), rgba(#C5E99B, 0.4)) ,url(#{$bgPath}sea_morudibu.jpg) no-repeat center/cover;
-  @include mq('u-sp') {
+  @include mq('u-pc') {
     padding-left: 0;
     flex-direction: column;
-    background-size: 100%;
+    background-size: 100% 100%;
     background-position: bottom;
+    padding-top: 10px;
   }
 }
 
