@@ -12,7 +12,7 @@ $(() => {
 
 
   // スクロールイベント
-  $(window).scroll(function() {      
+  $(window).scroll(function() {
     let windowHeight  = $(this).height(),
         scrollPosi    = $(this).scrollTop(),
         $aboutServiceText = $('.p-top-aboutService__text');
@@ -20,7 +20,7 @@ $(() => {
     $('#aboutService').each(function() {
       let aboutServicePosi = $(this).offset().top;
 
-      if (scrollPosi > aboutServicePosi - windowHeight + 150) {
+      if (scrollPosi > aboutServicePosi - windowHeight + 600) {
         for(let i=0; i<$aboutServiceText.length; i++) {
           let delayTime = ['0', '500', '1000', '1500'];
 
@@ -30,20 +30,20 @@ $(() => {
           })
         }
 
-        // $('#extendUnderline').addClass('extendUnderline');
-
-        // for(let i=0; i<3; i++) {
-        //   let delayTime = ['0', '500', '1000'];
-
-        //   $(`#fadeLogoInitial${i+1}`).delay(delayTime[i]).queue(function() {
-        //     $(this).addClass('fadeLogoInitial');
-        //   })
-        // }
-
-        // $(this).addClass('toDarkBgColor');
+        $('#aboutServiceImg').addClass('moveAboutServiceImg');
       }
-    })
+    });
 
+    $('#aboutServiceEntryArrow').each(function() {
+      let aboutServiceEntryBlockPosi = $(this).offset().top;
+
+      if (scrollPosi > aboutServiceEntryBlockPosi - windowHeight + 150) {
+        $(this).addClass('extendArrow1');
+        $(this).delay(1200).queue(function() {
+          $(this).addClass('extendArrow2');
+        })
+      }
+    });
 
     $('#fluffy_disappear').each(function() {
       let aboutServicePosi = $(this).offset().top;
@@ -53,7 +53,7 @@ $(() => {
       } else {
         $(this).removeClass('disappear');
       }
-    })
+    });
   });
 
   // 「案件を見るボタン」：クリックイベント
