@@ -10,7 +10,6 @@ $(() => {
   let $bodyAndHtml = $('body, html'),
       startPos     = $(window).scrollTop(); // 元の位置を取得
 
-
   // スクロールイベント
   $(window).scroll(function() {
     let windowHeight  = $(this).height(),
@@ -20,7 +19,7 @@ $(() => {
     $('#aboutService').each(function() {
       let aboutServicePosi = $(this).offset().top;
 
-      if (scrollPosi > aboutServicePosi - windowHeight + 600) {
+      if (scrollPosi > aboutServicePosi - windowHeight + 400) {
         for(let i=0; i<$aboutServiceText.length; i++) {
           let delayTime = ['0', '500', '1000', '1500'];
 
@@ -29,8 +28,14 @@ $(() => {
             $(this).addClass('textVisible');
           })
         }
+      }
+    });
 
-        $('#aboutServiceImg').addClass('moveAboutServiceImg');
+    $('#aboutServiceImg').each(function() {
+      let aboutServiceImgPosi = $(this).offset().top;
+
+      if (scrollPosi > aboutServiceImgPosi - windowHeight + 300) {
+        $(this).addClass('moveAboutServiceImg');
       }
     });
 
@@ -59,11 +64,8 @@ $(() => {
 
   // 「案件を見るボタン」：クリックイベント
   $('#toProject').on('click', function() {
-    let headerHeight = $('#header').innerHeight(); //innerHeight() → paddingも含めた高さ
-
-    $bodyAndHtml.animate({scrollTop: $('#project').offset().top - headerHeight}, 'swing');
+    $bodyAndHtml.animate({scrollTop: $('#project').offset().top}, 'swing');
   });
-
 
   // FAQ：モーダル（PC用）
   let $faqList = $('.p-top-faqSP__list');
@@ -73,13 +75,15 @@ $(() => {
       let $faqPCAnswer = $(`#faqPCAnswer${i+1}`),
           $body = $('body');
 
-      if($(e.target).is(`#slick-slide0${i+1}`) || $(e.target).is(`#faqPCTitleQuestion${i+1}`)) {
+      if($(e.target).is(`#faqPCQuestionList${i+1}`) || $(e.target).is(`#faqPCTitleQuestion${i+1}`)
+      || $(e.target).is(`#faqPCTitleNum${i+1}`)) { // ※リファクタリングの余地あり
         $body.addClass('nonScroll');
         $faqPCAnswer.toggleClass('show');
-      } else if($(e.target).is(`#bgBlack`) || $(e.target).is(`.l-footer`)
-      || $(e.target).is(`.p-top-faqPC__crossIcon`) || $(e.target).is(`.crossIcon`)) { // ※リファクタリングの余地あり
+        // $('#faqPCAnswer').fadeIn();
+      } else if($faqPCAnswer.hasClass('show') && $(e.target).is('*')) {
         $body.removeClass('nonScroll');
         $faqPCAnswer.removeClass('show');
+        // $('#faqPCAnswer').fadeOut();
       }
     });
   }

@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   padding: 100px 0;
-  background: url(#{$bgPath}sea_morudibu.jpg) no-repeat center/cover;
+  background: url(#{$bgPath}many_people.jpg) no-repeat center/cover;
   // background: linear-gradient(25deg, rgba(#FC9D9D, 0.4), rgba(#C5E99B, 0.4)) ,url(#{$bgPath}sea_morudibu.jpg) no-repeat center/cover;
   @include mq('u-sp') {
     padding-left: 0;
@@ -21,10 +21,13 @@
 }
 
 .l-top-aboutService {
-  font-family: 'Sawarabi Mincho', sans-serif;
   color: black;
   padding: 100px;
   background: linear-gradient(180deg,#ecccac,#e4e4e4 10% 90%,#fff);
+
+  @include mq(u-pc) {
+    padding: 60px 20px;
+  }
 }
 
 .l-top-request {
@@ -33,7 +36,9 @@
 }
 
 .l-top-faq {
-  width: 80%;
-  margin: 0 auto;
   padding-bottom: 100px;
+
+  @include mq(u-sp) {
+    padding: 0 30px 100px;
+  }
 }
