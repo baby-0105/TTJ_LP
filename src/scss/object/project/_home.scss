@@ -78,6 +78,7 @@
   opacity: 0;
   transform: translateY(-400px);
 }
+
 /*// -----------------------------------------------------------------
 //  .p-top-aboutService
 // -----------------------------------------------------------------*/
@@ -87,10 +88,14 @@
   align-items: center;
   position: relative;
   margin-bottom: 100px;
+
+  @include mq(u-pc) {
+    flex-direction: column-reverse;
+  }
 }
 
 .p-top-aboutService__bgLogo {
-  font-size: 600px;
+  font-size: 520px;
   font-weight: bold;
   color: rgba(105, 105, 105, 0.2);
   position: absolute;
@@ -99,6 +104,15 @@
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: space-between;
+
+  @include mq(u-pc) {
+    font-size: 300px;
+    flex-direction: column;
+  }
+
+  @include mq(u-sp) {
+    font-size: 220px;
+  }
 }
 
 .p-top-aboutService__bgLogo__list--red {
@@ -112,6 +126,10 @@
 .p-top-aboutService__imgBlock {
   width: 60%;
   margin-right: 60px;
+
+  @include mq(u-pc) {
+    margin-right: 0;
+  }
 }
 
 .p-top-aboutService__img {
@@ -122,16 +140,30 @@
   transform: scale(0);
 }
 
+// 付加クラス： イラスト出現
 .moveAboutServiceImg {
   transition: 2s;
   opacity: 1;
   transform: scale(1);
 }
 
+.p-top-aboutService__textBlock {
+  font-size: 25px;
+
+  @include mq(u-pc) {
+    margin-bottom: 100px;
+  }
+
+  @include mq(u-sp) {
+    font-size: 20px;
+    margin-bottom: 60px;
+  }
+}
+
 .p-top-aboutService__text {
+  // font-family: "Sawarabi Mincho";
   text-align: center;
   margin-bottom: 100px;
-  font-size: 25px;
   text-shadow: 1px 3px 3px #ffc042;
 
   opacity: 0;
@@ -142,8 +174,13 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  @include mq(u-sp) {
+    margin-bottom: 50px;
+  }
 }
 
+// 付加クラス： テキスト出現
 .textVisible {
   opacity: 1;
   top: 0;
@@ -155,13 +192,23 @@
 
 .p-top-aboutService__entry {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   text-align: center;
+
+  @include mq(u-sp) {
+    flex-direction: column;
+  }
 }
 
 .p-top-aboutService__entryArrowBlock {
   width: 200px;
+
+  @include mq(u-sp) {
+    width: 10px;
+    height: 100px;
+    margin-bottom: 50px;
+  }
 }
 
 // LINEへ：のびる矢印
@@ -176,31 +223,71 @@
   left: 0;
   transition: 1.5s;
 
-  @mixin arrowWing($transform, $direction) {
+  @mixin arrowWing {
     content: '';
-    width: 30%;
-    height: 10px;
     background-color: black;
     display: block;
     position: absolute;
-    right: 0;
-    transform: $transform;
-    transform-origin: $direction;
     transition: 1s;
   }
 
+  @mixin arrowWingPC($transform, $direction) {
+    @include arrowWing;
+
+    width: 30%;
+    height: 10px;
+    right: 0;
+    transform: $transform;
+    transform-origin: $direction;
+  }
+
+  @mixin arrowWingSP($transform, $direction) {
+    @include arrowWing;
+
+    width: 10px;
+    height: 30%;
+    bottom: 0;
+    transform: $transform;
+    transform-origin: $direction;
+  }
+
   &:before {
-    @include arrowWing($transform: rotate(-45deg) scale(0), $direction: bottom right);
+    @include arrowWingPC($transform: rotate(-45deg) scale(0), $direction: bottom right);
   }
 
   &:after {
-    @include arrowWing($transform: rotate(45deg) scale(0), $direction: top right);
+    @include arrowWingPC($transform: rotate(45deg) scale(0), $direction: top right);
+  }
+
+  @include mq(u-sp) {
+    width: 10px;
+    height: 1px;
+    top: 0;
+
+    &:before {
+      @include arrowWingSP($transform: rotate(-45deg) scale(0), $direction: bottom left);
+      width: 10px;
+      height: 30%;
+      bottom: 0;
+    }
+
+    &:after {
+      @include arrowWingSP($transform: rotate(45deg) scale(0), $direction: bottom right);
+      width: 10px;
+      height: 30%;
+      bottom: 0;
+    }
   }
 }
 
 .extendArrow1 {
   opacity: 1;
   width: 100%;
+
+  @include mq(u-sp) {
+    width: 10px;
+    height: 100%;
+  }
 }
 
 .extendArrow2 {
@@ -217,6 +304,10 @@
 
 .p-top-aboutService__entryBlock__text {
   font-size: 20px;
+
+  @include mq(u-sp) {
+    margin-bottom: 50px;
+  }
 }
 
 .p-top-aboutService__entryBlock__text--line {
@@ -244,7 +335,7 @@
   margin: 0 auto;
 }
 
-.p-top-flowUpToWork__heading {
+@mixin blueAndRedTitle {
   position: relative;
   margin: 30px 0 100px 0;
   font-size: 2.5vw;
@@ -264,6 +355,11 @@
       width: 27vw;
     }
   }
+}
+
+.p-top-flowUpToWork__heading {
+  @include blueAndRedTitle;
+
   &::before {
     left: 0;
     background-color: #FF6363;
@@ -418,7 +514,17 @@
 ---------------------------------------------------- */
 
 .p-top-project__heading {
-  @extend .p-top-flowUpToWork__heading;
+  @include blueAndRedTitle;
+
+  &::before {
+    left: 0;
+    background-color: #07E7FF;
+  }
+
+  &::after {
+    right: 0;
+    background-color: #FF6363;
+  }
 }
 
 .p-top-project__heading--bold {
@@ -540,9 +646,17 @@
 // -----------------------------------------------------------------*/
 
 .p-top-faq__title {
-  font-size: 30px;
-  text-align: center;
-  margin-bottom: 30px;
+  @include blueAndRedTitle;
+
+  &::before {
+    left: 0;
+    background-color: #FF6363;
+  }
+
+  &::after {
+    right: 0;
+    background-color: #07E7FF;
+  }
 }
 
 /*
@@ -550,20 +664,53 @@
 ---------------------------------------------------- */
 
 .p-top-faqPC__question {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+
   @include mq(u-sp) {
     display: none;
   }
 }
 
 .p-top-faqPC__questionList {
-  width: 300px;
-  height: 100px;
+  width: 30%;
+  height: 200px;
   border: solid 1px black;
+  border-radius: 20px;
+  background-color: #545454;
+  color: white;
   user-select: none; // ダブルクリック時の青色選択無効
-  display: flex;
-  &:nth-last-child(n+2) {
-    margin-right: 10px;
+  text-align: center;
+  padding: 30px;
+  position: relative;
+
+  &:not(:nth-last-child(-n+3)) {
+    margin-bottom: 20px;
   }
+
+  &:hover {
+    .p-top-faqPC__questionList__titleNum {
+      transform: rotateY(-360deg);
+    }
+  }
+}
+
+// Questionの背景
+.p-top-faqPC__questionList__titleNum {
+  color: white;
+  opacity: 0.2;
+  font-size: 100px;
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  transition: 1.0s;
+}
+
+.p-top-faqPC__questionList__title {
+  font-size: 20px;
 }
 
 /*
@@ -572,9 +719,7 @@
 
 .p-top-faqPC__answerList {
   display: none;
-  // opacity: 0;
-  // transition: .5s;
-  // transform: scale(0);
+  text-align: center;
 }
 
 .p-top-faqPC__answerList__textBlock {
@@ -592,10 +737,15 @@
   user-select: none; // ダブルクリック時の青色選択無効
 }
 
-.p-top-faqPC__answerList__title {
+.p-top-faqPC__answerList__question {
   text-align: center;
   font-size: 20px;
   margin-bottom: 20px;
+}
+
+.p-top-faqPC__answerList__Num {
+  font-size: 30px;
+  font-weight: bold;
 }
 
 // --------------------------×アイコン--------------------------
@@ -609,8 +759,8 @@
   color: white;
   font-size: 25px;
   position: absolute;
-  top: -20px;
-  right: -20px;
+  top: 10px;
+  right: 10px;
   height: 40px;
   width: 40px;
   background-color: black;
@@ -632,16 +782,10 @@
   background: rgba(51, 51, 51, 0.8);
   width: 100%;
   height: 100%;
-  // opacity: 1;
-  // transform: scale(1);
-  // display: block;
 }
 
 .show {
   display: block;
-  // opacity: 1;
-  // transform: scale(1);
-  // transition: 0.5s;
 }
 
 .nonScroll {

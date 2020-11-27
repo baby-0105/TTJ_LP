@@ -56,7 +56,7 @@ src/ejs/template/_head %>
     </div>
     <div class="p-top-aboutService__entry">
       <p class="p-top-aboutService__entryBlock__text">
-        まずはお気軽に、<br> <span class="p-top-aboutService__entryBlock__text--line">LINE</span>にてご登録下さい！
+        まずはお気軽に、<br> <span class="p-top-aboutService__entryBlock__text--line">LINE</span><br>にてご登録下さい！
       </p>
       <div class="p-top-aboutService__entryArrowBlock">
         <span class="p-top-aboutService__entryArrow" id="aboutServiceEntryArrow"></span>
@@ -169,19 +169,22 @@ src/ejs/template/_head %>
     <!-- p-top-faqPCブロック：slide用 -->
     <ul class="p-top-faqPC__question">
       <% for (var i=0; i < question.length; i++) { %>
-        <li class="p-top-faqPC__questionList">
-          <h3 class="p-top-faqPC__question__title" id="faqPCTitleQuestion<%= i+1 %>">Q.<%= question[i] %></h3>
+        <li class="p-top-faqPC__questionList" id="faqPCQuestionList<%= i+1 %>">
+          <div class="p-top-faqPC__questionList__titleNum" id="faqPCTitleNum<%= i+1 %>">Q<%= [i+1] %></div>
+          <h3 class="p-top-faqPC__questionList__title" id="faqPCTitleQuestion<%= i+1 %>"><%= question[i] %></h3>
         </li>
       <% } %>
     </ul>
 
-    <ul class="p-top-faqPC__answer">
+    <ul class="p-top-faqPC__answer" id="faqPCAnswer">
       <% for (var i=0; i < answer.length; i++) { %>
         <li class="p-top-faqPC__answerList" id="faqPCAnswer<%= i+1 %>">
           <div id="bgBlack">
             <div class="p-top-faqPC__answerList__textBlock">
-              <h3 class="p-top-faqPC__answerList__title">-<%= question[i] %>-</h3>
-              <p class="p-top-faqPC__answerList__text">A.<%= answer[i] %></p>
+              <span class="p-top-faqPC__answerList__Num">Q<%= [i+1] %></span>
+              <h3 class="p-top-faqPC__answerList__question"><%= question[i] %>-</h3>
+              <span class="p-top-faqPC__answerList__Num">A<%= [i+1] %></span>
+              <p class="p-top-faqPC__answerList__answer"><%= answer[i] %></p>
               <span class="p-top-faqPC__crossIcon"><i class="fas fa-times crossIcon"></i></span>
             </div>
           </div>

@@ -1,5 +1,30 @@
 .l-footer {
-  background-color: #343434;
-  padding: 50px 30px;
-  color: white;
+  background-color: white;
+  padding: 30px;
+  color: #343434;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+
+  &::before, &::after {
+    position: absolute;
+    display: block;
+    top: 0;
+    width: 49vw;
+    height: 5%;
+    content: '';
+    @include mq(u-sp) {
+      width: 45vw;
+    }
+  }
+
+  &::before {
+    left: 0;
+    background-color: #07E7FF;
+  }
+
+  &::after {
+    right: 0;
+    background-color: #FF6363;
+  }
 }
