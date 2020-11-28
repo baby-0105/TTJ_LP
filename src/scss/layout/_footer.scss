@@ -1,17 +1,17 @@
 .l-footer {
-  background-color: white;
+  background-color: $colorWhite;
   padding: 30px;
-  color: #343434;
   position: relative;
   display: flex;
 
-  &::before, &::after {
+  &:before, &:after {
     position: absolute;
     display: block;
     top: 0;
     width: 49vw;
     height: 5%;
     content: '';
+
     @include mq(u-sp) {
       width: 45vw;
     }
@@ -19,11 +19,11 @@
 
   &::before {
     left: 0;
-    background-color: #07E7FF;
+    background-color: $colorLightBlue;
   }
 
   &::after {
     right: 0;
-    background-color: #FF6363;
+    background-color: $colorLightRed;
   }
 }

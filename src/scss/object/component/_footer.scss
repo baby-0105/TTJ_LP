@@ -7,7 +7,7 @@
   width: 30%;
   display: block;
   margin: 0 auto;
-  filter: drop-shadow(10px 10px 10px rgba(0,0,0,1.0)); // オブジェクトの形に沿って影
+  filter: drop-shadow(10px 10px 10px $colorBlack); // オブジェクトの形に沿って影
 }
 
 .c-footer-corporate {
@@ -17,7 +17,7 @@
 }
 
 .c-footer-corporate__link {
-  background-color: green;
+  background-color: $colorLightGreen;
   width: 15%;
   display: block;
   padding: 5px 20px;
