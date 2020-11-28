@@ -38,25 +38,39 @@ $colorWhite: #fff;
 @mixin circlePattern($pattern) {
   position: relative;
   display: inline-block;
-  width: 17vw;
-  height: 17vw;
-  @include mq(u-sp) {
-    width: 25vw;
-    height: 25vw;
-  }
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
+  letter-spacing: 3px;
+
+  @include mq('u-pc') {
+    width: 200px;
+    height: 200px;
+  }
+
+  @include mq('u-sp') {
+    width: 160px;
+    height: 160px;
+  }
+
   @if ($pattern=="day") {
     margin-bottom: 50px;
     background-color: rgba(#E45764, .9);
-    @include mq(u-sp) {
+
+    @include mq('u-sp') {
       margin-bottom: 0;
     }
-  } @else if ($pattern=="match") {
+  }
+
+  @else if ($pattern=="match") {
     background-color: rgba(#63C5FF, .9);
-    @include mq(u-sp) {
+
+    @include mq('u-sp') {
       margin-right: 10px;
     }
-  } @else {
+  }
+
+  @else {
     background-color: rgba(#2EE32F, .9);
   }
 }
@@ -70,26 +84,34 @@ $colorWhite: #fff;
   box-shadow: 0px 7px 3px 0px $colorBlack;
   transition: all 0.5s;
   white-space: nowrap; // 文字おりかえさない
+
   @include mq('u-sp') {
-    font-size: 3vw;
+    font-size: 16px;
   }
+
   &:hover {transform: scale(1.05);}
+
   @if ($category=="project") {
     margin-bottom: 30px;
     letter-spacing: 2px;
     background-color:rgba(#EEFF00, .4);
+
     &:hover {
       background-color: #EEFF00;
     }
+
     @include mq('u-sp') {
       width: 80%;
       padding: 3vh 0;
     }
-  }@else {
+  }
+
+  @else {
     background-color:rgba(#2DE531, .9);
     &:hover {
       background-color: #2DE531;
     }
+
     @include mq('u-sp') {
       width: 100%;
       padding: 3vh 0;
@@ -103,6 +125,7 @@ $colorWhite: #fff;
   margin-right: 15px;
   margin-top: 5px;
   font-size: 14px;
+
   @include mq('u-smSp') {
     font-size: 13px;
   }
@@ -113,6 +136,7 @@ $colorWhite: #fff;
     background: no-repeat center/contain;
     content: '';
   }
+
   @if ($image=="money") {
     &::before {
       width: 45px;
@@ -120,6 +144,7 @@ $colorWhite: #fff;
       left: -40px;
       background-image: url(#{$bgPath}money.png);
     }
+
     @include mq('u-sp') {
       &::before {
         top: -1px;
@@ -138,6 +163,7 @@ $colorWhite: #fff;
       left: -48px;
       background-image: url(#{$bgPath}calendar_1.png);
     }
+
     @include mq('u-sp') {
       &::before {
         top: -1px;
