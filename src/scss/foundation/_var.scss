@@ -28,12 +28,18 @@ $breakpoints: (
 $bgPath: '../../assets/images/';
 
 // COLOR
-$colorLight: #3cabe0;
-$colorNormal: #2496cd;
-$colorDark: #012c45;
 $colorBlack: #222;
 $colorGray: #666;
 $colorWhite: #fff;
+$colorDeepRed: #D9340A;
+$colorLightRed: #FF6363;
+$colorLightBlue: #07E7FF;
+$colorDeepBlue: #2582bb;
+$colorLightGreen: #2EE32F;
+$colorGreen: #2DE531;
+$colorDeepGreen: #0DB53C;
+$colorYellow: #EEFF00;
+$colorOrange: #ffc042;
 
 @mixin circlePattern($pattern) {
   position: relative;
@@ -57,7 +63,7 @@ $colorWhite: #fff;
       margin-right: 10px;
     }
   } @else {
-    background-color: rgba(#2EE32F, .9);
+    background-color: rgba($colorLightGreen, .9);
   }
 }
 
@@ -77,18 +83,18 @@ $colorWhite: #fff;
   @if ($category=="project") {
     margin-bottom: 30px;
     letter-spacing: 2px;
-    background-color:rgba(#EEFF00, .4);
+    background-color:rgba($colorYellow, .4);
     &:hover {
-      background-color: #EEFF00;
+      background-color: $colorYellow;
     }
     @include mq('u-sp') {
       width: 80%;
       padding: 3vh 0;
     }
   }@else {
-    background-color:rgba(#2DE531, .9);
+    background-color:rgba($colorGreen, .9);
     &:hover {
-      background-color: #2DE531;
+      background-color: $colorGreen;
     }
     @include mq('u-sp') {
       width: 100%;
