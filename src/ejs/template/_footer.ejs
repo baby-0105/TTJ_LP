@@ -1,12 +1,15 @@
 <% var img_path='/assets/images/'; %>
 
-<footer class="l-footer">
+<footer class="l-footer" id="footer">
   <div class="c-footer-company">
     <img src="<%= img_path %>trust.png" class="c-footer-company__logo" alt="フッターのロゴ画像">
     <small class="c-footer-company__copyright">&copy; 2020 Trust Inc. All Rights Reserved.</small>
   </div>
-  <div class="c-footer-link">
-    <a class="c-footer-link__corporate" href="#">コーポレートサイト</a>
+  <div class="c-footer-corporate">
+    <a class="c-footer-corporate__link" href="#">
+      <img src="<%= img_path %>trust.png" class="c-footer-corporate__linkImg" alt="footerのコーポレートサイトのイメージ">
+    </a>
+    <p class="c-footer-corporate__text">トラストコーポレーション</p>
   </div>
 </footer>
 
