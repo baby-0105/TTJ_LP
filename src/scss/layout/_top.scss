@@ -2,46 +2,4 @@
 // l-top
 // ==========================================================================*/
 
-.l-main {
-  position: relative; // モーダルクリック用
-}
-
-.l-top-heading {
-  display: flex;
-  align-items: center;
-  padding: 100px 0;
-  background: url(#{$bgPath}many_people.jpg) no-repeat center/cover;
-  background-attachment: fixed;
-  // background: linear-gradient(25deg, rgba(#FC9D9D, 0.4), rgba(#C5E99B, 0.4)) ,url(#{$bgPath}sea_morudibu.jpg) no-repeat center/cover;
-  @include mq('u-pc') {
-    padding-left: 0;
-    flex-direction: column;
-    background-size: 100% 100%;
-    background-position: bottom;
-    padding-top: 10px;
-  }
-}
-
-.l-top-aboutService {
-  color: black;
-  padding: 100px;
-  background: linear-gradient(180deg,#141414,#e4e4e4 3% 90%,#fff);
-
-  @include mq(u-pc) {
-    padding: 60px 20px;
-  }
-}
-
-.l-top-entry {
-  // background: linear-gradient(to bottom, white, #ffc778 20% 80%, white);
-
-  @extend .p-top-aboutService__entry;
-}
-
-.l-top-faq {
-  padding-bottom: 100px;
-
-  @include mq(u-sp) {
-    padding: 0 30px 100px;
-  }
-}
+.l-main { position: relative; } // モーダルクリック用

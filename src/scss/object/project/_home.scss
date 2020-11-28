@@ -8,6 +8,23 @@
 /*// -----------------------------------------------------------------
 //  .p-top-heading
 // -----------------------------------------------------------------*/
+
+.p-top-heading {
+  display: flex;
+  align-items: center;
+  padding: 100px 0;
+  background: url(#{$bgPath}many_people.jpg) no-repeat center/cover;
+  background-attachment: fixed;
+  // background: linear-gradient(25deg, rgba(#FC9D9D, 0.4), rgba(#C5E99B, 0.4)) ,url(#{$bgPath}sea_morudibu.jpg) no-repeat center/cover;
+  @include mq('u-pc') {
+    padding-left: 0;
+    flex-direction: column;
+    background-size: 100% 100%;
+    background-position: bottom;
+    padding-top: 10px;
+  }
+}
+
 .p-top-heading__block {
   display: flex;
   flex-direction: column;
@@ -24,9 +41,9 @@
   }
 }
 
-.p-top-heading__circle--day {@include circlePattern(day);}
-.p-top-heading__circle--match {@include circlePattern(match);}
-.p-top-heading__circle--LINE {@include circlePattern(line);}
+.p-top-heading__circle--day { @include circlePattern(day); }
+.p-top-heading__circle--match { @include circlePattern(match); }
+.p-top-heading__circle--LINE { @include circlePattern(line); }
 
 .p-top-heading__catchPhrase {
   position: absolute;
@@ -100,6 +117,16 @@
 //  .p-top-aboutService
 // -----------------------------------------------------------------*/
 
+.p-top-aboutService {
+  color: $colorBlack;
+  padding: 100px;
+  background: linear-gradient(180deg, #e4e4e4 90%, $colorWhite);
+
+  @include mq(u-pc) {
+    padding: 60px 20px;
+  }
+}
+
 .p-top-aboutService__explain {
   display: flex;
   align-items: center;
@@ -133,13 +160,9 @@
   }
 }
 
-.p-top-aboutService__bgLogo__list--red {
-  color: rgba(#D9340A, 0.2);
-}
+.p-top-aboutService__bgLogo__list--red { color: rgba($colorDeepRed, 0.2); }
 
-.p-top-aboutService__bgLogo__list--blue {
-  color: rgba(#2582bb, 0.2);
-}
+.p-top-aboutService__bgLogo__list--blue { color: rgba($colorDeepBlue, 0.2); }
 
 .p-top-aboutService__imgBlock {
   width: 60%;
@@ -156,7 +179,7 @@
   position: relative; // 画像の重なりの関係で追加
   height: 50%;
   transform: scale(0);
-  filter: drop-shadow(10px 10px 10px rgba(0,0,0,1.0)); // オブジェクトの形に沿って影
+  filter: drop-shadow(10px 10px 10px $colorBlack); // オブジェクトの形に沿って影
 
   @include mq('u-pc') { // スマホ・タブではフェードインなし
     opacity: 1;
@@ -213,7 +236,7 @@
 }
 
 .p-top-aboutService__text--modifier {
-  background: linear-gradient(transparent 70%, #2582bb 85%, #D9340A 100%);
+  background: linear-gradient(transparent 70%, $colorDeepBlue 85%, $colorDeepRed 100%);
 }
 
 .p-top-aboutService__entry {
@@ -236,8 +259,8 @@
 }
 
 .p-top-aboutService__entryBlock__text--line {
-  color: #0DB53C;
-  text-shadow: 2px 4px 7px #0DB53C;
+  color: $colorDeepGreen;
+  text-shadow: 2px 4px 7px $colorDeepGreen;
   font-size: 100px;
   font-weight: 900;
 }
@@ -258,7 +281,7 @@
   transition: 0.5s;
 
   &:nth-of-type(2) {
-    color: gray;
+    color: $colorGray;
   }
 
   @include mq('u-sp') {
@@ -278,22 +301,9 @@
 }
 
 /*// -----------------------------------------------------------------
-// .p-top-container
-// -----------------------------------------------------------------*/
-
-.p-top-container {
-  width: 1200px;
-  margin: 0 auto;
-  padding: 20px 20px;
-  background-color: #F2F2F2;
-}
-
-/*// -----------------------------------------------------------------
 // .p-top-flowUpToWork
 // -----------------------------------------------------------------*/
-.p-top-flowUpToWork {
-  margin: 0 auto;
-}
+.p-top-flowUpToWork { margin: 0 auto; }
 
 @mixin blueAndRedTitle {
   position: relative;
@@ -325,12 +335,12 @@
 
   &::before {
     left: 0;
-    background-color: #FF6363;
+    background-color: $colorLightRed;
   }
 
   &::after {
     right: 0;
-    background-color: #07E7FF;
+    background-color: $colorLightBlue;
   }
 }
 
@@ -500,9 +510,7 @@
 // .p-top-project
 // -----------------------------------------------------------------*/
 
-.p-top-project {
-  margin-bottom: 100px;
-}
+.p-top-project { margin-bottom: 100px; }
 
 /*
   .p-top-project__heading
@@ -513,18 +521,16 @@
 
   &::before {
     left: 0;
-    background-color: #07E7FF;
+    background-color: $colorLightBlue;
   }
 
   &::after {
     right: 0;
-    background-color: #FF6363;
+    background-color: $colorLightRed;
   }
 }
 
-.p-top-project__heading--bold {
-  font-weight: bold;
-}
+.p-top-project__heading--bold { font-weight: bold; }
 
 .p-top-project__subTitle {
   margin-bottom: 150px;
@@ -553,8 +559,7 @@
 .p-top-project__listItem__margin {
   margin-right: 10px;
   outline: none;
-  border: 1px solid hsla(43, 0, 62, 1);
-
+  border: 1px solid #9e9e9e;
   @include mq('u-smSp') {
     margin-right: 0;
   }
@@ -566,9 +571,7 @@
   background-color: rgba($colorGray, .1);
 }
 
-.p-top-project__listItem__feature {
-  margin-bottom: 20px;
-}
+.p-top-project__listItem__feature { margin-bottom: 20px; }
 
 .p-top-project__listItem__feature > div {
   display: flex;
@@ -580,9 +583,7 @@
 /*
   .p-top-project__list__income
 -----------------------------------------------------------------*/
-.p-top-project__listItem__incomeBlock {
-  padding: 10px;
-}
+.p-top-project__listItem__incomeBlock { padding: 10px; }
 
 .p-top-project__listItem__income__monthly {
   @include projectIcon(money);
@@ -601,8 +602,7 @@
   display: inline-block;
   font-size: 25px;
   font-weight: bold;
-  color: red;
-
+  color: $colorDeepRed;
   @include mq('u-smSp') {
     font-size: 20px;
   }
@@ -638,7 +638,7 @@
 .p-top-project__listItem__working__days--emphasis {
   font-weight: bold;
   font-size: 25px;
-  color: red;
+  color: $colorDeepRed;
   letter-spacing: 5px;
 
   @include mq('u-smSp') {
@@ -693,17 +693,13 @@
 //  p-top-entry
 // -----------------------------------------------------------------*/
 
-.p-top-entry__text {
-  @extend .p-top-aboutService__entryBlock__text;
-}
+.p-top-entry { @extend .p-top-aboutService__entry; }
 
-.p-top-entry__text--line {
-  @extend .p-top-aboutService__entryBlock__text--line;
-}
+.p-top-entry__text { @extend .p-top-aboutService__entryBlock__text; }
 
-.p-top-entry__arrowBlock {
-  overflow: hidden;
-}
+.p-top-entry__text--line { @extend .p-top-aboutService__entryBlock__text--line; }
+
+.p-top-entry__arrowBlock { overflow: hidden; }
 
 /*// -----------------------------------------------------------------
 //  p-top-faq
@@ -714,18 +710,26 @@
 
   &::before {
     left: 0;
-    background-color: #FF6363;
+    background-color: $colorLightRed;
   }
 
   &::after {
     right: 0;
-    background-color: #07E7FF;
+    background-color: $colorLightBlue;
   }
 }
 
 /*
   p-top-faqPC__question
 ---------------------------------------------------- */
+
+.p-top-faq {
+  padding-bottom: 100px;
+
+  @include mq(u-sp) {
+    padding: 0 30px 100px;
+  }
+}
 
 .p-top-faqPC__question {
   display: flex;
@@ -742,19 +746,17 @@
 .p-top-faqPC__questionList {
   width: 30%;
   height: 200px;
-  border: solid 1px black;
+  border: solid 1px $colorBlack;
   border-radius: 20px;
   background-color: #545454;
-  box-shadow: -2px -2px 8px 5px black;
-  color: white;
+  box-shadow: -2px -2px 8px 5px $colorBlack;
+  color: $colorWhite;
   user-select: none; // ダブルクリック時の青色選択無効
   text-align: center;
   padding: 30px;
   position: relative;
 
-  &:not(:nth-last-child(-n+3)) {
-    margin-bottom: 30px;
-  }
+  &:not(:nth-last-child(-n+3)) { margin-bottom: 30px; }
 
   @include mq('o-pc') {
     &:hover {
@@ -768,8 +770,8 @@
 
 // Questionの背景
 .p-top-faqPC__questionList__titleNum {
-  color: white;
   opacity: .2;
+  color: $colorWhite;
   font-size: 100px;
   position: absolute;
   bottom: -20px;
@@ -797,8 +799,8 @@
 .p-top-faqPC__answerList__textBlock {
   width: 60%;
   margin: 0 auto;
-  border: solid 1px black;
-  background: linear-gradient(-60deg, #ec8c8c 2%,white 8%,white 92%,#c4fcfc 98%);
+  border: solid 1px $colorBlack;
+  background: linear-gradient(-60deg, #ec8c8c 2%,$colorWhite 8%,$colorWhite 92%,#c4fcfc 98%);
   padding: 20px;
   border-radius: 10px;
   position: fixed;
@@ -828,14 +830,14 @@
 }
 
 .p-top-faqPC__crossIcon {
-  color: white;
+  color: $colorWhite;
   font-size: 25px;
   position: absolute;
   top: 10px;
   right: 10px;
   height: 40px;
   width: 40px;
-  background-color: black;
+  background-color: $colorBlack;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -856,9 +858,7 @@
   height: 100%;
 }
 
-.nonScroll {
-  overflow: hidden; // モーダル表示時：スクロール×
-}
+.nonScroll { overflow: hidden; } // モーダル表示時：スクロール×
 
 /*
   p-top-faqSP
@@ -884,8 +884,8 @@
 .p-top-faqSP__question {
   @include mq('u-sp') {
     font-size: 20px;
-    background-color: #747474;
-    color: white;
+    background-color: $colorGray;
+    color: $colorWhite;
     padding: 5px 35px;
   }
 }
@@ -911,7 +911,7 @@
 .p-top-faqSP__answer {
   @include mq('u-sp') {
     display: none;
-    background: linear-gradient(-60deg, #ec8c8c 2%,white 8%,white 92%,#c4fcfc 98%);
+    background: linear-gradient(-60deg, #ec8c8c 2%,$colorWhite 8%,$colorWhite 92%,#c4fcfc 98%);
     border-radius: 0 0 30px 30px;
     padding: 20px 30px;
   }
