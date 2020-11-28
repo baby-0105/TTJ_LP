@@ -53,12 +53,21 @@ $(() => {
 
     // ファーストビュー fadeIn&fadeOut
     $('#fluffy_disappear').each(function() {
-      let aboutServicePosi = $(this).offset().top;
+      let aboutServicePosi = $(this).offset().top,
+          windowWidth      = $(window).width(),
+          smWidth          = 768;
 
-      if (startPos+400 < scrollPosi) {
-        $(this).addClass('disappear');
-      } else {
-        $(this).removeClass('disappear');
+      if (windowWidth > 768) {
+        if (startPos+400 < scrollPosi) {
+          $(this).addClass('disappear');
+        } else {
+          $(this).removeClass('disappear');
+        }
+      }else if (windowWidth <= smWidth) {
+        $(this).css({
+          opacity: 1,
+          transform: 'translateY(0)'
+        });
       }
     });
   });
@@ -114,15 +123,34 @@ $(() => {
     dotsClass: 'slide-dots',
     responsive: [
       {
-      breakpoint: 950,
+      breakpoint: 1300,
       settings: {
-          slidesToShow: 2,
+        slidesToShow: 3,
+        centerMode: false,
       }},
       {
-      breakpoint: 768,
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 2,
+      }},
+      {
+      breakpoint: 900,
+      settings: {
+        slidesToShow: 2,
+        centerMode: false,
+      }},
+      {
+      breakpoint: 701,
       settings: {
         slidesToShow: 1,
+      }},
+      {
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 1,
+        centerMode: false,
       }}
     ],
   });
+
 })

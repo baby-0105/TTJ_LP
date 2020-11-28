@@ -3,50 +3,9 @@
 // ==========================================================================*/
 
 .c-top-toProject {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 30px;
-  padding: 2vh 6vw;
-  font-size: 2vw;
-  background-color:rgba(#EEFF00, .4);
-  border-radius: 35px;
-  box-shadow: 0px 7px 3px 0px $colorBlack;
-  letter-spacing: 2px;
-  transition: all 0.5s;
-  white-space: nowrap; // 文字おりかえさない
-  &:hover {
-    transform: scale(1.05);
-    background-color: #EEFF00;
-  }
-  @include mq('u-pc') {
-    font-size: 20px;
-    padding: 10px 50px;
-    // padding: 3vh 10vw;
-  }
-
-  @include mq('u-sp') {
-    font-size: 15px;
-  }
+  @include firstViewBtn(project);
 }
 
 .c-top-toLINE {
-  position: relative;
-  display: inline-block;
-  background-color: rgba(#2DE531, .7);
-  box-shadow: 0px 7px 3px 0px $colorBlack;
-  font-size: 1.5vw;
-  padding: 2vh 4vw;
-  border-radius: 35px;
-  color: $colorWhite;
-  transition: all .5s;
-  white-space: nowrap;
-  cursor: pointer;
-  &:hover {
-    transform: scale(1.05);
-    background-color: rgba(#2DE531, 1);
-  }
-  @include mq('u-sp') {
-    font-size: 15px;
-    padding: 3vh 23vw;
-  }
+  @include firstViewBtn(line);
 }

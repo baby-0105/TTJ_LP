@@ -91,13 +91,13 @@ src/ejs/template/_head %>
     <!-- 案件例 -->
     <div class="p-top-project" id="project">
       <% var projects = [
-      {'unitPrice': '41~65', 'workingDays': 3},
-      {'unitPrice': '41~65', 'workingDays': 3},
-      {'unitPrice': '41~65', 'workingDays': 3},
-      {'unitPrice': '41~65', 'workingDays': 3},
-      {'unitPrice': '41~65', 'workingDays': 3},
-      {'unitPrice': '41~65', 'workingDays': 3},
-      {'unitPrice': '41~65', 'workingDays': 3},
+      {'unitPrice': '41〜65', 'workingDays': 3},
+      {'unitPrice': '41〜65', 'workingDays': 3},
+      {'unitPrice': '41〜65', 'workingDays': 3},
+      {'unitPrice': '41〜65', 'workingDays': 3},
+      {'unitPrice': '41〜65', 'workingDays': 3},
+      {'unitPrice': '41〜65', 'workingDays': 3},
+      {'unitPrice': '41〜65', 'workingDays': 3},
       ]; %>
       <% var developmentEnvironment = ['PHP', 'MySQL', 'JavaScript', 'AWS']; %>
       <h2 class="p-top-project__heading">案件例/比率</h2>
@@ -115,6 +115,7 @@ src/ejs/template/_head %>
 
       <ul class="p-top-project__list slick-slider">
         <% for (var k = 0; k < projects.length; k++) { %>
+          <!-- liタグ要素間の余白をつけずに直下のdivタグで余白をつける -->
         <li class="p-top-project__listItem slick-slide slick-current slick-active" id="fade-in-down<%= k+2 %>">
           <div class="p-top-project__listItem__margin">
             <p class="p-top-project__listItem__about">★週3日PHP案件！有名人も活用するブログサービス運営を支えるエンジニア募集！</p>
@@ -132,7 +133,7 @@ src/ejs/template/_head %>
                 </dd>
               </div>
             </dl>
-            <ul class="p-top-project__listItem__developmentEnironment">
+            <ul class="p-top-project__listItem__developmentEnironment" id="developmentEnironment">
               <% for (var l = 0; l < developmentEnvironment.length; l++) { %>
               <li><%= developmentEnvironment[l] %></li>
               <% } %>

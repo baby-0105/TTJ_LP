@@ -1,7 +1,9 @@
 // breakpoint
+$breakSmallSP: 320; // 小型スマホ縦
 $breakSP: 768;
 $breakPC: 950;
 $breakpoints: (
+  'u-smSp': 'print, screen and (max-width: #{$breakSmallSP}px)',
   'u-sp': 'print, screen and (max-width: #{$breakSP}px)',
   'o-sp': 'print, screen and (min-width: #{$breakSP + 1}px)',
   'u-pc': 'print, screen and (max-width: #{$breakPC}px)',
@@ -38,6 +40,10 @@ $colorWhite: #fff;
   display: inline-block;
   width: 17vw;
   height: 17vw;
+  @include mq(u-sp) {
+    width: 25vw;
+    height: 25vw;
+  }
   border-radius: 50%;
   @if ($pattern=="day") {
     margin-bottom: 50px;
@@ -55,10 +61,51 @@ $colorWhite: #fff;
   }
 }
 
+@mixin firstViewBtn($category) {
+  position: relative;
+  display: inline-block;
+  padding: 2vh 5vw;
+  font-size: 20px;
+  border-radius: 35px;
+  box-shadow: 0px 7px 3px 0px $colorBlack;
+  transition: all 0.5s;
+  white-space: nowrap; // 文字おりかえさない
+  @include mq('u-sp') {
+    font-size: 3vw;
+  }
+  &:hover {transform: scale(1.05);}
+  @if ($category=="project") {
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    background-color:rgba(#EEFF00, .4);
+    &:hover {
+      background-color: #EEFF00;
+    }
+    @include mq('u-sp') {
+      width: 80%;
+      padding: 3vh 0;
+    }
+  }@else {
+    background-color:rgba(#2DE531, .9);
+    &:hover {
+      background-color: #2DE531;
+    }
+    @include mq('u-sp') {
+      width: 100%;
+      padding: 3vh 0;
+    }
+  }
+}
+
 @mixin projectIcon($image) {
   position: relative;
+  display: inline-block;
   margin-right: 15px;
-  font-size: 1.2vw;
+  margin-top: 5px;
+  font-size: 14px;
+  @include mq('u-smSp') {
+    font-size: 13px;
+  }
   &::before {
     position: absolute;
     display: inline-block;
@@ -68,17 +115,43 @@ $colorWhite: #fff;
   }
   @if ($image=="money") {
     &::before {
-      width: 50px;
-      height: 50px;
-      left: -50px;
+      width: 45px;
+      height: 45px;
+      left: -40px;
       background-image: url(#{$bgPath}money.png);
     }
-} @else {
-  &::before {
-    width: 30px;
-    height: 30px;
-    left: -90px;
-    background-image: url(#{$bgPath}calendar_1.png);
+    @include mq('u-sp') {
+      &::before {
+        top: -1px;
+        left: -20px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  @else {
+    left: -8px;
+    &::before {
+      width: 30px;
+      height: 30px;
+      left: -48px;
+      background-image: url(#{$bgPath}calendar_1.png);
+    }
+    @include mq('u-sp') {
+      &::before {
+        top: -1px;
+        left: -28px;
+        width: 22px;
+        height: 22px;
+      }
+    }
   }
 }
-}
+
+  // お仕事の流れ 文字 段々大きく ← 要修正！！
+  @for $i from 1 to 8 {
+    .p-top-flowUpToWork__list:nth-child(#{$i}) > .p-top-flowUpToWork__list__txt {
+      font-size: 15+$i+'px';
+    }
+  }
