@@ -11,6 +11,8 @@
   align-items: center;
   padding: 100px 0;
   background: url(#{$bgPath}many_people.jpg) no-repeat center/cover;
+  background-attachment: fixed;
+  // background: linear-gradient(25deg, rgba(#FC9D9D, 0.4), rgba(#C5E99B, 0.4)) ,url(#{$bgPath}sea_morudibu.jpg) no-repeat center/cover;
   @include mq('u-pc') {
     padding-left: 0;
     flex-direction: column;

@@ -72,6 +72,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  @include mq(u-sp) {
+    width: 90%;
+  }
 }
 
 .disappear {
@@ -320,8 +324,29 @@
   // width: 80%;
   margin: 0 auto 100px auto;
   @include mq(u-sp) {
+    position: relative;
     flex-direction: column;
     align-items: center;
+    width: 70%;
+    background-color: $colorBlack;
+    &:before, &:after {
+      position: absolute;
+      display: block;
+      border-style: solid;
+      content: '';
+    }
+    &::before {
+      top: 0;
+      left: 0;
+      border-width: 360px 100px 0 0;
+      border-color: $colorWhite transparent transparent transparent;
+    }
+    &::after {
+      top: 0;
+      right: 0;
+      border-width: 360px 0 0 100px;
+      border-color: $colorWhite transparent transparent transparent;
+    }
   }
 }
 
@@ -337,8 +362,7 @@
     width: 50%;
     height: 2%;
     color: $colorWhite;
-    transform: skewX(-15deg);
-    background-color: #07E7FF;
+    // background-color: #000;
   }
   &:nth-last-child(n+2) {
     position: relative;
@@ -370,19 +394,6 @@
         border-width: 10px 0 10px 20px;
         content: '';
       }
-      @include mq(u-sp) {
-        position: absolute;
-        display: block;
-        bottom: -20px;
-        right: 40%;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-color: transparent transparent transparent #07E7FF;
-        border-width: 0 10px 20px 10px;
-        content: '';
-      transform: skewX(25deg);
-      }
     }
   }
 }
@@ -403,7 +414,6 @@
   @include mq(u-sp) {
     font-size: 2.5vw;
     height: initial;
-    transform: skewX(15deg);
   }
 }
 
@@ -422,13 +432,22 @@
   width: 100%;
   margin: 0 auto;
   @include mq(u-sp) {
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-bottom: 20px;
   }
 }
 
 .p-top-pieItem {
   margin-bottom: 100px;
+  @include mq(u-sp) {
+    width: 50%;
+  }
+  &:first-child { // ピラミッド型にするため1つ目の要素をほんの少し大きく
+    @include mq(u-sp) {
+      width: 51%;
+    }
+  }
 }
 
 .p-top-pieItem__category {
@@ -436,6 +455,9 @@
   font-size: 25px;
   opacity: .6;
   margin-bottom: 10px;
+  @include mq(u-sp) {
+    font-size: 20px;
+  }
 }
 
 .p-top-pieItem__image {
@@ -485,10 +507,10 @@
 ---------------------------------------------------- */
 
 .p-top-project__list {
-  // width: 80%;
+  width: 80%;
   margin: 0 auto;
   @include mq(u-sp) {
-    width: 70%;
+    width: 90%;
     flex-direction: column;
     align-items: center;
   }
@@ -500,18 +522,20 @@
 .p-top-project__listItem__margin {
   margin-right: 10px;
   outline: none;
-  border: 1px solid;
+  border: 1px solid hsla(43, 0, 62, 1);
+  @include mq('u-smSp') {
+    margin-right: 0;
+  }
 }
 
 .p-top-project__listItem__about {
   padding: 40px;
-  font-size: 1.2vw;
   letter-spacing: 3px;
   background-color: rgba($colorGray, .1);
 }
 
 .p-top-project__listItem__feature {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .p-top-project__listItem__feature > div {
@@ -530,11 +554,24 @@
 
 .p-top-project__listItem__income__monthly {
   @include projectIcon(money);
+  text-indent: 10px;
+}
+
+.p-top-project__listItem__income__price {
+  letter-spacing: 3px;
+  @include mq('u-smSp') {
+    font-size: 13px;
+  }
 }
 
 .p-top-project__listItem__income__price--emphasis {
+  display: inline-block;
   font-size: 25px;
   font-weight: bold;
+  color: red;
+  @include mq('u-smSp') {
+    font-size: 20px;
+  }
 }
 
 /*
@@ -549,38 +586,63 @@
 
 .p-top-project__listItem__working__week {
   @include projectIcon(calender);
-  text-align: center;
-  text-indent: -70px;
+  margin-left: -37px;
+  @include mq('u-smSp') {
+    margin-left: -28px;
+  }
 }
 
 .p-top-project__listItem__working__days {
-  text-indent: -20px;
+  letter-spacing: 3px;
+  @include mq('u-smSp') {
+    font-size: 13px;
+  }
 }
 
 .p-top-project__listItem__working__days--emphasis {
   font-weight: bold;
   font-size: 25px;
+  color: red;
+  letter-spacing: 5px;
+  @include mq('u-smSp') {
+    font-size: 20px;
+  }
 }
 
 .p-top-project__listItem__developmentEnironment {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
+  padding: 0 4px;
 }
 
 .p-top-project__listItem__developmentEnironment > li {
-  width: 90px;
-  height: 25px;
+  padding: 5px 10px;
+  font-size: 13px;
   text-align: center;
-  background-color: $colorWhite;
   border: 1px solid;
-  border-radius: 20px;
-  &:first-child {
-    margin-bottom: 5px;
-  }
-
+  border-radius: 14px;
+  background-color: $colorWhite;
+  line-height: 14px;
   &:nth-last-child(n+2) {
     margin-right: 5px;
+  }
+  @include mq(u-sp) {
+    font-size: 11px;
+  }
+  @include mq('u-smSp') {
+    width: calc(100% / 2 - 30px);
+    &:nth-child(n+3) {
+      margin-top: 10px;
+    }
+    &:nth-last-child(n+2) {
+      margin-right: 0;
+    }
+    &:nth-child(odd) {
+      margin-right: 5px;
+    }
   }
 }
 
