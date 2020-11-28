@@ -143,6 +143,12 @@
   position: relative; // 画像の重なりの関係で追加
   height: 50%;
   transform: scale(0);
+  filter: drop-shadow(10px 10px 10px rgba(0,0,0,1.0)); // オブジェクトの形に沿って影
+
+  @include mq(u-pc) { // スマホ・タブではフェードインなし
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 // 付加クラス： イラスト出現
@@ -180,8 +186,10 @@
     margin-bottom: 0;
   }
 
-  @include mq(u-sp) {
+  @include mq(u-pc) { // スマホ・タブではフェードインなし
+    top: 0;
     margin-bottom: 50px;
+    opacity: 1;
   }
 }
 
@@ -206,107 +214,6 @@
   }
 }
 
-.p-top-aboutService__entryArrowBlock {
-  width: 200px;
-
-  @include mq(u-sp) {
-    width: 10px;
-    height: 100px;
-    margin-bottom: 50px;
-  }
-}
-
-// LINEへ：のびる矢印
-.p-top-aboutService__entryArrow {
-  opacity: 0;
-  width: 1px;
-  height: 10px;
-  background-color: black;
-  display: block;
-  position: relative;
-  top: 50%;
-  left: 0;
-  transition: 1.5s;
-
-  @mixin arrowWing {
-    content: '';
-    background-color: black;
-    display: block;
-    position: absolute;
-    transition: 1s;
-  }
-
-  @mixin arrowWingPC($transform, $direction) {
-    @include arrowWing;
-
-    width: 30%;
-    height: 10px;
-    right: 0;
-    transform: $transform;
-    transform-origin: $direction;
-  }
-
-  @mixin arrowWingSP($transform, $direction) {
-    @include arrowWing;
-
-    width: 10px;
-    height: 30%;
-    bottom: 0;
-    transform: $transform;
-    transform-origin: $direction;
-  }
-
-  &:before {
-    @include arrowWingPC($transform: rotate(-45deg) scale(0), $direction: bottom right);
-  }
-
-  &:after {
-    @include arrowWingPC($transform: rotate(45deg) scale(0), $direction: top right);
-  }
-
-  @include mq(u-sp) {
-    width: 10px;
-    height: 1px;
-    top: 0;
-
-    &:before {
-      @include arrowWingSP($transform: rotate(-45deg) scale(0), $direction: bottom left);
-      width: 10px;
-      height: 30%;
-      bottom: 0;
-    }
-
-    &:after {
-      @include arrowWingSP($transform: rotate(45deg) scale(0), $direction: bottom right);
-      width: 10px;
-      height: 30%;
-      bottom: 0;
-    }
-  }
-}
-
-.extendArrow1 {
-  opacity: 1;
-  width: 100%;
-
-  @include mq(u-sp) {
-    width: 10px;
-    height: 100%;
-  }
-}
-
-.extendArrow2 {
-  &:before  {
-    opacity: 1;
-    transform: rotate(-45deg) scale(1);
-  }
-
-  &:after  {
-    opacity: 1;
-    transform: rotate(45deg) scale(1);
-  }
-}
-
 .p-top-aboutService__entryBlock__text {
   font-size: 20px;
 
@@ -320,6 +227,41 @@
   text-shadow: 2px 4px 7px #0DB53C;
   font-size: 100px;
   font-weight: 900;
+}
+
+.p-top-aboutService__entryArrowBlock {
+  width: 200px;
+  overflow: hidden;
+
+  @include mq(u-sp) {
+    margin-bottom: 30px;
+  }
+}
+
+.fa-angle-right {
+  font-size: 100px;
+  position: relative;
+  right: 200px;
+  transition: 0.5s;
+
+  &:nth-of-type(2) {
+    color: gray;
+  }
+
+  @include mq(u-sp) {
+    transform: rotate(90deg);
+    letter-spacing: 10px;
+    right: 0;
+    bottom: 200px;
+  }
+}
+
+.arrowMoveToRight {
+  right: 0;
+
+  @include mq(u-sp) {
+    bottom: 0;
+  }
 }
 
 /*// -----------------------------------------------------------------
@@ -705,6 +647,22 @@
 }
 
 /*// -----------------------------------------------------------------
+//  p-top-entry
+// -----------------------------------------------------------------*/
+
+.p-top-entry__text {
+  @extend .p-top-aboutService__entryBlock__text;
+}
+
+.p-top-entry__text--line {
+  @extend .p-top-aboutService__entryBlock__text--line;
+}
+
+.p-top-entry__arrowBlock {
+  overflow: hidden;
+}
+
+/*// -----------------------------------------------------------------
 //  p-top-faq
 // -----------------------------------------------------------------*/
 
@@ -744,6 +702,7 @@
   border: solid 1px black;
   border-radius: 20px;
   background-color: #545454;
+  box-shadow: -2px -2px 8px 5px black;
   color: white;
   user-select: none; // ダブルクリック時の青色選択無効
   text-align: center;
@@ -751,14 +710,17 @@
   position: relative;
 
   &:not(:nth-last-child(-n+3)) {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
-  &:hover {
-    .p-top-faqPC__questionList__titleNum {
-      transform: rotateY(-360deg);
+  @include mq(o-pc) {
+    &:hover {
+      .p-top-faqPC__questionList__titleNum {
+        transform: rotateY(-360deg);
+      }
     }
   }
+
 }
 
 // Questionの背景
@@ -774,6 +736,10 @@
 
 .p-top-faqPC__questionList__title {
   font-size: 20px;
+
+  @include mq(u-pc) {
+    font-size: 18px;
+  }
 }
 
 /*
@@ -845,10 +811,6 @@
   background: rgba(51, 51, 51, 0.8);
   width: 100%;
   height: 100%;
-}
-
-.show {
-  display: block;
 }
 
 .nonScroll {

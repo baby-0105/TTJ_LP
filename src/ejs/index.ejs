@@ -16,7 +16,7 @@ src/ejs/template/_head %>
           <h3 class="p-top-heading__catchPhrase">希望案件<br>マッチ率<span class="p-top-heading__catchPhrase--bold"> 97 </span>％</h3>
         </div>
         <div class="p-top-heading__vertical u-hidden-sp">
-          <a class="c-top-toProject" id="toProject" href="#">案件を見てみる！！</a>
+          <a class="c-top-toProject" id="toProjectSP" href="#">案件を見てみる！！</a>
           <a class="c-top-toLINE" href="#">LINE公式アカウントを登録する</a>
         </div>
         <div class="p-top-heading__circle--day">
@@ -24,7 +24,7 @@ src/ejs/template/_head %>
         </div>
       </div><!-- /.p-top-heading__horizontal -->
       <div class="p-top-heading__vertical u-hidden-pc">
-        <a class="c-top-toProject" id="toProject" href="#">案件を見てみる！！</a>
+        <a class="c-top-toProject" id="toProjectPC" href="#">案件を見てみる！！</a>
         <a class="c-top-toLINE" id="" href="#">LINE公式アカウントを登録する</a>
       </div>
     </div><!-- /.p-top-heading__block -->
@@ -58,8 +58,10 @@ src/ejs/template/_head %>
       <p class="p-top-aboutService__entryBlock__text">
         まずはお気軽に、<br> <span class="p-top-aboutService__entryBlock__text--line">LINE</span><br>にてご登録下さい！
       </p>
-      <div class="p-top-aboutService__entryArrowBlock">
-        <span class="p-top-aboutService__entryArrow" id="aboutServiceEntryArrow"></span>
+      <div class="p-top-aboutService__entryArrowBlock" id="aboutServiceEntryArrow">
+        <i class="fas fa-angle-right aboutServiceEntryArrow"></i>
+        <i class="fas fa-angle-right aboutServiceEntryArrow"></i>
+        <i class="fas fa-angle-right aboutServiceEntryArrow"></i>
       </div>
       <a class="c-top-toLINE" href="#">LINE公式アカウントを登録する</a>
     </div>
@@ -144,27 +146,39 @@ src/ejs/template/_head %>
       </ul>
     </div><!-- /.p-top-project -->
 
+  <div class="l-top-entry">
+    <p class="p-top-entry__text">
+      まずはお気軽に、<br> <span class="p-top-entry__text--line">LINE</span><br>にてご登録下さい！
+    </p>
+    <div class="p-top-entry__arrowBlock" id="entryArrow">
+      <i class="fas fa-angle-right entryArrow"></i>
+      <i class="fas fa-angle-right entryArrow"></i>
+      <i class="fas fa-angle-right entryArrow"></i>
+    </div>
+    <a class="c-top-toLINE" href="#">LINE公式アカウントを登録する</a>
+  </div>
+
   <div class="l-top-faq">
     <h1 class="p-top-faq__title">FAQ</h1>
     <% var question = [
       'フリーランスエージェントとはどういうサービスですか？', 'TTJのサービス利用料金は発生しますか？', '自分のスキルに見合った案件へ就けますか？', '実務未経験ですが案件紹介は可能でしょうか？',
-      'TTJのマージン率はどのぐらいですか？', 'フリーランスとして初めての案件となりますがTTJでどこまでサポートしてくれますか？', 'TTJでは現案件から次回案件へ以降の際、期間を開けず就業することは可能でしょうか？',
-      '案件の期間はどのぐらいでしょうか？', '案件先は東京のみでしょうか？', '月の労働時間はどのぐらいでしょうか？', '他のエージェントでは常駐案件が多いと聞きましたがTTJも同じでしょうか？',
+      'TTJのマージン率はどのぐらいですか？', 'フリーランスとして初めての案件となりますがTTJでどこまでサポートしてくれますか？', 'TTJでは現案件から次回案件へ移行の際、期間を開けず就業することは可能でしょうか？',
+      '案件の期間はどのぐらいでしょうか？', '案件先は東京のみでしょうか？', 'フルタイム以外の案件もありますか？', '他のエージェントでは常駐案件が多いと聞きましたがTTJも同じでしょうか？',
       '登録にするにあたり、何か用意するものなどありますでしょうか？'
     ]; %>
     <% var answer = [
       'フリーランスエンジニアへ案件をご紹介し、契約手続きや条件の交渉等行うサービスです。わかりやすく言うとエンジニアの営業代行業務になります。',
       'いいえ、ご利用料金は完全無料となります。',
       'はい、LINEにて登録後、弊社営業担当より細かなヒアリングを行いしっかりニーズにマッチした案件をご紹介いたします。',
-      '未経験でも案件紹介はできる可能性はありますが単価等、スキル見合いになりますので100%ニーズにマッチできるかはご相談させていただければと思います。',
+      'はい、未経験でも案件紹介は可能ですが経験者の方に比べ案件の幅には制限がございます。',
       '案件の単価にもよりますが15%〜20%ほどです。ちなみに業界の相場としては20%〜25%ほどが一般的です。',
       '案件の提案から業務開始まではもちろん、クライアント様との商談の仕方等ノウハウも含めサポート致します。',
       'はい、可能です。TTJではエンジニア1人1人に担当がつきますので案件終了期間が近づきましたら担当より次回案件についてご相談致します。',
-      '案件ごとに変わりますが3~6ヶ月での更新が一般的となります。エンジニア、クライアント様より双方認識(ニーズ)が合えば延長することも可能です。ちなみに弊社の案件更新率は90%以上となります。',
-      'いいえ、やはり東京が多いのは事実ですが、TTJでは全国にクライアント様がおりますので地方常駐案件も多数ございます。現在はリモートの案件も増えてきておりますので場所に拘らない案件紹介も可能となります。',
-      'エンジニアのニーズやクライアント様ごとに変わりますが、できる限り双方のニーズに合致する案件紹介を致します。基準としては1日8h程度の業務が一般的です。',
+      '案件ごとに変わりますが1〜3ヶ月での更新が一般的となります。エンジニア、クライアント様より双方認識(ニーズ)が合えば延長することも可能です。ちなみに弊社の案件更新率は90%以上となります。',
+      'いいえ、やはり東京23区内が多いのは事実ですが、TTJでは全国にクライアント様がおりますので地方案件も多数ございます。まずはお気軽にお問い合わせください。',
+      '当社では一般的な140h〜180h時間稼働の案件だけではなく、週2、3日の案件もご紹介致します。',
       'やはり割合として常駐案件が多いですがコロナ禍の影響もありリモートワーク案件も急増しております。まずは一度お気軽にご相談下さい。',
-      '登録の際には特にございません。ヒアリングや提案の際に何が必要かは山口さんに確認'
+      '登録の際には特にございません。弊社担当との打ち合わせの際にはスキルシート、職務経歴書をご用意いただけるとご案内がスムーズです。もしお持ちでない場合は、テンプレートをご用意致しますのでお申し付けください。'
     ]; %>
 
     <!-- p-top-faqPCブロック：slide用 -->

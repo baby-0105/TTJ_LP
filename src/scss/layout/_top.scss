@@ -25,16 +25,17 @@
 .l-top-aboutService {
   color: black;
   padding: 100px;
-  background: linear-gradient(180deg,#ecccac,#e4e4e4 10% 90%,#fff);
+  background: linear-gradient(180deg,#141414,#e4e4e4 3% 90%,#fff);
 
   @include mq(u-pc) {
     padding: 60px 20px;
   }
 }
 
-.l-top-request {
-  background: linear-gradient(to bottom,#e4e4e4 90%, white);
-  padding: 50px 0;
+.l-top-entry {
+  // background: linear-gradient(to bottom, white, #ffc778 20% 80%, white);
+
+  @extend .p-top-aboutService__entry;
 }
 
 .l-top-faq {

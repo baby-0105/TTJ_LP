@@ -17,37 +17,53 @@ $(() => {
         scrollPosi    = $(this).scrollTop(),
         $aboutServiceText = $('.p-top-aboutService__text');
 
-    $('#aboutService').each(function() {
-      let aboutServicePosi = $(this).offset().top;
+    // ウィンドウサイズが 769px以上の場合に有効にしたい処理
+    if (window.matchMedia( "(min-width: 769px)" ).matches) {
+      $('#aboutService').each(function() {
+        let aboutServicePosi = $(this).offset().top;
 
-      if (scrollPosi > aboutServicePosi - windowHeight + 400) {
-        for(let i=0; i<$aboutServiceText.length; i++) {
-          let delayTime = ['0', '500', '1000', '1500'];
+        if (scrollPosi > aboutServicePosi - windowHeight + 400) {
+          for(let i=0; i<$aboutServiceText.length; i++) {
+            let delayTime = ['0', '500', '1000', '1500'];
 
-          $(`#aboutServiceText${i+1}`).delay(delayTime[i]).queue(function() {
+            $(`#aboutServiceText${i+1}`).delay(delayTime[i]).queue(function() {
 
-            $(this).addClass('textVisible');
-          })
+              $(this).addClass('textVisible');
+            })
+          }
         }
-      }
-    });
+      });
 
-    $('#aboutServiceImg').each(function() {
-      let aboutServiceImgPosi = $(this).offset().top;
+      $('#aboutServiceImg').each(function() {
+        let aboutServiceImgPosi = $(this).offset().top;
 
-      if (scrollPosi > aboutServiceImgPosi - windowHeight + 300) {
-        $(this).addClass('moveAboutServiceImg');
-      }
-    });
+        if (scrollPosi > aboutServiceImgPosi - windowHeight + 300) {
+          $(this).addClass('moveAboutServiceImg');
+        }
+      });
+    }
 
     $('#aboutServiceEntryArrow').each(function() {
-      let aboutServiceEntryBlockPosi = $(this).offset().top;
+      let aboutServiceEntryPosi = $(this).offset().top,
+          aboutServiceEntryHeight = $(this).height();
 
-      if (scrollPosi > aboutServiceEntryBlockPosi - windowHeight + 150) {
-        $(this).addClass('extendArrow1');
-        $(this).delay(1200).queue(function() {
-          $(this).addClass('extendArrow2');
-        })
+      if(scrollPosi > aboutServiceEntryPosi - windowHeight + 100 &&
+      scrollPosi < aboutServiceEntryPosi + aboutServiceEntryHeight - (aboutServiceEntryHeight / 2) - 100){
+        $('.aboutServiceEntryArrow').addClass('arrowMoveToRight');
+      } else {
+        $('.aboutServiceEntryArrow').removeClass('arrowMoveToRight');
+      }
+    });
+
+    $('#entryArrow').each(function() {
+      let entryArrowPosi = $(this).offset().top,
+      entryArrowHeight = $(this).height();
+
+      if(scrollPosi > entryArrowPosi - windowHeight + 100 &&
+      scrollPosi < entryArrowPosi + entryArrowHeight - (entryArrowHeight / 2) - 100){
+        $('.entryArrow').addClass('arrowMoveToRight');
+      } else {
+        $('.entryArrow').removeClass('arrowMoveToRight');
       }
     });
 
@@ -73,29 +89,30 @@ $(() => {
   });
 
   // 「案件を見るボタン」：クリックイベント
-  $('#toProject').on('click', function() {
+  $('#toProjectSP').on('click', function() {
+    $bodyAndHtml.animate({scrollTop: $('#project').offset().top}, 'swing');
+  });
+
+  $('#toProjectPC').on('click', function() {
     $bodyAndHtml.animate({scrollTop: $('#project').offset().top}, 'swing');
   });
 
   // FAQ：モーダル（PC用）
-  let $faqList = $('.p-top-faqSP__list');
+  let $faqList = $('.p-top-faqPC__answerList');
 
   for (let i=0; i < $faqList.length; i++) {
-    $(document).on('click', function(e) {
-      let $faqPCAnswer = $(`#faqPCAnswer${i+1}`),
-          $body = $('body');
+    let $faqPCAnswer = $(`#faqPCAnswer${i+1}`),
+        $body = $('body');
 
-      if($(e.target).is(`#faqPCQuestionList${i+1}`) || $(e.target).is(`#faqPCTitleQuestion${i+1}`)
-      || $(e.target).is(`#faqPCTitleNum${i+1}`)) { // ※リファクタリングの余地あり
-        $body.addClass('nonScroll');
-        $faqPCAnswer.toggleClass('show');
-        // $('#faqPCAnswer').fadeIn();
-      } else if($faqPCAnswer.hasClass('show') && $(e.target).is('*')) {
-        $body.removeClass('nonScroll');
-        $faqPCAnswer.removeClass('show');
-        // $('#faqPCAnswer').fadeOut();
-      }
-    });
+    $(`#faqPCQuestionList${i+1}`).on('click', function() {
+      $faqPCAnswer.fadeIn();
+      $body.addClass('nonScroll');
+    })
+
+    $(`#faqPCAnswer${i+1}, #footer`).on('click', function() {
+      $faqPCAnswer.fadeOut();
+      $body.removeClass('nonScroll');
+    })
   }
 
   // FAQ：アコーディオン（スマホ用）
