@@ -54,15 +54,16 @@
       transform: skewX(-30deg) scale(1, 1);
     }
 
-    .c-top-aboutService__lineIcon {
+    .c-btn-lineIcon {
       color: $colorWhite;
     }
   }
 }
 
-.c-top-aboutService__lineIcon {
+.c-btn-lineIcon {
   width: 50px;
   height: 50px;
+  object-fit: contain;
   padding-right: 10px;
   color: $colorGreen;
   transform: skew(10deg);
