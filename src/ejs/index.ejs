@@ -5,7 +5,7 @@ src/ejs/template/_head %>
 <% include src/ejs/template/_header %>
 
 <main class="l-main">
-  <div class="p-top-heading">
+  <div class="p-top-heading" id="visility">
     <div class="p-top-heading__block" id="fluffy_disappear">
       <div class="p-top-heading__circle--LINE">
         <h3 class="p-top-heading__catchPhrase"><span class="p-top-heading__catchPhrase--bold">LINE</span>で<br>簡単登録</h3>
@@ -13,7 +13,7 @@ src/ejs/template/_head %>
       <img src="<%= imgPath %>trust.png" class="p-top-heading__titleImg" alt="トラストのロゴ">
       <div class="p-top-heading__horizontal">
         <div class="p-top-heading__circle--match">
-          <h3 class="p-top-heading__catchPhrase">希望案件<br>マッチ率<span class="p-top-heading__catchPhrase--bold"> 97 </span>％</h3>
+          <h3 class="p-top-heading__catchPhrase">希望案件<br>マッチ率<span class="p-top-heading__catchPhrase--bold">97</span>％</h3>
         </div>
         <div class="p-top-heading__vertical u-hidden-sp">
           <a class="c-top-toProject" id="toProjectSP" href="#">案件を見てみる！！</a>
@@ -23,7 +23,7 @@ src/ejs/template/_head %>
           </a>
         </div>
         <div class="p-top-heading__circle--day">
-          <h3 class="p-top-heading__catchPhrase">最短<span class="p-top-heading__catchPhrase--bold"> 2 </span>日で<br>業務開始 !</h3>
+          <h3 class="p-top-heading__catchPhrase">最短<span class="p-top-heading__catchPhrase--bold">2</span>日で<br>業務開始 !</h3>
         </div>
       </div><!-- /.p-top-heading__horizontal -->
       <div class="p-top-heading__vertical u-hidden-pc">
@@ -109,18 +109,18 @@ src/ejs/template/_head %>
     <!-- 案件例 -->
     <div class="p-top-project" id="project">
       <% var projects = [
-      {'unitPrice': '3.5〜5', 'workingDays': 3},
-      {'unitPrice': '3.5〜5', 'workingDays': 3},
-      {'unitPrice': '5', 'workingDays': 4},
-      {'unitPrice': '4', 'workingDays': 5},
-      {'unitPrice': '4', 'workingDays': 5},
+      {'unitPrice': '40', 'workingDays': 3},
+      {'unitPrice': '40', 'workingDays': 3},
+      {'unitPrice': '64', 'workingDays': 4},
+      {'unitPrice': '80', 'workingDays': 5},
+      {'unitPrice': '80', 'workingDays': 5},
       ]; %>
       <% var developmentEnvironment = ['PHP', 'MySQL', 'JavaScript', 'AWS']; %>
       <h2 class="p-top-project__heading">見つかる！希望案件</h2>
 
       <!-- 円グラフ -->
       <ul class="p-top-pieList">
-        <% var category = ['月収', '開発内容', '開発言語']; %>
+        <% var category = ['単価', '開発内容', '開発言語']; %>
         <% for (var m = 0; m < category.length; m++) { %>
         <li class="p-top-pieItem">
           <h2 class="p-top-pieItem__category"><%= category[m] %></h2>
