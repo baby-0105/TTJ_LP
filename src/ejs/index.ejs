@@ -17,8 +17,8 @@ src/ejs/template/_head %>
         </div>
         <div class="p-top-heading__vertical u-hidden-sp">
           <a class="c-top-toProject" id="toProjectSP" href="#">案件を見てみる！！</a>
-          <a class="c-btn-square__toLINE" href="#">
-            <img src="<%= imgPath %>LINE_APP.png" class="c-top-aboutService__lineIcon" alt="LINEのロゴ">
+          <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
+            <img src="<%= imgPath %>LINE_APP.png" class="c-btn-lineIcon" alt="LINEのロゴ">
             LINE公式アカウントを登録する
           </a>
         </div>
@@ -28,8 +28,8 @@ src/ejs/template/_head %>
       </div><!-- /.p-top-heading__horizontal -->
       <div class="p-top-heading__vertical u-hidden-pc">
         <a class="c-top-toProject" id="toProjectPC" href="#">案件を見てみる！！</a>
-        <a class="c-btn-square__toLINE" href="#">
-          <img src="<%= imgPath %>LINE_APP.png" class="c-top-aboutService__lineIcon" alt="LINEのロゴ">
+        <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
+          <img src="<%= imgPath %>LINE_APP.png" class="c-btn-lineIcon" alt="LINEのロゴ">
           LINE公式アカウントを登録する
         </a>
       </div>
@@ -67,12 +67,12 @@ src/ejs/template/_head %>
         まずはお気軽に、<br> <span class="p-top-aboutService__entryBlock__text--line">LINE</span><br>にてご登録下さい！
       </p>
       <div class="p-top-aboutService__entryArrowBlock" id="aboutServiceEntryArrow">
-        <i class="fas fa-angle-right aboutServiceEntryArrow"></i>
-        <i class="fas fa-angle-right aboutServiceEntryArrow"></i>
-        <i class="fas fa-angle-right aboutServiceEntryArrow"></i>
+        <% for (var i=0; i<3; i++) { %>
+          <i class="fas fa-angle-right aboutServiceEntryArrow"></i>
+        <% } %>
       </div>
-      <a class="c-btn-square__toLINE" href="#">
-        <img src="<%= imgPath %>LINE_APP.png" class="c-top-aboutService__lineIcon" alt="LINEのロゴ">
+      <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
+        <img src="<%= imgPath %>LINE_APP.png" class="c-btn-lineIcon" alt="LINEのロゴ">
         LINE公式アカウントを登録する
       </a>
     </div>
@@ -228,12 +228,12 @@ src/ejs/template/_head %>
       まずはお気軽に、<br> <span class="p-top-entry__text--line">LINE</span><br>にてご登録下さい！
     </p>
     <div class="p-top-entry__arrowBlock" id="entryArrow">
-      <i class="fas fa-angle-right entryArrow"></i>
-      <i class="fas fa-angle-right entryArrow"></i>
-      <i class="fas fa-angle-right entryArrow"></i>
+      <% for (var i=0; i<3; i++) { %>
+        <i class="fas fa-angle-right entryArrow"></i>
+      <% } %>
     </div>
-    <a class="c-btn-square__toLINE" href="#">
-      <img src="<%= imgPath %>LINE_APP.png" class="c-top-aboutService__lineIcon" alt="LINEのロゴ">
+    <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
+      <img src="<%= imgPath %>LINE_APP.png" class="c-btn-lineIcon" alt="LINEのロゴ">
       LINE公式アカウントを登録する
     </a>
   </div>
