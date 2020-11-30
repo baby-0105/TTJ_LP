@@ -17,7 +17,7 @@ src/ejs/template/_head %>
         </div>
         <div class="p-top-heading__vertical u-hidden-sp">
           <a class="c-top-toProject" id="toProjectSP" href="#">案件を見てみる！！</a>
-          <a class="c-top-toLINE" href="#">LINE公式アカウントを登録する</a>
+          <a class="c-top-toLINE" href="#">LINE公式アカウント登録</a>
         </div>
         <div class="p-top-heading__circle--day">
           <h3 class="p-top-heading__catchPhrase">最短<span class="p-top-heading__catchPhrase--bold"> 2 </span>日で<br>業務開始 !</h3>
@@ -25,10 +25,10 @@ src/ejs/template/_head %>
       </div><!-- /.p-top-heading__horizontal -->
       <div class="p-top-heading__vertical u-hidden-pc">
         <a class="c-top-toProject" id="toProjectPC" href="#">案件を見てみる！！</a>
-        <a class="c-top-toLINE" id="" href="#">LINE公式アカウントを登録する</a>
-      </div>
+        <a class="c-top-toLINE" id="" href="#">LINE公式アカウントを登録</a>
+      </div><!-- /.p-top-heading__vertical -->
     </div><!-- /.p-top-heading__block -->
-  </div><!-- /.l-top-heading -->
+  </div><!-- /.p-top-heading -->
 
   <div class="p-top-aboutService" id="aboutService">
     <div class="p-top-aboutService__explain">
@@ -72,19 +72,24 @@ src/ejs/template/_head %>
       <h1 class="p-top-flowUpToWork__heading">お仕事までの流れ</h1>
       <ul class="p-top-flowUpToWork__menu">
         <% var flow = [
-          {'flowNum': 'STEP.01', 'flowImage': 'アセット 2 (1).png', 'flowText': '登録'},
-          {'flowNum': 'STEP.02', 'flowImage': 'ttj.job2.png',      'flowText': '担当から連絡'},
-          {'flowNum': 'STEP.03', 'flowImage': 'アセット 2 (1).png', 'flowText': '打ち合わせ'},
-          {'flowNum': 'STEP.04', 'flowImage': 'アセット 2 (1).png', 'flowText': '案件紹介'},
-          {'flowNum': 'STEP.05', 'flowImage': 'アセット 2 (1).png', 'flowText': 'クライアントへ<br>提案'},
-          {'flowNum': 'STEP.06', 'flowImage': 'アセット 2 (1).png', 'flowText': 'エンジニア、<br class="u-hidden-sp">クライアント<br>打ち合わせ'},
-          {'flowNum': 'STEP.07', 'flowImage': 'アセット 2 (1).png', 'flowText': '業務開始'},
+          {'flowNum': '01', 'flowImage': 'ttj.entry.png', 'flowText': '登録'},
+          {'flowNum': '02', 'flowImage': 'ttj.job2.png',      'flowText': '担当から連絡'},
+          {'flowNum': '03', 'flowImage': 'ttj.talk.png', 'flowText': '打ち合わせ'},
+          {'flowNum': '04', 'flowImage': 'ttj.joblist.png', 'flowText': '案件紹介'},
+          {'flowNum': '05', 'flowImage': 'アセット 4.png', 'flowText': 'クライアントへ<br class="u-hidden-sp">提案'},
+          {'flowNum': '06', 'flowImage': 'ttj.talk2.png', 'flowText': 'エンジニア、クライアント打ち合わせ'},
+          {'flowNum': '07', 'flowImage': 'ttj.jobstart.png', 'flowText': '業務開始'},
         ]; %>
         <% for (var i = 0; i < flow.length; i++) { %>
         <li class="p-top-flowUpToWork__list">
-          <p class="p-top-flowUpToWork__list__order u-hidden-sp"><%= flow[i].flowNum %></p>
-          <p class="p-top-flowUpToWork__list__txt"><%- flow[i].flowText %></p>
-          <img class="p-top-flowUpToWork__list__image u-hidden-sp" src="<%= imgPath %><%= flow[i].flowImage %>" alt="仕事の流れ 画像">
+          <dl class="p-top-flowUpToWork__list__inner">
+            <div class="p-top-flowUpToWork__list__order">
+              <dt class="p-top-flowUpToWork__list__order--step">STEP</dt>
+              <dt class="p-top-flowUpToWork__list__order--num"><%= flow[i].flowNum %></dt>
+            </div>
+            <dd class="p-top-flowUpToWork__list__txt"><%- flow[i].flowText %></dd>
+          </dl>
+          <img class="p-top-flowUpToWork__list__image" src="<%= imgPath %><%= flow[i].flowImage %>" alt="仕事の流れ 画像">
         </li>
         <% } %>
       </ul>
@@ -93,16 +98,14 @@ src/ejs/template/_head %>
     <!-- 案件例 -->
     <div class="p-top-project" id="project">
       <% var projects = [
-      {'unitPrice': '41〜65', 'workingDays': 3},
-      {'unitPrice': '41〜65', 'workingDays': 3},
-      {'unitPrice': '41〜65', 'workingDays': 3},
-      {'unitPrice': '41〜65', 'workingDays': 3},
-      {'unitPrice': '41〜65', 'workingDays': 3},
-      {'unitPrice': '41〜65', 'workingDays': 3},
-      {'unitPrice': '41〜65', 'workingDays': 3},
+      {'unitPrice': '3.5〜5', 'workingDays': 3},
+      {'unitPrice': '3.5〜5', 'workingDays': 3},
+      {'unitPrice': '5', 'workingDays': 4},
+      {'unitPrice': '4', 'workingDays': 5},
+      {'unitPrice': '4', 'workingDays': 5},
       ]; %>
       <% var developmentEnvironment = ['PHP', 'MySQL', 'JavaScript', 'AWS']; %>
-      <h2 class="p-top-project__heading">案件例/比率</h2>
+      <h2 class="p-top-project__heading">見つかる！希望案件</h2>
 
       <!-- 円グラフ -->
       <ul class="p-top-pieList">
@@ -119,11 +122,11 @@ src/ejs/template/_head %>
         <% for (var k = 0; k < projects.length; k++) { %>
           <!-- liタグ要素間の余白をつけずに直下のdivタグで余白をつける -->
         <li class="p-top-project__listItem slick-slide slick-current slick-active" id="fade-in-down<%= k+2 %>">
-          <div class="p-top-project__listItem__margin">
+          <div class="p-top-project__listItem__inner">
             <p class="p-top-project__listItem__about">★週3日PHP案件！有名人も活用するブログサービス運営を支えるエンジニア募集！</p>
             <dl class="p-top-project__listItem__feature">
-              <div class="p-top-project__listItem__incomeBlock">
-                <dt class="p-top-project__listItem__income__monthly">月収</dt>
+              <div class="p-top-project__listItem__income">
+                <dt class="p-top-project__listItem__income__monthly">単価</dt>
                 <dd class="p-top-project__listItem__income__price">
                   <span class="p-top-project__listItem__income__price--emphasis"><%= projects[k].unitPrice %></span>万円
                 </dd>
