@@ -83,8 +83,8 @@ $(() => {
           windowWidth      = $(window).width(),
           smWidth          = 768;
 
-      if (windowWidth > 768) {
-        if (startPos+400 < scrollPosi) {
+      if (windowWidth > smWidth) {
+        if (startPos+250 < scrollPosi) {
           $(this).addClass('disappear');
         } else {
           $(this).removeClass('disappear');
@@ -144,7 +144,7 @@ $(() => {
     centerMode: true,
     autoplay: true,
     autoplaySpeed: 4000,
-    // swipe: true,
+    adaptiveHeight: true,
     prevArrow: '<button class="slide-arrow prev"></button>',
     nextArrow: '<button class="slide-arrow next"></button>',
     dotsClass: 'slide-dots',
@@ -170,14 +170,15 @@ $(() => {
       breakpoint: 701,
       settings: {
         slidesToShow: 1,
+        dots: false,
       }},
       {
       breakpoint: 500,
       settings: {
         slidesToShow: 1,
         centerMode: false,
+        dots: false,
       }}
     ],
   });
-
 })
