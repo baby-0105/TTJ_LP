@@ -17,7 +17,10 @@ src/ejs/template/_head %>
         </div>
         <div class="p-top-heading__vertical u-hidden-sp">
           <a class="c-top-toProject" id="toProjectSP" href="#">案件を見てみる！！</a>
-          <a class="c-top-toLINE" href="#">LINE公式アカウント登録</a>
+          <a class="c-btn-square__toLINE" href="#">
+            <img src="<%= imgPath %>LINE_APP.png" class="c-top-aboutService__lineIcon" alt="LINEのロゴ">
+            LINE公式アカウントを登録する
+          </a>
         </div>
         <div class="p-top-heading__circle--day">
           <h3 class="p-top-heading__catchPhrase">最短<span class="p-top-heading__catchPhrase--bold"> 2 </span>日で<br>業務開始 !</h3>
@@ -25,18 +28,24 @@ src/ejs/template/_head %>
       </div><!-- /.p-top-heading__horizontal -->
       <div class="p-top-heading__vertical u-hidden-pc">
         <a class="c-top-toProject" id="toProjectPC" href="#">案件を見てみる！！</a>
-        <a class="c-top-toLINE" id="" href="#">LINE公式アカウントを登録</a>
-      </div><!-- /.p-top-heading__vertical -->
+        <a class="c-btn-square__toLINE" href="#">
+          <img src="<%= imgPath %>LINE_APP.png" class="c-top-aboutService__lineIcon" alt="LINEのロゴ">
+          LINE公式アカウントを登録する
+        </a>
+      </div>
     </div><!-- /.p-top-heading__block -->
   </div><!-- /.p-top-heading -->
 
   <div class="p-top-aboutService" id="aboutService">
+    <h2 class="p-top-aboutService__title">
+      TTJは今まで様々なIT業界の営業に携わってきた<br><span class="p-top-aboutService__text--modifier">フリーランスエンジニア専門のエージェント</span>です。
+    </h2>
     <div class="p-top-aboutService__explain">
       <div class="p-top-aboutService__bgLogo">
         <% var aboutServicebgLogo=['T', 'T', 'J']; %>
         <% var color=['red', 'blue', 'white']; %>
         <% for (var i = 0; i < aboutServicebgLogo.length; i++) { %>
-          <span class="p-top-aboutService__bgLogo__list--<%= color[i] %>"><%= aboutServicebgLogo[i] %></span>
+          <span class="p-top-aboutService__bgLogo__list--<%= color[i] %>" id="bgLogo-<%= color[i] %>"><%= aboutServicebgLogo[i] %></span>
         <% } %>
       </div>
       <div class="p-top-aboutService__imgBlock">
@@ -44,10 +53,9 @@ src/ejs/template/_head %>
       </div>
       <ul class="p-top-aboutService__textBlock">
         <% var aboutServiceText = [
-          'TTJは今まで様々なITビジネスの営業に携わってきた<span class="p-top-aboutService__text--modifier">IT業界の営業スペシャリスト</span>です。',
-          'その中での経験からクライアントとエンジニア、双方のニーズの合致こそがT業界の発展だと考えております。',
-          'TTJではエンジニアのニーズを尊重し<span class="p-top-aboutService__text--modifier">【あなたにマッチする案件】</span>を提案します。',
-          '弊社の営業ノウハウには自信がありますので、<span class="p-top-aboutService__text--modifier">【自走できるエンジニア】</span>へのサポートもお任せ下さい。'
+          '営業に時間をかけたくない、今の現場からステップアップしたい、そもそも単価の相場もわからない…etc',
+          'それぞれのニーズに沿った提案はもちろん、<span class="p-top-aboutService__text--modifier">業務開始までしっかりサポート</span>致します。',
+          'もう案件探しで悩まない<span class="p-top-aboutService__text--modifier">【自走できるエンジニア】</span>へ…!!'
         ]; %>
         <% for (var i = 0; i < aboutServiceText.length; i++) { %>
           <li class="p-top-aboutService__text" id="aboutServiceText<%= i+1 %>"><%- aboutServiceText[i] %></li>
@@ -63,7 +71,10 @@ src/ejs/template/_head %>
         <i class="fas fa-angle-right aboutServiceEntryArrow"></i>
         <i class="fas fa-angle-right aboutServiceEntryArrow"></i>
       </div>
-      <a class="c-top-toLINE" href="#">LINE公式アカウントを登録する</a>
+      <a class="c-btn-square__toLINE" href="#">
+        <img src="<%= imgPath %>LINE_APP.png" class="c-top-aboutService__lineIcon" alt="LINEのロゴ">
+        LINE公式アカウントを登録する
+      </a>
     </div>
   </div>
 
@@ -149,18 +160,6 @@ src/ejs/template/_head %>
       </ul>
     </div><!-- /.p-top-project -->
 
-  <div class="p-top-entry">
-    <p class="p-top-entry__text">
-      まずはお気軽に、<br> <span class="p-top-entry__text--line">LINE</span><br>にてご登録下さい！
-    </p>
-    <div class="p-top-entry__arrowBlock" id="entryArrow">
-      <i class="fas fa-angle-right entryArrow"></i>
-      <i class="fas fa-angle-right entryArrow"></i>
-      <i class="fas fa-angle-right entryArrow"></i>
-    </div>
-    <a class="c-top-toLINE" href="#">LINE公式アカウントを登録する</a>
-  </div>
-
   <div class="p-top-faq">
     <h1 class="p-top-faq__title">FAQ</h1>
     <% var question = [
@@ -222,6 +221,21 @@ src/ejs/template/_head %>
         </li>
       <% } %>
     </ul>
+  </div>
+
+  <div class="p-top-entry">
+    <p class="p-top-entry__text">
+      まずはお気軽に、<br> <span class="p-top-entry__text--line">LINE</span><br>にてご登録下さい！
+    </p>
+    <div class="p-top-entry__arrowBlock" id="entryArrow">
+      <i class="fas fa-angle-right entryArrow"></i>
+      <i class="fas fa-angle-right entryArrow"></i>
+      <i class="fas fa-angle-right entryArrow"></i>
+    </div>
+    <a class="c-btn-square__toLINE" href="#">
+      <img src="<%= imgPath %>LINE_APP.png" class="c-top-aboutService__lineIcon" alt="LINEのロゴ">
+      LINE公式アカウントを登録する
+    </a>
   </div>
 </main>
 <% include src/ejs/template/_footer %>

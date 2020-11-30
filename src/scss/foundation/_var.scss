@@ -36,8 +36,7 @@ $colorLightRed: #FF6363;
 $colorLightBlue: #07E7FF;
 $colorDeepBlue: #2582bb;
 $colorLightGreen: #2EE32F;
-$colorGreen: #2DE531;
-$colorDeepGreen: #0DB53C;
+$colorGreen: #61ba10;
 $colorYellow: #EEFF00;
 $colorOrange: #ffc042;
 
@@ -97,7 +96,7 @@ $colorOrange: #ffc042;
 
   &:hover {transform: scale(1.05);}
 
-  @if ($category=="project") {
+  // @if ($category=="project") {
     margin-bottom: 30px;
     letter-spacing: 2px;
     background-color:rgba($colorYellow, .4);
@@ -109,17 +108,17 @@ $colorOrange: #ffc042;
       width: 80%;
       padding: 3vh 0;
     }
-  }@else {
-    background-color:rgba($colorGreen, .9);
-    &:hover {
-      background-color: $colorGreen;
-    }
+  // }@else {
+  //   background-color: rgba($colorGreen, .9);
+  //   &:hover {
+  //     background-color: $colorGreen;
+  //   }
 
-    @include mq('u-sp') {
-      width: 90%;
-      padding: 3vh 0;
-    }
-  }
+  //   @include mq('u-sp') {
+  //     width: 100%;
+  //     padding: 3vh 0;
+  //   }
+  // }
 }
 
 @mixin projectIcon($image) {

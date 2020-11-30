@@ -1,4 +1,4 @@
-.l-footer {
+.l-footerPC {
   background-color: $colorWhite;
   padding: 30px;
   position: relative;
@@ -11,10 +11,39 @@
     width: 49vw;
     height: 5%;
     content: '';
+  }
 
-    @include mq(u-sp) {
-      width: 45vw;
-    }
+  &::before {
+    left: 0;
+    background-color: $colorLightBlue;
+  }
+
+  &::after {
+    right: 0;
+    background-color: $colorLightRed;
+  }
+
+  @include mq('u-pc') {
+    display: none;
+  }
+}
+
+.l-footerSP {
+  @include mq('o-pc') {
+    display: none;
+  }
+
+  text-align: center;
+  position: relative;
+  padding: 30px;
+
+  &:before, &:after {
+    position: absolute;
+    display: block;
+    top: 0;
+    width: 49vw;
+    height: 5%;
+    content: '';
   }
 
   &::before {

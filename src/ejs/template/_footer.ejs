@@ -1,16 +1,24 @@
 <% var img_path='/assets/images/'; %>
 
-<footer class="l-footer" id="footer">
-  <div class="c-footer-company">
-    <img src="<%= img_path %>trust.png" class="c-footer-company__logo" alt="フッターのロゴ画像">
-    <small class="c-footer-company__copyright">&copy; 2020 Trust Inc. All Rights Reserved.</small>
+<footer class="l-footerPC" id="footer">
+  <div class="c-footerPC-company">
+    <img src="<%= img_path %>trust.png" class="c-footerPC-company__logo" alt="フッターのロゴ画像">
+    <small class="c-footerPC-company__copyright">&copy; 2020 Trust Inc. All Rights Reserved.</small>
   </div>
-  <div class="c-footer-corporate">
-    <a class="c-footer-corporate__link" href="#">
-      <img src="<%= img_path %>trust.png" class="c-footer-corporate__linkImg" alt="footerのコーポレートサイトのイメージ">
+  <div class="c-footerPC-corporate">
+    <a class="c-footerPC-corporate__link" href="#">
+      <img src="<%= img_path %>ttj.banner.png" class="c-footerPC-corporate__linkImg" alt="footerのコーポレートサイトのイメージ">
     </a>
-    <p class="c-footer-corporate__text">トラストコーポレーション</p>
   </div>
+</footer>
+
+<footer  class="l-footerSP" id="footer">
+  <p class="c-footerSP-text">↓詳しい弊社概要は下記をクリック↓</p>
+  <a class="c-footerSP-corporate__link" href="#">
+    <img src="<%= img_path %>ttj.banner.png" class="c-footerSP-corporate__linkImg" alt="footerのコーポレートサイトのイメージ">
+  </a>
+  <img src="<%= img_path %>trust.png" class="c-footerSP-company__logo" alt="フッターのロゴ画像">
+  <small class="c-footerSP-company__copyright">&copy; 2020 Trust Inc. All Rights Reserved.</small>
 </footer>
 
 </div><!-- l-wrap -->

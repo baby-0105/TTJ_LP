@@ -1,39 +1,53 @@
-.c-footer-company {
+.c-footerPC-company {
   width: 100%;
   text-align: center;
 }
 
-.c-footer-company__logo {
+.c-footerPC-company__logo {
   width: 30%;
   display: block;
   margin: 0 auto;
   filter: drop-shadow(10px 10px 10px $colorBlack); // オブジェクトの形に沿って影
 }
 
-.c-footer-corporate {
+.c-footerPC-corporate {
   width: 100%;
   display: block;
   margin-top: auto;
 }
 
-.c-footer-corporate__link {
-  background-color: $colorLightGreen;
-  width: 15%;
+.c-footerPC-corporate__link {
+  width: 40%;
   display: block;
-  padding: 5px 20px;
-  border-radius: 10px;
   margin: 0 auto;
+}
 
-  &:hover {
-    transform: scale(1.05);
+/*
+  以下：スマホ用
+---------------------------------------------------- */
+
+.c-footerPCSP-text {
+  display: none;
+
+  @include mq('u-pc') {
+    display: block;
   }
 }
 
-.c-footer-corporate__text {
-  font-size: 15px;
-  text-align: center;
+.c-footerSP-text {
+  font-size: 20px;
+}
 
-  @include mq(u-sp) {
-    font-size: 10px;
-  }
+.c-footerSP-corporate__linkImg {
+  margin-bottom: 10px;
+}
+
+.c-footerSP-company__logo {
+  width: 50%;
+  margin-bottom: 10px;
+  filter: drop-shadow(10px 10px 10px $colorBlack); // オブジェクトの形に沿って影
+}
+
+.c-footerSP-company__copyright {
+  display: block;
 }
