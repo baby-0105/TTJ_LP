@@ -74,7 +74,9 @@ $colorOrange: #ffc042;
     @include mq('u-sp') {
       margin-right: 10px;
     }
-  } @else {
+  }
+
+  @else {
     background-color: rgba($colorLightGreen, .9);
   }
 }
@@ -114,7 +116,7 @@ $colorOrange: #ffc042;
     }
 
     @include mq('u-sp') {
-      width: 100%;
+      width: 90%;
       padding: 3vh 0;
     }
   }
@@ -157,7 +159,6 @@ $colorOrange: #ffc042;
   }
 
   @else {
-    left: -8px;
     &::before {
       width: 30px;
       height: 30px;
@@ -175,10 +176,3 @@ $colorOrange: #ffc042;
     }
   }
 }
-
-  // お仕事の流れ 文字 段々大きく ← 要修正！！
-  @for $i from 1 to 8 {
-    .p-top-flowUpToWork__list:nth-child(#{$i}) > .p-top-flowUpToWork__list__txt {
-      font-size: 15+$i+'px';
-    }
-  }

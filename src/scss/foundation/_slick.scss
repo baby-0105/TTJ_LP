@@ -1,5 +1,3 @@
-/* Slider */
-
 .slick-slider {
   position: relative;
   display: block;
@@ -16,10 +14,10 @@
 }
 .slick-list {
   position: relative;
-  overflow: hidden;
   display: block;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 
   &:focus {
     outline: none;
@@ -127,6 +125,10 @@ button{
   outline: none;
   cursor: pointer;
   z-index: 1; // 左矢印だけ何故か反応しないからこれで調整
+
+  @media screen and(max-width: 768px) {
+    top: 95%;
+  }
 }
 
 .prev {
