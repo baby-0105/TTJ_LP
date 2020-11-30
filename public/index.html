@@ -25,7 +25,7 @@
 <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet"> <!-- font -->
 
 <title>TTL_JP_TOP</title>
-<link href="assets/stylesheets/bundleccf3d74a30d63b3351a3.css" rel="stylesheet"></head>
+<link href="assets/stylesheets/bundle6587e19944995062f229.css" rel="stylesheet"></head>
 <body>
 <div class="l-wrap">
 
@@ -34,7 +34,7 @@
 
 
 <main class="l-main">
-  <div class="l-top-heading">
+  <div class="p-top-heading">
     <div class="p-top-heading__block" id="fluffy_disappear">
       <div class="p-top-heading__circle--LINE">
         <h3 class="p-top-heading__catchPhrase"><span class="p-top-heading__catchPhrase--bold">LINE</span>で<br>簡単登録</h3>
@@ -46,7 +46,10 @@
         </div>
         <div class="p-top-heading__vertical u-hidden-sp">
           <a class="c-top-toProject" id="toProjectSP" href="#">案件を見てみる！！</a>
-          <a class="c-top-toLINE" href="#">LINE公式アカウントを登録する</a>
+          <a class="c-btn-square__toLINE" href="#">
+            <img src="/assets/images/LINE_APP.png" class="c-top-aboutService__lineIcon" alt="LINEのロゴ">
+            LINE公式アカウントを登録する
+          </a>
         </div>
         <div class="p-top-heading__circle--day">
           <h3 class="p-top-heading__catchPhrase">最短<span class="p-top-heading__catchPhrase--bold"> 2 </span>日で<br>業務開始 !</h3>
@@ -54,22 +57,25 @@
       </div><!-- /.p-top-heading__horizontal -->
       <div class="p-top-heading__vertical u-hidden-pc">
         <a class="c-top-toProject" id="toProjectPC" href="#">案件を見てみる！！</a>
-        <a class="c-top-toLINE" id="" href="#">LINE公式アカウントを登録する</a>
+        <a class="c-btn-square__toLINE" href="#">
+          <img src="/assets/images/LINE_APP.png" class="c-top-aboutService__lineIcon" alt="LINEのロゴ">
+          LINE公式アカウントを登録する
+        </a>
       </div>
     </div><!-- /.p-top-heading__block -->
   </div><!-- /.l-top-heading -->
 
-  <div class="l-top-aboutService" id="aboutService">
+  <div class="p-top-aboutService" id="aboutService">
     <div class="p-top-aboutService__explain">
       <div class="p-top-aboutService__bgLogo">
         
         
         
-          <span class="p-top-aboutService__bgLogo__list--red">T</span>
+          <span class="p-top-aboutService__bgLogo__list--red" id="bgLogo-red">T</span>
         
-          <span class="p-top-aboutService__bgLogo__list--blue">T</span>
+          <span class="p-top-aboutService__bgLogo__list--blue" id="bgLogo-blue">T</span>
         
-          <span class="p-top-aboutService__bgLogo__list--white">J</span>
+          <span class="p-top-aboutService__bgLogo__list--white" id="bgLogo-white">J</span>
         
       </div>
       <div class="p-top-aboutService__imgBlock">
@@ -78,13 +84,13 @@
       <ul class="p-top-aboutService__textBlock">
         
         
-          <li class="p-top-aboutService__text" id="aboutServiceText1">TTJは今まで様々なITビジネスの営業に携わってきた<span class="p-top-aboutService__text--modifier">IT業界の営業スペシャリスト</span>です。</li>
+          <li class="p-top-aboutService__text" id="aboutServiceText1">TTJは今まで様々なIT業界の営業に携わってきた<span class="p-top-aboutService__text--modifier">フリーランスエンジニア専門のエージェント</span>です。</li>
         
-          <li class="p-top-aboutService__text" id="aboutServiceText2">その中での経験からクライアントとエンジニア、双方のニーズの合致こそがT業界の発展だと考えております。</li>
+          <li class="p-top-aboutService__text" id="aboutServiceText2">営業に時間をかけたくない、今の現場からステップアップしたい、そもそも単価の相場もわからない…etc</li>
         
-          <li class="p-top-aboutService__text" id="aboutServiceText3">TTJではエンジニアのニーズを尊重し<span class="p-top-aboutService__text--modifier">【あなたにマッチする案件】</span>を提案します。</li>
+          <li class="p-top-aboutService__text" id="aboutServiceText3">それぞれのニーズに沿った提案はもちろん、<span class="p-top-aboutService__text--modifier">業務開始までしっかりサポート</span>致します。</li>
         
-          <li class="p-top-aboutService__text" id="aboutServiceText4">弊社の営業ノウハウには自信がありますので、<span class="p-top-aboutService__text--modifier">【自走できるエンジニア】</span>へのサポートもお任せ下さい。</li>
+          <li class="p-top-aboutService__text" id="aboutServiceText4">もう案件探しで悩まない<span class="p-top-aboutService__text--modifier">【自走できるエンジニア】</span>へ…!!</li>
         
       </ul>
     </div>
@@ -92,10 +98,15 @@
       <p class="p-top-aboutService__entryBlock__text">
         まずはお気軽に、<br> <span class="p-top-aboutService__entryBlock__text--line">LINE</span><br>にてご登録下さい！
       </p>
-      <div class="p-top-aboutService__entryArrowBlock">
-        <span class="p-top-aboutService__entryArrow" id="aboutServiceEntryArrow"></span>
+      <div class="p-top-aboutService__entryArrowBlock" id="aboutServiceEntryArrow">
+        <i class="fas fa-angle-right aboutServiceEntryArrow"></i>
+        <i class="fas fa-angle-right aboutServiceEntryArrow"></i>
+        <i class="fas fa-angle-right aboutServiceEntryArrow"></i>
       </div>
-      <a class="c-top-toLINE" href="#">LINE公式アカウントを登録する</a>
+      <a class="c-btn-square__toLINE" href="#">
+        <img src="/assets/images/LINE_APP.png" class="c-top-aboutService__lineIcon" alt="LINEのロゴ">
+        LINE公式アカウントを登録する
+      </a>
     </div>
   </div>
 
@@ -179,6 +190,7 @@
 
       <ul class="p-top-project__list slick-slider">
         
+          <!-- liタグ要素間の余白をつけずに直下のdivタグで余白をつける -->
         <li class="p-top-project__listItem slick-slide slick-current slick-active" id="fade-in-down2">
           <div class="p-top-project__listItem__margin">
             <p class="p-top-project__listItem__about">★週3日PHP案件！有名人も活用するブログサービス運営を支えるエンジニア募集！</p>
@@ -186,7 +198,7 @@
               <div class="p-top-project__listItem__incomeBlock">
                 <dt class="p-top-project__listItem__income__monthly">月収</dt>
                 <dd class="p-top-project__listItem__income__price">
-                  <span class="p-top-project__listItem__income__price--emphasis">41~65</span>万円
+                  <span class="p-top-project__listItem__income__price--emphasis">41〜65</span>万円
                 </dd>
               </div>
               <div class="p-top-project__listItem__working">
@@ -196,7 +208,7 @@
                 </dd>
               </div>
             </dl>
-            <ul class="p-top-project__listItem__developmentEnironment">
+            <ul class="p-top-project__listItem__developmentEnironment" id="developmentEnironment">
               
               <li>PHP</li>
               
@@ -210,6 +222,7 @@
           </div>
         </li>
         
+          <!-- liタグ要素間の余白をつけずに直下のdivタグで余白をつける -->
         <li class="p-top-project__listItem slick-slide slick-current slick-active" id="fade-in-down3">
           <div class="p-top-project__listItem__margin">
             <p class="p-top-project__listItem__about">★週3日PHP案件！有名人も活用するブログサービス運営を支えるエンジニア募集！</p>
@@ -217,7 +230,7 @@
               <div class="p-top-project__listItem__incomeBlock">
                 <dt class="p-top-project__listItem__income__monthly">月収</dt>
                 <dd class="p-top-project__listItem__income__price">
-                  <span class="p-top-project__listItem__income__price--emphasis">41~65</span>万円
+                  <span class="p-top-project__listItem__income__price--emphasis">41〜65</span>万円
                 </dd>
               </div>
               <div class="p-top-project__listItem__working">
@@ -227,7 +240,7 @@
                 </dd>
               </div>
             </dl>
-            <ul class="p-top-project__listItem__developmentEnironment">
+            <ul class="p-top-project__listItem__developmentEnironment" id="developmentEnironment">
               
               <li>PHP</li>
               
@@ -241,6 +254,7 @@
           </div>
         </li>
         
+          <!-- liタグ要素間の余白をつけずに直下のdivタグで余白をつける -->
         <li class="p-top-project__listItem slick-slide slick-current slick-active" id="fade-in-down4">
           <div class="p-top-project__listItem__margin">
             <p class="p-top-project__listItem__about">★週3日PHP案件！有名人も活用するブログサービス運営を支えるエンジニア募集！</p>
@@ -248,7 +262,7 @@
               <div class="p-top-project__listItem__incomeBlock">
                 <dt class="p-top-project__listItem__income__monthly">月収</dt>
                 <dd class="p-top-project__listItem__income__price">
-                  <span class="p-top-project__listItem__income__price--emphasis">41~65</span>万円
+                  <span class="p-top-project__listItem__income__price--emphasis">41〜65</span>万円
                 </dd>
               </div>
               <div class="p-top-project__listItem__working">
@@ -258,7 +272,7 @@
                 </dd>
               </div>
             </dl>
-            <ul class="p-top-project__listItem__developmentEnironment">
+            <ul class="p-top-project__listItem__developmentEnironment" id="developmentEnironment">
               
               <li>PHP</li>
               
@@ -272,6 +286,7 @@
           </div>
         </li>
         
+          <!-- liタグ要素間の余白をつけずに直下のdivタグで余白をつける -->
         <li class="p-top-project__listItem slick-slide slick-current slick-active" id="fade-in-down5">
           <div class="p-top-project__listItem__margin">
             <p class="p-top-project__listItem__about">★週3日PHP案件！有名人も活用するブログサービス運営を支えるエンジニア募集！</p>
@@ -279,7 +294,7 @@
               <div class="p-top-project__listItem__incomeBlock">
                 <dt class="p-top-project__listItem__income__monthly">月収</dt>
                 <dd class="p-top-project__listItem__income__price">
-                  <span class="p-top-project__listItem__income__price--emphasis">41~65</span>万円
+                  <span class="p-top-project__listItem__income__price--emphasis">41〜65</span>万円
                 </dd>
               </div>
               <div class="p-top-project__listItem__working">
@@ -289,7 +304,7 @@
                 </dd>
               </div>
             </dl>
-            <ul class="p-top-project__listItem__developmentEnironment">
+            <ul class="p-top-project__listItem__developmentEnironment" id="developmentEnironment">
               
               <li>PHP</li>
               
@@ -303,6 +318,7 @@
           </div>
         </li>
         
+          <!-- liタグ要素間の余白をつけずに直下のdivタグで余白をつける -->
         <li class="p-top-project__listItem slick-slide slick-current slick-active" id="fade-in-down6">
           <div class="p-top-project__listItem__margin">
             <p class="p-top-project__listItem__about">★週3日PHP案件！有名人も活用するブログサービス運営を支えるエンジニア募集！</p>
@@ -310,7 +326,7 @@
               <div class="p-top-project__listItem__incomeBlock">
                 <dt class="p-top-project__listItem__income__monthly">月収</dt>
                 <dd class="p-top-project__listItem__income__price">
-                  <span class="p-top-project__listItem__income__price--emphasis">41~65</span>万円
+                  <span class="p-top-project__listItem__income__price--emphasis">41〜65</span>万円
                 </dd>
               </div>
               <div class="p-top-project__listItem__working">
@@ -320,7 +336,7 @@
                 </dd>
               </div>
             </dl>
-            <ul class="p-top-project__listItem__developmentEnironment">
+            <ul class="p-top-project__listItem__developmentEnironment" id="developmentEnironment">
               
               <li>PHP</li>
               
@@ -334,6 +350,7 @@
           </div>
         </li>
         
+          <!-- liタグ要素間の余白をつけずに直下のdivタグで余白をつける -->
         <li class="p-top-project__listItem slick-slide slick-current slick-active" id="fade-in-down7">
           <div class="p-top-project__listItem__margin">
             <p class="p-top-project__listItem__about">★週3日PHP案件！有名人も活用するブログサービス運営を支えるエンジニア募集！</p>
@@ -341,7 +358,7 @@
               <div class="p-top-project__listItem__incomeBlock">
                 <dt class="p-top-project__listItem__income__monthly">月収</dt>
                 <dd class="p-top-project__listItem__income__price">
-                  <span class="p-top-project__listItem__income__price--emphasis">41~65</span>万円
+                  <span class="p-top-project__listItem__income__price--emphasis">41〜65</span>万円
                 </dd>
               </div>
               <div class="p-top-project__listItem__working">
@@ -351,7 +368,7 @@
                 </dd>
               </div>
             </dl>
-            <ul class="p-top-project__listItem__developmentEnironment">
+            <ul class="p-top-project__listItem__developmentEnironment" id="developmentEnironment">
               
               <li>PHP</li>
               
@@ -365,6 +382,7 @@
           </div>
         </li>
         
+          <!-- liタグ要素間の余白をつけずに直下のdivタグで余白をつける -->
         <li class="p-top-project__listItem slick-slide slick-current slick-active" id="fade-in-down8">
           <div class="p-top-project__listItem__margin">
             <p class="p-top-project__listItem__about">★週3日PHP案件！有名人も活用するブログサービス運営を支えるエンジニア募集！</p>
@@ -372,7 +390,7 @@
               <div class="p-top-project__listItem__incomeBlock">
                 <dt class="p-top-project__listItem__income__monthly">月収</dt>
                 <dd class="p-top-project__listItem__income__price">
-                  <span class="p-top-project__listItem__income__price--emphasis">41~65</span>万円
+                  <span class="p-top-project__listItem__income__price--emphasis">41〜65</span>万円
                 </dd>
               </div>
               <div class="p-top-project__listItem__working">
@@ -382,7 +400,7 @@
                 </dd>
               </div>
             </dl>
-            <ul class="p-top-project__listItem__developmentEnironment">
+            <ul class="p-top-project__listItem__developmentEnironment" id="developmentEnironment">
               
               <li>PHP</li>
               
@@ -399,7 +417,22 @@
       </ul>
     </div><!-- /.p-top-project -->
 
-  <div class="l-top-faq">
+  <div class="p-top-entry">
+    <p class="p-top-entry__text">
+      まずはお気軽に、<br> <span class="p-top-entry__text--line">LINE</span><br>にてご登録下さい！
+    </p>
+    <div class="p-top-entry__arrowBlock" id="entryArrow">
+      <i class="fas fa-angle-right entryArrow"></i>
+      <i class="fas fa-angle-right entryArrow"></i>
+      <i class="fas fa-angle-right entryArrow"></i>
+    </div>
+    <a class="c-btn-square__toLINE" href="#">
+      <img src="/assets/images/LINE_APP.png" class="c-top-aboutService__lineIcon" alt="LINEのロゴ">
+      LINE公式アカウントを登録する
+    </a>
+  </div>
+
+  <div class="p-top-faq">
     <h1 class="p-top-faq__title">FAQ</h1>
     
     
@@ -439,7 +472,7 @@
       
         <li class="p-top-faqPC__questionList" id="faqPCQuestionList7">
           <div class="p-top-faqPC__questionList__titleNum" id="faqPCTitleNum7">Q7</div>
-          <h3 class="p-top-faqPC__questionList__title" id="faqPCTitleQuestion7">TTJでは現案件から次回案件へ以降の際、期間を開けず就業することは可能でしょうか？</h3>
+          <h3 class="p-top-faqPC__questionList__title" id="faqPCTitleQuestion7">TTJでは現案件から次回案件へ移行の際、期間を開けず就業することは可能でしょうか？</h3>
         </li>
       
         <li class="p-top-faqPC__questionList" id="faqPCQuestionList8">
@@ -454,7 +487,7 @@
       
         <li class="p-top-faqPC__questionList" id="faqPCQuestionList10">
           <div class="p-top-faqPC__questionList__titleNum" id="faqPCTitleNum10">Q10</div>
-          <h3 class="p-top-faqPC__questionList__title" id="faqPCTitleQuestion10">月の労働時間はどのぐらいでしょうか？</h3>
+          <h3 class="p-top-faqPC__questionList__title" id="faqPCTitleQuestion10">フルタイム以外の案件もありますか？</h3>
         </li>
       
         <li class="p-top-faqPC__questionList" id="faqPCQuestionList11">
@@ -513,7 +546,7 @@
               <span class="p-top-faqPC__answerList__Num">Q4</span>
               <h3 class="p-top-faqPC__answerList__question">実務未経験ですが案件紹介は可能でしょうか？-</h3>
               <span class="p-top-faqPC__answerList__Num">A4</span>
-              <p class="p-top-faqPC__answerList__answer">未経験でも案件紹介はできる可能性はありますが単価等、スキル見合いになりますので100%ニーズにマッチできるかはご相談させていただければと思います。</p>
+              <p class="p-top-faqPC__answerList__answer">はい、未経験でも案件紹介は可能ですが経験者の方に比べ案件の幅には制限がございます。</p>
               <span class="p-top-faqPC__crossIcon"><i class="fas fa-times crossIcon"></i></span>
             </div>
           </div>
@@ -547,7 +580,7 @@
           <div id="bgBlack">
             <div class="p-top-faqPC__answerList__textBlock">
               <span class="p-top-faqPC__answerList__Num">Q7</span>
-              <h3 class="p-top-faqPC__answerList__question">TTJでは現案件から次回案件へ以降の際、期間を開けず就業することは可能でしょうか？-</h3>
+              <h3 class="p-top-faqPC__answerList__question">TTJでは現案件から次回案件へ移行の際、期間を開けず就業することは可能でしょうか？-</h3>
               <span class="p-top-faqPC__answerList__Num">A7</span>
               <p class="p-top-faqPC__answerList__answer">はい、可能です。TTJではエンジニア1人1人に担当がつきますので案件終了期間が近づきましたら担当より次回案件についてご相談致します。</p>
               <span class="p-top-faqPC__crossIcon"><i class="fas fa-times crossIcon"></i></span>
@@ -561,7 +594,7 @@
               <span class="p-top-faqPC__answerList__Num">Q8</span>
               <h3 class="p-top-faqPC__answerList__question">案件の期間はどのぐらいでしょうか？-</h3>
               <span class="p-top-faqPC__answerList__Num">A8</span>
-              <p class="p-top-faqPC__answerList__answer">案件ごとに変わりますが3~6ヶ月での更新が一般的となります。エンジニア、クライアント様より双方認識(ニーズ)が合えば延長することも可能です。ちなみに弊社の案件更新率は90%以上となります。</p>
+              <p class="p-top-faqPC__answerList__answer">案件ごとに変わりますが1〜3ヶ月での更新が一般的となります。エンジニア、クライアント様より双方認識(ニーズ)が合えば延長することも可能です。ちなみに弊社の案件更新率は90%以上となります。</p>
               <span class="p-top-faqPC__crossIcon"><i class="fas fa-times crossIcon"></i></span>
             </div>
           </div>
@@ -573,7 +606,7 @@
               <span class="p-top-faqPC__answerList__Num">Q9</span>
               <h3 class="p-top-faqPC__answerList__question">案件先は東京のみでしょうか？-</h3>
               <span class="p-top-faqPC__answerList__Num">A9</span>
-              <p class="p-top-faqPC__answerList__answer">いいえ、やはり東京が多いのは事実ですが、TTJでは全国にクライアント様がおりますので地方常駐案件も多数ございます。現在はリモートの案件も増えてきておりますので場所に拘らない案件紹介も可能となります。</p>
+              <p class="p-top-faqPC__answerList__answer">いいえ、やはり東京23区内が多いのは事実ですが、TTJでは全国にクライアント様がおりますので地方案件も多数ございます。まずはお気軽にお問い合わせください。</p>
               <span class="p-top-faqPC__crossIcon"><i class="fas fa-times crossIcon"></i></span>
             </div>
           </div>
@@ -583,9 +616,9 @@
           <div id="bgBlack">
             <div class="p-top-faqPC__answerList__textBlock">
               <span class="p-top-faqPC__answerList__Num">Q10</span>
-              <h3 class="p-top-faqPC__answerList__question">月の労働時間はどのぐらいでしょうか？-</h3>
+              <h3 class="p-top-faqPC__answerList__question">フルタイム以外の案件もありますか？-</h3>
               <span class="p-top-faqPC__answerList__Num">A10</span>
-              <p class="p-top-faqPC__answerList__answer">エンジニアのニーズやクライアント様ごとに変わりますが、できる限り双方のニーズに合致する案件紹介を致します。基準としては1日8h程度の業務が一般的です。</p>
+              <p class="p-top-faqPC__answerList__answer">当社では一般的な140h〜180h時間稼働の案件だけではなく、週2、3日の案件もご紹介致します。</p>
               <span class="p-top-faqPC__crossIcon"><i class="fas fa-times crossIcon"></i></span>
             </div>
           </div>
@@ -609,7 +642,7 @@
               <span class="p-top-faqPC__answerList__Num">Q12</span>
               <h3 class="p-top-faqPC__answerList__question">登録にするにあたり、何か用意するものなどありますでしょうか？-</h3>
               <span class="p-top-faqPC__answerList__Num">A12</span>
-              <p class="p-top-faqPC__answerList__answer">登録の際には特にございません。ヒアリングや提案の際に何が必要かは山口さんに確認</p>
+              <p class="p-top-faqPC__answerList__answer">登録の際には特にございません。弊社担当との打ち合わせの際にはスキルシート、職務経歴書をご用意いただけるとご案内がスムーズです。もしお持ちでない場合は、テンプレートをご用意致しますのでお申し付けください。</p>
               <span class="p-top-faqPC__crossIcon"><i class="fas fa-times crossIcon"></i></span>
             </div>
           </div>
@@ -651,7 +684,7 @@
             <h3 class="p-top-faqSP__question__title" id="questionTitle4">Q.実務未経験ですが案件紹介は可能でしょうか？</h3>
           </div>
           <div class="p-top-faqSP__answer">
-            <p class="p-top-faqSP__answer__text">A.未経験でも案件紹介はできる可能性はありますが単価等、スキル見合いになりますので100%ニーズにマッチできるかはご相談させていただければと思います。</p>
+            <p class="p-top-faqSP__answer__text">A.はい、未経験でも案件紹介は可能ですが経験者の方に比べ案件の幅には制限がございます。</p>
           </div>
         </li>
       
@@ -675,7 +708,7 @@
       
         <li class="p-top-faqSP__list">
           <div class="p-top-faqSP__question" id="questionMenu7" data-name="clicks">
-            <h3 class="p-top-faqSP__question__title" id="questionTitle7">Q.TTJでは現案件から次回案件へ以降の際、期間を開けず就業することは可能でしょうか？</h3>
+            <h3 class="p-top-faqSP__question__title" id="questionTitle7">Q.TTJでは現案件から次回案件へ移行の際、期間を開けず就業することは可能でしょうか？</h3>
           </div>
           <div class="p-top-faqSP__answer">
             <p class="p-top-faqSP__answer__text">A.はい、可能です。TTJではエンジニア1人1人に担当がつきますので案件終了期間が近づきましたら担当より次回案件についてご相談致します。</p>
@@ -687,7 +720,7 @@
             <h3 class="p-top-faqSP__question__title" id="questionTitle8">Q.案件の期間はどのぐらいでしょうか？</h3>
           </div>
           <div class="p-top-faqSP__answer">
-            <p class="p-top-faqSP__answer__text">A.案件ごとに変わりますが3~6ヶ月での更新が一般的となります。エンジニア、クライアント様より双方認識(ニーズ)が合えば延長することも可能です。ちなみに弊社の案件更新率は90%以上となります。</p>
+            <p class="p-top-faqSP__answer__text">A.案件ごとに変わりますが1〜3ヶ月での更新が一般的となります。エンジニア、クライアント様より双方認識(ニーズ)が合えば延長することも可能です。ちなみに弊社の案件更新率は90%以上となります。</p>
           </div>
         </li>
       
@@ -696,16 +729,16 @@
             <h3 class="p-top-faqSP__question__title" id="questionTitle9">Q.案件先は東京のみでしょうか？</h3>
           </div>
           <div class="p-top-faqSP__answer">
-            <p class="p-top-faqSP__answer__text">A.いいえ、やはり東京が多いのは事実ですが、TTJでは全国にクライアント様がおりますので地方常駐案件も多数ございます。現在はリモートの案件も増えてきておりますので場所に拘らない案件紹介も可能となります。</p>
+            <p class="p-top-faqSP__answer__text">A.いいえ、やはり東京23区内が多いのは事実ですが、TTJでは全国にクライアント様がおりますので地方案件も多数ございます。まずはお気軽にお問い合わせください。</p>
           </div>
         </li>
       
         <li class="p-top-faqSP__list">
           <div class="p-top-faqSP__question" id="questionMenu10" data-name="clicks">
-            <h3 class="p-top-faqSP__question__title" id="questionTitle10">Q.月の労働時間はどのぐらいでしょうか？</h3>
+            <h3 class="p-top-faqSP__question__title" id="questionTitle10">Q.フルタイム以外の案件もありますか？</h3>
           </div>
           <div class="p-top-faqSP__answer">
-            <p class="p-top-faqSP__answer__text">A.エンジニアのニーズやクライアント様ごとに変わりますが、できる限り双方のニーズに合致する案件紹介を致します。基準としては1日8h程度の業務が一般的です。</p>
+            <p class="p-top-faqSP__answer__text">A.当社では一般的な140h〜180h時間稼働の案件だけではなく、週2、3日の案件もご紹介致します。</p>
           </div>
         </li>
       
@@ -723,7 +756,7 @@
             <h3 class="p-top-faqSP__question__title" id="questionTitle12">Q.登録にするにあたり、何か用意するものなどありますでしょうか？</h3>
           </div>
           <div class="p-top-faqSP__answer">
-            <p class="p-top-faqSP__answer__text">A.登録の際には特にございません。ヒアリングや提案の際に何が必要かは山口さんに確認</p>
+            <p class="p-top-faqSP__answer__text">A.登録の際には特にございません。弊社担当との打ち合わせの際にはスキルシート、職務経歴書をご用意いただけるとご案内がスムーズです。もしお持ちでない場合は、テンプレートをご用意致しますのでお申し付けください。</p>
           </div>
         </li>
       
@@ -732,16 +765,27 @@
 </main>
 
 
-<footer class="l-footer">
-  <div class="c-footer-company">
-    <img src="/assets/images/trust.png" class="c-footer-company__logo" alt="フッターのロゴ画像">
-    <small class="c-footer-company__copyright">&copy; 2020 Trust Inc. All Rights Reserved.</small>
+<footer class="l-footerPC" id="footer">
+  <div class="c-footerPC-company">
+    <img src="/assets/images/trust.png" class="c-footerPC-company__logo" alt="フッターのロゴ画像">
+    <small class="c-footerPC-company__copyright">&copy; 2020 Trust Inc. All Rights Reserved.</small>
   </div>
-  <div class="c-footer-link">
-    <a class="c-footer-link__corporate" href="#">コーポレートサイト</a>
+  <div class="c-footerPC-corporate">
+    <a class="c-footerPC-corporate__link" href="#">
+      <img src="/assets/images/ttj.banner.png" class="c-footerPC-corporate__linkImg" alt="footerのコーポレートサイトのイメージ">
+    </a>
   </div>
 </footer>
 
+<footer  class="l-footerSP" id="footer">
+  <p class="c-footerSP-text">↓詳しい弊社概要は下記をクリック↓</p>
+  <a class="c-footerSP-corporate__link" href="#">
+    <img src="/assets/images/ttj.banner.png" class="c-footerSP-corporate__linkImg" alt="footerのコーポレートサイトのイメージ">
+  </a>
+  <img src="/assets/images/trust.png" class="c-footerSP-company__logo" alt="フッターのロゴ画像">
+  <small class="c-footerSP-company__copyright">&copy; 2020 Trust Inc. All Rights Reserved.</small>
+</footer>
+
 </div><!-- l-wrap -->
-<script type="text/javascript" src="assets/javascripts/bundleccf3d74a30d63b3351a3.js"></script></body>
+<script type="text/javascript" src="assets/javascripts/bundle6587e19944995062f229.js"></script></body>
 </html>

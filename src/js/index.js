@@ -27,7 +27,6 @@ $(() => {
             let delayTime = ['0', '500', '1000', '1500'];
 
             $(`#aboutServiceText${i+1}`).delay(delayTime[i]).queue(function() {
-
               $(this).addClass('textVisible');
             })
           }
@@ -42,6 +41,17 @@ $(() => {
         }
       });
     }
+
+    $('#aboutService').each(function() {
+      let aboutServicePosi = $(this).offset().top,
+          bgLogoColor = ['red', 'blue', 'white'];
+
+      if (scrollPosi > aboutServicePosi - windowHeight + 400) {
+        for(let i=0; i<bgLogoColor.length; i++) {
+          $(`#bgLogo-${bgLogoColor[i]}`).addClass('bgLogoToBig');
+        }
+      }
+    });
 
     $('#aboutServiceEntryArrow').each(function() {
       let aboutServiceEntryPosi = $(this).offset().top,
