@@ -96,6 +96,15 @@ $(() => {
         });
       }
     });
+
+    // ファーストビュー背景　対象範囲 p-top-aboutServiceまで
+    $('#visility').each(function() {
+      const flowUpPosi  = $('.p-top-flowUpToWork').offset().top;
+
+      if(scrollPosi > flowUpPosi - windowHeight) {
+        $(this).css({visility: hidden});
+      }
+    });
   });
 
   // 「案件を見るボタン」：クリックイベント

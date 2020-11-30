@@ -15,9 +15,6 @@
   align-items: center;
   padding: 100px 0;
   font-family: 'Kosugi Maru', sans-serif;
-  // background: url(#{$bgPath}many_people.jpg) no-repeat center/cover;
-  // background-attachment: fixed;
-  // background: linear-gradient(25deg, rgba(#FC9D9D, 0.4), rgba(#C5E99B, 0.4)) ,url(#{$bgPath}sea_morudibu.jpg) no-repeat center/cover;
   &::before {
     display: block;
     position: fixed;
@@ -153,8 +150,6 @@
 .p-top-aboutService {
   color: $colorBlack;
   padding: 100px 50px;
-  background: linear-gradient(180deg, #e4e4e4 90%, $colorWhite);
-  // background: linear-gradient(180deg, #e4e4e4 90%, $colorWhite);
 
   @include mq(u-pc) {
     padding: 60px 20px;
@@ -534,6 +529,7 @@
 // -----------------------------------------------------------------*/
 .p-top-pieList {
   display: flex;
+  justify-content: center;
   width: 100%;
   margin: 0 auto;
 
@@ -622,8 +618,7 @@
 
   @include mq('u-sp') {
     width: 95%;
-    margin: 0 auto;
-    // padding-bottom: 30px;
+    margin: 0 auto 50px;
   }
 }
 
@@ -644,7 +639,7 @@
 
 .p-top-project__listItem__feature {
   width: 80%;
-  margin: 0 auto 40px;
+  margin: 0 0 40px auto;
 }
 
 /*
@@ -655,30 +650,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 10px;
-
-  // &::before, &::after {
-  //   display: block;
-  //   position: absolute;
-  //   top: 50%;
-  //   width: 30px;
-  //   height: 5px;
-  //   background-color: $colorBlack;
-  //   content: '';
-  // }
-
-  // &::before {
-  //   transform: rotate(45deg);
-  // }
-
-  // &::after {
-  //   transform: rotate(-45deg);
-  // }
+  margin-bottom: 10px;
 }
 
 .p-top-project__listItem__income__monthly {
   @include projectIcon(money);
-  text-indent: 10px;
 }
 
 .p-top-project__listItem__income__price {
