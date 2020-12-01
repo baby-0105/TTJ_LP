@@ -37,7 +37,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to bottom, transparent 0%, transparent 50%, #fff 100%), url(#{$bgPath}many_people.jpg) no-repeat 30%/cover;
+    background: linear-gradient(to bottom, transparent 0%, transparent 50%, #fff 100%), url(#{$bgPath}bg_many_people.jpg) no-repeat 30%/cover;
     content: '';
     z-index: -1;
   }
@@ -373,7 +373,6 @@
 .p-top-flowUpToWork {
   margin: 0 auto;
   padding: 20px 0 100px;
-
 }
 
 @mixin blueAndRedTitle {
@@ -580,7 +579,7 @@
 }
 
 .p-top-pieItem__image {
-  width: 70%;
+  width: 100%;
   height: auto;
   margin: 0 auto;
 
@@ -1030,8 +1029,9 @@
     top: 0;
     left: 0;
     transition: 1s;
-    background: url('#{$bgPath}sea_morudibu.jpg');
-    background-position: bottom;
+    background: url('#{$bgPath}bg_night.jpg');
+    background-position: center;
+    background-size: cover;
   }
 
   &:hover {
@@ -1044,16 +1044,28 @@
 .p-top-entry__mask {
   width: 100%;
   height: 100%;
-  padding: 200px 50px;
-  background: rgba(255,255,255,0.5);
+  padding: 100px 50px;
+  background: rgba(255,255,255,0.6);
   position: relative;
-
-  @include mq('o-pc') {
-    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-  }
 
   @include mq('u-pc') {
     padding: 100px 20px;
+  }
+}
+
+.p-top-entry__companyLogo {
+  width: 20%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+
+  @include mq('sp-pc') {
+    width: 35%;
+  }
+
+  @include mq('u-sp') {
+    width: 50%;
   }
 }
 

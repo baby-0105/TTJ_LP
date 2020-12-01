@@ -145,7 +145,7 @@ $colorOrange: #ffc042;
       width: 45px;
       height: 45px;
       left: -45px;
-      background-image: url(#{$bgPath}money.png);
+      background-image: url(#{$bgPath}icon_money.png);
     }
 
     @include mq('u-sp') {
@@ -163,7 +163,7 @@ $colorOrange: #ffc042;
       width: 30px;
       height: 30px;
       left: -40px;
-      background-image: url(#{$bgPath}calendar_1.png);
+      background-image: url(#{$bgPath}icon_calendar.png);
     }
 
     @include mq('u-sp') {
