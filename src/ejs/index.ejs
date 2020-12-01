@@ -224,18 +224,17 @@ src/ejs/template/_head %>
   </div>
 
   <div class="p-top-entry">
-    <p class="p-top-entry__text">
-      まずはお気軽に、<br> <span class="p-top-entry__text--line">LINE</span><br>にてご登録下さい！
-    </p>
-    <div class="p-top-entry__arrowBlock" id="entryArrow">
-      <% for (var i=0; i<3; i++) { %>
-        <i class="fas fa-angle-right entryArrow"></i>
-      <% } %>
+    <div class="p-top-entry__mask">
+      <p class="p-top-entry__text">
+        まずはお気軽に、<br><span class="p-top-entry__text--line">LINE</span><br>にてご登録下さい！
+      </p>
+      <div class="p-top-entry__btn">
+        <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
+          <img src="<%= imgPath %>LINE_APP.png" class="c-btn-lineIcon" alt="LINEのロゴ">
+          LINE公式アカウントを登録する
+        </a>
+      </div>
     </div>
-    <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
-      <img src="<%= imgPath %>LINE_APP.png" class="c-btn-lineIcon" alt="LINEのロゴ">
-      LINE公式アカウントを登録する
-    </a>
   </div>
 </main>
 <% include src/ejs/template/_footer %>
