@@ -95,31 +95,6 @@ $(() => {
         });
       }
     });
-
-    // ファーストビュー: position fixed 対象範囲
-    const firstviewFixed = (function() {
-      const $fixed             = $('#fixed'),
-            $aboutService      = $('#aboutService'),
-            aboutServicePosi   = $aboutService.offset().top,
-            aboutServiceHeight = $aboutService.height(),
-            aboutServiceWidth = $aboutService.width();
-
-      if(scrollPosi > aboutServicePosi + (aboutServiceHeight / 2) - 100) {
-        $fixed.removeClass('fixed');
-      } else {
-        $fixed.addClass('fixed');
-      }
-
-      if (aboutServiceWidth <= 768) {
-        if(scrollPosi > aboutServicePosi + (aboutServiceHeight / 2) + 450) {
-          $fixed.removeClass('fixed');
-        } else {
-          $fixed.addClass('fixed');
-        }
-      }
-
-      // もうちょっと背景色がふわ～っと白に変化するようにしたい
-    })();
   });
 
   // 「案件を見るボタン」：クリックイベント
