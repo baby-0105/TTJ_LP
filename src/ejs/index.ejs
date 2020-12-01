@@ -5,79 +5,81 @@ src/ejs/template/_head %>
 <% include src/ejs/template/_header %>
 
 <main class="l-main">
-  <div class="p-top-fixed fixed" id="fixed">
-    <div class="p-top-fixed__container" id="fluffy_disappear">
-      <div class="p-top-fixed__circle--LINE">
-        <h3 class="p-top-fixed__catchPhrase"><span class="p-top-fixed__catchPhrase--bold">LINE</span>で<br>簡単登録</h3>
-      </div><!-- /.p-top-fixed__circle -->
-      <img src="<%= imgPath %>trust.png" class="p-top-fixed__titleImg" alt="トラストのロゴ">
-      <div class="p-top-fixed__horizontal">
-        <div class="p-top-fixed__circle--match">
-          <h3 class="p-top-fixed__catchPhrase">希望案件<br>マッチ率<span class="p-top-fixed__catchPhrase--bold">97</span>％</h3>
-        </div>
-        <div class="p-top-fixed__vertical u-hidden-sp">
-          <a class="c-top-toProject" id="toProjectSP" href="#">案件を見てみる！！</a>
+  <div class="p-top-sticky__container">
+    <div class="p-top-fixed">
+      <div class="p-top-fixed__container" id="fluffy_disappear">
+        <div class="p-top-fixed__circle--LINE">
+          <h3 class="p-top-fixed__catchPhrase"><span class="p-top-fixed__catchPhrase--bold">LINE</span>で<br>簡単登録</h3>
+        </div><!-- /.p-top-fixed__circle -->
+        <img src="<%= imgPath %>trust.png" class="p-top-fixed__titleImg" alt="トラストのロゴ">
+        <div class="p-top-fixed__horizontal">
+          <div class="p-top-fixed__circle--match">
+            <h3 class="p-top-fixed__catchPhrase">希望案件<br>マッチ率<span class="p-top-fixed__catchPhrase--bold">97</span>％</h3>
+          </div>
+          <div class="p-top-fixed__vertical u-hidden-sp">
+            <a class="c-top-toProject" id="toProjectSP" href="#">案件を見てみる！！</a>
+            <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
+              <img src="<%= imgPath %>LINE_APP.png" class="c-btn-lineIcon" alt="LINEのロゴ">
+              LINE公式アカウントを登録する
+            </a>
+          </div>
+          <div class="p-top-fixed__circle--day">
+            <h3 class="p-top-fixed__catchPhrase">最短<span class="p-top-fixed__catchPhrase--bold">2</span>日で<br>業務開始 !</h3>
+          </div>
+        </div><!-- /.p-top-fixed__horizontal -->
+        <div class="p-top-fixed__vertical u-hidden-pc">
+          <a class="c-top-toProject" id="toProjectPC" href="#">案件を見てみる！！</a>
           <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
             <img src="<%= imgPath %>LINE_APP.png" class="c-btn-lineIcon" alt="LINEのロゴ">
             LINE公式アカウントを登録する
           </a>
         </div>
-        <div class="p-top-fixed__circle--day">
-          <h3 class="p-top-fixed__catchPhrase">最短<span class="p-top-fixed__catchPhrase--bold">2</span>日で<br>業務開始 !</h3>
+      </div><!-- /.p-top-fixed__container -->
+    </div><!-- /.p-top-fixed -->
+
+    <div class="p-top-aboutService" id="aboutService">
+      <h2 class="p-top-aboutService__title">
+        TTJは今まで様々なIT業界の営業に携わってきた<br><span class="p-top-aboutService__text--modifier">フリーランスエンジニア専門のエージェント</span>です。
+      </h2>
+      <div class="p-top-aboutService__explain">
+        <div class="p-top-aboutService__bgLogo">
+          <% var aboutServicebgLogo=['T', 'T', 'J']; %>
+          <% var color=['red', 'blue', 'white']; %>
+          <% for (var i = 0; i < aboutServicebgLogo.length; i++) { %>
+            <span class="p-top-aboutService__bgLogo__list--<%= color[i] %>" id="bgLogo-<%= color[i] %>"><%= aboutServicebgLogo[i] %></span>
+          <% } %>
         </div>
-      </div><!-- /.p-top-fixed__horizontal -->
-      <div class="p-top-fixed__vertical u-hidden-pc">
-        <a class="c-top-toProject" id="toProjectPC" href="#">案件を見てみる！！</a>
+        <div class="p-top-aboutService__imgBlock">
+          <img src="<%= imgPath %>sikou.png" class="p-top-aboutService__img" id="aboutServiceImg" alt="人の吹き出し">
+        </div>
+        <ul class="p-top-aboutService__textBlock">
+          <% var aboutServiceText = [
+            '営業に時間をかけたくない、今の現場からステップアップしたい、そもそも単価の相場もわからない…etc',
+            'それぞれのニーズに沿った提案はもちろん、<span class="p-top-aboutService__text--modifier">業務開始までしっかりサポート</span>致します。',
+            'もう案件探しで悩まない<span class="p-top-aboutService__text--modifier">【自走できるエンジニア】</span>へ…!!'
+          ]; %>
+          <% for (var i = 0; i < aboutServiceText.length; i++) { %>
+            <li class="p-top-aboutService__text" id="aboutServiceText<%= i+1 %>"><%- aboutServiceText[i] %></li>
+          <% } %>
+        </ul>
+      </div>
+      <div class="p-top-aboutService__entry">
+        <p class="p-top-aboutService__entryBlock__text">
+          まずはお気軽に、<br> <span class="p-top-aboutService__entryBlock__text--line">LINE</span><br>にてご登録下さい！
+        </p>
+        <div class="p-top-aboutService__entryArrowBlock" id="aboutServiceEntryArrow">
+          <% for (var i=0; i<3; i++) { %>
+            <i class="fas fa-angle-right aboutServiceEntryArrow"></i>
+          <% } %>
+        </div>
         <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
           <img src="<%= imgPath %>LINE_APP.png" class="c-btn-lineIcon" alt="LINEのロゴ">
           LINE公式アカウントを登録する
         </a>
       </div>
-    </div><!-- /.p-top-fixed__block -->
-  </div><!-- /.p-top-fixed -->
-
-  <div class="p-top-aboutService" id="aboutService">
-    <h2 class="p-top-aboutService__title">
-      TTJは今まで様々なIT業界の営業に携わってきた<br><span class="p-top-aboutService__text--modifier">フリーランスエンジニア専門のエージェント</span>です。
-    </h2>
-    <div class="p-top-aboutService__explain">
-      <div class="p-top-aboutService__bgLogo">
-        <% var aboutServicebgLogo=['T', 'T', 'J']; %>
-        <% var color=['red', 'blue', 'white']; %>
-        <% for (var i = 0; i < aboutServicebgLogo.length; i++) { %>
-          <span class="p-top-aboutService__bgLogo__list--<%= color[i] %>" id="bgLogo-<%= color[i] %>"><%= aboutServicebgLogo[i] %></span>
-        <% } %>
-      </div>
-      <div class="p-top-aboutService__imgBlock">
-        <img src="<%= imgPath %>sikou.png" class="p-top-aboutService__img" id="aboutServiceImg" alt="人の吹き出し">
-      </div>
-      <ul class="p-top-aboutService__textBlock">
-        <% var aboutServiceText = [
-          '営業に時間をかけたくない、今の現場からステップアップしたい、そもそも単価の相場もわからない…etc',
-          'それぞれのニーズに沿った提案はもちろん、<span class="p-top-aboutService__text--modifier">業務開始までしっかりサポート</span>致します。',
-          'もう案件探しで悩まない<span class="p-top-aboutService__text--modifier">【自走できるエンジニア】</span>へ…!!'
-        ]; %>
-        <% for (var i = 0; i < aboutServiceText.length; i++) { %>
-          <li class="p-top-aboutService__text" id="aboutServiceText<%= i+1 %>"><%- aboutServiceText[i] %></li>
-        <% } %>
-      </ul>
     </div>
-    <div class="p-top-aboutService__entry">
-      <p class="p-top-aboutService__entryBlock__text">
-        まずはお気軽に、<br> <span class="p-top-aboutService__entryBlock__text--line">LINE</span><br>にてご登録下さい！
-      </p>
-      <div class="p-top-aboutService__entryArrowBlock" id="aboutServiceEntryArrow">
-        <% for (var i=0; i<3; i++) { %>
-          <i class="fas fa-angle-right aboutServiceEntryArrow"></i>
-        <% } %>
-      </div>
-      <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
-        <img src="<%= imgPath %>LINE_APP.png" class="c-btn-lineIcon" alt="LINEのロゴ">
-        LINE公式アカウントを登録する
-      </a>
-    </div>
-  </div>
-
+  </div><!-- /.p-top-sticky__container -->
+  
   <!-- 仕事までの流れ -->
     <div class="p-top-flowUpToWork">
       <h1 class="p-top-flowUpToWork__heading">お仕事までの流れ</h1>
