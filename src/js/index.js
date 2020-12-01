@@ -7,7 +7,6 @@ import router from './modules/Router'
 import '../scss/app.scss'
 
 $(() => {
-
   let $bodyAndHtml = $('body, html'),
       startPos     = $(window).scrollTop(); // 元の位置を取得
 
@@ -77,7 +76,7 @@ $(() => {
       }
     });
 
-    // ファーストビュー fadeIn&fadeOut
+    // ファーストビュー fadeIn, fadeOut
     $('#fluffy_disappear').each(function() {
       let aboutServicePosi = $(this).offset().top,
           windowWidth      = $(window).width(),
@@ -97,14 +96,30 @@ $(() => {
       }
     });
 
-    // ファーストビュー背景　対象範囲 p-top-aboutServiceまで
-    $('#visility').each(function() {
-      const flowUpPosi  = $('.p-top-flowUpToWork').offset().top;
+    // ファーストビュー: position fixed 対象範囲
+    const firstviewFixed = (function() {
+      const $fixed             = $('#fixed'),
+            $aboutService      = $('#aboutService'),
+            aboutServicePosi   = $aboutService.offset().top,
+            aboutServiceHeight = $aboutService.height(),
+            aboutServiceWidth = $aboutService.width();
 
-      if(scrollPosi > flowUpPosi - windowHeight) {
-        $(this).css({visility: hidden});
+      if(scrollPosi > aboutServicePosi + (aboutServiceHeight / 2) - 100) {
+        $fixed.removeClass('fixed');
+      } else {
+        $fixed.addClass('fixed');
       }
-    });
+
+      if (aboutServiceWidth <= 768) {
+        if(scrollPosi > aboutServicePosi + (aboutServiceHeight / 2) + 450) {
+          $fixed.removeClass('fixed');
+        } else {
+          $fixed.addClass('fixed');
+        }
+      }
+
+      // もうちょっと背景色がふわ～っと白に変化するようにしたい
+    })();
   });
 
   // 「案件を見るボタン」：クリックイベント
@@ -145,7 +160,7 @@ $(() => {
     });
   }
 
-  // 案件 スライドショー
+  // 案件: スライドショー
   $('.p-top-project__list').slick({
     dots: true,
     slidesToScroll: 1,
@@ -153,7 +168,6 @@ $(() => {
     centerMode: true,
     autoplay: true,
     autoplaySpeed: 4000,
-    adaptiveHeight: true,
     prevArrow: '<button class="slide-arrow prev"></button>',
     nextArrow: '<button class="slide-arrow next"></button>',
     dotsClass: 'slide-dots',
@@ -170,16 +184,11 @@ $(() => {
         slidesToShow: 2,
       }},
       {
-      breakpoint: 900,
+      breakpoint: 950,
       settings: {
         slidesToShow: 2,
         centerMode: false,
-      }},
-      {
-      breakpoint: 701,
-      settings: {
-        slidesToShow: 1,
-        dots: false,
+        dots :false,
       }},
       {
       breakpoint: 500,

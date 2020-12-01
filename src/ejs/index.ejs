@@ -5,36 +5,36 @@ src/ejs/template/_head %>
 <% include src/ejs/template/_header %>
 
 <main class="l-main">
-  <div class="p-top-heading" id="visility">
-    <div class="p-top-heading__block" id="fluffy_disappear">
-      <div class="p-top-heading__circle--LINE">
-        <h3 class="p-top-heading__catchPhrase"><span class="p-top-heading__catchPhrase--bold">LINE</span>で<br>簡単登録</h3>
-      </div><!-- /.p-top-heading__circle -->
-      <img src="<%= imgPath %>trust.png" class="p-top-heading__titleImg" alt="トラストのロゴ">
-      <div class="p-top-heading__horizontal">
-        <div class="p-top-heading__circle--match">
-          <h3 class="p-top-heading__catchPhrase">希望案件<br>マッチ率<span class="p-top-heading__catchPhrase--bold">97</span>％</h3>
+  <div class="p-top-fixed fixed" id="fixed">
+    <div class="p-top-fixed__container" id="fluffy_disappear">
+      <div class="p-top-fixed__circle--LINE">
+        <h3 class="p-top-fixed__catchPhrase"><span class="p-top-fixed__catchPhrase--bold">LINE</span>で<br>簡単登録</h3>
+      </div><!-- /.p-top-fixed__circle -->
+      <img src="<%= imgPath %>trust.png" class="p-top-fixed__titleImg" alt="トラストのロゴ">
+      <div class="p-top-fixed__horizontal">
+        <div class="p-top-fixed__circle--match">
+          <h3 class="p-top-fixed__catchPhrase">希望案件<br>マッチ率<span class="p-top-fixed__catchPhrase--bold">97</span>％</h3>
         </div>
-        <div class="p-top-heading__vertical u-hidden-sp">
+        <div class="p-top-fixed__vertical u-hidden-sp">
           <a class="c-top-toProject" id="toProjectSP" href="#">案件を見てみる！！</a>
           <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
             <img src="<%= imgPath %>LINE_APP.png" class="c-btn-lineIcon" alt="LINEのロゴ">
             LINE公式アカウントを登録する
           </a>
         </div>
-        <div class="p-top-heading__circle--day">
-          <h3 class="p-top-heading__catchPhrase">最短<span class="p-top-heading__catchPhrase--bold">2</span>日で<br>業務開始 !</h3>
+        <div class="p-top-fixed__circle--day">
+          <h3 class="p-top-fixed__catchPhrase">最短<span class="p-top-fixed__catchPhrase--bold">2</span>日で<br>業務開始 !</h3>
         </div>
-      </div><!-- /.p-top-heading__horizontal -->
-      <div class="p-top-heading__vertical u-hidden-pc">
+      </div><!-- /.p-top-fixed__horizontal -->
+      <div class="p-top-fixed__vertical u-hidden-pc">
         <a class="c-top-toProject" id="toProjectPC" href="#">案件を見てみる！！</a>
         <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
           <img src="<%= imgPath %>LINE_APP.png" class="c-btn-lineIcon" alt="LINEのロゴ">
           LINE公式アカウントを登録する
         </a>
       </div>
-    </div><!-- /.p-top-heading__block -->
-  </div><!-- /.p-top-heading -->
+    </div><!-- /.p-top-fixed__block -->
+  </div><!-- /.p-top-fixed -->
 
   <div class="p-top-aboutService" id="aboutService">
     <h2 class="p-top-aboutService__title">
@@ -115,16 +115,28 @@ src/ejs/template/_head %>
       {'unitPrice': '80', 'workingDays': 5},
       {'unitPrice': '80', 'workingDays': 5},
       ]; %>
-      <% var developmentEnvironment = ['PHP', 'MySQL', 'JavaScript', 'AWS']; %>
+      <% var category = ['up', 'genre', 'lang']; %>
+      <% var categories = [
+        {'img': 'up', 'heading': '単価'},
+        {'img': 'genre', 'heading': '開発内容'},
+        {'img': 'lang', 'heading': '開発言語'},
+      ]; %>
+      <% var aboutProject = [
+        {'environment': 'JavaScript', 'project': 'グルメサイトフロントエンド開発案件'},
+        {'environment': 'PHP', 'project': '女性向けポータルサイト開発案件'},
+        {'environment': 'MySQL', 'project': 'ショッピングモールサイト開発'},
+        {'environment': 'Python', 'project': '自社新規WEBアプリケーション開発'},
+        {'environment': 'AWS', 'project': '通信会社のBtoC向けサービスのインフラ開発業務'},
+      ]; %>
+
       <h2 class="p-top-project__heading">見つかる！希望案件</h2>
 
       <!-- 円グラフ -->
       <ul class="p-top-pieList">
-        <% var category = ['単価', '開発内容', '開発言語']; %>
         <% for (var m = 0; m < category.length; m++) { %>
         <li class="p-top-pieItem">
-          <h2 class="p-top-pieItem__category"><%= category[m] %></h2>
-          <p class="p-top-pieItem__image"><img src="<%= imgPath %><%= category[m] %>.png" alt="開発言語 画像"></p>
+          <h2 class="p-top-pieItem__category"><%= categories[m].heading %></h2>
+          <p class="p-top-pieItem__image"><img src="<%= imgPath %><%= categories[m].img %>.png" alt="開発言語 画像"></p>
         </li>
         <% } %>
       </ul>
@@ -132,9 +144,9 @@ src/ejs/template/_head %>
       <ul class="p-top-project__list slick-slider">
         <% for (var k = 0; k < projects.length; k++) { %>
           <!-- liタグ要素間の余白をつけずに直下のdivタグで余白をつける -->
-        <li class="p-top-project__listItem slick-slide slick-current slick-active" id="fade-in-down<%= k+2 %>">
+        <li class="p-top-project__listItem slick-slide slick-current slick-active" id="adjustHeight">
           <div class="p-top-project__listItem__inner">
-            <p class="p-top-project__listItem__about">★週3日PHP案件！有名人も活用するブログサービス運営を支えるエンジニア募集！</p>
+            <p class="p-top-project__listItem__about"><%= aboutProject[k].project %></p>
             <dl class="p-top-project__listItem__feature">
               <div class="p-top-project__listItem__income">
                 <dt class="p-top-project__listItem__income__monthly">単価</dt>
@@ -150,9 +162,7 @@ src/ejs/template/_head %>
               </div>
             </dl>
             <ul class="p-top-project__listItem__developmentEnironment" id="developmentEnironment">
-              <% for (var l = 0; l < developmentEnvironment.length; l++) { %>
-              <li><%= developmentEnvironment[l] %></li>
-              <% } %>
+              <li><%= aboutProject[k].environment %></li>
             </ul>
           </div>
         </li>

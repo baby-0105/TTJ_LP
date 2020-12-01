@@ -1,3 +1,25 @@
+$breakSP: 768;
+$breakPC: 950;
+$breakpoints: (
+  'u-sp': 'print, screen and (max-width: #{$breakSP}px)',
+  'sp-pc':
+    'print, screen and (max-width: #{$breakPC}px) and (min-width: #{$breakSP + 1}px)',
+  'u-pc': 'print, screen and (min-width: #{$breakPC}px)',
+
+) !default;
+@mixin mq($breakpoint) {
+  @media #{inspect(map-get($breakpoints, $breakpoint))} {
+    @content;
+  }
+}
+
+// ie用
+@mixin ie {
+  @media all and (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
 .slick-slider {
   position: relative;
   display: block;
@@ -41,7 +63,7 @@
   position: relative;
   left: 0;
   top: 0;
-  display: block;
+  display: flex !important;
   margin-left: auto;
   margin-right: auto;
 
@@ -61,7 +83,7 @@
 }
 .slick-slide {
   float: left;
-  height: 100%;
+  height: auto;
   min-height: 1px;
   outline: none;
   [dir="rtl"] & {
@@ -95,10 +117,6 @@
   }
 }
 
-.slick-active {
-  outline: none; // 選択した要素の青い枠線を消す
-}
-
 .slick-arrow.slick-hidden {
   display: none;
 }
@@ -124,21 +142,27 @@ button{
   border-left: 5px solid;
   outline: none;
   cursor: pointer;
-  z-index: 1; // 左矢印だけ何故か反応しないからこれで調整
+  z-index: 1; // 左矢印だけ何故か下に回り込んでいるのため
 
-  @media screen and(max-width: 768px) {
-    top: 95%;
+  @include mq('u-pc') {
+    top: 110%;
   }
 }
 
 .prev {
   left: 35px;
   transform: rotate(-45deg);
+  @include mq('u-pc') {
+    left: 30%;
+  }
 }
 
 .next {
   right: 35px;
   transform: rotate(135deg);
+  @include mq('u-pc') {
+    right: 30%;
+  }
 }
 
 .slick-dots > li {
