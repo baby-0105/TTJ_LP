@@ -359,8 +359,9 @@
 // .p-top-flowUpToWork
 // -----------------------------------------------------------------*/
 .p-top-flowUpToWork {
+  background-color: $colorWhite;
   margin: 0 auto;
-  padding: 20px 0 100px;
+  padding: 100px 0;
 }
 
 @mixin blueAndRedTitle {
@@ -584,8 +585,13 @@
   .p-top-project__heading
 ---------------------------------------------------- */
 
+.p-top-project {
+  background-color: $colorWhite;
+}
+
 .p-top-project__heading {
   @include blueAndRedTitle;
+
 
   &::before {
     left: 0;
@@ -618,7 +624,8 @@
 
   @include mq('u-pc') {
     width: 95%;
-    margin: 0 auto 150px;
+    margin: 0 auto;
+    padding-bottom: 150px;
   }
 }
 
@@ -758,6 +765,10 @@
 /*// -----------------------------------------------------------------
 //  p-top-faq
 // -----------------------------------------------------------------*/
+
+.p-top-faq {
+  background-color: $colorWhite;
+}
 
 .p-top-faq__title {
   @include blueAndRedTitle;
@@ -1006,7 +1017,6 @@
 .p-top-entry {
   @extend .p-top-aboutService__entry;
 
-  padding: 0 30px 100px 30px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -1067,8 +1077,19 @@
   margin-bottom: 100px;
 }
 
-.p-top-entry__text { @extend .p-top-aboutService__entryBlock__text; }
+.p-top-entry__text--line {
+  font-size: 80px;
+  color: #fff;
+  text-shadow: 2px 2px 10px #777, -2px 2px 10px #777, 2px -2px 10px #777, -2px -2px 10px #777;
+}
 
-.p-top-entry__text--line { @extend .p-top-aboutService__entryBlock__text--line; }
+.p-top-entry__btn {
+  display: inline-block;
+  margin: 0 auto;
+}
 
-.p-top-entry__arrowBlock { overflow: hidden; }
+// .p-top-entry__text { @extend .p-top-aboutService__entryBlock__text; }
+
+// .p-top-entry__text--line { @extend .p-top-aboutService__entryBlock__text--line; }
+
+// .p-top-entry__arrowBlock { overflow: hidden; }

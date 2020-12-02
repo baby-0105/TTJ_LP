@@ -145,7 +145,7 @@ button{
   z-index: 1; // 左矢印だけ何故か下に回り込んでいるのため
 
   @include mq('u-pc') {
-    top: 110%;
+    top: 80%;
   }
 }
 
