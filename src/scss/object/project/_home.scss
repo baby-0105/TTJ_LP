@@ -11,18 +11,29 @@
 
 .p-top-fixed {
   display: flex;
-  position: sticky;
+  position: relative;
   align-items: center;
   top: 0;
   padding: 100px 0;
   font-family: 'Kosugi Maru', sans-serif;
-  background: linear-gradient(to bottom, transparent 0%, transparent 50%, #fff 100%), url(#{$bgPath}many_people.jpg) no-repeat 30%/cover;
-
-    @include mq('u-pc') {
+  transition-duration: 3s;
+  @include mq('u-pc') {
     flex-direction: column;
     background-size: 100% 100%;
     background-position: bottom;
     padding-top: 10px;
+  }
+
+  &::before {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, transparent 0%, transparent 50%, #fff 100%), url(#{$bgPath}bg_many_people.jpg) no-repeat 30%/cover;
+    content: '';
+    z-index: -1;
   }
 }
 
@@ -994,6 +1005,7 @@
 
 .p-top-entry {
   @extend .p-top-aboutService__entry;
+
   padding: 0 30px 100px 30px;
   margin: 0 auto;
   position: relative;
