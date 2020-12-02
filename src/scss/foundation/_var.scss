@@ -125,13 +125,13 @@ $colorOrange: #ffc042;
 @mixin projectIcon($image) {
   position: relative;
   display: inline-block;
-  margin-right: 15px;
   margin-top: 5px;
   font-size: 14px;
 
   @include mq('u-smSp') {
     font-size: 13px;
   }
+
   &::before {
     position: absolute;
     display: inline-block;
@@ -141,6 +141,8 @@ $colorOrange: #ffc042;
   }
 
   @if ($image=="money") {
+    margin-right: 15px;
+
     &::before {
       width: 45px;
       height: 45px;
@@ -159,17 +161,20 @@ $colorOrange: #ffc042;
   }
 
   @else {
+    margin-right: 25px;
+    margin-left: 6px;
+
     &::before {
       width: 30px;
       height: 30px;
-      left: -40px;
+      left: -44px;
       background-image: url(#{$bgPath}icon_calendar.png);
     }
 
     @include mq('u-sp') {
       &::before {
         top: -1px;
-        left: -28px;
+        left: -33px;
         width: 22px;
         height: 22px;
       }

@@ -559,8 +559,8 @@
 .p-top-pieItem__category {
   text-align: center;
   font-size: 25px;
+  letter-spacing: 5px;
   opacity: 0.6;
-  margin-bottom: 10px;
 
   @include mq('u-sp') {
     font-size: 20px;
@@ -574,6 +574,17 @@
 
   @include mq('u-sp') {
     width: auto;
+  }
+}
+
+.p-top-pieItem__image > img {
+  &:first-child {
+    position: relative;
+    left: -20px; // 元々円グラフがズレてるから
+
+    @include mq('u-sp') {
+      left: -10px;
+    }
   }
 }
 
@@ -632,26 +643,41 @@
 /*
   .p-top-project__listItem
 ---------------------------------------------------- */
+.p-top-project__listItem {
+  padding-bottom: 10px;
+}
+
 .p-top-project__listItem__inner {
   height: 100%;
   margin: 0 10px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   border: 1px solid #9e9e9e;
   border-radius: 5px;
 }
 
 .p-top-project__listItem__about {
+  position: relative;
+  display: flex;
+  // justify-content: center;
   height: 120px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   padding: 40px;
+  font-size: 17px;
+  font-weight: bold;
   letter-spacing: 3px;
   background-color: rgba($colorGray, 0.1);
+
+  &::before {
+    display: block;
+    position: absolute;
+    left: 10px;
+    content: '★';
+  }
 }
 
 .p-top-project__listItem__feature {
   width: 80%;
-  margin: 0 0 40px auto;
-
+  margin: 0 0 30px auto;
 }
 
 /*
@@ -728,31 +754,23 @@
   align-items: center;
 }
 
-.p-top-project__listItem__developmentEnironment > li {
+.p-top-project__listItem__developmentEnironment--detail {
   padding: 5px 10px;
   text-align: center;
   line-height: 14px;
-  font-size: 13px;
-  border: 1px solid;
-  border-radius: 5px;
-  background-color: $colorWhite;
 
-  &:nth-last-child(n + 2) {
+  &:nth-last-child(n+2) {
     margin-right: 5px;
-  }
-
-  @include mq('u-sp') {
-    font-size: 11px;
   }
 
   @include mq('u-smSp') {
     width: calc(100% / 2 - 30px);
 
-    &:nth-child(n + 3) {
+    &:nth-child(n+3) {
       margin-top: 10px;
     }
 
-    &:nth-last-child(n + 2) {
+    &:nth-last-child(n+2) {
       margin-right: 0;
     }
 

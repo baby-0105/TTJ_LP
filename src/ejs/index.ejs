@@ -83,7 +83,7 @@ src/ejs/template/_head %>
       <h1 class="p-top-flowUpToWork__heading">お仕事までの流れ</h1>
       <ul class="p-top-flowUpToWork__menu">
         <% var flow = [
-          {'flowNum': '01', 'flowImage': 'icon_flow1.png', 'flowText': '登録'},
+          {'flowNum': '01', 'flowImage': 'icon_line.png', 'flowText': '登録'},
           {'flowNum': '02', 'flowImage': 'icon_flow2.png', 'flowText': '担当から連絡'},
           {'flowNum': '03', 'flowImage': 'icon_flow3.png', 'flowText': '打ち合わせ'},
           {'flowNum': '04', 'flowImage': 'icon_flow4.png', 'flowText': '案件紹介'},
@@ -108,32 +108,31 @@ src/ejs/template/_head %>
 
     <!-- 案件例 -->
     <div class="p-top-project" id="project">
-      <% var projects = [
-      {'unitPrice': '40', 'workingDays': 4},
-      {'unitPrice': '40', 'workingDays': 4},
-      {'unitPrice': '64', 'workingDays': 3},
-      {'unitPrice': '80', 'workingDays': 1},
-      {'unitPrice': '80', 'workingDays': 1},
-      ]; %>
-      <% var category = ['up', 'genre', 'lang']; %>
       <% var categories = [
-        {'img': 'up', 'heading': '単価'},
-        {'img': 'genre', 'heading': '開発内容'},
-        {'img': 'lang', 'heading': '開発言語'},
+      {'img': 'up',    'heading': '単価'},
+      {'img': 'genre', 'heading': '開発内容'},
+      {'img': 'lang',  'heading': '開発言語'},
+      ]; %>
+      <% var projects = [
+      {'unitPrice': '40', 'workingDays': 3},
+      {'unitPrice': '50', 'workingDays': 3},
+      {'unitPrice': '65', 'workingDays': 4},
+      {'unitPrice': '80', 'workingDays': 5},
+      {'unitPrice': '85', 'workingDays': 5},
       ]; %>
       <% var aboutProject = [
-        {'environment': 'JavaScript', 'project': 'グルメサイトフロントエンド開発案件'},
-        {'environment': 'PHP', 'project': '女性向けポータルサイト開発案件'},
-        {'environment': 'MySQL', 'project': 'ショッピングモールサイト開発'},
-        {'environment': 'Python', 'project': '自社新規WEBアプリケーション開発'},
-        {'environment': 'AWS', 'project': '通信会社のBtoC向けサービスのインフラ開発業務'},
+        {'environment': 'Ruby / Python / PHP',     'project': 'コミュニティーサービスのバックエンド開発'},
+        {'environment': 'Go / PHP',                  'project': 'オンライン学習サービス向けWebアプリ開発'},
+        {'environment': 'Vue.js / Nuxt.js',      'project': '面談予約サイトの改修、新規実装'},
+        {'environment': 'PHP / MySQL',           'project': 'イベント管理システムの開発'},
+        {'environment': 'JavaScript / CSS / HTML', 'project': '自社保険サービスサイト開発'},
       ]; %>
 
       <h2 class="p-top-project__heading">見つかる！希望案件</h2>
 
       <!-- 円グラフ -->
       <ul class="p-top-pieList">
-        <% for (var m = 0; m < category.length; m++) { %>
+        <% for (var m = 0; m < categories.length; m++) { %>
         <li class="p-top-pieItem">
           <h2 class="p-top-pieItem__category"><%= categories[m].heading %></h2>
           <p class="p-top-pieItem__image"><img src="<%= imgPath %>img_graph_<%= categories[m].img %>.png" alt="開発言語 画像"></p>
@@ -162,7 +161,7 @@ src/ejs/template/_head %>
               </div>
             </dl>
             <ul class="p-top-project__listItem__developmentEnironment" id="developmentEnironment">
-              <li><%= aboutProject[k].environment %></li>
+              <li class="p-top-project__listItem__developmentEnironment--detail"><%= aboutProject[k].environment %></li>
             </ul>
           </div>
         </li>
