@@ -30,7 +30,7 @@ src/ejs/template/_head %>
         <div class="p-top-fixed__vertical u-hidden-pc">
           <a class="c-top-toProject" id="toProjectPC" href="#">案件を見てみる！！</a>
           <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
-            <img src="<%= imgPath %>LINE_APP.png" class="c-btn-lineIcon" alt="LINEのロゴ">
+            <img src="<%= imgPath %>icon_line.png" class="c-btn-lineIcon" alt="LINEのロゴ">
             LINE公式アカウントを登録する
           </a>
         </div>
@@ -73,10 +73,52 @@ src/ejs/template/_head %>
           <% } %>
         </div>
         <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
-          <img src="<%= imgPath %>LINE_APP.png" class="c-btn-lineIcon" alt="LINEのロゴ">
+          <img src="<%= imgPath %>icon_line.png" class="c-btn-lineIcon" alt="LINEのロゴ">
           LINE公式アカウントを登録する
         </a>
       </div>
+    </div><!-- /.p-top-fixed__block -->
+  </div><!-- /.p-top-fixed -->
+
+  <div class="p-top-aboutService" id="aboutService">
+    <h2 class="p-top-aboutService__title">
+      TTJは今まで様々なIT業界の営業に携わってきた<br><span class="p-top-aboutService__text--modifier">フリーランスエンジニア専門のエージェント</span>です。
+    </h2>
+    <div class="p-top-aboutService__explain">
+      <div class="p-top-aboutService__bgLogo">
+        <% var aboutServicebgLogo=['T', 'T', 'J']; %>
+        <% var color=['red', 'blue', 'white']; %>
+        <% for (var i = 0; i < aboutServicebgLogo.length; i++) { %>
+          <span class="p-top-aboutService__bgLogo__list--<%= color[i] %>" id="bgLogo-<%= color[i] %>"><%= aboutServicebgLogo[i] %></span>
+        <% } %>
+      </div>
+      <div class="p-top-aboutService__imgBlock">
+        <img src="<%= imgPath %>img_sikou.png" class="p-top-aboutService__img" id="aboutServiceImg" alt="人の吹き出し">
+      </div>
+      <ul class="p-top-aboutService__textBlock">
+        <% var aboutServiceText = [
+          '営業に時間をかけたくない、今の現場からステップアップしたい、そもそも単価の相場もわからない…etc',
+          'それぞれのニーズに沿った提案はもちろん<br><span class="p-top-aboutService__text--modifier">業務開始までしっかりサポート</span>致します。',
+          'もう案件探しで悩まない<span class="p-top-aboutService__text--modifier">【自走できるエンジニア】</span>へ…!!'
+        ]; %>
+        <% for (var i = 0; i < aboutServiceText.length; i++) { %>
+          <li class="p-top-aboutService__text" id="aboutServiceText<%= i+1 %>"><%- aboutServiceText[i] %></li>
+        <% } %>
+      </ul>
+    </div>
+    <div class="p-top-aboutService__entry">
+      <p class="p-top-aboutService__entryBlock__text">
+        まずはお気軽に、<br> <span class="p-top-aboutService__entryBlock__text--line">LINE</span><br>にてご登録下さい！
+      </p>
+      <div class="p-top-aboutService__entryArrowBlock" id="aboutServiceEntryArrow">
+        <% for (var i=0; i<3; i++) { %>
+          <i class="fas fa-angle-right aboutServiceEntryArrow"></i>
+        <% } %>
+      </div>
+      <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
+        <img src="<%= imgPath %>icon_line.png" class="c-btn-lineIcon" alt="LINEのロゴ">
+        LINE公式アカウントを登録する
+      </a>
     </div>
   </div><!-- /.p-top-sticky__container -->
 
@@ -85,13 +127,13 @@ src/ejs/template/_head %>
       <h1 class="p-top-flowUpToWork__heading">お仕事までの流れ</h1>
       <ul class="p-top-flowUpToWork__menu">
         <% var flow = [
-          {'flowNum': '01', 'flowImage': 'ttj.entry.png', 'flowText': '登録'},
-          {'flowNum': '02', 'flowImage': 'ttj.job2.png',      'flowText': '担当から連絡'},
-          {'flowNum': '03', 'flowImage': 'ttj.talk.png', 'flowText': '打ち合わせ'},
-          {'flowNum': '04', 'flowImage': 'ttj.joblist.png', 'flowText': '案件紹介'},
-          {'flowNum': '05', 'flowImage': 'アセット 4.png', 'flowText': 'クライアントへ<br class="u-hidden-sp">提案'},
-          {'flowNum': '06', 'flowImage': 'ttj.talk2.png', 'flowText': 'エンジニア、クライアント打ち合わせ'},
-          {'flowNum': '07', 'flowImage': 'ttj.jobstart.png', 'flowText': '業務開始'},
+          {'flowNum': '01', 'flowImage': 'icon_flow1.png', 'flowText': '登録'},
+          {'flowNum': '02', 'flowImage': 'icon_flow2.png', 'flowText': '担当から連絡'},
+          {'flowNum': '03', 'flowImage': 'icon_flow3.png', 'flowText': '打ち合わせ'},
+          {'flowNum': '04', 'flowImage': 'icon_flow4.png', 'flowText': '案件紹介'},
+          {'flowNum': '05', 'flowImage': 'icon_flow5.png', 'flowText': 'クライアントへ<br class="u-hidden-sp">提案'},
+          {'flowNum': '06', 'flowImage': 'icon_flow6.png', 'flowText': 'エンジニア、<br class="u-hidden-sp">クライアント打ち合わせ'},
+          {'flowNum': '07', 'flowImage': 'icon_flow7.png', 'flowText': '業務開始'},
         ]; %>
         <% for (var i = 0; i < flow.length; i++) { %>
         <li class="p-top-flowUpToWork__list">
@@ -138,7 +180,7 @@ src/ejs/template/_head %>
         <% for (var m = 0; m < category.length; m++) { %>
         <li class="p-top-pieItem">
           <h2 class="p-top-pieItem__category"><%= categories[m].heading %></h2>
-          <p class="p-top-pieItem__image"><img src="<%= imgPath %><%= categories[m].img %>.png" alt="開発言語 画像"></p>
+          <p class="p-top-pieItem__image"><img src="<%= imgPath %>img_graph_<%= categories[m].img %>.png" alt="開発言語 画像"></p>
         </li>
         <% } %>
       </ul>
@@ -188,7 +230,7 @@ src/ejs/template/_head %>
       '案件の単価にもよりますが15%〜20%ほどです。ちなみに業界の相場としては20%〜25%ほどが一般的です。',
       '案件の提案から業務開始まではもちろん、クライアント様との商談の仕方等ノウハウも含めサポート致します。',
       'はい、可能です。TTJではエンジニア1人1人に担当がつきますので案件終了期間が近づきましたら担当より次回案件についてご相談致します。',
-      '案件ごとに変わりますが1〜3ヶ月での更新が一般的となります。エンジニア、クライアント様より双方認識(ニーズ)が合えば延長することも可能です。ちなみに弊社の案件更新率は90%以上となります。',
+      '案件ごとに変わりますが1〜3ヶ月での更新が一般的となります。エンジニア、クライアント様より双方認識（ニーズ）が合えば延長することも可能です。ちなみに弊社の案件更新率は90%以上となります。',
       'いいえ、やはり東京23区内が多いのは事実ですが、TTJでは全国にクライアント様がおりますので地方案件も多数ございます。まずはお気軽にお問い合わせください。',
       '当社では一般的な140h〜180h時間稼働の案件だけではなく、週2、3日の案件もご紹介致します。',
       'やはり割合として常駐案件が多いですがコロナ禍の影響もありリモートワーク案件も急増しております。まずは一度お気軽にご相談下さい。',
@@ -237,12 +279,13 @@ src/ejs/template/_head %>
 
   <div class="p-top-entry">
     <div class="p-top-entry__mask">
+      <img src="<%= imgPath %>logo_ttj.png" class="p-top-entry__companyLogo" alt="サービス名のロゴ">
       <p class="p-top-entry__text">
         まずはお気軽に、<br><span class="p-top-entry__text--line">LINE</span><br>にてご登録下さい！
       </p>
       <div class="p-top-entry__btn">
         <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
-          <img src="<%= imgPath %>LINE_APP.png" class="c-btn-lineIcon" alt="LINEのロゴ">
+          <img src="<%= imgPath %>icon_line.png" class="c-btn-lineIcon" alt="LINEのロゴ">
           LINE公式アカウントを登録する
         </a>
       </div>

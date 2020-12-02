@@ -20,6 +20,18 @@
   width: 40%;
   display: block;
   margin: 0 auto;
+  text-align: center;
+
+  &:hover {
+    .c-footerPC-corporate__linkText {
+      text-decoration: underline;
+    }
+  }
+}
+
+.c-footerPC-corporate__linkText {
+  font-size: 12px;
+  display: inline;
 }
 
 /*
