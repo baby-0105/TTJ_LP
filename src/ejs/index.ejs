@@ -19,7 +19,7 @@ src/ejs/template/_head %>
             <a class="c-top-toProject" id="toProjectSP" href="#">案件を見てみる！！</a>
             <a class="c-btn-skew__toLINE" href="https://lin.ee/Os4sS5W">
               <img src="<%= imgPath %>icon_line.png" class="c-btn-skew__lineIcon" alt="LINEのロゴ">
-              LINE公式アカウントを登録する
+              LINE公式アカウントを登録！
             </a>
           </div>
           <div class="p-top-fixed__circle--day">
@@ -30,7 +30,7 @@ src/ejs/template/_head %>
           <a class="c-top-toProject" id="toProjectPC" href="#">案件を見てみる！！</a>
           <a class="c-btn-skew__toLINE" href="https://lin.ee/Os4sS5W">
             <img src="<%= imgPath %>icon_line.png" class="c-btn-skew__lineIcon" alt="LINEのロゴ">
-            LINE公式アカウントを登録する
+            LINE公式アカウントを登録！
           </a>
         </div>
       </div><!-- /.p-top-fixed__container -->
@@ -73,7 +73,7 @@ src/ejs/template/_head %>
         </div>
         <a class="c-btn-skew__toLINE" href="https://lin.ee/Os4sS5W">
           <img src="<%= imgPath %>icon_line.png" class="c-btn-skew__lineIcon" alt="LINEのロゴ">
-          LINE公式アカウントを登録する
+          LINE公式アカウントを登録！
         </a>
       </div>
     </div>
@@ -180,8 +180,8 @@ src/ejs/template/_head %>
     <% var answer = [
       'フリーランスエンジニアへ案件をご紹介し、契約手続きや条件の交渉等行うサービスです。わかりやすく言うとエンジニアの営業代行業務になります。',
       'いいえ、ご利用料金は完全無料となります。',
-      'はい、LINEにて登録後、弊社営業担当より細かなヒアリングを行いしっかりニーズにマッチした案件をご紹介いたします。',
-      'はい、未経験でも案件紹介は可能ですが経験者の方に比べ案件の幅には制限がございます。',
+      'はい。LINEにて登録後、弊社営業担当より細かなヒアリングを行いしっかりニーズにマッチした案件をご紹介いたします。',
+      'はい。未経験でも案件紹介は可能ですが経験者の方に比べ案件の幅には制限がございます。',
       '案件の単価にもよりますが15%〜20%ほどです。ちなみに業界の相場としては20%〜25%ほどが一般的です。',
       '案件の提案から業務開始まではもちろん、クライアント様との商談の仕方等ノウハウも含めサポート致します。',
       'はい、可能です。TTJではエンジニア1人1人に担当がつきますので案件終了期間が近づきましたら担当より次回案件についてご相談致します。',
@@ -208,7 +208,7 @@ src/ejs/template/_head %>
           <div id="bgBlack">
             <div class="p-top-faqPC__answerList__textBlock">
               <span class="p-top-faqPC__answerList__Num">Q<%= [i+1] %></span>
-              <h3 class="p-top-faqPC__answerList__question"><%= question[i] %>-</h3>
+              <h3 class="p-top-faqPC__answerList__question"><%= question[i] %></h3>
               <span class="p-top-faqPC__answerList__Num">A<%= [i+1] %></span>
               <p class="p-top-faqPC__answerList__answer"><%= answer[i] %></p>
               <span class="p-top-faqPC__crossIcon"><i class="fas fa-times crossIcon"></i></span>
@@ -238,10 +238,16 @@ src/ejs/template/_head %>
       <p class="p-top-entry__text">
         まずはお気軽に、<br><span class="p-top-entry__text--line">LINE</span><br>にてご登録下さい！
       </p>
-      <div class="p-top-entry__btn">
+      <div class="p-top-PCentry__btn">
         <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
           <img src="<%= imgPath %>icon_line.png" class="c-btn-square__lineIcon" alt="LINEのロゴ">
-          LINE公式アカウントを登録する
+          LINE公式アカウントを登録！
+        </a>
+      </div>
+      <div class="p-top-SPentry__btn">
+        <a class="c-btn-skew__toLINE" href="https://lin.ee/Os4sS5W">
+          <img src="<%= imgPath %>icon_line.png" class="c-btn-skew__lineIcon" alt="LINEのロゴ">
+          LINE公式アカウントを登録！
         </a>
       </div>
     </div>
