@@ -18,21 +18,23 @@
 
   @include mq('u-sp') {
     font-size: 16px;
+    padding: 3vh 10vw;
   }
 
   &:hover {
     transform: scale(1.05);
     background-color: $colorYellow;
   }
-
-
-  @include mq('u-sp') {
-    width: 45%;
-    padding: 3vh 0;
-  }
 }
 
-.c-btn-square__toLINE {
+@mixin c-btn-lineIcon {
+  width: 50px;
+  object-fit: contain;
+  padding-right: 10px;
+  color: $colorGreen;
+}
+
+@mixin c-btn-toLINE {
   display: flex;
   align-items: center;
   padding: 1em 2em;
@@ -71,13 +73,6 @@
       z-index: -1; // 文字見えるように
     }
   }
-}
-
-@mixin c-btn-lineIcon {
-  width: 50px;
-  object-fit: contain;
-  padding-right: 10px;
-  color: $colorGreen;
 }
 
 .c-btn-skew__toLINE {
