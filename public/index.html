@@ -27,7 +27,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
 
 <title>TTL_JP_TOP</title>
-<link href="assets/stylesheets/bundle1fd6f498bf3a2b00d048.css" rel="stylesheet"></head>
+<link href="assets/stylesheets/bundlea0b312f129920194349f.css" rel="stylesheet"></head>
 <body>
 <div class="l-wrap">
 
@@ -36,7 +36,7 @@
 
 
 <main class="l-main">
-    <div class="p-top-fixed">
+    <div class="p-top-fixed" id="fixed">
       <div class="p-top-fixed__container" id="fluffy_disappear">
         <div class="p-top-fixed__circle--LINE">
           <h3 class="p-top-fixed__catchPhrase"><span class="p-top-fixed__catchPhrase--bold">LINE</span>で<br>簡単登録</h3>
@@ -48,9 +48,9 @@
           </div>
           <div class="p-top-fixed__vertical u-hidden-sp">
             <a class="c-top-toProject" id="toProjectSP" href="#">案件を見てみる！！</a>
-            <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
-              <img src="/assets/images/icon_line.png" class="c-btn-lineIcon" alt="LINEのロゴ">
-              LINE公式アカウントを登録する
+            <a class="c-btn-skew__toLINE" href="https://lin.ee/Os4sS5W">
+              <img src="/assets/images/icon_line.png" class="c-btn-skew__lineIcon" alt="LINEのロゴ">
+              LINE公式アカウントを登録！
             </a>
           </div>
           <div class="p-top-fixed__circle--day">
@@ -59,9 +59,9 @@
         </div><!-- /.p-top-fixed__horizontal -->
         <div class="p-top-fixed__vertical u-hidden-pc">
           <a class="c-top-toProject" id="toProjectPC" href="#">案件を見てみる！！</a>
-          <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
-            <img src="/assets/images/icon_line.png" class="c-btn-lineIcon" alt="LINEのロゴ">
-            LINE公式アカウントを登録する
+          <a class="c-btn-skew__toLINE" href="https://lin.ee/Os4sS5W">
+            <img src="/assets/images/icon_line.png" class="c-btn-skew__lineIcon" alt="LINEのロゴ">
+            LINE公式アカウントを登録！
           </a>
         </div>
       </div><!-- /.p-top-fixed__container -->
@@ -110,15 +110,15 @@
             <i class="fas fa-angle-right aboutServiceEntryArrow"></i>
           
         </div>
-        <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
-          <img src="/assets/images/icon_line.png" class="c-btn-lineIcon" alt="LINEのロゴ">
-          LINE公式アカウントを登録する
+        <a class="c-btn-skew__toLINE" href="https://lin.ee/Os4sS5W">
+          <img src="/assets/images/icon_line.png" class="c-btn-skew__lineIcon" alt="LINEのロゴ">
+          LINE公式アカウントを登録！
         </a>
       </div>
     </div>
 
   <!-- 仕事までの流れ -->
-    <div class="p-top-flowUpToWork">
+    <div class="p-top-flowUpToWork" id="flowUpToWork">
       <h1 class="p-top-flowUpToWork__heading">お仕事までの流れ</h1>
       <ul class="p-top-flowUpToWork__menu">
         
@@ -131,7 +131,7 @@
             </div>
             <dd class="p-top-flowUpToWork__list__txt">登録</dd>
           </dl>
-          <img class="p-top-flowUpToWork__list__image" src="/assets/images/icon_flow1.png" alt="仕事の流れ 画像">
+          <img class="p-top-flowUpToWork__list__image" src="/assets/images/icon_line.png" alt="仕事の流れ 画像">
         </li>
         
         <li class="p-top-flowUpToWork__list">
@@ -208,26 +208,25 @@
       
       
       
-      
 
       <h2 class="p-top-project__heading">見つかる！希望案件</h2>
 
       <!-- 円グラフ -->
-      <ul class="p-top-pieList">
+      <ul class="p-top-project__pieList">
         
-        <li class="p-top-pieItem">
-          <h2 class="p-top-pieItem__category">単価</h2>
-          <p class="p-top-pieItem__image"><img src="/assets/images/img_graph_up.png" alt="開発言語 画像"></p>
+        <li class="p-top-project__pieItem">
+          <h2 class="p-top-project__pieItem__category">単価</h2>
+          <p class="p-top-project__pieItem__image"><img src="/assets/images/img_graph_up.png" alt="開発言語 画像"></p>
         </li>
         
-        <li class="p-top-pieItem">
-          <h2 class="p-top-pieItem__category">開発内容</h2>
-          <p class="p-top-pieItem__image"><img src="/assets/images/img_graph_genre.png" alt="開発言語 画像"></p>
+        <li class="p-top-project__pieItem">
+          <h2 class="p-top-project__pieItem__category">開発内容</h2>
+          <p class="p-top-project__pieItem__image"><img src="/assets/images/img_graph_genre.png" alt="開発言語 画像"></p>
         </li>
         
-        <li class="p-top-pieItem">
-          <h2 class="p-top-pieItem__category">開発言語</h2>
-          <p class="p-top-pieItem__image"><img src="/assets/images/img_graph_lang.png" alt="開発言語 画像"></p>
+        <li class="p-top-project__pieItem">
+          <h2 class="p-top-project__pieItem__category">開発言語</h2>
+          <p class="p-top-project__pieItem__image"><img src="/assets/images/img_graph_lang.png" alt="開発言語 画像"></p>
         </li>
         
       </ul>
@@ -237,23 +236,23 @@
           <!-- liタグ要素間の余白をつけずに直下のdivタグで余白をつける -->
         <li class="p-top-project__listItem slick-slide slick-current slick-active" id="adjustHeight">
           <div class="p-top-project__listItem__inner">
-            <p class="p-top-project__listItem__about">グルメサイトフロントエンド開発案件</p>
+            <p class="p-top-project__listItem__about">コミュニティーサービスのバックエンド開発</p>
             <dl class="p-top-project__listItem__feature">
-              <div class="p-top-project__listItem__income">
-                <dt class="p-top-project__listItem__income__monthly">単価</dt>
-                <dd class="p-top-project__listItem__income__price">
-                  <span class="p-top-project__listItem__income__price--emphasis">40</span>万円
+              <div class="p-top-project__listItem__feature__income">
+                <dt class="p-top-project__listItem__feature__income__monthly">単価</dt>
+                <dd class="p-top-project__listItem__feature__income__price">
+                  <span class="p-top-project__listItem__feature__income__price--emphasis">40</span>万円
                 </dd>
               </div>
-              <div class="p-top-project__listItem__working">
-                <dt class="p-top-project__listItem__working__week">週</dt>
-                <dd class="p-top-project__listItem__working__days">
-                  <span class="p-top-project__listItem__working__days--emphasis">4</span>日勤務
+              <div class="p-top-project__listItem__feature__working">
+                <dt class="p-top-project__listItem__feature__working__week">週</dt>
+                <dd class="p-top-project__listItem__feature__working__day">
+                  <span class="p-top-project__listItem__feature__working__day--emphasis">3</span>日勤務
                 </dd>
               </div>
             </dl>
-            <ul class="p-top-project__listItem__developmentEnironment" id="developmentEnironment">
-              <li>JavaScript</li>
+            <ul class="p-top-project__listItem__language" id="language">
+              <li class="p-top-project__listItem__language--detail">Ruby / Python / PHP</li>
             </ul>
           </div>
         </li>
@@ -261,23 +260,23 @@
           <!-- liタグ要素間の余白をつけずに直下のdivタグで余白をつける -->
         <li class="p-top-project__listItem slick-slide slick-current slick-active" id="adjustHeight">
           <div class="p-top-project__listItem__inner">
-            <p class="p-top-project__listItem__about">女性向けポータルサイト開発案件</p>
+            <p class="p-top-project__listItem__about">オンライン学習サービス向けWebアプリ開発</p>
             <dl class="p-top-project__listItem__feature">
-              <div class="p-top-project__listItem__income">
-                <dt class="p-top-project__listItem__income__monthly">単価</dt>
-                <dd class="p-top-project__listItem__income__price">
-                  <span class="p-top-project__listItem__income__price--emphasis">40</span>万円
+              <div class="p-top-project__listItem__feature__income">
+                <dt class="p-top-project__listItem__feature__income__monthly">単価</dt>
+                <dd class="p-top-project__listItem__feature__income__price">
+                  <span class="p-top-project__listItem__feature__income__price--emphasis">50</span>万円
                 </dd>
               </div>
-              <div class="p-top-project__listItem__working">
-                <dt class="p-top-project__listItem__working__week">週</dt>
-                <dd class="p-top-project__listItem__working__days">
-                  <span class="p-top-project__listItem__working__days--emphasis">4</span>日勤務
+              <div class="p-top-project__listItem__feature__working">
+                <dt class="p-top-project__listItem__feature__working__week">週</dt>
+                <dd class="p-top-project__listItem__feature__working__day">
+                  <span class="p-top-project__listItem__feature__working__day--emphasis">3</span>日勤務
                 </dd>
               </div>
             </dl>
-            <ul class="p-top-project__listItem__developmentEnironment" id="developmentEnironment">
-              <li>PHP</li>
+            <ul class="p-top-project__listItem__language" id="language">
+              <li class="p-top-project__listItem__language--detail">Go / PHP</li>
             </ul>
           </div>
         </li>
@@ -285,23 +284,23 @@
           <!-- liタグ要素間の余白をつけずに直下のdivタグで余白をつける -->
         <li class="p-top-project__listItem slick-slide slick-current slick-active" id="adjustHeight">
           <div class="p-top-project__listItem__inner">
-            <p class="p-top-project__listItem__about">ショッピングモールサイト開発</p>
+            <p class="p-top-project__listItem__about">面談予約サイトの改修、新規実装</p>
             <dl class="p-top-project__listItem__feature">
-              <div class="p-top-project__listItem__income">
-                <dt class="p-top-project__listItem__income__monthly">単価</dt>
-                <dd class="p-top-project__listItem__income__price">
-                  <span class="p-top-project__listItem__income__price--emphasis">64</span>万円
+              <div class="p-top-project__listItem__feature__income">
+                <dt class="p-top-project__listItem__feature__income__monthly">単価</dt>
+                <dd class="p-top-project__listItem__feature__income__price">
+                  <span class="p-top-project__listItem__feature__income__price--emphasis">65</span>万円
                 </dd>
               </div>
-              <div class="p-top-project__listItem__working">
-                <dt class="p-top-project__listItem__working__week">週</dt>
-                <dd class="p-top-project__listItem__working__days">
-                  <span class="p-top-project__listItem__working__days--emphasis">3</span>日勤務
+              <div class="p-top-project__listItem__feature__working">
+                <dt class="p-top-project__listItem__feature__working__week">週</dt>
+                <dd class="p-top-project__listItem__feature__working__day">
+                  <span class="p-top-project__listItem__feature__working__day--emphasis">4</span>日勤務
                 </dd>
               </div>
             </dl>
-            <ul class="p-top-project__listItem__developmentEnironment" id="developmentEnironment">
-              <li>MySQL</li>
+            <ul class="p-top-project__listItem__language" id="language">
+              <li class="p-top-project__listItem__language--detail">Vue.js / Nuxt.js</li>
             </ul>
           </div>
         </li>
@@ -309,23 +308,23 @@
           <!-- liタグ要素間の余白をつけずに直下のdivタグで余白をつける -->
         <li class="p-top-project__listItem slick-slide slick-current slick-active" id="adjustHeight">
           <div class="p-top-project__listItem__inner">
-            <p class="p-top-project__listItem__about">自社新規WEBアプリケーション開発</p>
+            <p class="p-top-project__listItem__about">イベント管理システムの開発</p>
             <dl class="p-top-project__listItem__feature">
-              <div class="p-top-project__listItem__income">
-                <dt class="p-top-project__listItem__income__monthly">単価</dt>
-                <dd class="p-top-project__listItem__income__price">
-                  <span class="p-top-project__listItem__income__price--emphasis">80</span>万円
+              <div class="p-top-project__listItem__feature__income">
+                <dt class="p-top-project__listItem__feature__income__monthly">単価</dt>
+                <dd class="p-top-project__listItem__feature__income__price">
+                  <span class="p-top-project__listItem__feature__income__price--emphasis">80</span>万円
                 </dd>
               </div>
-              <div class="p-top-project__listItem__working">
-                <dt class="p-top-project__listItem__working__week">週</dt>
-                <dd class="p-top-project__listItem__working__days">
-                  <span class="p-top-project__listItem__working__days--emphasis">1</span>日勤務
+              <div class="p-top-project__listItem__feature__working">
+                <dt class="p-top-project__listItem__feature__working__week">週</dt>
+                <dd class="p-top-project__listItem__feature__working__day">
+                  <span class="p-top-project__listItem__feature__working__day--emphasis">5</span>日勤務
                 </dd>
               </div>
             </dl>
-            <ul class="p-top-project__listItem__developmentEnironment" id="developmentEnironment">
-              <li>Python</li>
+            <ul class="p-top-project__listItem__language" id="language">
+              <li class="p-top-project__listItem__language--detail">PHP / MySQL</li>
             </ul>
           </div>
         </li>
@@ -333,23 +332,23 @@
           <!-- liタグ要素間の余白をつけずに直下のdivタグで余白をつける -->
         <li class="p-top-project__listItem slick-slide slick-current slick-active" id="adjustHeight">
           <div class="p-top-project__listItem__inner">
-            <p class="p-top-project__listItem__about">通信会社のBtoC向けサービスのインフラ開発業務</p>
+            <p class="p-top-project__listItem__about">自社保険サービスサイト開発</p>
             <dl class="p-top-project__listItem__feature">
-              <div class="p-top-project__listItem__income">
-                <dt class="p-top-project__listItem__income__monthly">単価</dt>
-                <dd class="p-top-project__listItem__income__price">
-                  <span class="p-top-project__listItem__income__price--emphasis">80</span>万円
+              <div class="p-top-project__listItem__feature__income">
+                <dt class="p-top-project__listItem__feature__income__monthly">単価</dt>
+                <dd class="p-top-project__listItem__feature__income__price">
+                  <span class="p-top-project__listItem__feature__income__price--emphasis">85</span>万円
                 </dd>
               </div>
-              <div class="p-top-project__listItem__working">
-                <dt class="p-top-project__listItem__working__week">週</dt>
-                <dd class="p-top-project__listItem__working__days">
-                  <span class="p-top-project__listItem__working__days--emphasis">1</span>日勤務
+              <div class="p-top-project__listItem__feature__working">
+                <dt class="p-top-project__listItem__feature__working__week">週</dt>
+                <dd class="p-top-project__listItem__feature__working__day">
+                  <span class="p-top-project__listItem__feature__working__day--emphasis">5</span>日勤務
                 </dd>
               </div>
             </dl>
-            <ul class="p-top-project__listItem__developmentEnironment" id="developmentEnironment">
-              <li>AWS</li>
+            <ul class="p-top-project__listItem__language" id="language">
+              <li class="p-top-project__listItem__language--detail">JavaScript / CSS / HTML</li>
             </ul>
           </div>
         </li>
@@ -694,10 +693,16 @@
       <p class="p-top-entry__text">
         まずはお気軽に、<br><span class="p-top-entry__text--line">LINE</span><br>にてご登録下さい！
       </p>
-      <div class="p-top-entry__btn">
+      <div class="p-top-PCentry__btn">
         <a class="c-btn-square__toLINE" href="https://lin.ee/Os4sS5W">
-          <img src="/assets/images/icon_line.png" class="c-btn-lineIcon" alt="LINEのロゴ">
-          LINE公式アカウントを登録する
+          <img src="/assets/images/icon_line.png" class="c-btn-square__lineIcon" alt="LINEのロゴ">
+          LINE公式アカウントを登録！
+        </a>
+      </div>
+      <div class="p-top-SPentry__btn">
+        <a class="c-btn-skew__toLINE" href="https://lin.ee/Os4sS5W">
+          <img src="/assets/images/icon_line.png" class="c-btn-skew__lineIcon" alt="LINEのロゴ">
+          LINE公式アカウントを登録！
         </a>
       </div>
     </div>
@@ -707,7 +712,7 @@
 
 <footer class="l-footerPC" id="footer">
   <div class="c-footerPC-company">
-    <img src="/assets/images/logo_ttj.png" class="c-footerPC-company__logo" alt="サービス名のロゴ画像">
+    <img src="/assets/images/logo_tc.png" class="c-footerPC-company__logo" alt="サービス名のロゴ画像">
     <small class="c-footerPC-company__copyright">&copy; 2020 Trust Inc. All Rights Reserved.</small>
   </div>
   <div class="c-footerPC-corporate">
@@ -728,5 +733,5 @@
 </footer>
 
 </div><!-- l-wrap -->
-<script type="text/javascript" src="assets/javascripts/bundle1fd6f498bf3a2b00d048.js"></script></body>
+<script type="text/javascript" src="assets/javascripts/bundlea0b312f129920194349f.js"></script></body>
 </html>
