@@ -138,7 +138,7 @@
 // -----------------------------------------------------------------*/
 
 .p-top-aboutService {
-  color: $colorBlack;
+  // color: $colorBlack;
   padding: 100px 50px;
 
   @include mq('u-pc') {
@@ -165,7 +165,7 @@
 .p-top-aboutService__explain {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  // justify-content: space-around;
   position: relative;
   margin-bottom: 100px;
 
@@ -184,7 +184,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  justify-content: space-between;
 
   @include mq('u-pc') {
     font-size: 250px;
@@ -1030,11 +1029,11 @@
   //   transition: 1s;
   // }
 
-  &:hover {
-    &:before {
-      transform: scale(1.05);
-    }
-  }
+  // &:hover {
+  //   &:before {
+  //     transform: scale(1.05);
+  //   }
+  // }
 }
 
 .p-top-entry__mask {
