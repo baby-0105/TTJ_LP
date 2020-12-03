@@ -545,22 +545,6 @@
 
 .p-top-project__pieItem {
   margin-bottom: 100px;
-
-  @include mq('u-sp') {
-    &:nth-child(1) {
-      .p-top-project__pieItem__image {
-        position: relative;
-        right: 25px;
-      }
-    }
-
-    &:nth-child(3) {
-      .p-top-project__pieItem__image {
-        position: relative;
-        right: 15px;
-      }
-    }
-  }
 }
 
 .p-top-project__pieItem__category {
@@ -574,25 +558,41 @@
   }
 }
 
-.p-top-project__pieItem__image {
+.p-top-project__PCpieItem__image {
   width: 100%;
   height: auto;
   margin: 0 auto;
 
   @include mq('u-sp') {
-    width: auto;
+    display: none;
   }
 }
 
-.p-top-project__pieItem__image > img {
+.p-top-project__PCpieItem__image > img {
   &:first-child {
     position: relative;
     left: -20px; // 元々円グラフがズレてるから
 
     @include mq('u-sp') {
-      left: -10px;
+      display: none;
     }
   }
+}
+
+.p-top-project__SPpieItem__image {
+  @include mq('o-sp') {
+    display: none;
+  }
+
+  width: 100vw;
+  height: auto;
+  padding-bottom: 100px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.p-top-project__SPpieItem__image > img {
+  transform: scale(1.8);
 }
 
 /*// -----------------------------------------------------------------
