@@ -135,7 +135,7 @@
 // -----------------------------------------------------------------*/
 
 .p-top-aboutService {
-  color: $colorBlack;
+  // color: $colorBlack;
   padding: 100px 50px;
 
   @include mq('u-pc') {
@@ -162,7 +162,7 @@
 .p-top-aboutService__explain {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  // justify-content: space-around;
   position: relative;
   margin-bottom: 100px;
 
@@ -181,7 +181,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  justify-content: space-between;
 
   @include mq('u-pc') {
     font-size: 250px;
@@ -925,6 +924,7 @@
   background: rgba(51, 51, 51, 0.8);
   width: 100%;
   height: 100%;
+  z-index: 2;
 }
 
 .nonScroll {
@@ -1012,39 +1012,30 @@
 // -----------------------------------------------------------------*/
 
 .p-top-entry {
-  @extend .p-top-aboutService__entry;
-
-  margin: 0 auto;
-  position: relative;
+  text-align: center;
   overflow: hidden;
+  background: url('#{$bgPath}bg_night.jpg');
+  background-position: center;
+  background-size: cover;
 
-  &:before {
-    content: '';
-    display: block;
-    width: 100vw;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: 1s;
-    background: url('#{$bgPath}bg_night.jpg');
-    background-position: center;
-    background-size: cover;
-  }
+  // &:before {
+  //   content: '';
+  //   width: 100vw;
+  //   height: 100%;
+  //   left: 0;
+  //   transition: 1s;
+  // }
 
-  &:hover {
-    &:before {
-      transform: scale(1.05);
-    }
-  }
+  // &:hover {
+  //   &:before {
+  //     transform: scale(1.05);
+  //   }
+  // }
 }
 
 .p-top-entry__mask {
-  width: 100%;
-  height: 100%;
   padding: 100px 50px;
   background: rgba(255,255,255,0.6);
-  position: relative;
 
   @include mq('u-pc') {
     padding: 100px 20px;
@@ -1053,9 +1044,6 @@
 
 .p-top-entry__companyLogo {
   width: 20%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
   margin-bottom: 100px;
 
   @include mq('sp-pc') {
@@ -1069,7 +1057,6 @@
 
 .p-top-entry__text {
   text-shadow: 1px 3px 3px #ffc042;
-  text-align: center;
   font-size: 30px;
   margin-bottom: 100px;
 }
@@ -1084,9 +1071,3 @@
   display: inline-block;
   margin: 0 auto;
 }
-
-// .p-top-entry__text { @extend .p-top-aboutService__entryBlock__text; }
-
-// .p-top-entry__text--line { @extend .p-top-aboutService__entryBlock__text--line; }
-
-// .p-top-entry__arrowBlock { overflow: hidden; }
