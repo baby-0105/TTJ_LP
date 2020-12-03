@@ -3,10 +3,36 @@
 // ==========================================================================*/
 
 .c-top-toProject {
-  @include firstViewBtn(project);
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 2vh 5vw;
+  font-size: 20px;
+  border-radius: 35px;
+  box-shadow: 0px 7px 3px 0px $colorBlack;
+  transition: all 0.5s;
+  white-space: nowrap; // 文字おりかえさない
+  letter-spacing: 2px;
+  background-color:rgba($colorYellow, .4);
+
+  @include mq('u-sp') {
+    font-size: 16px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: $colorYellow;
+  }
+
+
+  @include mq('u-sp') {
+    width: 45%;
+    padding: 3vh 0;
+  }
 }
 
-@mixin c-btn-toLINE {
+.c-btn-square__toLINE {
   display: flex;
   align-items: center;
   padding: 1em 2em;

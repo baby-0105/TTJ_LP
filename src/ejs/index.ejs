@@ -5,7 +5,7 @@ src/ejs/template/_head %>
 <% include src/ejs/template/_header %>
 
 <main class="l-main">
-    <div class="p-top-fixed">
+    <div class="p-top-fixed" id="fixed">
       <div class="p-top-fixed__container" id="fluffy_disappear">
         <div class="p-top-fixed__circle--LINE">
           <h3 class="p-top-fixed__catchPhrase"><span class="p-top-fixed__catchPhrase--bold">LINE</span>で<br>簡単登録</h3>
@@ -79,7 +79,7 @@ src/ejs/template/_head %>
     </div>
 
   <!-- 仕事までの流れ -->
-    <div class="p-top-flowUpToWork">
+    <div class="p-top-flowUpToWork" id="flowUpToWork">
       <h1 class="p-top-flowUpToWork__heading">お仕事までの流れ</h1>
       <ul class="p-top-flowUpToWork__menu">
         <% var flow = [
@@ -131,11 +131,11 @@ src/ejs/template/_head %>
       <h2 class="p-top-project__heading">見つかる！希望案件</h2>
 
       <!-- 円グラフ -->
-      <ul class="p-top-pieList">
+      <ul class="p-top-project__pieList">
         <% for (var m = 0; m < categories.length; m++) { %>
-        <li class="p-top-pieItem">
-          <h2 class="p-top-pieItem__category"><%= categories[m].heading %></h2>
-          <p class="p-top-pieItem__image"><img src="<%= imgPath %>img_graph_<%= categories[m].img %>.png" alt="開発言語 画像"></p>
+        <li class="p-top-project__pieItem">
+          <h2 class="p-top-project__pieItem__category"><%= categories[m].heading %></h2>
+          <p class="p-top-project__pieItem__image"><img src="<%= imgPath %>img_graph_<%= categories[m].img %>.png" alt="開発言語 画像"></p>
         </li>
         <% } %>
       </ul>
@@ -147,21 +147,21 @@ src/ejs/template/_head %>
           <div class="p-top-project__listItem__inner">
             <p class="p-top-project__listItem__about"><%= aboutProject[k].project %></p>
             <dl class="p-top-project__listItem__feature">
-              <div class="p-top-project__listItem__income">
-                <dt class="p-top-project__listItem__income__monthly">単価</dt>
-                <dd class="p-top-project__listItem__income__price">
-                  <span class="p-top-project__listItem__income__price--emphasis"><%= projects[k].unitPrice %></span>万円
+              <div class="p-top-project__listItem__feature__income">
+                <dt class="p-top-project__listItem__feature__income__monthly">単価</dt>
+                <dd class="p-top-project__listItem__feature__income__price">
+                  <span class="p-top-project__listItem__feature__income__price--emphasis"><%= projects[k].unitPrice %></span>万円
                 </dd>
               </div>
-              <div class="p-top-project__listItem__working">
-                <dt class="p-top-project__listItem__working__week">週</dt>
-                <dd class="p-top-project__listItem__working__days">
-                  <span class="p-top-project__listItem__working__days--emphasis"><%= projects[k].workingDays %></span>日勤務
+              <div class="p-top-project__listItem__feature__working">
+                <dt class="p-top-project__listItem__feature__working__week">週</dt>
+                <dd class="p-top-project__listItem__feature__working__day">
+                  <span class="p-top-project__listItem__feature__working__day--emphasis"><%= projects[k].workingDays %></span>日勤務
                 </dd>
               </div>
             </dl>
-            <ul class="p-top-project__listItem__developmentEnironment" id="developmentEnironment">
-              <li class="p-top-project__listItem__developmentEnironment--detail"><%= aboutProject[k].environment %></li>
+            <ul class="p-top-project__listItem__language" id="language">
+              <li class="p-top-project__listItem__language--detail"><%= aboutProject[k].environment %></li>
             </ul>
           </div>
         </li>

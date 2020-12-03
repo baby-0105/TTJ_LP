@@ -81,47 +81,6 @@ $colorOrange: #ffc042;
   }
 }
 
-@mixin firstViewBtn($category) {
-  position: relative;
-  display: inline-block;
-  padding: 2vh 5vw;
-  font-size: 20px;
-  border-radius: 35px;
-  box-shadow: 0px 7px 3px 0px $colorBlack;
-  transition: all 0.5s;
-  white-space: nowrap; // 文字おりかえさない
-
-  @include mq('u-sp') {
-    font-size: 16px;
-  }
-
-  &:hover {transform: scale(1.05);}
-
-  // @if ($category=="project") {
-    margin-bottom: 30px;
-    letter-spacing: 2px;
-    background-color:rgba($colorYellow, .4);
-    &:hover {
-      background-color: $colorYellow;
-    }
-
-    @include mq('u-sp') {
-      width: 80%;
-      padding: 3vh 0;
-    }
-  // }@else {
-  //   background-color: rgba($colorGreen, .9);
-  //   &:hover {
-  //     background-color: $colorGreen;
-  //   }
-
-  //   @include mq('u-sp') {
-  //     width: 100%;
-  //     padding: 3vh 0;
-  //   }
-  // }
-}
-
 @mixin projectIcon($image) {
   position: relative;
   display: inline-block;
