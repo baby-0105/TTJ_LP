@@ -83,7 +83,7 @@ $(() => {
           spWidth          = 768;
 
       if (windowWidth > spWidth) {
-        if (startPos+250 < scrollPosi) {
+        if (startPos+500 < scrollPosi) {
           $(this).addClass('disappear');
         } else {
           $(this).removeClass('disappear');
