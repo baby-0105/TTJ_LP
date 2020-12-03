@@ -101,7 +101,7 @@ $(() => {
             fixPosi      = $fixed.offset().top,
             flowUpPosi   = $('#flowUpToWork').offset().top;
 
-      if (scrollPosi > flowUpPosi - windowHeight + 500) {
+      if (scrollPosi > flowUpPosi - windowHeight + 1200) {
         $fixed.removeClass('fixed');
       } else {
         $fixed.addClass('fixed');

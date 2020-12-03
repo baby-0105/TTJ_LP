@@ -545,6 +545,22 @@
 
 .p-top-project__pieItem {
   margin-bottom: 100px;
+
+  @include mq('u-sp') {
+    &:nth-child(1) {
+      .p-top-project__pieItem__image {
+        position: relative;
+        right: 25px;
+      }
+    }
+
+    &:nth-child(3) {
+      .p-top-project__pieItem__image {
+        position: relative;
+        right: 15px;
+      }
+    }
+  }
 }
 
 .p-top-project__pieItem__category {
@@ -554,7 +570,7 @@
   opacity: 0.6;
 
   @include mq('u-sp') {
-    font-size: 20px;
+    font-size: 30px;
   }
 }
 
