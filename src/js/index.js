@@ -95,6 +95,18 @@ $(() => {
         });
       }
     });
+
+    $('#fixed').each(function() {
+      const $fixed       = $(this),
+            fixPosi      = $fixed.offset().top,
+            flowUpPosi   = $('#flowUpToWork').offset().top;
+
+      if (scrollPosi > flowUpPosi - windowHeight + 500) {
+        $fixed.removeClass('fixed');
+      } else {
+        $fixed.addClass('fixed');
+      }
+    });
   }); // スクロールイベント終了
 
 
