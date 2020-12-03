@@ -11,12 +11,10 @@
 
 .p-top-fixed {
   display: flex;
-  position: relative;
   align-items: center;
   top: 0;
   padding: 100px 0;
   font-family: 'Kosugi Maru', sans-serif;
-  transition-duration: 3s;
   @include mq('u-pc') {
     flex-direction: column;
     background-size: 100% 100%;
@@ -37,12 +35,10 @@
   }
 }
 
-
 .p-top-fixed__container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   width: 100%;
   margin: 0 auto;
   opacity: 1;
@@ -128,6 +124,7 @@
   }
 }
 
+// toggleクラス ファーストビューコンテンツ 消える
 .disappear {
   opacity: 0;
   transform: translateY(-400px);
@@ -526,9 +523,9 @@
 }
 
 /*// -----------------------------------------------------------------
-// .p-top-pie
+// .p-top-project__pie
 // -----------------------------------------------------------------*/
-.p-top-pieList {
+.p-top-project__pieList {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -541,7 +538,7 @@
   }
 }
 
-.p-top-pieItem {
+.p-top-project__pieItem {
   margin-bottom: 100px;
 
   @include mq('u-sp') {
@@ -556,7 +553,7 @@
   }
 }
 
-.p-top-pieItem__category {
+.p-top-project__pieItem__category {
   text-align: center;
   font-size: 25px;
   letter-spacing: 5px;
@@ -567,7 +564,7 @@
   }
 }
 
-.p-top-pieItem__image {
+.p-top-project__pieItem__image {
   width: 100%;
   height: auto;
   margin: 0 auto;
@@ -577,7 +574,7 @@
   }
 }
 
-.p-top-pieItem__image > img {
+.p-top-project__pieItem__image > img {
   &:first-child {
     position: relative;
     left: -20px; // 元々円グラフがズレてるから
@@ -681,9 +678,9 @@
 }
 
 /*
-  .p-top-project__list__income
+  .p-top-project__list__feature__income
 -----------------------------------------------------------------*/
-.p-top-project__listItem__income {
+.p-top-project__listItem__feature__income {
   position: relative;
   display: flex;
   justify-content: flex-start;
@@ -691,11 +688,11 @@
   margin-bottom: 10px;
 }
 
-.p-top-project__listItem__income__monthly {
+.p-top-project__listItem__feature__income__monthly {
   @include projectIcon(money);
 }
 
-.p-top-project__listItem__income__price {
+.p-top-project__listItem__feature__income__price {
   letter-spacing: 3px;
 
   @include mq('u-smSp') {
@@ -703,7 +700,7 @@
   }
 }
 
-.p-top-project__listItem__income__price--emphasis {
+.p-top-project__listItem__feature__income__price--emphasis {
   display: inline-block;
   font-size: 25px;
   font-weight: bold;
@@ -715,20 +712,20 @@
 }
 
 /*
-  .p-top-project__listItem__working
+  .p-top-project__listItem__feature__working
 // -----------------------------------------------------------------*/
 
-.p-top-project__listItem__working {
+.p-top-project__listItem__feature__working {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.p-top-project__listItem__working__week {
+.p-top-project__listItem__feature__working__week {
   @include projectIcon(calender);
 }
 
-.p-top-project__listItem__working__days {
+.p-top-project__listItem__feature__working__day {
   letter-spacing: 3px;
 
   @include mq('u-smSp') {
@@ -736,7 +733,7 @@
   }
 }
 
-.p-top-project__listItem__working__days--emphasis {
+.p-top-project__listItem__feature__working__day--emphasis {
   font-weight: bold;
   font-size: 25px;
   color: $colorDeepRed;
@@ -747,36 +744,18 @@
   }
 }
 
-.p-top-project__listItem__developmentEnironment {
+.p-top-project__listItem__language {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 }
 
-.p-top-project__listItem__developmentEnironment--detail {
+.p-top-project__listItem__language--detail {
   padding: 5px 10px;
   text-align: center;
   line-height: 14px;
 
   &:nth-last-child(n+2) {
     margin-right: 5px;
-  }
-
-  @include mq('u-smSp') {
-    width: calc(100% / 2 - 30px);
-
-    &:nth-child(n+3) {
-      margin-top: 10px;
-    }
-
-    &:nth-last-child(n+2) {
-      margin-right: 0;
-    }
-
-    &:nth-child(odd) {
-      margin-right: 5px;
-    }
   }
 }
 

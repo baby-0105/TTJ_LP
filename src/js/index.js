@@ -80,22 +80,23 @@ $(() => {
     $('#fluffy_disappear').each(function() {
       let aboutServicePosi = $(this).offset().top,
           windowWidth      = $(window).width(),
-          smWidth          = 768;
+          spWidth          = 768;
 
-      if (windowWidth > smWidth) {
+      if (windowWidth > spWidth) {
         if (startPos+250 < scrollPosi) {
           $(this).addClass('disappear');
         } else {
           $(this).removeClass('disappear');
         }
-      }else if (windowWidth <= smWidth) {
+      }else if (windowWidth <= spWidth) {
         $(this).css({
           opacity: 1,
           transform: 'translateY(0)'
         });
       }
     });
-  });
+  }); // スクロールイベント終了
+
 
   // 「案件を見るボタン」：クリックイベント
   $('#toProjectSP').on('click', function() {
