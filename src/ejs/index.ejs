@@ -135,7 +135,8 @@ src/ejs/template/_head %>
         <% for (var m = 0; m < categories.length; m++) { %>
         <li class="p-top-project__pieItem">
           <h2 class="p-top-project__pieItem__category"><%= categories[m].heading %></h2>
-          <p class="p-top-project__pieItem__image"><img src="<%= imgPath %>img_graph_<%= categories[m].img %>.png" alt="開発言語 画像"></p>
+          <p class="p-top-project__PCpieItem__image"><img src="<%= imgPath %>img_graph_<%= categories[m].img %>.png" alt="開発言語 画像"></p>
+          <p class="p-top-project__SPpieItem__image"><img src="<%= imgPath %>imgSP_graph_<%= categories[m].img %>.png" alt="開発言語 画像（SP）"></p>
         </li>
         <% } %>
       </ul>
