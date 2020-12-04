@@ -121,7 +121,21 @@ $(() => {
     $('#toProjectPC').on('click',handleClick);
   })();
 
+  for (let i=0; i < 3; i++) {
+    let $body = $('body');
 
+    $(`#openPie${i+1}`).on('click',function() {
+      $(`#pieFadeIn${i+1}`).fadeIn();
+      $('#bgBlack').fadeIn();
+      $body.addClass('nonScroll');
+    });
+
+    $(`#bgBlack`).on('click', function() {
+      $(this).fadeOut();
+      $('#bgBlack').fadeOut();
+      $body.removeClass('nonScroll');
+    })
+  }
   // FAQ：モーダル（PC用)
   const occurModalEvent = (function() {
     const $faqList       = $('.p-top-faqPC__answerList');
@@ -148,7 +162,6 @@ $(() => {
       })
     }
   })();
-
 
   // FAQ：アコーディオン（スマホ用）
   const accordion = (function() {

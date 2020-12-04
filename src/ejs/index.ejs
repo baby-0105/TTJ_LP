@@ -131,13 +131,36 @@ src/ejs/template/_head %>
       <h2 class="p-top-project__heading">見つかる！希望案件</h2>
 
       <!-- 円グラフ -->
-      <ul class="p-top-project__pieList">
+      <ul class="p-top-project__PCpieList">
         <% for (var m = 0; m < categories.length; m++) { %>
-        <li class="p-top-project__pieItem">
-          <h2 class="p-top-project__pieItem__category"><%= categories[m].heading %></h2>
+        <li class="p-top-project__PCpieItem">
+          <h2 class="p-top-project__PCpieItem__category"><%= categories[m].heading %></h2>
           <p class="p-top-project__PCpieItem__image"><img src="<%= imgPath %>img_graph_<%= categories[m].img %>.png" alt="開発言語 画像"></p>
-          <p class="p-top-project__SPpieItem__image"><img src="<%= imgPath %>imgSP_graph_<%= categories[m].img %>.png" alt="開発言語 画像（SP）"></p>
         </li>
+        <% } %>
+      </ul>
+
+      <div class="p-top-project__SPpieList__top">
+        <div class="c-btn-round" id="openPie1"></div>
+        <h2 class="p-top-project__SPpieItem__topCategory">単価詳細</h2>
+      </div>
+
+      <ul class="p-top-project__SPpieList__bottom">
+        <% for (var m = 0; m < 2; m++) { %>
+          <li class="p-top-project__SPpieItem__bottom">
+            <div class="c-btn-round" id="openPie<%= m+2 %>"></div>
+            <h2 class="p-top-project__SPpieItem__bottomCategory"><%= categories[m+1].heading %></h2>
+          </li>
+        <% } %>
+      </ul>
+
+      <ul class="p-top-project__SPpieList__fadeIn" id="">
+        <% for(var i=0; i<categories.length; i++) { %>
+          <li class="p-top-project__SPpieItem__fadeIn" id="pieFadeIn<%= i+1 %>">
+            <div id="bgBlack">
+              <p class="p-top-project__SPpieItem__Img"><img src="<%= imgPath %>imgSP_graph_<%= categories[i].img %>.png" alt="開発言語 画像（SP）"></p>
+            </div>
+          </li>
         <% } %>
       </ul>
 

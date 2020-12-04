@@ -105,3 +105,33 @@
 .c-btn-square__lineIcon {
   @include c-btn-lineIcon;
 }
+
+.c-btn-round {
+  font-size: 20px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  font-weight: bold;
+  background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+  border-bottom: solid 8px #b5b5b5;
+  color: rgba(152, 152, 152, 0.43); /* アイコン色 */
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+  margin: 0 auto;
+  position: relative;
+
+  &:before {
+    content: '押';
+    font-size: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:active {
+    position: relative;
+    top: 8px;
+    border-bottom: none;
+  }
+}

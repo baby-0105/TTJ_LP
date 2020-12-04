@@ -35,7 +35,7 @@ $colorDeepRed: #D9340A;
 $colorLightRed: #FF6363;
 $colorLightBlue: #07E7FF;
 $colorDeepBlue: #2582bb;
-$colorLightGreen: #2EE32F;
+// $colorLightGreen: #2EE32F;
 $colorGreen: #61ba10;
 $colorYellow: #EEFF00;
 $colorOrange: #ffc042;
@@ -77,7 +77,7 @@ $colorOrange: #ffc042;
   }
 
   @else {
-    background-color: rgba($colorLightGreen, .9);
+    background-color: rgba($colorGreen, .7);
 
     @include mq('o-sp') {
       margin-bottom: 100px;
