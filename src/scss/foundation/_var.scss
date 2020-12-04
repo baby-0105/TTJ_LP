@@ -78,6 +78,10 @@ $colorOrange: #ffc042;
 
   @else {
     background-color: rgba($colorLightGreen, .9);
+
+    @include mq('o-sp') {
+      margin-bottom: 100px;
+    }
   }
 }
 
