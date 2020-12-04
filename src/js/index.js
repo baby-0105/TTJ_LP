@@ -11,15 +11,15 @@ $(() => {
       startPos     = $(window).scrollTop(); // 元の位置を取得
 
   // スクロールイベント
-  $(window).scroll(function() {
-    let windowHeight  = $(this).height(),
-        scrollPosi    = $(this).scrollTop(),
-        $aboutServiceText = $('.p-top-aboutService__text');
+  $(window).on('scroll', function() {
+    const windowHeight        = $(this).height(),
+          scrollPosi          = $(this).scrollTop(),
+          $aboutServiceText   = $('.p-top-aboutService__text');
 
     // ウィンドウサイズが 769px以上の場合に有効にしたい処理
     if (window.matchMedia( "(min-width: 769px)" ).matches) {
       $('#aboutService').each(function() {
-        let aboutServicePosi = $(this).offset().top;
+        const aboutServicePosi = $(this).offset().top;
 
         if (scrollPosi > aboutServicePosi - windowHeight + 400) {
           for(let i=0; i<$aboutServiceText.length; i++) {
@@ -33,7 +33,7 @@ $(() => {
       });
 
       $('#aboutServiceImg').each(function() {
-        let aboutServiceImgPosi = $(this).offset().top;
+        const aboutServiceImgPosi = $(this).offset().top;
 
         if (scrollPosi > aboutServiceImgPosi - windowHeight + 300) {
           $(this).addClass('moveAboutServiceImg');
@@ -42,8 +42,8 @@ $(() => {
     }
 
     $('#aboutService').each(function() {
-      let aboutServicePosi = $(this).offset().top,
-          bgLogoColor = ['red', 'blue', 'white'];
+      const aboutServicePosi = $(this).offset().top,
+            bgLogoColor      = ['red', 'blue', 'white'];
 
       if (scrollPosi > aboutServicePosi - windowHeight + 400) {
         for(let i=0; i<bgLogoColor.length; i++) {
@@ -53,8 +53,8 @@ $(() => {
     });
 
     $('#aboutServiceEntryArrow').each(function() {
-      let aboutServiceEntryPosi = $(this).offset().top,
-          aboutServiceEntryHeight = $(this).height();
+      const aboutServiceEntryPosi   = $(this).offset().top,
+            aboutServiceEntryHeight = $(this).height();
 
       if(scrollPosi > aboutServiceEntryPosi - windowHeight + 100 &&
       scrollPosi < aboutServiceEntryPosi + aboutServiceEntryHeight - (aboutServiceEntryHeight / 2) - 100){
@@ -65,8 +65,8 @@ $(() => {
     });
 
     $('#entryArrow').each(function() {
-      let entryArrowPosi = $(this).offset().top,
-      entryArrowHeight = $(this).height();
+      const entryArrowPosi   = $(this).offset().top,
+            entryArrowHeight = $(this).height();
 
       if(scrollPosi > entryArrowPosi - windowHeight + 100 &&
       scrollPosi < entryArrowPosi + entryArrowHeight - (entryArrowHeight / 2) - 100){
@@ -77,10 +77,10 @@ $(() => {
     });
 
     // ファーストビュー fadeIn, fadeOut
-    $('#fluffy_disappear').each(function() {
-      let aboutServicePosi = $(this).offset().top,
-          windowWidth      = $(window).width(),
-          spWidth          = 768;
+    $('#fluffyDisappear').each(function() {
+      const aboutServicePosi = $(this).offset().top,
+            windowWidth      = $(window).width(),
+            spWidth          = 768;
 
       if (windowWidth > spWidth) {
         if (startPos+500 < scrollPosi) {
@@ -111,42 +111,64 @@ $(() => {
 
 
   // 「案件を見るボタン」：クリックイベント
-  $('#toProjectSP').on('click', function() {
-    $bodyAndHtml.animate({scrollTop: $('#project').offset().top}, 'swing');
-  });
+  const toProject = (function() {
+    const handleClick = (function() {
+      $bodyAndHtml.animate({scrollTop: $('#project').offset().top}, 'swing');
+    });
 
-  $('#toProjectPC').on('click', function() {
-    $bodyAndHtml.animate({scrollTop: $('#project').offset().top}, 'swing');
-  });
+    $('#toProjectSP').on('click',handleClick);
 
-  // FAQ：モーダル（PC用）
-  let $faqList = $('.p-top-faqPC__answerList');
+    $('#toProjectPC').on('click',handleClick);
+  })();
 
-  for (let i=0; i < $faqList.length; i++) {
-    let $faqPCAnswer = $(`#faqPCAnswer${i+1}`),
-        $body = $('body');
 
-    $(`#faqPCQuestionList${i+1}`).on('click', function() {
-      $faqPCAnswer.fadeIn();
-      $body.addClass('nonScroll');
-    })
+  // FAQ：モーダル（PC用)
+  const occurModalEvent = (function() {
+    const $faqList       = $('.p-top-faqPC__answerList');
 
-    $(`#faqPCAnswer${i+1}, #footer`).on('click', function() {
-      $faqPCAnswer.fadeOut();
-      $body.removeClass('nonScroll');
-    })
-  }
+    for (let i = 0; i < $faqList.length; i++) {
+      const $faqPCAnswer = $(`#faqPCAnswer${i+1}`),
+            $body        = $('body');
+
+      nonScroll(i, $faqPCAnswer, $body);
+      scroll(i, $faqPCAnswer, $body);
+    }
+
+    function nonScroll(loop, answer, body) {
+      $(`#faqPCQuestionList${loop+1}`).on('click', function() {
+        answer.fadeIn();
+        body.addClass('nonScroll');
+      });
+    }
+
+    function scroll(loop, answer, body) {
+      $(`#faqPCAnswer${loop+1}, #footer`).on('click', function() {
+        answer.fadeOut();
+        body.removeClass('nonScroll');
+      })
+    }
+  })();
+
 
   // FAQ：アコーディオン（スマホ用）
-  for(let i=0; i < $faqList.length; i++) {
-    let $questionMenu = $(`#questionMenu${i+1}`),
-        $questionTitle = $(`#questionTitle${i+1}`);
+  const accordion = (function() {
+    const $faqList = $('.p-top-faqPC__answerList');
 
-    $questionMenu.on('click', function() {
-      $(this).next().stop().slideToggle();
-      $questionTitle.toggleClass('arrowTransform');
-    });
-  }
+    for(let i=0; i < $faqList.length; i++) {
+      const $questionMenu  = $(`#questionMenu${i+1}`),
+            $questionTitle = $(`#questionTitle${i+1}`);
+
+      arrowTransform($questionMenu, $questionTitle);
+    }
+
+    function arrowTransform(menu, title) {
+      menu.on('click', function() {
+        menu.next().stop().slideToggle();
+        title.toggleClass('arrowTransform');
+      });
+    }
+  })();
+
 
   // 案件: スライドショー
   $('.p-top-project__list').slick({
