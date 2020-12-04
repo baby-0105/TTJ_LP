@@ -41,6 +41,10 @@ $breakpoints: (
   padding: 0;
   overflow: hidden;
 
+  @media screen and(max-width: 500px) {
+    padding-right: 30px; // 次の要素をチョビ出しするため
+  }
+
   &:focus {
     outline: none;
   }
