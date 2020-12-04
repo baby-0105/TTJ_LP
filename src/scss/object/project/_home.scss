@@ -142,7 +142,6 @@
 // -----------------------------------------------------------------*/
 
 .p-top-aboutService {
-  // color: $colorBlack;
   padding: 100px 50px;
 
   @include mq('u-pc') {
@@ -169,7 +168,6 @@
 .p-top-aboutService__explain {
   display: flex;
   align-items: center;
-  // justify-content: space-around;
   position: relative;
   margin-bottom: 100px;
 
@@ -214,7 +212,9 @@
 }
 
 .bgLogoToBig {
-  transform: scale(1.4);
+  // @include mq('o-pc') {
+    transform: scale(1.4);
+  // }
 }
 
 .p-top-aboutService__imgBlock {
@@ -531,23 +531,29 @@
 /*// -----------------------------------------------------------------
 // .p-top-project__pie
 // -----------------------------------------------------------------*/
-.p-top-project__pieList {
+
+/*
+  .p-top-project__PCpie
+---------------------------------------------------- */
+
+.p-top-project__PCpieList {
   display: flex;
   justify-content: center;
   width: 100%;
   margin: 0 auto;
 
   @include mq('u-sp') {
+    display: none;
     flex-direction: column;
     margin-bottom: 20px;
   }
 }
 
-.p-top-project__pieItem {
+.p-top-project__PCpieItem {
   margin-bottom: 100px;
 }
 
-.p-top-project__pieItem__category {
+.p-top-project__PCpieItem__category {
   text-align: center;
   font-size: 25px;
   letter-spacing: 5px;
@@ -580,19 +586,62 @@
   }
 }
 
-.p-top-project__SPpieItem__image {
+/*
+  .p-top-project__SPpie
+---------------------------------------------------- */
+
+.p-top-project__SPpieList__top {
   @include mq('o-sp') {
     display: none;
   }
 
-  width: 100vw;
-  height: auto;
-  margin: 0 auto;
-  overflow: hidden; // グラフ画像のはみ出し防ぐ
+  margin-bottom: 50px;
+  text-align: center;
 }
 
-.p-top-project__SPpieItem__image > img {
-  transform: scale(1.4);
+.p-top-project__SPpieItem__topCategory {
+  font-size: 25px;
+}
+
+.p-top-project__SPpieList__bottom {
+  @include mq('o-sp') {
+    display: none;
+  }
+
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 80px;
+}
+
+.p-top-project__SPpieItem__fadeIn {
+  display: none;
+}
+
+.p-top-project__SPpieItem__Img {
+  overflow: hidden; // グラフ画像のはみ出し防ぐ
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+
+  &:before {
+    content: '\f057';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 1000;
+    display: block;
+    color: $colorWhite;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+.p-top-project__SPpieItem__Img > img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.4);
 }
 
 /*// -----------------------------------------------------------------

@@ -119,6 +119,22 @@ $(() => {
     $bodyAndHtml.animate({scrollTop: $('#project').offset().top}, 'swing');
   });
 
+  for (let i=0; i < 3; i++) {
+    let $body = $('body');
+
+    $(`#openPie${i+1}`).on('click',function() {
+      $(`#pieFadeIn${i+1}`).fadeIn();
+      $('#bgBlack').fadeIn();
+      $body.addClass('nonScroll');
+    });
+
+    $(`#bgBlack`).on('click', function() {
+      $(this).fadeOut();
+      $('#bgBlack').fadeOut();
+      $body.removeClass('nonScroll');
+    })
+  }
+
   // FAQ：モーダル（PC用）
   let $faqList = $('.p-top-faqPC__answerList');
 
@@ -128,11 +144,13 @@ $(() => {
 
     $(`#faqPCQuestionList${i+1}`).on('click', function() {
       $faqPCAnswer.fadeIn();
+      // $('#bgBlack').fadeIn();
       $body.addClass('nonScroll');
     })
 
-    $(`#faqPCAnswer${i+1}, #footer`).on('click', function() {
+    $(`#faqPCAnswer${i+1}, #bgBlack`).on('click', function() {
       $faqPCAnswer.fadeOut();
+      // $('#bgBlack').fadeOut();
       $body.removeClass('nonScroll');
     })
   }
