@@ -555,7 +555,7 @@
   margin-bottom: 100px;
 }
 
-.p-top-project__PCpieItem__category {
+@mixin pie_title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -580,11 +580,10 @@
   &::after {
     transform: rotate(-60deg);
   }
+}
 
-  @include mq('u-sp') {
-    margin-bottom: -80px;
-    font-size: 30px;
-  }
+.p-top-project__PCpieItem__category {
+  @include pie_title;
 }
 
 .p-top-project__PCpieItem__image {
@@ -617,12 +616,19 @@
     display: none;
   }
 
-  margin-bottom: 50px;
   text-align: center;
 }
 
-.p-top-project__SPpieItem__topCategory {
+.p-top-project__SPpieItem__topCategory,
+.p-top-project__SPpieItem__bottomCategory {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 25px;
+  font-weight: bold;
+  color: rgba($colorGray, 0.9);
+  letter-spacing: 5px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .p-top-project__SPpieItem__topImg {
@@ -636,6 +642,7 @@
 .p-top-project__SPpieItem__topImg > img,
 .p-top-project__SPpieItem__bottomImg > img {
   filter: drop-shadow(0 10px 3px $colorBlack);
+  -webkit-touch-callout: none;
 
   &:active {
     filter: none;
@@ -657,40 +664,16 @@
 }
 
 .p-top-project__SPpieList__note {
-  font-size: 20px;
-  color: $colorDeepRed;
-  font-weight: bold;
-  text-align: right;
-  margin: 0 10px 80px;
-}
-
-.p-top-project__SPpieItem__fadeIn {
   display: none;
-}
 
-.p-top-project__SPpieItem__Img {
-  overflow: hidden; // グラフ画像のはみ出し防ぐ
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-
-  &:before {
-    content: '\f057';
-    font-family: "Font Awesome 5 Free";
-    font-weight: 1000;
+  @include mq('u-sp') {
     display: block;
-    color: $colorWhite;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    font-size: 16px;
+    color: $colorDeepRed;
+    font-weight: bold;
+    text-align: right;
+    margin: 30px 10px 80px;
   }
-}
-
-.p-top-project__SPpieItem__Img > img {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.4);
 }
 
 /*// -----------------------------------------------------------------
@@ -962,88 +945,6 @@
     font-size: 18px;
   }
 }
-
-/*
-  p-top-faqPC__answer
----------------------------------------------------- */
-
-.p-top-faqPC__answerList {
-  display: none;
-  text-align: center;
-}
-
-.p-top-faqPC__answerList__textBlock {
-  width: 60%;
-  margin: 0 auto;
-  border: solid 1px $colorBlack;
-  background: linear-gradient(
-    -60deg,
-    #ec8c8c 2%,
-    $colorWhite 8%,
-    $colorWhite 92%,
-    #c4fcfc 98%
-  );
-  padding: 20px;
-  border-radius: 10px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  user-select: none; // ダブルクリック時の青色選択無効
-}
-
-.p-top-faqPC__answerList__question {
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.p-top-faqPC__answerList__Num {
-  font-size: 30px;
-  font-weight: bold;
-}
-
-// --------------------------×アイコン--------------------------
-
-.crossIcon {
-  margin: 0 auto;
-  transition: 0.5s;
-}
-
-.p-top-faqPC__crossIcon {
-  color: $colorWhite;
-  font-size: 25px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  height: 40px;
-  width: 40px;
-  background-color: $colorBlack;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-
-  &:hover > .crossIcon {
-    transform: rotateZ(180deg);
-  }
-}
-
-/* ---------------------------------------------------- */
-
-#bgBlack {
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: rgba(51, 51, 51, 0.8);
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-}
-
-.nonScroll {
-  overflow: hidden;
-} // モーダル表示時：スクロール×
 
 /*
   p-top-faqSP

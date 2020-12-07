@@ -5,6 +5,7 @@ src/ejs/template/_head %>
 <% include src/ejs/template/_header %>
 
 <main class="l-main">
+  <div id="bgBlack"></div>
     <div class="p-top-fixed fixed" id="fixed">
       <div class="p-top-fixed__container" id="fluffyDisappear">
         <div class="p-top-fixed__circle--LINE">
@@ -141,7 +142,6 @@ src/ejs/template/_head %>
       </ul>
 
       <div class="p-top-project__SPpieList__top">
-        <!--<div class="c-btn-round" id="openPie1"></div>-->
         <p class="p-top-project__SPpieItem__topImg" id="openPie1"><img src="<%= imgPath %>imgSP_graph_up.png" alt="グラフの画像"></p>
         <h2 class="p-top-project__SPpieItem__topCategory">単価詳細</h2>
       </div>
@@ -149,19 +149,17 @@ src/ejs/template/_head %>
         <% for (var m = 0; m < 2; m++) { %>
           <li class="p-top-project__SPpieItem__bottom">
             <!--<div class="c-btn-round" id="openPie<%= m+2 %>"></div>-->
-            <p class="p-top-project__SPpieItem__bottomImg" id="openPie<%= m+2 %>"><img src="<%= imgPath %>imgSP_graph_<%= categories[m].img %>.png" alt="グラフの画像"></p>
+            <p class="p-top-project__SPpieItem__bottomImg" id="openPie<%= m+2 %>"><img src="<%= imgPath %>imgSP_graph_<%= categories[m+1].img %>.png" alt="グラフの画像"></p>
             <h2 class="p-top-project__SPpieItem__bottomCategory"><%= categories[m+1].heading %></h2>
           </li>
         <% } %>
       </ul>
       <p class="p-top-project__SPpieList__note">※グラフタップで画像拡大が出来ます</p>
 
-      <ul class="p-top-project__SPpieList__fadeIn" id="">
+      <ul class="c-modal-SPproject__pie" id="projectModal">
         <% for(var i=0; i<categories.length; i++) { %>
-          <li class="p-top-project__SPpieItem__fadeIn" id="pieFadeIn<%= i+1 %>">
-            <div id="bgBlack">
-              <p class="p-top-project__SPpieItem__Img" id="pieItemImg<%= i+1 %>"><img src="<%= imgPath %>imgSP_graph_<%= categories[i].img %>.png" alt="開発言語 画像（SP）"></p>
-            </div>
+          <li class="c-modal-SPproject__pieList" id="pieFadeIn<%= i+1 %>">
+            <p class="c-modal-SPproject__pieList__img" id="pieItemImg<%= i+1 %>"><img src="<%= imgPath %>imgSP_graph_<%= categories[i].img %>.png" alt="開発言語 画像（SP）"></p>
           </li>
         <% } %>
       </ul>
@@ -228,17 +226,15 @@ src/ejs/template/_head %>
       <% } %>
     </ul>
 
-    <ul class="p-top-faqPC__answer" id="faqPCAnswer">
+    <ul class="c-modal-faqPC__answer" id="faqPCAnswer">
       <% for (var i=0; i < answer.length; i++) { %>
-        <li class="p-top-faqPC__answerList" id="faqPCAnswer<%= i+1 %>">
-          <div id="bgBlack">
-            <div class="p-top-faqPC__answerList__textBlock">
-              <span class="p-top-faqPC__answerList__Num">Q<%= [i+1] %></span>
-              <h3 class="p-top-faqPC__answerList__question"><%= question[i] %>-</h3>
-              <span class="p-top-faqPC__answerList__Num">A<%= [i+1] %></span>
-              <p class="p-top-faqPC__answerList__answer"><%= answer[i] %></p>
-              <span class="p-top-faqPC__crossIcon"><i class="fas fa-times crossIcon"></i></span>
-            </div>
+        <li class="c-modal-faqPC__answerList" id="faqPCAnswer<%= i+1 %>">
+          <div class="c-modal-faqPC__answerList__textBlock">
+            <span class="c-modal-faqPC__answerList__Num">Q<%= [i+1] %></span>
+            <h3 class="c-modal-faqPC__answerList__question"><%= question[i] %></h3>
+            <span class="c-modal-faqPC__answerList__Num">A<%= [i+1] %></span>
+            <p class="c-modal-faqPC__answerList__answer"><%= answer[i] %></p>
+            <span class="c-modal-faqPC__crossIcon"><i class="fas fa-times crossIcon"></i></span>
           </div>
         </li>
       <% } %>

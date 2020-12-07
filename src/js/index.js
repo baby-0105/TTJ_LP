@@ -121,23 +121,11 @@ $(() => {
     $('#toProjectPC').on('click',handleClick);
   })();
 
-  for (let i=0; i < 3; i++) {
-    let $body = $('body');
-
-    $(`#openPie${i+1}`).on('click',function() {
-      $(`#pieFadeIn${i+1}`).fadeIn();
-      $body.addClass('nonScroll');
-    });
-
-    $(`#pieFadeIn${i+1}`).on('click', function() {
-      $(this).fadeOut();
-      $body.removeClass('nonScroll');
-    })
-  }
-
   // FAQ：モーダル（PC用)
   const occurModalEvent = (function() {
-    const $faqList       = $('.p-top-faqPC__answerList');
+    const $faqList = $('.c-modal-faqPC__answerList'),
+          $projectModal = $('#projectModal'),
+          $bgBlack = $('#bgBlack');
 
     for (let i = 0; i < $faqList.length; i++) {
       const $faqPCAnswer = $(`#faqPCAnswer${i+1}`),
@@ -147,16 +135,39 @@ $(() => {
       scroll(i, $faqPCAnswer, $body);
     }
 
+    // 案件グラフ：モーダル
+    for (let i=0; i < 3; i++) {
+      let $body = $('body');
+
+      $(`#openPie${i+1}`).on('click',function() {
+        $(`#pieFadeIn${i+1}`).fadeIn();
+        $projectModal.fadeIn();
+        $bgBlack.fadeIn();
+        $body.addClass('nonScroll');
+      });
+
+      $(`#pieFadeIn${i+1}`).on('click', function() {
+        $projectModal.fadeOut();
+        $(this).fadeOut();
+        $bgBlack.fadeOut();
+        $body.removeClass('nonScroll');
+      })
+    }
+
     function nonScroll(loop, answer, body) {
       $(`#faqPCQuestionList${loop+1}`).on('click', function() {
         answer.fadeIn();
+        $bgBlack.fadeIn();
+        $(`#faqPCAnswer`).fadeIn();
         body.addClass('nonScroll');
       });
     }
 
     function scroll(loop, answer, body) {
-      $(`#faqPCAnswer${loop+1}, #footer`).on('click', function() {
+      $(`#faqPCAnswer`).on('click', function() {
         answer.fadeOut();
+        $bgBlack.fadeOut();
+        $(`#faqPCAnswer`).fadeOut();
         body.removeClass('nonScroll');
       })
     }
@@ -164,7 +175,7 @@ $(() => {
 
   // FAQ：アコーディオン（スマホ用）
   const accordion = (function() {
-    const $faqList = $('.p-top-faqPC__answerList');
+    const $faqList = $('.c-modal-faqPC__answerList');
 
     for(let i=0; i < $faqList.length; i++) {
       const $questionMenu  = $(`#questionMenu${i+1}`),
