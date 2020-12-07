@@ -141,24 +141,26 @@ src/ejs/template/_head %>
       </ul>
 
       <div class="p-top-project__SPpieList__top">
-        <div class="c-btn-round" id="openPie1"></div>
+        <!--<div class="c-btn-round" id="openPie1"></div>-->
+        <p class="p-top-project__SPpieItem__topImg" id="openPie1"><img src="<%= imgPath %>imgSP_graph_up.png" alt="グラフの画像"></p>
         <h2 class="p-top-project__SPpieItem__topCategory">単価詳細</h2>
       </div>
-
       <ul class="p-top-project__SPpieList__bottom">
         <% for (var m = 0; m < 2; m++) { %>
           <li class="p-top-project__SPpieItem__bottom">
-            <div class="c-btn-round" id="openPie<%= m+2 %>"></div>
+            <!--<div class="c-btn-round" id="openPie<%= m+2 %>"></div>-->
+            <p class="p-top-project__SPpieItem__bottomImg" id="openPie<%= m+2 %>"><img src="<%= imgPath %>imgSP_graph_<%= categories[m].img %>.png" alt="グラフの画像"></p>
             <h2 class="p-top-project__SPpieItem__bottomCategory"><%= categories[m+1].heading %></h2>
           </li>
         <% } %>
       </ul>
+      <p class="p-top-project__SPpieList__note">※グラフタップで画像拡大が出来ます</p>
 
       <ul class="p-top-project__SPpieList__fadeIn" id="">
         <% for(var i=0; i<categories.length; i++) { %>
           <li class="p-top-project__SPpieItem__fadeIn" id="pieFadeIn<%= i+1 %>">
             <div id="bgBlack">
-              <p class="p-top-project__SPpieItem__Img"><img src="<%= imgPath %>imgSP_graph_<%= categories[i].img %>.png" alt="開発言語 画像（SP）"></p>
+              <p class="p-top-project__SPpieItem__Img" id="pieItemImg<%= i+1 %>"><img src="<%= imgPath %>imgSP_graph_<%= categories[i].img %>.png" alt="開発言語 画像（SP）"></p>
             </div>
           </li>
         <% } %>
@@ -232,7 +234,7 @@ src/ejs/template/_head %>
           <div id="bgBlack">
             <div class="p-top-faqPC__answerList__textBlock">
               <span class="p-top-faqPC__answerList__Num">Q<%= [i+1] %></span>
-              <h3 class="p-top-faqPC__answerList__question"><%= question[i] %></h3>
+              <h3 class="p-top-faqPC__answerList__question"><%= question[i] %>-</h3>
               <span class="p-top-faqPC__answerList__Num">A<%= [i+1] %></span>
               <p class="p-top-faqPC__answerList__answer"><%= answer[i] %></p>
               <span class="p-top-faqPC__crossIcon"><i class="fas fa-times crossIcon"></i></span>

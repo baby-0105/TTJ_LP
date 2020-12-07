@@ -126,16 +126,15 @@ $(() => {
 
     $(`#openPie${i+1}`).on('click',function() {
       $(`#pieFadeIn${i+1}`).fadeIn();
-      $('#bgBlack').fadeIn();
       $body.addClass('nonScroll');
     });
 
-    $(`#bgBlack`).on('click', function() {
+    $(`#pieFadeIn${i+1}`).on('click', function() {
       $(this).fadeOut();
-      $('#bgBlack').fadeOut();
       $body.removeClass('nonScroll');
     })
   }
+
   // FAQ：モーダル（PC用)
   const occurModalEvent = (function() {
     const $faqList       = $('.p-top-faqPC__answerList');

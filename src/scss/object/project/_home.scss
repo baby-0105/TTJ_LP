@@ -555,7 +555,7 @@
   margin-bottom: 100px;
 }
 
-.p-top-project__PCpieItem__category { // 12/4　class名修正
+.p-top-project__PCpieItem__category {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -625,6 +625,25 @@
   font-size: 25px;
 }
 
+.p-top-project__SPpieItem__topImg {
+  width: 50%;
+  position: relative;
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.p-top-project__SPpieItem__topImg > img,
+.p-top-project__SPpieItem__bottomImg > img {
+  filter: drop-shadow(0 10px 3px $colorBlack);
+
+  &:active {
+    filter: none;
+    position: relative;
+    top: 10px;
+  }
+}
+
 .p-top-project__SPpieList__bottom {
   @include mq('o-sp') {
     display: none;
@@ -634,7 +653,15 @@
   justify-content: space-around;
   text-align: center;
   font-size: 25px;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
+}
+
+.p-top-project__SPpieList__note {
+  font-size: 20px;
+  color: $colorDeepRed;
+  font-weight: bold;
+  text-align: right;
+  margin: 0 10px 80px;
 }
 
 .p-top-project__SPpieItem__fadeIn {
@@ -692,7 +719,7 @@
   }
 
   @include mq('u-sp') {
-    margin-bottom: 100px;
+    // margin-bottom: 100px;
   }
 }
 
