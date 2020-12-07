@@ -744,7 +744,7 @@
   @include mq('u-pc') {
     width: 95%;
     margin: 0 auto;
-    padding-bottom: 150px;
+    padding-bottom: 120px; // 12/4 150px → 120pxに変更
   }
 }
 
@@ -1145,6 +1145,8 @@
   //     transform: scale(1.05);
   //   }
   // }
+
+
 }
 
 .p-top-entry__mask {
