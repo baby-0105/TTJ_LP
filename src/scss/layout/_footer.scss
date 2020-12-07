@@ -23,37 +23,38 @@
     background-color: $colorLightRed;
   }
 
-  @include mq('u-pc') {
+  @include mq('u-sp') {
     display: none;
   }
 }
 
 .l-footerSP {
-  @include mq('o-pc') {
-    display: none;
-  }
+  display: none;
 
-  text-align: center;
-  position: relative;
-  padding: 30px;
-  background-color: $colorWhite;
-
-  &:before, &:after {
-    position: absolute;
+  @include mq('u-sp') {
+    text-align: center;
+    position: relative;
+    padding: 40px 30px 30px;
+    background-color: $colorWhite;
     display: block;
-    top: 0;
-    width: 49vw;
-    height: 5%;
-    content: '';
-  }
 
-  &::before {
-    left: 0;
-    background-color: $colorLightBlue;
-  }
+    &:before, &:after {
+      position: absolute;
+      display: block;
+      top: 0;
+      width: 49vw;
+      height: 5%;
+      content: '';
+    }
 
-  &::after {
-    right: 0;
-    background-color: $colorLightRed;
+    &::before {
+      left: 0;
+      background-color: $colorLightBlue;
+    }
+
+    &::after {
+      right: 0;
+      background-color: $colorLightRed;
+    }
   }
 }
