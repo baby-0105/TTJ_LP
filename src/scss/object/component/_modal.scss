@@ -1,0 +1,136 @@
+/*// -----------------------------------------------------------------
+// .c-modal-SPproject
+// -----------------------------------------------------------------*/
+
+.c-modal-SPproject__pie {
+  display: none;
+
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+}
+
+.c-modal-SPproject__pieList {
+  display: none;
+}
+
+.c-modal-SPproject__pieList__img {
+  // overflow: hidden; // グラフ画像のはみ出し防ぐ
+  position: relative;
+
+  &:before {
+    content: '\f057';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 1000;
+    display: block;
+    color: $colorWhite;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+.c-modal-SPproject__pieList__img > img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.4);
+}
+
+/*// -----------------------------------------------------------------
+// c-modal-faqPC__answer
+// -----------------------------------------------------------------*/
+
+.c-modal-faqPC__answer {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  // transform: translate(-50%, -50%);
+  z-index: 2;
+  display: none;
+}
+
+.c-modal-faqPC__answerList {
+  display: none;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.c-modal-faqPC__answerList__textBlock {
+  margin: 0 auto;
+  border: solid 1px $colorBlack;
+  background: linear-gradient(
+    -60deg,
+    #ec8c8c 2%,
+    $colorWhite 8%,
+    $colorWhite 92%,
+    #c4fcfc 98%
+  );
+  padding: 20px;
+  border-radius: 10px;
+  user-select: none; // ダブルクリック時の青色選択無効
+}
+
+.c-modal-faqPC__answerList__question {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.c-modal-faqPC__answerList__Num {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+// --------------------------×アイコン--------------------------
+
+.crossIcon {
+  margin: 0 auto;
+  transition: 0.5s;
+}
+
+.c-modal-faqPC__crossIcon {
+  color: $colorWhite;
+  font-size: 25px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 40px;
+  width: 40px;
+  background-color: $colorBlack;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+
+  &:hover > .crossIcon {
+    transform: rotateZ(180deg);
+  }
+}
+
+/* ---------------------------------------------------- */
+
+#bgBlack {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(51, 51, 51, 0.8);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+
+  display: none;
+}
+
+// モーダル表示時：スクロール×
+.nonScroll {
+  overflow: hidden;
+}
